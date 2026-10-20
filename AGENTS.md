@@ -30,14 +30,15 @@ normalizations, with no nuisance constraint terms, even in stat-only scans.
 
 # Ntuple process labels
 
-In `dataset_wDR_mean_origIndex.h5`, the Type == "qqZZ" category contains both
-qqZZ and ttV. Use these disjoint physical process selections in all analyses:
+Use **subType only** to identify physical processes in
+`dataset_wDR_mean_origIndex.h5`: `subType == process_name` for every process.
+Do not select or filter processes using Type, and do not request Type in analysis
+notebooks. In particular, qqZZ is `subType == "qqZZ"` and ttV is
+`subType == "ttV"`; they are disjoint without additional conditions.
 
-- qqZZ: `(Type == "qqZZ") & (subType != "ttV")`.
-- ttV: `(Type == "qqZZ") & (subType == "ttV")`.
-- Every other process: `Type == process_name`.
-
-Apply these exact masks consistently to native yields, direct targets/Asimov
-events, and comparisons. Notebooks 01–04 exclude ttV; 05 includes it separately.
-Keep the stored branch names `r_qqZZ` and `r_ttV`. The reference remains Type
-in S and EWSBI10. Retain the direct-Asimov yield consistency check.
+Apply these exact masks consistently to the reference, native yields, direct
+targets/Asimov events, and comparisons. The reference is subType in S and
+EWSBI10. Notebooks 01–04 exclude ttV; 05 includes it separately. Keep the stored
+branch names `r_qqZZ` and `r_ttV` and retain the direct-Asimov yield consistency
+check. Saved workspace metadata must identify subType as the process label.
+The auxiliary label census may still inspect both Type and subType.

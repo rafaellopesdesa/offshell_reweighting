@@ -4,9 +4,9 @@ Notebooks for the off-shell HZZ reweighting project. Input data and generated in
 
 ## Process selections
 
-The ntuple's `Type == "qqZZ"` category contains both qqZZ and ttV. All notebooks 01–05 use **qqZZ = `(Type == "qqZZ") & (subType != "ttV")`**. Notebook 05 also includes **ttV = `(Type == "qqZZ") & (subType == "ttV")`** as a separate process. Every other process uses `Type == process_name`.
+All notebooks 01–05 identify every process using **`subType == process_name`**. In particular, qqZZ is `subType == "qqZZ"` and ttV is `subType == "ttV"`. The reference is `subType` in `S`, `EWSBI10`. `Type` is not requested or used for analysis selections.
 
-These masks define native yields, direct targets/Asimov samples, and the yield coefficients used for reweighting. Notebooks 01–04 exclude ttV. The density-ratio branch names remain `r_qqZZ` and `r_ttV`. The reference is still S + EWSBI10. Rerun 01–05 to regenerate figures, yields, workspaces, and scans using the corrected selections; old notebook outputs have been cleared.
+These masks define native yields, direct targets/Asimov samples, and the yield coefficients used for reweighting. Notebooks 01–04 exclude ttV. Notebook 05 includes ttV as a separate process, counted exactly once. The density-ratio branch names remain `r_qqZZ` and `r_ttV`. Saved workspaces record `process_label: subType` and the reference subtypes. Rerun 01–05 to regenerate figures, yields, workspaces, and scans using these selections; old notebook outputs have been cleared.
 
 ## Plotting defaults
 
@@ -30,7 +30,7 @@ The notebook is self-contained and uses `h5py`, `numpy`, and `pandas`, which are
 
 Use a CPU runtime. If you ran an older notebook version, run the installation cell once, choose **Runtime → Restart session**, then **Run all**. Setup pins `matplotlib==3.10.0` and `mplhep==0.4.1`, detects stale imports after installation, and checks PNG/PDF export before loading the ntuple.
 
-Notebook 01 uses `weight_kFact` to compare the reference (`Type` in `S`, `EWSBI10`) with the target (SBI + qqZZ, using the disjoint selections above) for `NN_disc_New` and `m4l_fsr`.
+Notebook 01 uses `weight_kFact` to compare the reference (`subType` in `S`, `EWSBI10`) with the target (SBI + qqZZ, using the disjoint selections above) for `NN_disc_New` and `m4l_fsr`.
 
 Each variable produces two separate figures: **weighted yields first, then a normalized shape**. Bins are fixed to `[-1, 1]` in steps of `0.05` for `NN_disc_New`, and `[150, 2000]` GeV in steps of `50` GeV for `m4l_fsr`. Signed weights are retained, and rows with nonfinite plotted values or weights are counted and excluded. Yields outside the plotting ranges are reported separately; normalized shapes use the in-range signed weight.
 
@@ -103,6 +103,6 @@ Use the same CPU setup as 04. Workspaces, arrays, Z checks, jet fractions, domai
 
 [Open auxA.ipynb in Colab](https://colab.research.google.com/github/rafaellopesdesa/offshell_reweighting/blob/main/auxA.ipynb)
 
-This small diagnostic lists all Type values, all subType values, and every Type/subType combination with event counts and signed finite-weight sums. It applies no event cuts, includes missing labels, counts nonfinite weights separately, and shows exact label representations so whitespace and capitalization are visible. It compares exact `Type == "ttV"` and `subType == "ttV"` matches and highlights labels containing `tt` or `top`. The selection used for ttV in 05 is `(Type == "qqZZ") & (subType == "ttV")`; qqZZ uses the complementary subType selection within the same Type category. It reads only the two label columns and `weight_kFact`, and saves CSV tables under `HZZ_OffShell/inspection/auxA/`.
+This small diagnostic lists all Type values, all subType values, and every Type/subType combination with event counts and signed finite-weight sums. It applies no event cuts, includes missing labels, counts nonfinite weights separately, and shows exact label representations so whitespace and capitalization are visible. It compares exact `Type == "ttV"` and `subType == "ttV"` matches and highlights labels containing `tt` or `top`. All analysis notebooks use subType alone: ttV in 05 is `subType == "ttV"`, qqZZ is `subType == "qqZZ"`, and every other process is `subType == process_name`. It reads only the two label columns and `weight_kFact`, and saves CSV tables under `HZZ_OffShell/inspection/auxA/`.
 
 Keep datasets, reports, and notebook outputs containing event data out of this public repository.
