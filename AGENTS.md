@@ -11,3 +11,8 @@ Z with the normalized signed weights of the exact reference event set used in
 that workspace, and recompute Z for each random subset. Keep full native process
 yields fixed when reducing the reference event count, unless Rafael explicitly
 asks to change the physical yield.
+
+Distinguish the Asimov events from the model's normalization reference. When
+comparing a direct SBI + qqZZ Asimov with the full-reference reweighted Asimov,
+keep the full-reference Z factors for both models and retain the original
+direct event weights. Do not recalibrate Z on the direct Asimov sample.
