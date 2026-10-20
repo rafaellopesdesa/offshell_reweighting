@@ -2,6 +2,12 @@
 
 Notebooks for the off-shell HZZ reweighting project. Input data and generated inspection reports live in `My Drive/Colab Notebooks/HZZ_OffShell/`.
 
+## Process selections
+
+The ntuple's `Type == "qqZZ"` category contains both qqZZ and ttV. All notebooks 01–05 use **qqZZ = `(Type == "qqZZ") & (subType != "ttV")`**. Notebook 05 also includes **ttV = `(Type == "qqZZ") & (subType == "ttV")`** as a separate process. Every other process uses `Type == process_name`.
+
+These masks define native yields, direct targets/Asimov samples, and the yield coefficients used for reweighting. Notebooks 01–04 exclude ttV. The density-ratio branch names remain `r_qqZZ` and `r_ttV`. The reference is still S + EWSBI10. Rerun 01–05 to regenerate figures, yields, workspaces, and scans using the corrected selections; old notebook outputs have been cleared.
+
 ## Plotting defaults
 
 Use **0.90–1.10 for every histogram ratio panel**, including future notebooks, unless a different range is explicitly requested. This preference is recorded in `AGENTS.md` and `DEFAULT_RATIO_YLIM` in `utils.py`.
@@ -24,13 +30,13 @@ The notebook is self-contained and uses `h5py`, `numpy`, and `pandas`, which are
 
 Use a CPU runtime. If you ran an older notebook version, run the installation cell once, choose **Runtime → Restart session**, then **Run all**. Setup pins `matplotlib==3.10.0` and `mplhep==0.4.1`, detects stale imports after installation, and checks PNG/PDF export before loading the ntuple.
 
-Notebook 01 uses `weight_kFact` to compare the reference (`Type` in `S`, `EWSBI10`) with the target (`Type` in `SBI`, `qqZZ`) for `NN_disc_New` and `m4l_fsr`.
+Notebook 01 uses `weight_kFact` to compare the reference (`Type` in `S`, `EWSBI10`) with the target (SBI + qqZZ, using the disjoint selections above) for `NN_disc_New` and `m4l_fsr`.
 
 Each variable produces two separate figures: **weighted yields first, then a normalized shape**. Bins are fixed to `[-1, 1]` in steps of `0.05` for `NN_disc_New`, and `[150, 2000]` GeV in steps of `50` GeV for `m4l_fsr`. Signed weights are retained, and rows with nonfinite plotted values or weights are counted and excluded. Yields outside the plotting ranges are reported separately; normalized shapes use the in-range signed weight.
 
 Figure names end in `_yields` or `_normalized`. ATLAS styling uses mplhep; the label uses public Matplotlib text calls for compatibility with Colab's Matplotlib versions. Re-running setup downloads and reloads the updated helper.
 
-The four-column reader and ATLAS plot formatting are in `utils.py`; sample selections and NumPy histograms remain in the notebook. PNG/PDF figures are saved to `HZZ_OffShell/plots/01_reference_sample/` in Drive. The reader is tailored to this ntuple's pandas fixed-format HDF5 layout.
+The selective column reader and ATLAS plot formatting are in `utils.py`; sample selections and NumPy histograms remain in the notebook. PNG/PDF figures are saved to `HZZ_OffShell/plots/01_reference_sample/` in Drive. The reader is tailored to this ntuple's pandas fixed-format HDF5 layout.
 
 ## Test the stored reweighting ratios
 
@@ -75,7 +81,7 @@ Compare the full S + EWSBI10 reference with 2,048, 16,384, 131,072, and 1,048,57
 
 A second figure compares the full-reference reweighted Asimov with a **direct SBI + qqZZ Asimov**. The direct sample uses the original `weight_kFact` weights and ratio branches evaluated on its own events. Its model uses the same full-reference Z factors; the ratios are not renormalized using the direct sample. The fitted minimum is free to move away from mu = 1, exposing finite-MC or density-ratio closure differences. Both constructions have the same physical yield.
 
-The earlier scan failed because a full-reference event's combined intensity crossed zero at mu approximately 1.8947. The logarithm is then undefined even though the total expected yield remains positive. Before each fit, the helper now checks positivity over the entire requested interval, including any interior minimum of the quadratic in sqrt(mu). It reports the worst event and saves `domain_check.json`. The adapter keeps the fit within that interval as well. No event weights, densities, or individual process coefficients are clipped.
+With the earlier ttV-inclusive qqZZ yield, a full-reference event's combined intensity crossed zero at mu approximately 1.8947. The corrected qqZZ yield changes the model, so that old crossing is not a bound for the updated scan. The logarithm is then undefined even though the total expected yield remains positive. Before each fit, the helper now checks positivity over the entire requested interval, including any interior minimum of the quadratic in sqrt(mu). It reports the worst event and saves `domain_check.json`. The adapter keeps the fit within that interval as well. No event weights, densities, or individual process coefficients are clipped.
 
 Use a CPU runtime and the notebook's setup/restart procedure. Setup pins matching CPU JAX/JAXlib 0.6.2 and removes installed CUDA JAX plugins to avoid Colab plugin-version conflicts. Toolkit source is pinned to commit `fc09848fc6540fd32310faebbe9db6eea7ecd17b`. The same finite-value selection as notebooks 01–03 is retained, including events outside the histogram ranges. Workspaces, corrected ratio arrays, original row positions, Z checks, domain checks, and scan tables are saved under `HZZ_OffShell/likelihoods/04_stat_only/`. The reference-size and Asimov-comparison PNG/PDF figures go to `HZZ_OffShell/plots/04_likelihood_scans/`.
 
@@ -85,9 +91,9 @@ Use a CPU runtime and the notebook's setup/restart procedure. Setup pins matchin
 
 Notebook 05 adds EWB, EWSBI, EWSBI10, and ttV to the model. It uses the supplied electroweak interpolation coefficients, keeps ttV fixed, and profiles three independent qqZZ normalizations for 0, 1, and at least 2 jets. The four physical fit parameters are `mu`, `mu_qqZZ0`, `mu_qqZZ1`, and `mu_qqZZ2`. The nuisance parameters have no Gaussian or other constraint terms; their physical domain is nonnegative, without an upper bound. All three remain free at every fixed-mu scan point. Scans cover **0–1.8 in steps of 0.025**.
 
-The reference is S + EWSBI10. The SM Asimov is SBI + EWSBI + qqZZ + ttV. In this ntuple, **ttV is selected with `subType == "ttV"`**, while every other process uses `Type`. This selection is used consistently for the native ttV yield and the direct Asimov events; the density-ratio branch remains `r_ttV`. As in 04, compare the full reference with 2,048, 16,384, 131,072, and 1,048,576 nested random events, recomputing all eight same-sample Z factors for each case while holding the eight full native yields fixed. A second figure compares the full-reference reweighted Asimov with native events from the four SM processes, retaining their original weights and the full-reference model normalization.
+The reference is S + EWSBI10. The SM Asimov is SBI + EWSBI + qqZZ + ttV. The qqZZ and ttV components use the disjoint selections above for both native yields and direct Asimov events, so ttV is counted exactly once. The density-ratio branches remain `r_qqZZ` and `r_ttV`. As in 04, compare the full reference with 2,048, 16,384, 131,072, and 1,048,576 nested random events, recomputing all eight same-sample Z factors for each case while holding the eight full native yields fixed. A second figure compares the full-reference reweighted Asimov with native events from the four SM processes, retaining their original weights and the full-reference model normalization.
 
-To retain a common inclusive qqZZ yield and ratio without triple-counting the rate, compute `f_c = sum(u * rhat_qqZZ * I_c)` on each reference set. The workspace uses category yield `lambda_qqZZ * f_c` and ratio `rhat_qqZZ * I_c / f_c`. Their product is exactly `lambda_qqZZ * rhat_qqZZ * I_c`; the profiled qqZZ rate is `lambda_qqZZ * sum(mu_qqZZc * f_c)`. The fractions sum to one and are recalculated for each reference subset. The direct Asimov uses the same full-reference Z factors **and** jet fractions. Jet masks use the jets of each evaluation event.
+To retain a common qqZZ yield and ratio across jet categories (with ttV excluded), compute `f_c = sum(u * rhat_qqZZ * I_c)` on each reference set. The workspace uses category yield `lambda_qqZZ * f_c` and ratio `rhat_qqZZ * I_c / f_c`. Their product is exactly `lambda_qqZZ * rhat_qqZZ * I_c`; the profiled qqZZ rate is `lambda_qqZZ * sum(mu_qqZZc * f_c)`. The fractions sum to one and are recalculated for each reference subset. The direct Asimov uses the same full-reference Z factors **and** jet fractions. Jet masks use the jets of each evaluation event.
 
 `utils_full_likelihood.py` writes the ten-process workspace and ties its six signal/interference normfactors to mu, exposing only the four physical parameters. The toolkit performs the likelihood evaluation and profiling; the existing helper delegates curve drawing to its plotting function. A continuous nominal-intensity check precedes each fit, invalid trial intensities are rejected without clipping, and failed profile-minimization warnings stop the scan. Curves are relative to their own grid minimum. Fitted mu and all three nuisance estimates are recorded separately.
 
@@ -97,6 +103,6 @@ Use the same CPU setup as 04. Workspaces, arrays, Z checks, jet fractions, domai
 
 [Open auxA.ipynb in Colab](https://colab.research.google.com/github/rafaellopesdesa/offshell_reweighting/blob/main/auxA.ipynb)
 
-This small diagnostic lists all Type values, all subType values, and every Type/subType combination with event counts and signed finite-weight sums. It applies no event cuts, includes missing labels, counts nonfinite weights separately, and shows exact label representations so whitespace and capitalization are visible. It compares exact `Type == "ttV"` and `subType == "ttV"` matches and highlights labels containing `tt` or `top`. The confirmed selection used in 05 is `subType == "ttV"`. It reads only the two label columns and `weight_kFact`, and saves CSV tables under `HZZ_OffShell/inspection/auxA/`.
+This small diagnostic lists all Type values, all subType values, and every Type/subType combination with event counts and signed finite-weight sums. It applies no event cuts, includes missing labels, counts nonfinite weights separately, and shows exact label representations so whitespace and capitalization are visible. It compares exact `Type == "ttV"` and `subType == "ttV"` matches and highlights labels containing `tt` or `top`. The selection used for ttV in 05 is `(Type == "qqZZ") & (subType == "ttV")`; qqZZ uses the complementary subType selection within the same Type category. It reads only the two label columns and `weight_kFact`, and saves CSV tables under `HZZ_OffShell/inspection/auxA/`.
 
 Keep datasets, reports, and notebook outputs containing event data out of this public repository.

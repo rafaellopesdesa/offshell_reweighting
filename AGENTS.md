@@ -30,7 +30,14 @@ normalizations, with no nuisance constraint terms, even in stat-only scans.
 
 # Ntuple process labels
 
-In `dataset_wDR_mean_origIndex.h5`, select ttV using `subType == "ttV"`.
-Every other process is selected using `Type == process_name`. Apply this rule
-consistently to native yields and direct Asimov events. Keep the ratio branch
-name `r_ttV`; the reference remains Type in S and EWSBI10.
+In `dataset_wDR_mean_origIndex.h5`, the Type == "qqZZ" category contains both
+qqZZ and ttV. Use these disjoint physical process selections in all analyses:
+
+- qqZZ: `(Type == "qqZZ") & (subType != "ttV")`.
+- ttV: `(Type == "qqZZ") & (subType == "ttV")`.
+- Every other process: `Type == process_name`.
+
+Apply these exact masks consistently to native yields, direct targets/Asimov
+events, and comparisons. Notebooks 01–04 exclude ttV; 05 includes it separately.
+Keep the stored branch names `r_qqZZ` and `r_ttV`. The reference remains Type
+in S and EWSBI10. Retain the direct-Asimov yield consistency check.
