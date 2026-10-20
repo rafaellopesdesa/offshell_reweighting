@@ -67,7 +67,7 @@ Corrected full-sample yield closure is enforced by construction. For individual 
 
 [Open 04_likelihood_scans.ipynb in Colab](https://colab.research.google.com/github/rafaellopesdesa/offshell_reweighting/blob/main/04_likelihood_scans.ipynb)
 
-Notebook 04 uses the [NSBI LHC toolkit](https://github.com/iris-hep/nsbi-lhc-toolkit/) for an unbinned extended likelihood, fitting and scanning one physical POI, mu, and drawing the likelihood curves with ATLAS styling. It uses SM Asimov data at mu = 1 and includes both shape and event yield. The scan defaults to **0–1.5 in steps of 0.025**.
+Notebook 04 uses the [NSBI LHC toolkit](https://github.com/iris-hep/nsbi-lhc-toolkit/) for an unbinned extended likelihood, fitting and scanning one physical POI, mu, and drawing the likelihood curves with ATLAS styling. It uses SM Asimov data at mu = 1 and includes both shape and event yield. The scan defaults to **0–1.8 in steps of 0.025**, also the default for future notebooks.
 
 The process scaling is `sqrt(mu)` for SBI, `mu - sqrt(mu)` for S, `1 - sqrt(mu)` for B, and 1 for qqZZ. The pinned toolkit supports multiplicative normalization factors; `utils_likelihood.py` maps the single physical mu to the three internal factors and writes the toolkit workspace. It does not implement a likelihood. The internal factors must remain tied together when reopening a workspace.
 
@@ -78,5 +78,19 @@ A second figure compares the full-reference reweighted Asimov with a **direct SB
 The earlier scan failed because a full-reference event's combined intensity crossed zero at mu approximately 1.8947. The logarithm is then undefined even though the total expected yield remains positive. Before each fit, the helper now checks positivity over the entire requested interval, including any interior minimum of the quadratic in sqrt(mu). It reports the worst event and saves `domain_check.json`. The adapter keeps the fit within that interval as well. No event weights, densities, or individual process coefficients are clipped.
 
 Use a CPU runtime and the notebook's setup/restart procedure. Setup pins matching CPU JAX/JAXlib 0.6.2 and removes installed CUDA JAX plugins to avoid Colab plugin-version conflicts. Toolkit source is pinned to commit `fc09848fc6540fd32310faebbe9db6eea7ecd17b`. The same finite-value selection as notebooks 01–03 is retained, including events outside the histogram ranges. Workspaces, corrected ratio arrays, original row positions, Z checks, domain checks, and scan tables are saved under `HZZ_OffShell/likelihoods/04_stat_only/`. The reference-size and Asimov-comparison PNG/PDF figures go to `HZZ_OffShell/plots/04_likelihood_scans/`.
+
+## Full model with profiled qqZZ normalizations
+
+[Open 05_full_model.ipynb in Colab](https://colab.research.google.com/github/rafaellopesdesa/offshell_reweighting/blob/main/05_full_model.ipynb)
+
+Notebook 05 adds EWB, EWSBI, EWSBI10, and ttV to the model. It uses the supplied electroweak interpolation coefficients, keeps ttV fixed, and profiles three independent qqZZ normalizations for 0, 1, and at least 2 jets. The four physical fit parameters are `mu`, `mu_qqZZ0`, `mu_qqZZ1`, and `mu_qqZZ2`. The nuisance parameters have no Gaussian or other constraint terms; their physical domain is nonnegative, without an upper bound. All three remain free at every fixed-mu scan point. Scans cover **0–1.8 in steps of 0.025**.
+
+The reference is S + EWSBI10. The SM Asimov is SBI + EWSBI + qqZZ + ttV. As in 04, compare the full reference with 2,048, 16,384, 131,072, and 1,048,576 nested random events, recomputing all eight same-sample Z factors for each case while holding the eight full native yields fixed. A second figure compares the full-reference reweighted Asimov with native events from the four SM processes, retaining their original weights and the full-reference model normalization.
+
+To retain a common inclusive qqZZ yield and ratio without triple-counting the rate, compute `f_c = sum(u * rhat_qqZZ * I_c)` on each reference set. The workspace uses category yield `lambda_qqZZ * f_c` and ratio `rhat_qqZZ * I_c / f_c`. Their product is exactly `lambda_qqZZ * rhat_qqZZ * I_c`; the profiled qqZZ rate is `lambda_qqZZ * sum(mu_qqZZc * f_c)`. The fractions sum to one and are recalculated for each reference subset. The direct Asimov uses the same full-reference Z factors **and** jet fractions. Jet masks use the jets of each evaluation event.
+
+`utils_full_likelihood.py` writes the ten-process workspace and ties its six signal/interference normfactors to mu, exposing only the four physical parameters. The toolkit performs the likelihood evaluation and profiling; the existing helper delegates curve drawing to its plotting function. A continuous nominal-intensity check precedes each fit, invalid trial intensities are rejected without clipping, and failed profile-minimization warnings stop the scan. Curves are relative to their own grid minimum. Fitted mu and all three nuisance estimates are recorded separately.
+
+Use the same CPU setup as 04. Workspaces, arrays, Z checks, jet fractions, domain checks, fit summaries, and scan tables go to `HZZ_OffShell/likelihoods/05_full_model/`. The two PNG/PDF comparisons go to `HZZ_OffShell/plots/05_full_model/`. Native/direct fits can differ from the SM point because this is also a density-ratio closure test.
 
 Keep datasets, reports, and notebook outputs containing event data out of this public repository.

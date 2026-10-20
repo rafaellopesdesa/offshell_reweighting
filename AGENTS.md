@@ -6,6 +6,10 @@ Keep sample selections, weights, and NumPy histogram calculations readable in th
 
 # Likelihood normalization
 
+Use **mu in [0, 1.8]** as the default likelihood scan interval, including future
+notebooks, unless Rafael explicitly requests another range. Keep the continuous
+intensity-domain checks; the range alone does not guarantee positivity.
+
 Use same-sample normalization for every process in likelihood studies. Compute
 Z with the normalized signed weights of the exact reference event set used in
 that workspace, and recompute Z for each random subset. Keep full native process
@@ -13,6 +17,13 @@ yields fixed when reducing the reference event count, unless Rafael explicitly
 asks to change the physical yield.
 
 Distinguish the Asimov events from the model's normalization reference. When
-comparing a direct SBI + qqZZ Asimov with the full-reference reweighted Asimov,
+comparing a direct native-process Asimov with the full-reference reweighted Asimov,
 keep the full-reference Z factors for both models and retain the original
 direct event weights. Do not recalibrate Z on the direct Asimov sample.
+
+For the full model, also retain the full-reference qqZZ jet fractions in the
+direct comparison. Split qqZZ using the shared inclusive yield and ratio:
+f_c = sum_ref(u * rhat_qqZZ * I_c), yield_c = lambda_qqZZ * f_c,
+ratio_c = rhat_qqZZ * I_c / f_c. Recompute f_c for every reference subset;
+the inclusive native qqZZ yield stays fixed. Profile all three free qqZZ
+normalizations, with no nuisance constraint terms, even in stat-only scans.
