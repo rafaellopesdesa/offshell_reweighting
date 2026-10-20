@@ -1,0 +1,8 @@
+# Large event files and private generated reports
+*.h5
+*.hdf5
+*.root
+*.inspection.txt
+*.inspection.json
+.ipynb_checkpoints/
+__pycache__/
