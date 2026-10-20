@@ -28,4 +28,25 @@ Figure names end in `_yields` or `_normalized`. ATLAS styling uses mplhep; the l
 
 The four-column reader and ATLAS plot formatting are in `utils.py`; sample selections and NumPy histograms remain in the notebook. PNG/PDF figures are saved to `HZZ_OffShell/plots/01_reference_sample/` in Drive. The reader is tailored to this ntuple's pandas fixed-format HDF5 layout.
 
+## Test the stored reweighting ratios
+
+[Open 02_reweighting_tests.ipynb in Colab](https://colab.research.google.com/github/rafaellopesdesa/offshell_reweighting/blob/main/02_reweighting_tests.ipynb)
+
+Notebook 02 applies `r_SBI` and `r_qqZZ` to the reference events with yield scaling:
+
+```python
+w_reweighted = weight_kFact * (
+    (lambda_sbi / lambda_ref) * r_SBI
+    + (lambda_qqzz / lambda_ref) * r_qqZZ
+)
+```
+
+Each lambda is the signed sum of original event weights for its sample after the same finite-value selection as notebook 01 and before plotting-range cuts. Stored ratios are used without renormalization. Ratios are checked only on reference events; signed values and negative event weights are retained.
+
+The notebook checks SBI, qqZZ, and their sum against the corresponding direct samples. For both variables it produces weighted-yield and normalized-shape plots with **reweighted / direct** ratio panels, using the binning of notebook 01. It also prints weighted ratio means, full-sample yield closure, and underflow/in-range/overflow yields. PNG/PDF figures are saved to `HZZ_OffShell/plots/02_reweighting_tests/` in Drive.
+
+Blue error bars show the reweighted-reference MC uncertainty; the grey band shows the direct-target MC uncertainty. Variances use squared event weights with fixed yield coefficients and stored ratios; the combined weights are summed before squaring. Shape uncertainties propagate the in-range normalization. Zero-direct-yield bins are omitted from ratio panels, and `RATIO_YLIM` can be changed to zoom the ratio axis. Model uncertainties and correlations between reference and direct samples are not included.
+
+Use the same setup/restart procedure as notebook 01. The selections, reweighting formula, and NumPy histograms are visible in the notebook; ratio plotting and normalized uncertainty propagation are in `utils.py`.
+
 Keep datasets, reports, and notebook outputs containing event data out of this public repository.
