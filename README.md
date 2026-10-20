@@ -93,4 +93,10 @@ To retain a common inclusive qqZZ yield and ratio without triple-counting the ra
 
 Use the same CPU setup as 04. Workspaces, arrays, Z checks, jet fractions, domain checks, fit summaries, and scan tables go to `HZZ_OffShell/likelihoods/05_full_model/`. The two PNG/PDF comparisons go to `HZZ_OffShell/plots/05_full_model/`. Native/direct fits can differ from the SM point because this is also a density-ratio closure test.
 
+## Inspect Type and subType labels
+
+[Open auxA.ipynb in Colab](https://colab.research.google.com/github/rafaellopesdesa/offshell_reweighting/blob/main/auxA.ipynb)
+
+This small diagnostic lists all Type values, all subType values, and every Type/subType combination with event counts and signed finite-weight sums. It applies no event cuts, includes missing labels, counts nonfinite weights separately, and shows exact label representations so whitespace and capitalization are visible. It checks the exact `Type == "ttV"` selection used in 05 and highlights labels containing `tt` or `top` without choosing a replacement selection. It reads only the two label columns and `weight_kFact`, and saves CSV tables under `HZZ_OffShell/inspection/auxA/`.
+
 Keep datasets, reports, and notebook outputs containing event data out of this public repository.
