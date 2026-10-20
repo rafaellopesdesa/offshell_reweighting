@@ -2,6 +2,10 @@
 
 Notebooks for the off-shell HZZ reweighting project. Input data and generated inspection reports live in `My Drive/Colab Notebooks/HZZ_OffShell/`.
 
+## Plotting defaults
+
+Use **0.90–1.10 for every histogram ratio panel**, including future notebooks, unless a different range is explicitly requested. This preference is recorded in `AGENTS.md` and `DEFAULT_RATIO_YLIM` in `utils.py`.
+
 ## Inspect the input ntuple
 
 [Open 00_inspect_dataset.ipynb in Colab](https://colab.research.google.com/github/rafaellopesdesa/offshell_reweighting/blob/main/00_inspect_dataset.ipynb)
@@ -45,8 +49,18 @@ Each lambda is the signed sum of original event weights for its sample after the
 
 The notebook checks SBI, qqZZ, and their sum against the corresponding direct samples. For both variables it produces weighted-yield and normalized-shape plots with **reweighted / direct** ratio panels, using the binning of notebook 01. It also prints weighted ratio means, full-sample yield closure, and underflow/in-range/overflow yields. PNG/PDF figures are saved to `HZZ_OffShell/plots/02_reweighting_tests/` in Drive.
 
-Blue error bars show the reweighted-reference MC uncertainty; the grey band shows the direct-target MC uncertainty. Variances use squared event weights with fixed yield coefficients and stored ratios; the combined weights are summed before squaring. Shape uncertainties propagate the in-range normalization. Zero-direct-yield bins are omitted from ratio panels, and `RATIO_YLIM` can be changed to zoom the ratio axis. Model uncertainties and correlations between reference and direct samples are not included.
+Blue error bars show the reweighted-reference MC uncertainty; the grey band shows the direct-target MC uncertainty. Variances use squared event weights with fixed yield coefficients and stored ratios; the combined weights are summed before squaring. Shape uncertainties propagate the in-range normalization. Zero-direct-yield bins are omitted from ratio panels. All ratio axes use `RATIO_YLIM = (0.90, 1.10)`. Model uncertainties and correlations between reference and direct samples are not included.
 
 Use the same setup/restart procedure as notebook 01. The selections, reweighting formula, and NumPy histograms are visible in the notebook; ratio plotting and normalized uncertainty propagation are in `utils.py`.
+
+## Compare same-sample normalization
+
+[Open 03_same_sample_normalization.ipynb in Colab](https://colab.research.google.com/github/rafaellopesdesa/offshell_reweighting/blob/main/03_same_sample_normalization.ipynb)
+
+Step 1 normalizes the reference event weights and computes `Z_SBI = sum(w_ref_normalized * r_SBI)` and `Z_qqZZ = sum(w_ref_normalized * r_qqZZ)`. It divides each ratio by its own Z and prints the weighted means before and after correction. Z is computed once on the full selected reference sample, before plotting-range cuts.
+
+Step 2 compares the original and corrected reweightings against the direct SBI, qqZZ, and combined targets. Each figure has both reweightings above and two reweighted/direct curves below, with ratio axes fixed to **0.90–1.10**. Both weighted-yield and unit-area plots use the established bins. PNG/PDF figures go to `HZZ_OffShell/plots/03_same_sample_normalization/` in Drive.
+
+Corrected full-sample yield closure is enforced by construction. For individual components, the unit-area shapes coincide because a constant Z cancels; for the mixture, correcting the components separately can change the shape. Signed weights are retained. MC errors propagate the same-sample normalization and shared-reference component correlations, with full bin covariance used for unit-area shapes. Yield coefficients and stored ratios are held fixed, and model uncertainty and correlations with the direct sample are not included.
 
 Keep datasets, reports, and notebook outputs containing event data out of this public repository.

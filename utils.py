@@ -8,6 +8,9 @@ import numpy as np
 import tables
 
 
+DEFAULT_RATIO_YLIM = (0.90, 1.10)
+
+
 def load_columns(path, columns, key="dataset"):
     """Read selected columns from this ntuple's pandas fixed-format HDF5 group.
 
@@ -78,8 +81,9 @@ def check_plot_exports():
 def normalize_histogram(hist, variance, bins):
     """Return a unit-area density and its diagonal delta-method variance.
 
-    The normalization is the signed in-range sum. The input variance is sum(w^2)
-    in each bin; its covariance with the normalization is included.
+    The normalization is the signed in-range sum. Pass either a 1D array of
+    independent bin variances or the full 2D bin covariance matrix. Correlation
+    with the normalization is included in both cases.
     """
     hist = np.asarray(hist, dtype=float)
     variance = np.asarray(variance, dtype=float)
@@ -87,24 +91,82 @@ def normalize_histogram(hist, variance, bins):
     if total == 0:
         raise ValueError("Cannot normalize a histogram with zero signed yield.")
     fraction = hist / total
+    if variance.ndim == 2:
+        jacobian = (np.eye(hist.size) - fraction[:, None]) / (total * np.diff(bins))[:, None]
+        density_covariance = jacobian @ variance @ jacobian.T
+        return fraction / np.diff(bins), np.maximum(np.diag(density_covariance), 0.0)
     other_variance = np.maximum(variance.sum() - variance, 0.0)
     density_variance = ((1.0 - fraction)**2 * variance
                         + fraction**2 * other_variance) / (total * np.diff(bins))**2
     return fraction / np.diff(bins), density_variance
 
 
+def same_sample_covariance(values, bins, component_weights):
+    """MC bin covariance after fixing each component's full-sample signed yield.
+
+    Each array contains the already corrected weights for one component, on
+    the same reference events. Yield coefficients and stored ratios are fixed;
+    their same-sample normalization fluctuates with the reference events.
+    For component j the event influence in bin b is w_j * (I_b - p_jb).
+    The pairwise products below include all shared-reference cross terms.
+    Full-sample sums include underflow/overflow, even for finite plotting bins.
+    """
+    covariance = np.zeros((len(bins) - 1, len(bins) - 1), dtype=float)
+    components = []
+    for weights in component_weights:
+        weights = np.asarray(weights, dtype=float)
+        total = weights.sum()
+        if total == 0:
+            if np.any(weights != 0):
+                raise ValueError("A nonzero component has zero signed normalization.")
+            continue
+        fractions = np.histogram(values, bins=bins, weights=weights)[0] / total
+        components.append((weights, fractions))
+    for weights_i, fractions_i in components:
+        for weights_j, fractions_j in components:
+            product = weights_i * weights_j
+            per_bin = np.histogram(values, bins=bins, weights=product)[0]
+            covariance += (np.diag(per_bin)
+                           - np.outer(per_bin, fractions_j)
+                           - np.outer(fractions_i, per_bin)
+                           + np.outer(fractions_i, fractions_j) * product.sum())
+    return 0.5 * (covariance + covariance.T)
+
+
 def plot_reweighting_comparison(reweighted_hist, target_hist, reweighted_variance,
                                target_variance, bins, *, xlabel, ylabel,
-                               title, ratio_ylim=None):
+                               title, ratio_ylim=DEFAULT_RATIO_YLIM):
     """Overlay histograms and show reweighted/direct with separate MC errors.
 
     Points show reweighted-reference uncertainty with the denominator fixed.
     The grey band shows the direct-target uncertainty around unity. Bins with
     zero direct yield have an undefined ratio and are omitted, never set to 1.
     """
-    reweighted_hist = np.asarray(reweighted_hist, dtype=float)
+    curves = [("Reweighted reference", reweighted_hist, reweighted_variance,
+               "#0072B2", "--", "o")]
+    return _plot_reweighting_curves(curves, target_hist, target_variance, bins,
+                                    xlabel=xlabel, ylabel=ylabel, title=title,
+                                    ratio_ylim=ratio_ylim)
+
+
+def plot_normalization_comparison(raw_hist, corrected_hist, target_hist,
+                                  raw_variance, corrected_variance, target_variance,
+                                  bins, *, xlabel, ylabel, title,
+                                  ratio_ylim=DEFAULT_RATIO_YLIM):
+    """Compare both reweightings to the same direct target on both panels."""
+    curves = [
+        ("Without same-sample norm.", raw_hist, raw_variance, "#0072B2", "--", "o"),
+        ("With same-sample norm.", corrected_hist, corrected_variance, "#D55E00", "-", "s"),
+    ]
+    return _plot_reweighting_curves(curves, target_hist, target_variance, bins,
+                                    xlabel=xlabel, ylabel=ylabel, title=title,
+                                    ratio_ylim=ratio_ylim)
+
+
+def _plot_reweighting_curves(curves, target_hist, target_variance, bins, *,
+                             xlabel, ylabel, title, ratio_ylim):
+    """Shared ATLAS formatting for one or more reweighted/reference curves."""
     target_hist = np.asarray(target_hist, dtype=float)
-    reweighted_error = np.sqrt(np.asarray(reweighted_variance, dtype=float))
     target_error = np.sqrt(np.asarray(target_variance, dtype=float))
     bins = np.asarray(bins, dtype=float)
     centers = 0.5 * (bins[:-1] + bins[1:])
@@ -117,19 +179,29 @@ def plot_reweighting_comparison(reweighted_hist, target_hist, reweighted_varianc
     # The signed-weight MC errors are drawn explicitly below.
     hep.histplot(target_hist, bins=bins, ax=ax, histtype="step", yerr=None,
                  color="black", linewidth=1.7, label="Direct target")
-    hep.histplot(reweighted_hist, bins=bins, ax=ax, histtype="step", yerr=None,
-                 color="#0072B2", linewidth=2, linestyle="--",
-                 label="Reweighted reference")
     lower, upper = target_hist - target_error, target_hist + target_error
     ax.fill_between(bins, np.r_[lower, lower[-1]], np.r_[upper, upper[-1]],
                     step="post", color="0.5", alpha=0.25, linewidth=0,
                     label="Target MC stat.")
-    ax.errorbar(centers, reweighted_hist, yerr=reweighted_error, fmt="none",
-                color="#0072B2", elinewidth=1, alpha=0.8)
+    low = min(0.0, float(lower.min()))
+    high = max(0.0, float(upper.max()))
+    valid = target_hist != 0
+    for label, hist, variance, color, linestyle, marker in curves:
+        hist = np.asarray(hist, dtype=float)
+        error = np.sqrt(np.asarray(variance, dtype=float))
+        hep.histplot(hist, bins=bins, ax=ax, histtype="step", yerr=None,
+                     color=color, linewidth=2, linestyle=linestyle, label=label)
+        ax.errorbar(centers, hist, yerr=error, fmt="none",
+                    color=color, elinewidth=1, alpha=0.8)
+        low = min(low, float((hist - error).min()))
+        high = max(high, float((hist + error).max()))
+        ratio_ax.errorbar(centers[valid], hist[valid] / target_hist[valid],
+                          yerr=error[valid] / np.abs(target_hist[valid]),
+                          fmt=marker, markersize=3.5, color=color, elinewidth=1,
+                          markerfacecolor="none" if marker == "s" else color,
+                          zorder=3)
     ax.set(ylabel=ylabel, xlim=(bins[0], bins[-1]))
     ax.set_title(title, fontsize=16, pad=12)
-    low = min(0.0, float(lower.min()), float((reweighted_hist - reweighted_error).min()))
-    high = max(0.0, float(upper.max()), float((reweighted_hist + reweighted_error).max()))
     span = high - low if high > low else 1.0
     ax.set_ylim(low - 0.06 * span if low < 0 else 0, high + 0.40 * span)
     if low < 0:
@@ -140,19 +212,12 @@ def plot_reweighting_comparison(reweighted_hist, target_hist, reweighted_varianc
             va="top", fontsize=13)
     ax.legend(loc="upper right", fontsize=11, frameon=False)
 
-    valid = target_hist != 0
-    ratio = np.full_like(target_hist, np.nan)
-    ratio_error = np.full_like(target_hist, np.nan)
     target_relative_error = np.full_like(target_hist, np.nan)
-    ratio[valid] = reweighted_hist[valid] / target_hist[valid]
-    ratio_error[valid] = reweighted_error[valid] / np.abs(target_hist[valid])
     target_relative_error[valid] = target_error[valid] / np.abs(target_hist[valid])
     lower, upper = 1.0 - target_relative_error, 1.0 + target_relative_error
     ratio_ax.fill_between(bins, np.r_[lower, lower[-1]], np.r_[upper, upper[-1]],
-                          step="post", color="0.5", alpha=0.25, linewidth=0)
+                          step="post", color="0.5", alpha=0.25, linewidth=0, zorder=1)
     ratio_ax.axhline(1, color="black", linestyle="--", linewidth=1)
-    ratio_ax.errorbar(centers[valid], ratio[valid], yerr=ratio_error[valid],
-                      fmt="o", markersize=3, color="#0072B2", elinewidth=1)
     ratio_ax.set(xlabel=xlabel, ylabel="Reweighted\n/ direct")
     ratio_ax.yaxis.label.set_size(15)
     ratio_ax.tick_params(axis="both", labelsize=13)
