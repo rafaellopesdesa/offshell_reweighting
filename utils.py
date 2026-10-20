@@ -1,5 +1,7 @@
 """Small I/O and plotting helpers for the off-shell HZZ notebooks."""
 
+from io import BytesIO
+
 import matplotlib.pyplot as plt
 import mplhep as hep
 import numpy as np
@@ -59,3 +61,15 @@ def plot_comparison(reference_hist, target_hist, bins, *, xlabel, ylabel):
     ax.legend(loc="upper right", fontsize=13, frameon=False)
     fig.tight_layout()
     return fig, ax
+
+
+def check_plot_exports():
+    """Check the plotting stack and both export backends before reading the ntuple."""
+    fig, _ = plot_comparison([0.8, 1.3], [1.7, 0.4], [0.0, 1.0, 2.0],
+                             xlabel="Export check", ylabel="Export check")
+    try:
+        for extension in ("png", "pdf"):
+            with BytesIO() as buffer:
+                fig.savefig(buffer, format=extension, bbox_inches="tight")
+    finally:
+        plt.close(fig)
