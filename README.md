@@ -14,4 +14,14 @@ Shapes and stored metadata are exact. Statistics use small deterministic samples
 
 The notebook is self-contained and uses `h5py`, `numpy`, and `pandas`, which are available in standard Colab runtimes. For local use, install those packages plus `ipython`/Jupyter and change `FILE_PATH`.
 
+## Compare the reference and target samples
+
+[Open 01_reference_sample.ipynb in Colab](https://colab.research.google.com/github/rafaellopesdesa/offshell_reweighting/blob/main/01_reference_sample.ipynb)
+
+Run all cells on a CPU runtime. Notebook 01 uses `weight_kFact` to compare the reference (`Type` in `S`, `EWSBI10`) with the target (`Type` in `SBI`, `qqZZ`) for `NN_disc_New` and `m4l_fsr`.
+
+The default is unit-area normalization of each combined mixture. Set `DENSITY = False` for weighted yields per bin. Signed weights are retained, and rows with nonfinite plotted values or weights are counted and excluded. The shared bins cover the full selected range, including discriminator values outside `[0, 1]`.
+
+The four-column reader and ATLAS plot formatting are in `utils.py`; sample selections and NumPy histograms remain in the notebook. PNG/PDF figures are saved to `HZZ_OffShell/plots/01_reference_sample/` in Drive. The reader is tailored to this ntuple's pandas fixed-format HDF5 layout.
+
 Keep datasets, reports, and notebook outputs containing event data out of this public repository.
