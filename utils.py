@@ -50,7 +50,12 @@ def plot_comparison(reference_hist, target_hist, bins, *, xlabel, ylabel):
     ax.set_ylim(low - 0.06 * span if low < 0 else 0, high + 0.38 * span)
     if low < 0:
         ax.axhline(0, color="0.5", linewidth=0.8)
-    hep.atlas.label("Internal", data=False, com=None, ax=ax, fontsize=17)
+    # mplhep's label helper uses a private text-layout API that differs across
+    # Colab's Matplotlib versions. Use public Matplotlib text for this label.
+    ax.text(0.04, 0.95, "ATLAS", transform=ax.transAxes, va="top",
+            fontsize=17, fontweight="bold", fontstyle="italic")
+    ax.text(0.21, 0.95, "Simulation Internal", transform=ax.transAxes,
+            va="top", fontsize=15)
     ax.legend(loc="upper right", fontsize=13, frameon=False)
     fig.tight_layout()
     return fig, ax
