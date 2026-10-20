@@ -63,4 +63,16 @@ Step 2 compares the original and corrected reweightings against the direct SBI, 
 
 Corrected full-sample yield closure is enforced by construction. For individual components, the unit-area shapes coincide because a constant Z cancels; for the mixture, correcting the components separately can change the shape. Signed weights are retained. MC errors propagate the same-sample normalization and shared-reference component correlations, with full bin covariance used for unit-area shapes. Yield coefficients and stored ratios are held fixed, and model uncertainty and correlations with the direct sample are not included.
 
+## Stat-only likelihood scans
+
+[Open 04_likelihood_scans.ipynb in Colab](https://colab.research.google.com/github/rafaellopesdesa/offshell_reweighting/blob/main/04_likelihood_scans.ipynb)
+
+Notebook 04 uses the [NSBI LHC toolkit](https://github.com/iris-hep/nsbi-lhc-toolkit/) for an unbinned extended likelihood, fitting and scanning one physical POI, mu, and drawing the likelihood curves with ATLAS styling. It uses SM Asimov data at mu = 1 and includes both shape and event yield. The scan defaults to 0–5 in steps of 0.05.
+
+The process scaling is `sqrt(mu)` for SBI, `mu - sqrt(mu)` for S, `1 - sqrt(mu)` for B, and 1 for qqZZ. The pinned toolkit supports multiplicative normalization factors; `utils_likelihood.py` maps the single physical mu to the three internal factors and writes the toolkit workspace. It does not implement a likelihood. The internal factors must remain tied together when reopening a workspace.
+
+Compare the full S + EWSBI10 reference with 2,048, 16,384, 131,072, and 1,048,576 events. Subsets are nested, uniformly drawn without replacement with seed 42. Every sample, including the full reference, recalculates all four weighted Z factors using its own normalized signed reference weights. Full native process yields stay fixed, so reducing the reference count does not reduce the expected event yield. Each sample supplies its own same-sample-normalized Asimov integration weights; no MC-statistical, training, or systematic nuisance parameters are included.
+
+Use a CPU runtime and the notebook's setup/restart procedure. Toolkit source is pinned to commit `fc09848fc6540fd32310faebbe9db6eea7ecd17b`. The same finite-value selection as notebooks 01–03 is retained, including events outside the histogram ranges. Workspaces, corrected ratio arrays, original row positions, Z checks, and scan tables are saved under `HZZ_OffShell/likelihoods/04_stat_only/`. PNG/PDF figures go to `HZZ_OffShell/plots/04_likelihood_scans/`.
+
 Keep datasets, reports, and notebook outputs containing event data out of this public repository.
