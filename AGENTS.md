@@ -27,3 +27,10 @@ f_c = sum_ref(u * rhat_qqZZ * I_c), yield_c = lambda_qqZZ * f_c,
 ratio_c = rhat_qqZZ * I_c / f_c. Recompute f_c for every reference subset;
 the inclusive native qqZZ yield stays fixed. Profile all three free qqZZ
 normalizations, with no nuisance constraint terms, even in stat-only scans.
+
+# Ntuple process labels
+
+In `dataset_wDR_mean_origIndex.h5`, select ttV using `subType == "ttV"`.
+Every other process is selected using `Type == process_name`. Apply this rule
+consistently to native yields and direct Asimov events. Keep the ratio branch
+name `r_ttV`; the reference remains Type in S and EWSBI10.
