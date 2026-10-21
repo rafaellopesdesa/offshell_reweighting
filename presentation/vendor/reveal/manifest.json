@@ -1,0 +1,26 @@
+{
+  "version": "6.0.2",
+  "source": "https://github.com/hakimel/reveal.js/releases/tag/6.0.2",
+  "files": {
+    "reveal.js": {
+      "url": "https://cdn.jsdelivr.net/npm/reveal.js@6.0.2/dist/reveal.js",
+      "sha256": "aa1bbbf2617b23a623b23612cb3c5bdb63de512e652bf20fcfa832b045d37844",
+      "bytes": 118912
+    },
+    "reveal.css": {
+      "url": "https://cdn.jsdelivr.net/npm/reveal.js@6.0.2/dist/reveal.css",
+      "sha256": "615ee850cbbb98a0f688b60ed37b21819a3f54c9f3e6f20e33e63693ab74a0c0",
+      "bytes": 53963
+    },
+    "reset.css": {
+      "url": "https://cdn.jsdelivr.net/npm/reveal.js@6.0.2/dist/reset.css",
+      "sha256": "39413c3490fdcf826427c26ff4c1ee59ea961a0aa8507c18454e0c6dc96c12d8",
+      "bytes": 594
+    },
+    "LICENSE": {
+      "url": "https://cdn.jsdelivr.net/npm/reveal.js@6.0.2/LICENSE",
+      "sha256": "b2883e4b610bfa1b4d8fff84c4d4b825cc7d553cbd9fec4777c04068a2859dc0",
+      "bytes": 1108
+    }
+  }
+}

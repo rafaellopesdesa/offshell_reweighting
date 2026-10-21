@@ -1,0 +1,1998 @@
+{
+  "created_utc": "2026-10-21T23:17:27+00:00",
+  "analysis_commit": "96725d6be415c2c8d8f8824f3efb86b5edb254c0",
+  "root_version": "6.34.10",
+  "reference_doi": "10.17182/hepdata.156805.v1/t2",
+  "observed": {
+    "mu_hat": 0.8731396397029829,
+    "edm": 8.104582467711357e-07,
+    "covariance_quality": 3,
+    "max_abs_delta_q": 0.0005518274111090959,
+    "rms_delta_q": 0.0002774889895103102,
+    "comparison_points": 21
+  },
+  "samples": {
+    "4096": {
+      "mu_hat": 0.1261779814813243,
+      "nll_min": -20013.04484436189,
+      "complete": false,
+      "fit_complete": true,
+      "validated": false,
+      "points": 9,
+      "rows": [
+        {
+          "mu": 0.01,
+          "q": 0.9266211649446632,
+          "nll": -20012.58153377942,
+          "edm": 1.1907837215586947e-06,
+          "migrad_status": 0,
+          "reference_q": null,
+          "delta_q": null
+        },
+        {
+          "mu": 0.05,
+          "q": 0.24922851906740107,
+          "nll": -20012.920230102358,
+          "edm": 4.879338316515775e-06,
+          "migrad_status": 0,
+          "reference_q": 1.354,
+          "delta_q": -1.104771480932599
+        },
+        {
+          "mu": 0.1,
+          "q": 0.02218233275198145,
+          "nll": -20013.033753195516,
+          "edm": 4.3432886927057805e-06,
+          "migrad_status": 0,
+          "reference_q": 0.899,
+          "delta_q": -0.8768176672480186
+        },
+        {
+          "mu": 0.15,
+          "q": 0.014664576810901053,
+          "nll": -20013.037512073486,
+          "edm": 3.7902439935756575e-06,
+          "migrad_status": 0,
+          "reference_q": 0.735,
+          "delta_q": -0.7203354231890989
+        },
+        {
+          "mu": 0.2,
+          "q": 0.12110208754165797,
+          "nll": -20012.98429331812,
+          "edm": 5.695299869754201e-06,
+          "migrad_status": 0,
+          "reference_q": 0.614,
+          "delta_q": -0.492897912458342
+        },
+        {
+          "mu": 0.4,
+          "q": 1.0772342632262735,
+          "nll": -20012.50622723028,
+          "edm": 2.1826112800698564e-06,
+          "migrad_status": 0,
+          "reference_q": 0.287,
+          "delta_q": 0.7902342632262735
+        },
+        {
+          "mu": 0.45,
+          "q": 1.3851894894105499,
+          "nll": -20012.352249617186,
+          "edm": 2.3064589015371067e-06,
+          "migrad_status": 0,
+          "reference_q": 0.253,
+          "delta_q": 1.1321894894105498
+        },
+        {
+          "mu": 0.5,
+          "q": 1.7082379438870703,
+          "nll": -20012.190725389948,
+          "edm": 8.058801792154495e-06,
+          "migrad_status": 0,
+          "reference_q": 0.222,
+          "delta_q": 1.4862379438870703
+        },
+        {
+          "mu": 0.55,
+          "q": 2.0427831370034255,
+          "nll": -20012.02345279339,
+          "edm": 5.679597333534244e-06,
+          "migrad_status": 0,
+          "reference_q": 0.188,
+          "delta_q": 1.8547831370034256
+        }
+      ],
+      "covariance_quality": 3,
+      "edm": 1.2863621396847957e-06,
+      "start_mu_estimates": [
+        0.12652011361278664,
+        0.12611819550107864
+      ],
+      "start_nll_spread": 6.240516086108983e-07,
+      "parameters": [
+        {
+          "name": "alpha_ATLAS_EG_RESOLUTION_ALL",
+          "value": -0.24099679365210422,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EG_SCALE_AF2",
+          "value": -0.5229689034296049,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EG_SCALE_ALL",
+          "value": 0.7086175597722524,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP0",
+          "value": 0.0850109228350963,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP1",
+          "value": -0.45648203046871993,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP10",
+          "value": 0.33944042314568335,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP11",
+          "value": 0.5199439708720237,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP12",
+          "value": -0.3089954173016031,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP13",
+          "value": 0.14918351049928114,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP14",
+          "value": -0.44370837116445727,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP15",
+          "value": 0.14795176232688936,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP2",
+          "value": -0.09342842672841996,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP3",
+          "value": 0.05148896961421381,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP4",
+          "value": 0.3752968558090461,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP5",
+          "value": -0.2428613078734775,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP6",
+          "value": 0.05275184357301526,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP7",
+          "value": 0.203983070939232,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP8",
+          "value": -0.19189741550972805,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP9",
+          "value": 0.9912596446141444,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP0",
+          "value": -0.12206893602763254,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP1",
+          "value": -0.3500916059322344,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP10",
+          "value": -0.016802106141178035,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP11",
+          "value": -0.14859392658205747,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP12",
+          "value": 0.01647998744666989,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP13",
+          "value": -0.12440468728952092,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP14",
+          "value": 0.23767436035461775,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP15",
+          "value": 0.0738324754809635,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP16",
+          "value": 0.20565700138025989,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP17",
+          "value": 0.9099809286111906,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP2",
+          "value": 0.4997167970154145,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP3",
+          "value": -0.4570340646731719,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP4",
+          "value": -2.3434042036191154,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP5",
+          "value": 0.3484485595016782,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP6",
+          "value": -0.03311606154500133,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP7",
+          "value": -0.02634093228937477,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP8",
+          "value": 0.13434276673968343,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP9",
+          "value": 0.29003783937918626,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_Iso_TOTAL_1NPCOR_PLUS_UNCOR",
+          "value": -0.10636528082533689,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_Reco_TOTAL_1NPCOR_PLUS_UNCOR",
+          "value": 0.02603267013726597,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_H4l_Shower_UEPS_VBF_OffShell",
+          "value": 0.016126261368021637,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOEW",
+          "value": 0.3549895294253463,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOEW_QCD_0Jet",
+          "value": -0.056031927917781624,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOEW_QCD_1Jet",
+          "value": -0.7189003377559353,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOEW_QCD_2Jet",
+          "value": -0.005344104976814851,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOQCD_0Jet",
+          "value": -1.3464513949208705,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOQCD_1Jet",
+          "value": -0.5061481850055471,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOQCD_2Jet",
+          "value": 0.002667676234891782,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOQCD_VBF",
+          "value": -0.1277593717234858,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_BJES_Response",
+          "value": 1.175854712700709,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Detector1",
+          "value": -0.012270572158935714,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Detector2",
+          "value": -0.4172580123593066,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Mixed1",
+          "value": -0.18691649831456758,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Mixed2",
+          "value": -0.33308925682151724,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Mixed3",
+          "value": 1.0346376695684716,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Modelling1",
+          "value": 4.698650919442907,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Modelling2",
+          "value": -0.289145944872984,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Modelling3",
+          "value": 0.09557445370716627,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Modelling4",
+          "value": -0.14742882525162648,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical1",
+          "value": 0.05665915394093797,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical2",
+          "value": -1.2195140457981566,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical3",
+          "value": 0.3522432435498684,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical4",
+          "value": 0.16875240501451885,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical5",
+          "value": 0.5116379015336903,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical6",
+          "value": -0.6815971444773101,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_Modelling",
+          "value": 4.999999999998697,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_2018data",
+          "value": 1.5783924556366982,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_highE",
+          "value": 0.17406281459967393,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_negEta",
+          "value": 0.16433876041468096,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_posEta",
+          "value": -0.0249295842743402,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_TotalStat",
+          "value": 1.9374121982216241,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Composition_VBF",
+          "value": 0.011492957527484502,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Composition_gg",
+          "value": 2.9664973519227775,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Composition_qq",
+          "value": 0.010644668831158603,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Response_VBF",
+          "value": 0.048229876324341565,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Response_gg",
+          "value": -4.999999999998698,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Response_qq",
+          "value": 0.6047119208837308,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_DataVsMC_MC16",
+          "value": -0.49526288707780813,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_1",
+          "value": 4.999999999999976,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_10",
+          "value": -0.06235042412461961,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_11",
+          "value": 0.8717748459675954,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_12restTerm",
+          "value": 0.9855449097649158,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_2",
+          "value": 2.7657187335725433,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_3",
+          "value": -0.46079598855556697,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_4",
+          "value": -0.5196037735308868,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_5",
+          "value": 0.5355086849287645,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_6",
+          "value": 0.4356630551773566,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_7",
+          "value": 0.3603500454488317,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_8",
+          "value": 0.914731595345121,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Pileup_OffsetMu",
+          "value": 4.999999999999269,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Pileup_OffsetNPV",
+          "value": 4.62241209066217,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Pileup_PtTerm",
+          "value": 0.13390737676881553,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Pileup_RhoTopology",
+          "value": 4.999999999998692,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_PunchThrough_MC16",
+          "value": -0.14111247403280675,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_SingleParticle_HighPt",
+          "value": -0.08815597627471901,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_fJvtEfficiency",
+          "value": 0.9247786433861019,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_ISO_STAT",
+          "value": 0.42433326424963697,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_ISO_SYS",
+          "value": -0.06314802970851437,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_RECO_STAT",
+          "value": 0.33643964414598276,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_RECO_STAT_LOWPT",
+          "value": 0.6090665497069879,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_RECO_SYS",
+          "value": 0.41229689755771887,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_RECO_SYS_LOWPT",
+          "value": 0.8791520420034218,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_TTVA_STAT",
+          "value": 0.3475684608758082,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_TTVA_SYS",
+          "value": -0.28458079291837124,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_ID",
+          "value": 0.04979395137942106,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_MS",
+          "value": -1.2951519668548626,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_SAGITTA_RESBIAS",
+          "value": 0.012176390440515154,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_SAGITTA_RHO",
+          "value": -1.4463179444882721,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_SCALE",
+          "value": -0.27581444277684847,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PRW_DATASF",
+          "value": 0.8248912971284396,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_CKKW_Norm",
+          "value": 1.3331830745617443,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_CKKW_Shape",
+          "value": -4.849487069739273,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_CSSKIN_Norm",
+          "value": 1.9265293180049214,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_CSSKIN_Shape",
+          "value": 0.29530005412404353,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_QSF_Norm",
+          "value": -2.6243334796466997,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_QSF_Shape",
+          "value": 4.999999999998699,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_qqZZ_CKKW_0Jet_Shape",
+          "value": -0.9133029500553772,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_qqZZ_CKKW_1Jet_Shape",
+          "value": 0.10361038092671106,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_qqZZ_CKKW_2Jet_Shape",
+          "value": 0.003610423387146351,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_qqZZ_QSF_Shape",
+          "value": -0.21303374618297932,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_QCD_ggZZk_Norm",
+          "value": 2.1668225942244046,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_QCD_ggZZk_Shape",
+          "value": 3.0270535690960196,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_VBF_PDF",
+          "value": -0.15060369381112934,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_alpha_LUMI",
+          "value": 0.5509535825439708,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_gg_PDF",
+          "value": 1.3277143042766244,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_qq_PDF_0Jet",
+          "value": 0.009247223057223305,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_qq_PDF_1Jet",
+          "value": -0.07102121158318635,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_qq_PDF_2Jet",
+          "value": -0.039745784606878685,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "mu",
+          "value": 0.1261779814813243,
+          "min": 0.0,
+          "max": 10.0
+        },
+        {
+          "name": "mu_qqZZ",
+          "value": 0.720855284342935,
+          "min": 0.0,
+          "max": 10.0
+        },
+        {
+          "name": "mu_qqZZ_1",
+          "value": 0.8695502834831932,
+          "min": 0.0,
+          "max": 10.0
+        },
+        {
+          "name": "mu_qqZZ_2",
+          "value": 4.023149001441961e-14,
+          "min": 0.0,
+          "max": 10.0
+        }
+      ],
+      "construction": {
+        "dataset_rows": 4099,
+        "sum_weights": 3709.256617886582,
+        "negative_weights": 0,
+        "max_delta_nll_difference": 1.2005330063402653e-10
+      },
+      "max_abs_delta_q_available": 1.8547831370034256,
+      "shared_points": 8
+    },
+    "8192": {
+      "mu_hat": 1.10435888591571,
+      "nll_min": -19950.988054600926,
+      "complete": false,
+      "fit_complete": true,
+      "validated": false,
+      "points": 25,
+      "rows": [
+        {
+          "mu": 0.2,
+          "q": 0.5952996402556892,
+          "nll": -19950.6904047808,
+          "edm": 5.57787823114879e-06,
+          "migrad_status": 0,
+          "reference_q": 0.614,
+          "delta_q": -0.018700359744310835
+        },
+        {
+          "mu": 0.25,
+          "q": 0.48268059567635646,
+          "nll": -19950.746714303088,
+          "edm": 6.405952096760302e-06,
+          "migrad_status": 0,
+          "reference_q": 0.498,
+          "delta_q": -0.015319404323643537
+        },
+        {
+          "mu": 0.3,
+          "q": 0.3977709885366494,
+          "nll": -19950.789169106658,
+          "edm": 5.582086010842416e-06,
+          "migrad_status": 0,
+          "reference_q": 0.401,
+          "delta_q": -0.0032290114633506395
+        },
+        {
+          "mu": 0.35,
+          "q": 0.33144814763363684,
+          "nll": -19950.82233052711,
+          "edm": 3.3694639931763593e-06,
+          "migrad_status": 0,
+          "reference_q": 0.332,
+          "delta_q": -0.0005518523663631814
+        },
+        {
+          "mu": 0.4,
+          "q": 0.27813350741053,
+          "nll": -19950.84898784722,
+          "edm": 1.0580625526355091e-06,
+          "migrad_status": 0,
+          "reference_q": 0.287,
+          "delta_q": -0.008866492589469976
+        },
+        {
+          "mu": 0.5,
+          "q": 0.19718696863856167,
+          "nll": -19950.889461116607,
+          "edm": 4.831881198115228e-06,
+          "migrad_status": 0,
+          "reference_q": 0.222,
+          "delta_q": -0.024813031361438337
+        },
+        {
+          "mu": 0.55,
+          "q": 0.16536720706062624,
+          "nll": -19950.905370997396,
+          "edm": 4.414848713991186e-06,
+          "migrad_status": 0,
+          "reference_q": 0.188,
+          "delta_q": -0.022632792939373758
+        },
+        {
+          "mu": 0.6,
+          "q": 0.13759018122800626,
+          "nll": -19950.919259510312,
+          "edm": 5.444672990718739e-06,
+          "migrad_status": 0,
+          "reference_q": 0.151,
+          "delta_q": -0.013409818771993737
+        },
+        {
+          "mu": 0.65,
+          "q": 0.11307023456902243,
+          "nll": -19950.93151948364,
+          "edm": 5.224867720785678e-06,
+          "migrad_status": 0,
+          "reference_q": 0.115,
+          "delta_q": -0.001929765430977573
+        },
+        {
+          "mu": 0.7,
+          "q": 0.09121546140522696,
+          "nll": -19950.942446870224,
+          "edm": 4.947547511453125e-06,
+          "migrad_status": 0,
+          "reference_q": 0.082,
+          "delta_q": 0.009215461405226957
+        },
+        {
+          "mu": 0.75,
+          "q": 0.07174149254569784,
+          "nll": -19950.952183854653,
+          "edm": 3.619215872427703e-06,
+          "migrad_status": 0,
+          "reference_q": 0.056,
+          "delta_q": 0.015741492545697837
+        },
+        {
+          "mu": 0.8,
+          "q": 0.054418095416622236,
+          "nll": -19950.960845553218,
+          "edm": 1.4535215377615468e-06,
+          "migrad_status": 0,
+          "reference_q": 0.037,
+          "delta_q": 0.017418095416622238
+        },
+        {
+          "mu": 0.85,
+          "q": 0.0392315884528216,
+          "nll": -19950.9684388067,
+          "edm": 2.9698681702964968e-06,
+          "migrad_status": 0,
+          "reference_q": 0.025,
+          "delta_q": 0.014231588452821596
+        },
+        {
+          "mu": 0.9,
+          "q": 0.026222730601148214,
+          "nll": -19950.974943235626,
+          "edm": 4.582836025230518e-06,
+          "migrad_status": 0,
+          "reference_q": 0.017,
+          "delta_q": 0.009222730601148213
+        },
+        {
+          "mu": 0.95,
+          "q": 0.015503235154028516,
+          "nll": -19950.98030298335,
+          "edm": 3.1524859275529467e-06,
+          "migrad_status": 0,
+          "reference_q": 0.012,
+          "delta_q": 0.003503235154028516
+        },
+        {
+          "mu": 1.0,
+          "q": 0.0073387310694670305,
+          "nll": -19950.98438523539,
+          "edm": 2.0885177800298652e-06,
+          "migrad_status": 0,
+          "reference_q": 0.008,
+          "delta_q": -0.0006612689305329697
+        },
+        {
+          "mu": 1.05,
+          "q": 0.0020489444432314485,
+          "nll": -19950.987030128705,
+          "edm": 1.2729572505421922e-06,
+          "migrad_status": 0,
+          "reference_q": 0.007,
+          "delta_q": -0.004951055556768552
+        },
+        {
+          "mu": 1.1,
+          "q": 8.860813977662474e-06,
+          "nll": -19950.98805017052,
+          "edm": 3.3184847371569585e-07,
+          "migrad_status": 0,
+          "reference_q": 0.009,
+          "delta_q": -0.008991139186022337
+        },
+        {
+          "mu": 1.15,
+          "q": 0.0016232060370384715,
+          "nll": -19950.987242997908,
+          "edm": 1.5590051467546386e-06,
+          "migrad_status": 0,
+          "reference_q": 0.016,
+          "delta_q": -0.014376793962961529
+        },
+        {
+          "mu": 1.2,
+          "q": 0.007275570053025149,
+          "nll": -19950.9844168159,
+          "edm": 1.5804173287715654e-06,
+          "migrad_status": 0,
+          "reference_q": 0.029,
+          "delta_q": -0.021724429946974853
+        },
+        {
+          "mu": 1.25,
+          "q": 0.017354446681565605,
+          "nll": -19950.979377377585,
+          "edm": 3.888914480593105e-06,
+          "migrad_status": 0,
+          "reference_q": 0.052,
+          "delta_q": -0.03464555331843439
+        },
+        {
+          "mu": 1.3,
+          "q": 0.032163784628210124,
+          "nll": -19950.971972708612,
+          "edm": 3.2763979771473052e-06,
+          "migrad_status": 0,
+          "reference_q": 0.084,
+          "delta_q": -0.05183621537178988
+        },
+        {
+          "mu": 1.35,
+          "q": 0.052023562740942,
+          "nll": -19950.962042819556,
+          "edm": 5.558178772780752e-06,
+          "migrad_status": 0,
+          "reference_q": 0.125,
+          "delta_q": -0.072976437259058
+        },
+        {
+          "mu": 1.4,
+          "q": 0.07714298262726516,
+          "nll": -19950.949483109613,
+          "edm": 4.113326176752803e-06,
+          "migrad_status": 0,
+          "reference_q": 0.174,
+          "delta_q": -0.09685701737273483
+        },
+        {
+          "mu": 1.45,
+          "q": 0.10776680482376833,
+          "nll": -19950.934171198514,
+          "edm": 6.588008650031644e-06,
+          "migrad_status": 0,
+          "reference_q": 0.231,
+          "delta_q": -0.12323319517623169
+        }
+      ],
+      "covariance_quality": 3,
+      "edm": 1.4241135127018281e-06,
+      "start_mu_estimates": [
+        1.1045947137712442,
+        1.104051443190744
+      ],
+      "start_nll_spread": 1.0802174074342474e-05,
+      "parameters": [
+        {
+          "name": "alpha_ATLAS_EG_RESOLUTION_ALL",
+          "value": -0.20464429996384123,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EG_SCALE_AF2",
+          "value": -0.4411396499107389,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EG_SCALE_ALL",
+          "value": 0.3082835173650473,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP0",
+          "value": 0.11032331268553025,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP1",
+          "value": -0.21888955409685923,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP10",
+          "value": 0.0028357437894010926,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP11",
+          "value": 0.2402436798096182,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP12",
+          "value": -0.011652605692536967,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP13",
+          "value": 0.15934722117728825,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP14",
+          "value": -0.09868897972723577,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP15",
+          "value": -0.012399156918140312,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP2",
+          "value": 0.0676635427427066,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP3",
+          "value": -0.07292657524017883,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP4",
+          "value": 0.008889194099151745,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP5",
+          "value": -0.10887719242379916,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP6",
+          "value": -0.21201688447594164,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP7",
+          "value": 0.026796401270044803,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP8",
+          "value": -0.061552284621128446,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP9",
+          "value": -0.0158797473806642,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP0",
+          "value": -0.14668544284165838,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP1",
+          "value": -0.004549997844994783,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP10",
+          "value": -0.06933235858724868,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP11",
+          "value": 0.03503529000198769,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP12",
+          "value": -0.09970416846303774,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP13",
+          "value": -0.13297885629105843,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP14",
+          "value": -0.14718752426861748,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP15",
+          "value": -0.007259509748322122,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP16",
+          "value": 0.061226429248271715,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP17",
+          "value": -0.03164391612981923,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP2",
+          "value": 0.07938819268028058,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP3",
+          "value": 0.11506169096044425,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP4",
+          "value": -0.0900178060872464,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP5",
+          "value": -0.19408347024297523,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP6",
+          "value": 0.0335704940966311,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP7",
+          "value": 0.03779056910587116,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP8",
+          "value": -0.07798531386713368,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP9",
+          "value": 0.36042253023185233,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_Iso_TOTAL_1NPCOR_PLUS_UNCOR",
+          "value": -0.07945747662007886,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_EL_EFF_Reco_TOTAL_1NPCOR_PLUS_UNCOR",
+          "value": -0.13796642376177493,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_H4l_Shower_UEPS_VBF_OffShell",
+          "value": 0.014204529810586165,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOEW",
+          "value": 0.03419925159692702,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOEW_QCD_0Jet",
+          "value": 0.05236020304696425,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOEW_QCD_1Jet",
+          "value": -0.6717391411498506,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOEW_QCD_2Jet",
+          "value": -0.24447755402008883,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOQCD_0Jet",
+          "value": 0.5538143368286961,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOQCD_1Jet",
+          "value": -0.6490174322121236,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOQCD_2Jet",
+          "value": -0.5687056961019868,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_HOQCD_VBF",
+          "value": 0.03659915780383372,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_BJES_Response",
+          "value": 0.2391123061453939,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Detector1",
+          "value": 0.07896549147868834,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Detector2",
+          "value": -0.0772868924415759,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Mixed1",
+          "value": -0.15316054166611964,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Mixed2",
+          "value": -0.20478271037996357,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Mixed3",
+          "value": 0.1390565700577465,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Modelling1",
+          "value": 0.8307275752843797,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Modelling2",
+          "value": -0.00020207683061064172,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Modelling3",
+          "value": 0.08133573977022834,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Modelling4",
+          "value": -0.10569960693674382,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical1",
+          "value": 0.16843900149651322,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical2",
+          "value": -0.18041705594219848,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical3",
+          "value": -0.049972859094547566,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical4",
+          "value": 0.04702413722276003,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical5",
+          "value": 0.019964635915536683,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EffectiveNP_Statistical6",
+          "value": -0.13861843433150922,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_Modelling",
+          "value": 1.3680223858650715,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_2018data",
+          "value": 0.2296856700087042,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_highE",
+          "value": 0.2583782657084268,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_negEta",
+          "value": -0.14610650804761133,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_posEta",
+          "value": -0.39603304641890635,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_EtaIntercalibration_TotalStat",
+          "value": 0.33301981600882624,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Composition_VBF",
+          "value": 0.010151818881042732,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Composition_gg",
+          "value": 0.4717678931407559,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Composition_qq",
+          "value": 0.001001410922629761,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Response_VBF",
+          "value": 0.0026055512243953333,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Response_gg",
+          "value": -1.1636273967834325,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Flavor_Response_qq",
+          "value": -0.0860845202707541,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_DataVsMC_MC16",
+          "value": -0.443764749171348,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_1",
+          "value": 1.342843390726163,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_10",
+          "value": -0.08248884776687924,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_11",
+          "value": 0.2542894597401895,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_12restTerm",
+          "value": 0.4756173300099044,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_2",
+          "value": 0.2810698744802451,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_3",
+          "value": -0.23056861204745716,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_4",
+          "value": -0.016990100137453702,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_5",
+          "value": 0.06499421214295083,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_6",
+          "value": -0.10349785325045185,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_7",
+          "value": 0.1724126882489253,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_JER_EffectiveNP_8",
+          "value": -0.19872807493885064,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Pileup_OffsetMu",
+          "value": 0.7998534304722361,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Pileup_OffsetNPV",
+          "value": 0.8640500126911562,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Pileup_PtTerm",
+          "value": -0.026253413528583496,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_Pileup_RhoTopology",
+          "value": 2.039008619582001,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_PunchThrough_MC16",
+          "value": 0.12167861622748524,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_SingleParticle_HighPt",
+          "value": -0.03453585625095475,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_JET_fJvtEfficiency",
+          "value": -0.032052287566572496,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_ISO_STAT",
+          "value": 0.11444846143043644,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_ISO_SYS",
+          "value": 0.005175033499766488,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_RECO_STAT",
+          "value": -0.122139943675176,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_RECO_STAT_LOWPT",
+          "value": 0.14889544465731475,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_RECO_SYS",
+          "value": -0.03870420084654165,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_RECO_SYS_LOWPT",
+          "value": 0.09539299712772051,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_TTVA_STAT",
+          "value": 0.11726295612666035,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_EFF_TTVA_SYS",
+          "value": 0.14233235633555935,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_ID",
+          "value": -0.33779615833184246,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_MS",
+          "value": -0.1969003526547915,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_SAGITTA_RESBIAS",
+          "value": -0.10797111292353805,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_SAGITTA_RHO",
+          "value": -0.039737168847438435,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_MUON_SCALE",
+          "value": -0.13579824974956467,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PRW_DATASF",
+          "value": 0.48216034536101976,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_CKKW_Norm",
+          "value": 0.03725155490532918,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_CKKW_Shape",
+          "value": -0.4610719822685493,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_CSSKIN_Norm",
+          "value": 0.08042788409058955,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_CSSKIN_Shape",
+          "value": 0.03404048771036805,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_QSF_Norm",
+          "value": -0.13520083955357648,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_ggZZ_QSF_Shape",
+          "value": 0.47635608075562963,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_qqZZ_CKKW_0Jet_Shape",
+          "value": -0.6155691511039244,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_qqZZ_CKKW_1Jet_Shape",
+          "value": -0.059184290884770764,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_qqZZ_CKKW_2Jet_Shape",
+          "value": 0.24330407268311274,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_PS_qqZZ_QSF_Shape",
+          "value": 0.07289368621007752,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_QCD_ggZZk_Norm",
+          "value": 0.09158096078852855,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_QCD_ggZZk_Shape",
+          "value": 0.061441394791275084,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_VBF_PDF",
+          "value": 0.005598211113985483,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_alpha_LUMI",
+          "value": 0.039586452793096236,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_gg_PDF",
+          "value": 0.12810946101392737,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_qq_PDF_0Jet",
+          "value": -0.0809898013082482,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_qq_PDF_1Jet",
+          "value": 0.07846215629214832,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "alpha_ATLAS_qq_PDF_2Jet",
+          "value": -0.05983533899644741,
+          "min": -5.0,
+          "max": 5.0
+        },
+        {
+          "name": "mu",
+          "value": 1.10435888591571,
+          "min": 0.0,
+          "max": 10.0
+        },
+        {
+          "name": "mu_qqZZ",
+          "value": 0.9837022098507222,
+          "min": 0.0,
+          "max": 10.0
+        },
+        {
+          "name": "mu_qqZZ_1",
+          "value": 1.0450495275996834,
+          "min": 0.0,
+          "max": 10.0
+        },
+        {
+          "name": "mu_qqZZ_2",
+          "value": 0.9388997911353224,
+          "min": 0.0,
+          "max": 10.0
+        }
+      ],
+      "construction": {
+        "dataset_rows": 8195,
+        "sum_weights": 3709.256617886582,
+        "negative_weights": 2,
+        "max_delta_nll_difference": 1.7462298274040222e-10
+      },
+      "max_abs_delta_q_available": 0.12323319517623169,
+      "shared_points": 25
+    }
+  },
+  "quadrature_first_start": {
+    "4096": {
+      "first_start_mu_hat": 0.12652011361278664,
+      "nominal": {
+        "sr_model_expected_yield": 2036.1531734466553,
+        "sr_reference_integral": 2036.1531734466535,
+        "sr_integral_relative_difference": -8.881784197001252e-16
+      },
+      "fitted": {
+        "sr_model_expected_yield": 1991.2825260355369,
+        "sr_reference_integral": 2361.5696883929804,
+        "sr_integral_relative_difference": 0.18595410621849418
+      },
+      "delta_nll_disagreement": -4.3655745685100555e-11,
+      "note": "Finite-reference quadrature diagnostic, not a change to supplied systematic normalization"
+    },
+    "8192": {
+      "first_start_mu_hat": 1.1045947137712442,
+      "nominal": {
+        "sr_model_expected_yield": 2036.153173446655,
+        "sr_reference_integral": 2036.1531734466496,
+        "sr_integral_relative_difference": -2.6645352591003757e-15
+      },
+      "fitted": {
+        "sr_model_expected_yield": 2039.8992048920759,
+        "sr_reference_integral": 2058.631169360942,
+        "sr_integral_relative_difference": 0.009182789239754019
+      },
+      "delta_nll_disagreement": -1.964508555829525e-10,
+      "note": "Finite-reference quadrature diagnostic, not a change to supplied systematic normalization"
+    }
+  },
+  "sources_sha256": {
+    "hepdata_comparison/table_2.json": "e5496434f535861883fe83f5192fb678ac90e8f38f70922d17b5d226b94abfe4",
+    "data_workspace/bestfit.json": "4ecdccbde155988c48183f843ac8759cf9961cbcd408a094e8d97768fee7be70",
+    "data_workspace/scan_points.json": "288d76db82b46649ce836587034fb86d69ec5c4b8bae3a147cb010926c9ae449",
+    "hepdata_comparison/comparison_summary.json": "c71f85d2566f460680184d085153af91c9c7d1c049fab118a7dd4e14940f44d4",
+    "asimov_workspaces/summary.json": "5920a89a89fede48f70b687f2d399cf9d48d351ee85c1b02aace6b4a08c797b7",
+    "asimov_fits/quadrature_diagnostic.json": "5ede2163a772239f4e8bdcd9cdbc004575ed9ae246984eb72ac27bb2bcdbb2a1",
+    "asimov_fits/source_manifest.json": "363888553782de2e7e2e8d2efee352e7d6f6f5116bd8418efcd85e0e7e821760",
+    "asimov_fits/n_4096/bestfit.json": "20c9816e6445700b8a23f05c5665b196d3a6c34385261c0b05ce131418c75ffd",
+    "asimov_fits/n_4096/scan_0/scan_points.json": "81016020706dd3bb34b66509417e7521e5813ae58189935ababa5b31c51a2a71",
+    "asimov_fits/n_4096/scan_1/scan_points.json": "c30c81dbca0558e9cdee49c0fb0f0fdc9dc68b6a6ccf109d6c03a52e66e1c216",
+    "asimov_fits/n_8192/bestfit.json": "9cbfcf0d3c8883778ee92ecf2c57d28ee1e994ea080b106690e0e0a183bac79f",
+    "asimov_fits/n_8192/scan_0/scan_points.json": "863bff45b85a5d0cb91abca81bbad27ef2f1240e097bbb5a2c1ab546d10ff1fc",
+    "asimov_fits/n_8192/scan_1/scan_points.json": "5633a55133f3dacc26878f97dcf37fcb25744d381708813f531a76e74a4818c4",
+    "asimov_fits/n_8192/scan_2/scan_points.json": "a3f8171feabcbcb19aedcddefd7d37c67cd51d949fdf3b3990e5e7b94efb2085",
+    "asimov_fits/n_8192/scan_3/scan_points.json": "647b73b47307005421865051ec3ffc16ad5396b2faba866f6495815a38caf011"
+  },
+  "status": "preliminary"
+}

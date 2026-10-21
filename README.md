@@ -1,5 +1,14 @@
 # Off-shell HZZ reweighting
 
+## Results presentation
+
+This branch includes a [Reveal.js results slideshow](presentation/index.html)
+with observed-data validation, Asimov fit results, scan figures, and downloadable
+tables. See the [presentation setup and refresh instructions](presentation/README.md).
+For GitHub Pages, select branch `codex/asimov-results-slides-20261021` and
+the **/ (root)** folder. The displayed timestamp identifies the frozen snapshot;
+unfinished scans are explicitly labeled preliminary.
+
 Notebooks for the off-shell HZZ reweighting project. Input data and generated inspection reports live in `My Drive/Colab Notebooks/HZZ_OffShell/`.
 
 ## Process selections

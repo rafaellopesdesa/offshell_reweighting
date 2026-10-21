@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Observed-workspace validation and reference-sample Asimov likelihood scans for off-shell Higgs production.">
+  <title>Off-shell Higgs · workspace results</title>
+  <link rel="stylesheet" href="vendor/reveal/reset.css">
+  <link rel="stylesheet" href="vendor/reveal/reveal.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead"><a href="#/overview">OFF-SHELL / INFERENCE</a><span id="snapshot-stamp"></span><button id="contents-button" type="button">Contents <span aria-hidden="true">☰</span></button></header>
+  <div class="reveal"><main class="slides">
+    <section id="overview" aria-labelledby="overview-title">
+      <p class="eyebrow">H* → ZZ → 4ℓ · reference-sample study</p>
+      <h1 id="overview-title">How small can the<br>reference sample be?</h1>
+      <p class="lead">Validating the observed workspace, then testing<br>Asimov samples with 4,096 and 8,192 events.</p>
+      <div class="three-cards">
+        <article><span class="pill complete">VALIDATED</span><h3>Observed data</h3><div class="big">0.87314</div><p>Fitted signal strength μ̂.<br>Published scan reproduced.</p></article>
+        <article class="blue"><span class="pill" data-status="4096"></span><h3>4,096 events</h3><div class="big" data-mu="4096"></div><p><span data-count="4096"></span><br>Scan differs substantially so far.</p></article>
+        <article class="coral"><span class="pill" data-status="8192"></span><h3>8,192 events</h3><div class="big" data-mu="8192"></div><p><span data-count="8192"></span><br>Closer to the published curve.</p></article>
+      </div>
+      <p class="footnote">A frozen results snapshot, not a live job monitor. Use ← → to navigate; Esc for an overview.</p>
+    </section>
+
+    <section id="observed" aria-labelledby="observed-title">
+      <p class="eyebrow">01 / establish the baseline</p><h2 id="observed-title">The observed scan closes.</h2>
+      <div class="figure-layout"><figure><img src="assets/observed.svg" alt="Observed profile likelihood compared with HEPData, with absolute residuals below."><figcaption>41 local points; 21 coordinates shared with HEPData. Shading marks ±0.0005 rounding precision.</figcaption></figure>
+      <aside><span class="pill complete">COMPLETE + VALIDATED</span><dl><dt>Fitted μ̂</dt><dd>0.87313964</dd><dt>Maximum |Δq|</dt><dd>0.000552</dd><dt>RMS Δq</dt><dd>0.000277</dd></dl><p>Native RooFit likelihood; 127 systematic parameters and 3 qqZZ factors profiled.</p><p>Accurate covariance: quality 3.<br>EDM: 8.10 × 10⁻⁷.</p><a class="download" href="data/observed_scan.csv" download>↓ Scan table</a></aside></div>
+      <p class="footnote"><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData Table 2 · Obs NSBI, stat+syst, 4ℓ only</a>. No shifts, interpolation, or rescaling.</p>
+    </section>
+
+    <section id="construction" aria-labelledby="construction-title">
+      <p class="eyebrow">02 / construct the test</p><h2 id="construction-title">Two subsets. Independent normalization.</h2>
+      <div class="method-strip"><div><strong>3,110,759</strong><span>reference rows<br>S + EWSBI10</span></div><span class="arrow" aria-hidden="true">→</span><div><strong>Seed 42</strong><span>nested random selections<br>without replacement</span></div><span class="arrow" aria-hidden="true">→</span><div><strong>4,096 / 8,192</strong><span>separate nominal Z factors<br>and qqZZ jet fractions</span></div></div>
+      <div class="columns"><div><p class="equation">uᵢ = wᵢ / ∑w<br>Zₚ = ∑uᵢ rₚᵢ<br>r̂ₚᵢ = rₚᵢ / Zₚ</p><p>Generate at μ = 1, α = 0,<br>and all qqZZ factors = 1.</p></div><div><table id="construction-table"><caption>Serialized workspace checks</caption><thead><tr><th scope="col">Quantity</th><th scope="col">4,096</th><th scope="col">8,192</th></tr></thead><tbody></tbody></table><p class="note">Full physical yields stay fixed. Signed weights are retained. Systematic weights are used as supplied.</p></div></div>
+      <p class="footnote">The NumPy physics inputs differ from the observed ROOT template, including some yields and systematics. The template supplies the structure.</p>
+    </section>
+
+    <section id="minima" aria-labelledby="minima-title">
+      <p class="eyebrow">03 / global fits</p><h2 id="minima-title">Both starting points find the same minima.</h2>
+      <table class="large-table" id="fit-table"><caption>Unconditional fits · all 131 parameters floating</caption><thead><tr><th scope="col">Reference events</th><th scope="col">μ̂, start at 1.0</th><th scope="col">μ̂, start at 1.4</th><th scope="col">|ΔNLL| between starts</th><th scope="col">Final covariance</th></tr></thead><tbody></tbody></table>
+      <div class="two-cards"><article class="blue"><h3>4,096: a reproducible shift</h3><p>The minimum is near μ̂ ≈ 0.126. Several systematic nuisance parameters sit at their ±5 bounds.</p></article><article class="coral"><h3>8,192: near the generation point</h3><p>The minimum is near μ̂ ≈ 1.105. Its available profile points track the expected reference more closely.</p></article></div>
+      <p class="note" id="fit-state-note"></p><p class="footnote">Scan range: [0, 1.5], with μ = 0.01 as the zero proxy. Original unconditional bounds are retained.</p>
+    </section>
+
+    <section id="scan-4096" aria-labelledby="scan-4096-title">
+      <p class="eyebrow">04 / 4,096 reference events</p><h2 id="scan-4096-title">A substantial expected-scan discrepancy.</h2>
+      <div class="figure-layout"><figure><img src="assets/asimov_4096.svg" alt="Available 4096-event Asimov scan points compared with the published expected NSBI curve."><figcaption data-caption="4096"></figcaption></figure><aside class="blue"><span class="pill" data-status="4096"></span><dl><dt>Fitted μ̂</dt><dd data-mu="4096"></dd><dt>Available profile</dt><dd class="small-value" data-count="4096"></dd></dl><table class="point-table" data-points="4096"><caption>Selected shared coordinates</caption><thead><tr><th>μ</th><th>Local q</th><th>HEPData</th></tr></thead><tbody></tbody></table><a class="download" href="data/asimov_4096_scan.csv" download>↓ Available scan points</a></aside></div>
+      <p class="footnote">The published point at μ = 0 is separate from our μ = 0.01 proxy. Residuals use exact shared coordinates only.</p>
+    </section>
+
+    <section id="scan-8192" aria-labelledby="scan-8192-title">
+      <p class="eyebrow">05 / 8,192 reference events</p><h2 id="scan-8192-title">Closer agreement with the expected curve.</h2>
+      <div class="figure-layout"><figure><img src="assets/asimov_8192.svg" alt="Available 8192-event Asimov scan points compared with the published expected NSBI curve."><figcaption data-caption="8192"></figcaption></figure><aside class="coral"><span class="pill" data-status="8192"></span><dl><dt>Fitted μ̂</dt><dd data-mu="8192"></dd><dt>Available profile</dt><dd class="small-value" data-count="8192"></dd></dl><table class="point-table" data-points="8192"><caption>Selected shared coordinates</caption><thead><tr><th>μ</th><th>Local q</th><th>HEPData</th></tr></thead><tbody></tbody></table><a class="download" href="data/asimov_8192_scan.csv" download>↓ Available scan points</a></aside></div>
+      <p class="footnote">q = 2[NLLprofile(μ) − NLLminimum]. The published curve is used as tabulated, including its nonzero sampled minimum.</p>
+    </section>
+
+    <section id="nuisances" aria-labelledby="nuisances-title">
+      <p class="eyebrow">06 / inspect the fit</p><h2 id="nuisances-title">The 4,096 fit reaches nuisance bounds.</h2>
+      <table class="nuisance-table" id="nuisance-table"><caption>Six largest |α̂| in the 4,096 fit; corresponding values for 8,192</caption><thead><tr><th scope="col">Systematic parameter · ATLAS prefix omitted</th><th scope="col">α̂ · 4,096</th><th scope="col">α̂ · 8,192</th></tr></thead><tbody></tbody></table>
+      <div class="two-cards"><article><h3>Bounds preserved</h3><p>All 127 systematic parameters remain in [−5, 5]. All three cumulative qqZZ factors remain free.</p></article><article><h3>Values retained</h3><p>Download all fitted parameters, bounds, and the available error estimates for later reference.</p><p><a href="data/asimov_4096_parameters.csv" download>4,096 parameters ↗</a> &nbsp; <a href="data/asimov_8192_parameters.csv" download>8,192 parameters ↗</a></p></article></div>
+      <p class="footnote">Asimov parameter tables use the saved best-fit checkpoint until the final covariance is available; provisional errors are not validated uncertainties.</p>
+    </section>
+
+    <section id="normalization" aria-labelledby="normalization-title">
+      <p class="eyebrow">07 / finite-reference diagnostic</p><h2 id="normalization-title">Normalization shifts under systematic variations.</h2>
+      <p class="lead small">Compare the reference-weighted SR intensity integral with the model’s expected SR yield.</p>
+      <table class="large-table" id="quadrature-table"><caption>Diagnostic at the first converged global start · not a normalization correction</caption><thead><tr><th>Reference events</th><th>Expected SR yield</th><th>Reference integral</th><th>Relative difference</th></tr></thead><tbody></tbody></table>
+      <div class="two-cards"><article class="blue"><div class="big">+18.60%</div><p>4,096 events, at the first fitted nuisance vector.</p></article><article class="coral"><div class="big">+0.92%</div><p>8,192 events, at the first fitted nuisance vector.</p></article></div>
+      <p class="note">Both close at nominal settings to better than 3 × 10⁻¹⁵. The fitted discrepancies suggest finite-sample effects in the systematic variations; they do not isolate every source of scan differences.</p>
+    </section>
+
+    <section id="validation" aria-labelledby="validation-title">
+      <p class="eyebrow">08 / what has been checked</p><h2 id="validation-title">Validate the likelihood before interpreting the curve.</h2>
+      <div class="validation-grid"><article><span class="step">01</span><h3>Native likelihood</h3><p>Extended RooFit likelihood, SR + 3 control regions, Gaussian constraints counted once. No SumW2 correction.</p></article><article><span class="step">02</span><h3>Independent evaluation</h3><p>Explicit intensities, Poisson terms, and constraint penalties agree in ΔNLL to ≲2 × 10⁻¹⁰ in the completed construction and first-fit checks.</p></article><article><span class="step">03</span><h3>Physical profile points</h3><p>Positivity is checked at the actual fitted points. A nuisance vector need not stay physical at every other μ.</p></article><article><span class="step">04</span><h3>Final acceptance</h3><p>Full covariance, all 31 profile coordinates, overlap agreement, independent validation, and unchanged-input checks.</p></article></div>
+      <p class="note">The figures show a likelihood scan, not confidence intervals. The publication uses Neyman confidence belts; q = 1 is not its 68% belt.</p>
+    </section>
+
+    <section id="downloads" aria-labelledby="downloads-title">
+      <p class="eyebrow">09 / reproducible results</p><h2 id="downloads-title">Figures, tables, and provenance.</h2>
+      <div class="columns downloads"><div><h3>Download the snapshot</h3><ul><li><a href="data/snapshot.json" download>Numerical snapshot + source hashes</a></li><li><a href="data/observed_scan.csv" download>Observed scan</a> · <a href="data/observed_parameters.csv" download>fitted parameters</a></li><li><a href="data/asimov_4096_scan.csv" download>4,096 scan</a> · <a href="data/asimov_4096_parameters.csv" download>fitted parameters</a></li><li><a href="data/asimov_8192_scan.csv" download>8,192 scan</a> · <a href="data/asimov_8192_parameters.csv" download>fitted parameters</a></li><li><a href="data/hepdata.csv" download>Published observed / expected values</a></li><li>Vector figures: <a href="assets/observed.svg">observed</a> · <a href="assets/asimov_4096.svg">4,096</a> · <a href="assets/asimov_8192.svg">8,192</a></li></ul></div><div><h3>Sources & conventions</h3><ul><li><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData 156805 v1 · Table 2</a></li><li><a href="https://arxiv.org/abs/2412.01548">ATLAS off-shell 4ℓ measurement</a></li><li><a href="https://github.com/rafaellopesdesa/offshell_reweighting">Analysis repository</a></li><li id="source-commit"></li><li>ROOT 6.34.10 · nominal generation μ = 1</li><li>Snapshot: <span class="snapshot-time"></span></li></ul></div></div>
+      <p class="note" id="snapshot-note"></p><p class="footnote">Navigation: ← → / Space · Overview: Esc · Full screen: F · Browser print: append ?print-pdf to this page’s URL.</p>
+    </section>
+  </main></div>
+  <dialog id="contents"><div class="dialog-heading"><h2>Contents</h2><button id="close-contents" type="button" aria-label="Close contents">×</button></div><ol id="contents-list"></ol></dialog>
+  <noscript><p class="noscript">JavaScript is needed for the slideshow. <a href="data/snapshot.json">Download the numerical snapshot.</a></p></noscript>
+  <script src="vendor/reveal/reveal.js"></script><script src="data/snapshot.js"></script><script src="slides.js"></script>
+</body></html>
