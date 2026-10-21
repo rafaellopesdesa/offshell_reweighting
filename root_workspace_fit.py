@@ -227,8 +227,27 @@ def scan_grid(args):
     return [lower + (upper-lower)*i/(args.points-1) for i in range(args.points)]
 
 
+def valid_profile_start(workspace, floating, nll, nominal):
+    """Move an invalid warm start toward nominal parameters at the fixed mu.
+
+    This changes initialization only. No intensity, parameter bound, or
+    likelihood term is clipped or altered; all nuisance parameters are then
+    profiled normally. The nominal reference point must itself be physical.
+    """
+    current = {v.GetName(): v.getVal() for v in floating if v.GetName() != "mu"}
+    for fraction in (1.0, 0.5, 0.25, 0.125, 0.0):
+        if fraction != 1.0:
+            for name, value in current.items():
+                workspace.var(name).setVal(nominal[name] + fraction*(value-nominal[name]))
+        if math.isfinite(nll.getVal()):
+            return fraction
+    raise RuntimeError("No finite profile start, including the nominal nuisance point")
+
+
 def scan(args):
     source, w, mc, data, parameters, floating, nll = load_model(args)
+    nominal = {v.GetName(): v.getVal() for v in floating}
+    nominal_errors = {v.GetName(): v.getError() for v in floating}
     best = json.loads(args.bestfit.read_text())
     if best["input_sha256"] != sha256(args.input):
         raise RuntimeError("Best-fit checkpoint is for a different input file")
@@ -250,6 +269,14 @@ def scan(args):
             if round(value, 10) in done:
                 continue
             w.var("mu").setVal(value)
+            start_fraction = valid_profile_start(w, floating, nll, nominal)
+            if start_fraction != 1.0:
+                print(f"mu={value}: valid start at {start_fraction:g} of warm-start displacement from nominal", flush=True)
+                del minim
+                for var in floating:
+                    if var.GetName() != "mu":
+                        var.setError(nominal_errors[var.GetName()])
+                minim = minimizer(nll, 0)
             t0 = time.monotonic()
             status = minim.minimize("Minuit2", "Migrad")
             result = minim.save()
@@ -261,6 +288,7 @@ def scan(args):
                 row = diagnostics(result, status, nll, time.monotonic() - t0)
                 minim.setStrategy(0)
             row.update({"mu": value, "q": 2.0 * (row["nll"] - best["nll_min"]),
+                        "warm_start_fraction": start_fraction,
                         "parameters": {v.GetName(): v.getVal() for v in floating}})
             records.append(row)
             write_json(scan_path, sorted(records, key=lambda r: r["mu"]))

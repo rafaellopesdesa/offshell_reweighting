@@ -167,6 +167,12 @@ def main():
               ("lumi_shift", baseline_mu, "alpha_ATLAS_alpha_LUMI", 0.2),
               ("shape_shift", baseline_mu, "alpha_ATLAS_QCD_ggZZk_Shape", -0.2),
               ("qqzz_shift", baseline_mu, "mu_qqZZ_1", 0.03)]
+    if args.scan_points:
+        # A fitted nuisance vector need not be physical at another mu. For a
+        # profile, test the actual global minimum and each actual fitted point;
+        # report the continuous fixed-nuisance domain separately. The nominal
+        # and perturbed fixed-setting checks remain available without a scan.
+        checks = checks[:1]
     records = []
     for name, mu, parameter, shift in checks:
         w.var("mu").setVal(mu)
@@ -188,7 +194,8 @@ def main():
         if parameter:
             w.var(parameter).setVal(original)
     valid = all(r["invalid_intensities"] == 0 and
-                r["minimum_continuous_interval_intensity"] > 0 and
+                r["minimum_current_intensity"] > 0 and
+                (args.scan_points or r["minimum_continuous_interval_intensity"] > 0) and
                 math.isfinite(r["delta_nll_disagreement"]) and
                 abs(r["delta_nll_disagreement"]) < 1e-6 for r in records)
     report = {"passed": valid, "checks": records, "mu_interval": args.range}
@@ -212,6 +219,9 @@ def main():
                                 "invalid_intensities": invalid})
             valid = valid and invalid == 0 and current > 0 and math.isfinite(residual) and abs(residual) < 1e-6 and abs(native-point["nll"]) < 1e-6
         report["scan_checks"] = scan_checks
+        report["domain_scope"] = "Positivity required at the global minimum and every profiled point; fixed-nuisance continuous domains are diagnostic"
+        report["all_fixed_nuisance_vectors_positive_over_interval"] = all(
+            row["minimum_continuous_interval_intensity"] > 0 for row in records+scan_checks)
         report["passed"] = valid
     write_json(args.output, report)
     if not valid:

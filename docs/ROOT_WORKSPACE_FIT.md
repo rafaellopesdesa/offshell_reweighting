@@ -297,6 +297,19 @@ and verifies the saved covariance and snapshot. It records continuous
 intensity minima at fixed profile nuisance settings across the requested
 interval, while requiring positivity at each actual profile point. Positivity
 at one profile setting does not establish positivity at every nuisance value.
+For profile validation, the global minimum and the saved profile points are
+the required physical configurations. A fixed fitted nuisance vector can
+become unphysical at another mu, which is reported as a domain diagnostic;
+the fit must reprofile the nuisances there. The six nominal/perturbed
+fixed-setting checks remain available when no `--scan-points` is supplied.
+
+If a profile warm start has a non-finite NLL after changing mu, the driver
+tries nuisance vectors at 1/2, 1/4, and 1/8 of the displacement from the
+nominal vector, then nominal itself. It resets the numerical steps and
+minimizer covariance after such a fallback and profiles all 130 parameters
+normally. The saved `warm_start_fraction` records this choice. This only
+chooses a physical starting point: no density, bound, or likelihood term is
+clipped or changed.
 
 ```bash
 python3 compare_asimov_hepdata.py \
