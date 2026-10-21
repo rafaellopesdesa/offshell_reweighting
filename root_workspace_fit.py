@@ -69,7 +69,14 @@ def load_model(args):
     expected.update(v.GetName() for v in configuration.GetParametersOfInterest())
     if names != expected:
         raise RuntimeError(f"Unexpected floating parameter set: {names ^ expected}")
-    if data.isNonPoissonWeighted():
+    asimov = getattr(args, "weighted_asimov", False)
+    if asimov:
+        metadata = source.Get("asimov_metadata")
+        if not metadata or json.loads(str(metadata.GetString()))["data_kind"] != "weighted_reference_asimov":
+            raise RuntimeError("Weighted-Asimov mode requires construction metadata")
+        if not workspace.getSnapshot("asimov_generation"):
+            raise RuntimeError("Missing Asimov generation snapshot")
+    elif data.isNonPoissonWeighted():
         raise RuntimeError("This data driver expects unit events or integer count weights")
     options = [
         ROOT.RooFit.Extended(True),
@@ -136,15 +143,20 @@ def fit(args):
         restore(w, initial_records)
         w.var("mu").setVal(start_mu)
         print(f"Starting global fit at mu={start_mu}", flush=True)
-        minim = minimizer(nll, 1, verbose=True)
+        minim = minimizer(nll, args.fit_strategy, verbose=True)
         t0 = time.monotonic()
         status = minim.minimize("Minuit2", "Migrad")
         result = minim.save()
         diagnostic = diagnostics(result, status, nll, time.monotonic() - t0)
         diagnostic["start_mu"] = start_mu
         diagnostic["mu_hat"] = w.var("mu").getVal()
+        diagnostic["strategy"] = args.fit_strategy
         attempts.append(diagnostic)
         write_json(args.output / "global_fit_attempts.json", attempts)
+        write_json(args.output / f"global_fit_attempt_{len(attempts)-1}.json", {
+            "input_sha256": sha256(args.input), "diagnostics": diagnostic,
+            "parameters": [parameter_record(v) for v in floating],
+        })
         print("GLOBAL FIT", json.dumps(diagnostic), flush=True)
         require_minimum(diagnostic)
         if diagnostic["nll"] < best_value:
@@ -158,6 +170,8 @@ def fit(args):
         "input": str(args.input.resolve()), "input_sha256": sha256(args.input),
         "root_version": ROOT.gROOT.GetVersion(), "workspace": args.workspace,
         "model_config": args.model_config, "dataset": args.data,
+        "data_kind": "weighted_reference_asimov" if args.weighted_asimov else "observed",
+        "weight_treatment": "Native signed weighted extended NLL; no SumW2 correction",
         "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
         "mu_hat": w.var("mu").getVal(), "nll_min": nll.getVal(),
         "initial_nll": initial_nll, "attempts": attempts,
@@ -165,18 +179,20 @@ def fit(args):
     }
     write_json(args.output / "bestfit_checkpoint.json", summary)
     if args.hesse:
-        minim = minimizer(nll, 1, verbose=True)
+        minim = minimizer(nll, args.fit_strategy, verbose=True)
         status = minim.minimize("Minuit2", "Migrad")
         require_minimum(diagnostics(minim.save(), status, nll, 0.0))
         print("Starting full Hesse covariance", flush=True)
+        minim.setStrategy(1)
         t0 = time.monotonic()
         hesse_status = minim.hesse()
-        best_result = minim.save("bestfit_result", "Observed data global fit")
+        best_result = minim.save("bestfit_result", "Workspace global fit")
         summary["hesse_status"] = int(hesse_status)
         summary["hesse_seconds"] = time.monotonic() - t0
         if hesse_status != 0 or best_result.covQual() != 3:
             write_json(args.output / "failed_hesse.json", summary)
             raise RuntimeError("Hesse did not produce an accurate positive-definite covariance")
+        require_minimum(diagnostics(best_result, status, nll, 0.0))
     summary.update({
         "mu_hat": w.var("mu").getVal(), "mu_hesse_error": w.var("mu").getError(),
         "nll_min": nll.getVal(), "fit_status": int(best_result.status()),
@@ -204,6 +220,13 @@ def fit(args):
     source.Close()
 
 
+def scan_grid(args):
+    if args.grid:
+        return sorted(args.grid)
+    lower, upper = args.range
+    return [lower + (upper-lower)*i/(args.points-1) for i in range(args.points)]
+
+
 def scan(args):
     source, w, mc, data, parameters, floating, nll = load_model(args)
     best = json.loads(args.bestfit.read_text())
@@ -212,8 +235,8 @@ def scan(args):
     restore(w, best["parameters"])
     if abs(nll.getVal() - best["nll_min"]) > 1e-6:
         raise RuntimeError("Restored best-fit likelihood does not match saved value")
-    lower, upper = args.range
-    grid = [lower + (upper - lower) * i / (args.points - 1) for i in range(args.points)]
+    grid = scan_grid(args)
+    lower, upper = min(grid), max(grid)
     scan_path = args.output / "scan_points.json"
     records = json.loads(scan_path.read_text()) if args.resume and scan_path.exists() else []
     done = {round(row["mu"], 10) for row in records}
@@ -276,7 +299,7 @@ def plot(args):
     graph.SetMarkerStyle(20)
     graph.SetMarkerSize(0.45)
     ROOT.gStyle.SetOptStat(0)
-    canvas = ROOT.TCanvas("likelihood_scan", "Observed profile likelihood", 1000, 750)
+    canvas = ROOT.TCanvas("likelihood_scan", "Workspace profile likelihood", 1000, 750)
     canvas.SetLeftMargin(0.12)
     canvas.SetBottomMargin(0.12)
     canvas.SetTopMargin(0.09)
@@ -294,7 +317,8 @@ def plot(args):
     text.SetNDC()
     text.SetTextFont(42)
     text.SetTextSize(0.034)
-    text.DrawLatex(0.16, 0.84, "Observed H* #rightarrow ZZ #rightarrow 4l workspace")
+    kind = "Asimov" if args.weighted_asimov else "Observed"
+    text.DrawLatex(0.16, 0.84, kind + " H* #rightarrow ZZ #rightarrow 4l workspace")
     text.DrawLatex(0.16, 0.79, "Signal region + three control regions")
     text.DrawLatex(0.16, 0.74, "127 systematic + 3 qqZZ parameters profiled")
     text.DrawLatex(0.16, 0.68, f"#hat{{#mu}} = {best['mu_hat']:.5f}")
@@ -328,9 +352,9 @@ def finalize(args):
             by_mu[key] = row
     points = list(by_mu.values())
     lower, upper = args.range
-    expected = [lower + (upper-lower)*i/(args.points-1) for i in range(args.points)]
+    expected = scan_grid(args)
     actual = sorted(row["mu"] for row in points)
-    if len(actual) != args.points or any(abs(a-b) > 1e-9 for a, b in zip(actual, expected)):
+    if len(actual) != len(expected) or any(abs(a-b) > 1e-9 for a, b in zip(actual, expected)):
         raise RuntimeError("The scan does not cover the complete requested grid")
     for row in points:
         require_minimum(row)
@@ -347,6 +371,7 @@ def finalize(args):
     previous = json.loads(summary_path.read_text()) if summary_path.exists() else {}
     write_json(summary_path, {
         "range": [lower, upper], "points": len(points), "mu_hat": best["mu_hat"],
+        "evaluated_range": [min(expected), max(expected)], "grid": expected,
         "input_sha256": best["input_sha256"], "bestfit": str(args.bestfit.resolve()),
         "baseline_nll": best["nll_min"],
         "initial_scan_baseline_nll": previous.get("initial_scan_baseline_nll", previous.get("baseline_nll")),
@@ -371,9 +396,15 @@ def main():
     parser.add_argument("--data", default="obsData_4l_offshell")
     parser.add_argument("--starts", type=float, nargs="+", default=[1.0, 1.4])
     parser.add_argument("--hesse", action="store_true")
+    parser.add_argument("--fit-strategy", type=int, choices=(0, 1, 2), default=1,
+                        help="Migrad strategy for global starts/refinement; explicit Hesse always uses 1")
+    parser.add_argument("--weighted-asimov", action="store_true",
+                        help="Accept signed Asimov quadrature weights with construction metadata")
     parser.add_argument("--bestfit", type=Path)
     parser.add_argument("--range", type=float, nargs=2, default=[0.5, 1.5])
     parser.add_argument("--points", type=int, default=41)
+    parser.add_argument("--grid", type=float, nargs="+",
+                        help="Explicit evaluated mu coordinates; --range sets the plot axis")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--scan-parts", type=Path, nargs="+",
                         help="Optional scan_points.json chunks to combine during finalization")
@@ -384,6 +415,10 @@ def main():
         raise RuntimeError("Run this fit/scan inside a Slurm allocation")
     if args.points < 2 or args.range[0] >= args.range[1]:
         parser.error("Require at least two points and an increasing scan range")
+    if args.mode in ("scan", "finalize"):
+        grid = scan_grid(args)
+        if len(set(grid)) != len(grid) or any(not math.isfinite(x) or x <= 0 for x in grid):
+            parser.error("Scan coordinates must be unique, finite, and positive; use 0.01 as the zero proxy")
     {"fit": fit, "scan": scan, "plot": plot, "finalize": finalize}[args.mode](args)
 
 

@@ -229,6 +229,89 @@ compares native RooFit NLL differences against direct NumPy event intensities,
 CR Poisson terms, and Gaussian penalties. Signed Asimov weights are retained
 in the weighted log likelihood; no SumW2 correction is applied.
 
+## Fit the two Asimov workspaces and compare expected scans
+
+Use `--weighted-asimov` explicitly. This mode requires the construction
+metadata and generation snapshot and preserves signed quadrature weights.
+Without that flag the observed-data guard still rejects non-Poisson weights.
+Both fits use the same native likelihood, parameter bounds, two independent
+starts, and full covariance calculation as the observed baseline.
+For these larger Asimov fits use `--fit-strategy 0 --hesse`: strategy 0
+avoids computing a full covariance at each preliminary start, and the final
+explicit Hesse uses strategy 1. The EDM/status checks remain unchanged, and
+the final covariance must have quality 3. The default global strategy remains
+1 for compatibility with the observed baseline. Each completed starting-point
+fit also writes its full parameter vector as a recovery checkpoint.
+
+For the requested [0,1.5] plot, use **0.01 as the proxy for zero** and then
+the HEPData coordinates 0.05, 0.10, ..., 1.50. Never evaluate a scan at zero.
+An explicit `--grid` separates evaluated coordinates from the plot range:
+
+```bash
+grid=(0.01 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50
+      0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00
+      1.05 1.10 1.15 1.20 1.25 1.30 1.35 1.40 1.45 1.50)
+
+python3 root_workspace_fit.py fit --weighted-asimov --hesse --fit-strategy 0 \
+  --input /work/path/to/asimov/n_4096/HZZ_4l_asimov_4096.root \
+  --output /work/path/to/asimov_fits/n_4096
+
+python3 root_workspace_fit.py scan --weighted-asimov \
+  --input /work/path/to/asimov/n_4096/HZZ_4l_asimov_4096.root \
+  --output /work/path/to/asimov_fits/n_4096 \
+  --range 0 1.5 --grid "${grid[@]}"
+
+python3 root_workspace_fit.py finalize --weighted-asimov \
+  --input /work/path/to/asimov/n_4096/HZZ_4l_asimov_4096.root \
+  --output /work/path/to/asimov_fits/n_4096 \
+  --range 0 1.5 --grid "${grid[@]}"
+
+python3 root_workspace_validation.py --weighted-asimov --range 0.01 1.5 \
+  --input /work/path/to/asimov/n_4096/HZZ_4l_asimov_4096.root \
+  --bestfit /work/path/to/asimov_fits/n_4096/bestfit.json \
+  --scan-points /work/path/to/asimov_fits/n_4096/scan_points.json \
+  --output /work/path/to/asimov_fits/n_4096/likelihood_validation.json
+```
+
+Repeat for 8192. For longer work, `run_root_fit.slurm`,
+`run_root_scan.slurm`, and `run_root_finalize.slurm` accept the ROOT setup
+script, repository directory, input workspace, output directory, and their
+remaining documented arguments. Supply the current Unity account, partition,
+CPU count, memory, walltime, and dependencies to `sbatch`; these are not
+hard-coded in the scripts. Each process uses one CPU. Overlapping chunks
+allow independent convergence checks before merging. The finalizer expects
+chunk directories named `scan_*` under that sample's output directory.
+
+The validator independently reconstructs every saved profile-point likelihood
+and verifies the saved covariance and snapshot. It records continuous
+intensity minima at fixed profile nuisance settings across the requested
+interval, while requiring positivity at each actual profile point. Positivity
+at one profile setting does not establish positivity at every nuisance value.
+
+```bash
+python3 compare_asimov_hepdata.py \
+  --fits /work/path/to/asimov_fits \
+  --reference /work/path/to/hepdata/table_2.json \
+  --crosscheck-table /work/path/to/hepdata/table_1.json \
+  --reference-csv /work/path/to/hepdata/table_2.csv \
+  --output /work/path/to/asimov_fits/hepdata_comparison
+```
+
+The comparison selects **Exp NSBI**, the four-lepton stat+syst series in
+Table 2 / Figure 11(b). It verifies the duplicate table and CSV, writes both
+local curves and their signed residuals in PNG/PDF/ROOT, and saves per-sample
+and between-sample CSVs plus a checksum-bearing JSON summary. Only the 30
+shared coordinates from 0.05 to 1.50 enter reference residuals. The published
+point at zero remains at zero, separate from the local 0.01 proxy. Neither
+curve is shifted, interpolated, or rescaled. The statistics-only series uses
+a different nuisance prescription and is not the counterpart of these fits.
+
+Finite-sample nuisance score closure is not guaranteed by nominal-only
+same-sample normalization. Preserve any fitted shifts and report them. The
+provided NumPy yields/systematics also differ from the observed ROOT template;
+these two nested subsets alone cannot separate input-model differences from
+quadrature effects or estimate a distribution of finite-sample fluctuations.
+
 The current `root_workspace_fit.py` driver deliberately rejects non-Poisson
 weighted datasets. Before profiling these Asimov workspaces, add an explicit
 Asimov-data mode with the appropriate weighted-likelihood conventions; do not

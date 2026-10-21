@@ -152,6 +152,10 @@ def main():
     parser.add_argument("--workspace", default="combined")
     parser.add_argument("--model-config", default="ModelConfig_4l_offshell")
     parser.add_argument("--data", default="obsData_4l_offshell")
+    parser.add_argument("--weighted-asimov", action="store_true")
+    parser.add_argument("--range", type=float, nargs=2, default=[0.5, 1.5])
+    parser.add_argument("--scan-points", type=Path,
+                        help="Also validate every saved profile point independently")
     args = parser.parse_args()
     source, w, mc, data, parameters, floating, nll = load_model(args)
     ROOT.gInterpreter.Declare(CPP)
@@ -159,7 +163,7 @@ def main():
         restore(w, json.loads(args.bestfit.read_text())["parameters"])
     baseline_mu = w.var("mu").getVal()
     checks = [("baseline", baseline_mu, None, 0.0),
-              ("mu_low", 0.5, None, 0.0), ("mu_high", 1.5, None, 0.0),
+              ("mu_low", args.range[0], None, 0.0), ("mu_high", args.range[1], None, 0.0),
               ("lumi_shift", baseline_mu, "alpha_ATLAS_alpha_LUMI", 0.2),
               ("shape_shift", baseline_mu, "alpha_ATLAS_QCD_ggZZk_Shape", -0.2),
               ("qqzz_shift", baseline_mu, "mu_qqZZ_1", 0.03)]
@@ -170,7 +174,7 @@ def main():
             original = w.var(parameter).getVal()
             w.var(parameter).setVal(original + shift)
         native = nll.getVal()
-        explicit, min_current, min_interval, invalid = ROOT.offshell_check_intensity(w, data, 0.5, 1.5)
+        explicit, min_current, min_interval, invalid = ROOT.offshell_check_intensity(w, data, *args.range)
         row = {"name": name, "mu": mu, "native_nll": native,
                "explicit_nll": explicit, "minimum_current_intensity": min_current,
                "minimum_continuous_interval_intensity": min_interval,
@@ -187,9 +191,28 @@ def main():
                 r["minimum_continuous_interval_intensity"] > 0 and
                 math.isfinite(r["delta_nll_disagreement"]) and
                 abs(r["delta_nll_disagreement"]) < 1e-6 for r in records)
-    report = {"passed": valid, "checks": records}
+    report = {"passed": valid, "checks": records, "mu_interval": args.range}
     if args.bestfit:
         report["saved_artifacts"] = validate_saved_fit(args.bestfit)
+    if args.scan_points:
+        baseline = records[0]
+        scan_checks = []
+        for point in json.loads(args.scan_points.read_text()):
+            for name, value in point["parameters"].items():
+                w.var(name).setVal(value)
+            if abs(w.var("mu").getVal() - point["mu"]) > 1e-12:
+                raise RuntimeError("Saved scan coordinate and parameter disagree")
+            native = nll.getVal()
+            explicit, current, interval, invalid = ROOT.offshell_check_intensity(w, data, *args.range)
+            residual = (native-baseline["native_nll"])-(explicit-baseline["explicit_nll"])
+            scan_checks.append({"mu": point["mu"], "delta_nll_disagreement": residual,
+                                "saved_nll_difference": native-point["nll"],
+                                "minimum_current_intensity": current,
+                                "minimum_continuous_interval_intensity": interval,
+                                "invalid_intensities": invalid})
+            valid = valid and invalid == 0 and current > 0 and math.isfinite(residual) and abs(residual) < 1e-6 and abs(native-point["nll"]) < 1e-6
+        report["scan_checks"] = scan_checks
+        report["passed"] = valid
     write_json(args.output, report)
     if not valid:
         raise RuntimeError("Extended-intensity cross-check failed; inspect the saved report")

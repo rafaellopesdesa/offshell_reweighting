@@ -20,11 +20,11 @@ def digest(path):
         return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
-def observed_points(table):
+def series_points(table, series="Obs NSBI"):
     if table["x_count"] != 1 or "4l only" not in table["name"]:
         raise ValueError("Expected a one-dimensional, four-lepton-only table")
     labels = [header["name"] for header in table["headers"][1:]]
-    group = labels.index("Obs NSBI")
+    group = labels.index(series)
     points = {}
     for row in table["values"]:
         mu = float(row["x"][0]["value"])
@@ -35,14 +35,14 @@ def observed_points(table):
     return points
 
 
-def csv_observed_points(path):
+def csv_series_points(path, series="Obs NSBI"):
     points = {}
     selected = False
     with path.open(newline="") as stream:
         for row in csv.reader(stream):
             if not row or row[0].startswith("#"):
                 continue
-            if len(row) == 2 and row[1] == "Obs NSBI":
+            if len(row) == 2 and row[1] == series:
                 selected = True
                 continue
             if selected:
@@ -54,7 +54,7 @@ def csv_observed_points(path):
                     raise ValueError("Duplicate CSV point")
                 points[mu] = value
     if not points:
-        raise ValueError("CSV does not contain the Obs NSBI series")
+        raise ValueError(f"CSV does not contain the {series} series")
     return points
 
 
@@ -164,15 +164,15 @@ def main():
     table = json.loads(args.reference.read_text())
     if table["doi"] != "10.17182/hepdata.156805.v1/t2":
         raise ValueError("This comparison expects HEPData 156805 v1 Table 2")
-    reference = observed_points(table)
+    reference = series_points(table)
     checks = {}
     if args.crosscheck_table:
         other = json.loads(args.crosscheck_table.read_text())
-        if observed_points(other) != reference:
+        if series_points(other) != reference:
             raise ValueError("The duplicate observed series disagree")
         checks["duplicate_table"] = other["doi"]
     if args.reference_csv:
-        if csv_observed_points(args.reference_csv) != reference:
+        if csv_series_points(args.reference_csv) != reference:
             raise ValueError("The JSON and CSV observed values disagree")
         checks["csv_matches_json"] = True
     scan = {}
