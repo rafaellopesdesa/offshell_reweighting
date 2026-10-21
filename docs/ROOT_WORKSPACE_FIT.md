@@ -15,6 +15,12 @@ project ROOT environment before running the commands below. Keep the input
 file read-only and all generated outputs outside this public repository.
 The command-line driver requires `SLURM_JOB_ID` for fitting and scanning.
 
+For the two-sample Asimov workflow, `report_asimov_fits.py --fits RESULTS
+--status-doc PROJECT/docs/CURRENT_STATUS.md` records the completed numerical
+comparison in the project status document. Run it after provenance succeeds;
+it requires the completed run summary and unchanged-input check. It preserves
+earlier entries and explicitly leaves visual plot inspection for a manual check.
+
 ```bash
 python3 root_workspace_fit.py fit \
   --input /path/to/read-only/HZZ_4l_offshell_v2.root \
