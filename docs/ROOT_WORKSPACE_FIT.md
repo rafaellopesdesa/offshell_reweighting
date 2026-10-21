@@ -32,6 +32,34 @@ Use a separate output directory to preserve the earlier local minimum.
 A successful covariance or agreement between two starts does not establish
 global optimality; all profiles must still be checked against the new minimum.
 
+`diagnose_asimov_stationarity.py` checks whether the nominal generation point
+is stationary in a serialized weighted-reference Asimov workspace. It reads
+both combined and separate control-region counts, compares them with nominal
+model yields, checks the fixed global observables, evaluates native NLL
+derivatives for all 131 parameters, and independently checks the largest
+systematic derivatives against the SR integral mismatch. It also fits mu and
+the three qqZZ factors from two starts while fixing all systematic parameters
+to zero. Run it inside a Slurm allocation; it writes JSON only:
+
+```bash
+python3 diagnose_asimov_stationarity.py \
+  --input /work/path/to/HZZ_4l_asimov_8192.root \
+  --output /work/path/to/nominal_stationarity.json
+```
+
+For reference weights `u_i`, intensity `I_i(theta)`, expected SR yield
+`nu(theta)`, and Asimov weights `a_i = u_i I_i(theta0)`, the SR NLL score at
+generation is `d nu/d theta - sum_i u_i d I_i/d theta`. Asimov Poisson counts
+and zero Gaussian pulls contribute zero score at that point. Nominal
+same-sample normalization closes the mu and qqZZ directions with systematic
+parameters fixed. Keeping the supplied systematic factors unnormalized on
+the subset does not close their derivatives. Consequently this construction
+does not enforce an exact stationary nominal point when all systematics are
+profiled. The diagnostic does not renormalize these variations or modify the
+model. A future change that enforces nuisance-dependent integral closure
+would be a different construction prescription; stationarity alone would
+still not certify a global minimum, particularly with signed weights.
+
 ```bash
 python3 root_workspace_fit.py fit \
   --input /path/to/read-only/HZZ_4l_offshell_v2.root \
