@@ -103,3 +103,40 @@ domain; RooFit must reject invalid minimizer trial points.
 
 Do not commit input data, fitted workspaces, or generated result files to this
 public repository.
+
+## Compare the observed scan with HEPData
+
+The matching published result is the `Obs NSBI` series in
+[HEPData 156805 v1, Table 2](https://doi.org/10.17182/hepdata.156805.v1/t2),
+corresponding to Figure 11(b): four-lepton only, including statistical and
+systematic uncertainties. Table 1 / Figure 11(a) repeats this same series.
+The other tables include different observables or channel combinations.
+Equation (16) of [the paper](https://arxiv.org/html/2412.01548v2#S7) defines
+the same statistic as the saved RooFit scan. The published confidence belts
+use a Neyman construction; `q=1` is not its 68% confidence belt.
+
+Download the public table JSON and CSV into an output directory outside the
+repository, then run the comparison with the ROOT environment activated:
+
+```bash
+curl --fail --location 'https://www.hepdata.net/record/data/156805/1759753/1' \
+  --output /work/path/to/comparison/table_2.json
+curl --fail --location 'https://www.hepdata.net/record/data/156805/1759752/1' \
+  --output /work/path/to/comparison/table_1.json
+
+python3 compare_hepdata_scan.py \
+  --scan /work/path/to/data_fit/likelihood_scan.csv \
+  --bestfit /work/path/to/data_fit/bestfit.json \
+  --reference /work/path/to/comparison/table_2.json \
+  --crosscheck-table /work/path/to/comparison/table_1.json \
+  --output /work/path/to/comparison
+```
+
+Optionally pass the official Table 2 CSV download as `--reference-csv` to
+verify that its `Obs NSBI` values match the JSON. The script compares only
+shared mu coordinates, with no interpolation, extrapolation, vertical shift,
+or fitted rescaling. It writes a point-by-point CSV, a JSON summary with
+input checksums and absolute residual metrics, and PNG/PDF/ROOT plots.
+The lower panel shows the signed difference, local minus HEPData. Its gray
+band is the half-step of three-decimal rounding, not a statistical error.
+Relative residuals are avoided because the statistic vanishes at its minimum.
