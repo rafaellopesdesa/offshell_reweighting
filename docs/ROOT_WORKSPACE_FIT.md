@@ -60,6 +60,29 @@ model. A future change that enforces nuisance-dependent integral closure
 would be a different construction prescription; stationarity alone would
 still not certify a global minimum, particularly with signed weights.
 
+For the separately authorized anchor-normalization experiment, pass
+`--normalize-systematic-anchors` to `build_root_asimov.py`. For each subset,
+SR process (including each qqZZ jet bin), nuisance and direction, it replaces
+the supplied mixed shape/rate factor `v` by `v * R / sum(u*rhat*v)`, with `R`
+from `list_weight_up/down_<process>.npy`. The correction preserves the intended
+varied rate. It leaves the nominal Asimov weights, CRs, full-MC rate factors,
+interpolation codes, and fit bounds unchanged. New workspaces must use a
+separate output directory. `anchor_normalization.json` records all 2540
+correction factors and their original integrals and target rates.
+
+`validate_root_asimov.py` independently recomputes the corrections, checks
+all serialized anchors and 258 native-versus-explicit likelihood settings,
+and records remaining nominal nuisance scores. This checks anchor closure;
+it does not assume closure between anchors or when several nuisances vary.
+
+`run_anchor_asimov.slurm` builds, validates and fits one subset from mu=1 and
+1.4, floating all 131 parameters. It uses Migrad strategy 0 with
+`--fit-eps 0.0001`, without a full Hesse calculation or any profile scan.
+`validate_anchor_global_fit.py` then checks both fitted parameter vectors
+against explicit intensities, verifies saved artifacts, and compares
+unchanged nominal inputs with the earlier workspace. Report the Migrad
+covariance as an estimate, not a validated full-Hesse uncertainty.
+
 ```bash
 python3 root_workspace_fit.py fit \
   --input /path/to/read-only/HZZ_4l_offshell_v2.root \

@@ -133,14 +133,14 @@ def intensity_check(workspace, data, interval, reference_weights=None):
     return result[:4], extra
 
 
-def validate_saved_fit(bestfit_path):
+def validate_saved_fit(bestfit_path, require_accurate_covariance=True):
     best = json.loads(bestfit_path.read_text())
     directory = bestfit_path.parent
     output = ROOT.TFile.Open(str(directory / "bestfit.root"), "READ")
     if not output or output.IsZombie():
         raise RuntimeError("Cannot open saved fit result")
     result = output.Get("fit_result")
-    if not result or result.status() != 0 or result.covQual() != 3:
+    if not result or result.status() != 0 or (require_accurate_covariance and result.covQual() != 3):
         raise RuntimeError("Saved RooFitResult has invalid convergence diagnostics")
     saved = {v.GetName(): v.getVal() for v in result.floatParsFinal()}
     expected = {row["name"]: row["value"] for row in best["parameters"]}
@@ -161,6 +161,8 @@ def validate_saved_fit(bestfit_path):
         raise RuntimeError("Workspace snapshot does not restore the best-fit parameters")
     report = {"parameter_count": len(expected), "root_json_agreement": True,
               "snapshot_restores_all_parameters": True,
+              "covariance_quality": int(result.covQual()),
+              "accurate_covariance_required": require_accurate_covariance,
               "covariance_minimum_eigenvalue": smallest_eigenvalue}
     postfit_file.Close()
     output.Close()

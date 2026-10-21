@@ -162,6 +162,7 @@ def fit(args):
         w.var("mu").setVal(start_mu)
         print(f"Starting global fit at mu={start_mu}", flush=True)
         minim = minimizer(nll, args.fit_strategy, verbose=True)
+        minim.setEps(args.fit_eps)
         t0 = time.monotonic()
         status = minim.minimize("Minuit2", "Migrad")
         result = minim.save()
@@ -169,6 +170,7 @@ def fit(args):
         diagnostic["start_mu"] = start_mu
         diagnostic["mu_hat"] = w.var("mu").getVal()
         diagnostic["strategy"] = args.fit_strategy
+        diagnostic["requested_eps"] = args.fit_eps
         attempts.append(diagnostic)
         write_json(args.output / "global_fit_attempts.json", attempts)
         write_json(args.output / f"global_fit_attempt_{len(attempts)-1}.json", {
@@ -199,6 +201,7 @@ def fit(args):
     write_json(args.output / "bestfit_checkpoint.json", summary)
     if args.hesse:
         minim = minimizer(nll, args.fit_strategy, verbose=True)
+        minim.setEps(args.fit_eps)
         status = minim.minimize("Minuit2", "Migrad")
         require_minimum(diagnostics(minim.save(), status, nll, 0.0))
         print("Starting full Hesse covariance", flush=True)
@@ -447,6 +450,8 @@ def main():
     parser.add_argument("--hesse", action="store_true")
     parser.add_argument("--fit-strategy", type=int, choices=(0, 1, 2), default=1,
                         help="Migrad strategy for global starts/refinement; explicit Hesse always uses 1")
+    parser.add_argument("--fit-eps", type=float, default=0.01,
+                        help="Minuit convergence tolerance for unconditional fits")
     parser.add_argument("--weighted-asimov", action="store_true",
                         help="Accept signed Asimov quadrature weights with construction metadata")
     parser.add_argument("--bestfit", type=Path)

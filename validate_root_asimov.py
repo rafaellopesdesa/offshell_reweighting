@@ -23,7 +23,8 @@ def coefficients(mu, qq=(1.0, 1.0, 1.0)):
             "qqZZ_0": qq[0], "qqZZ_1": qq[0]*qq[1], "qqZZ_2": qq[0]*qq[1]*qq[2]}
 
 
-def evaluate_numpy(report, ratios, weights, staged, mu, qq=(1, 1, 1), variation=None):
+def evaluate_numpy(report, ratios, weights, staged, mu, qq=(1, 1, 1), variation=None,
+                   anchor_corrections=None):
     factors = coefficients(mu, qq)
     sr_rate, intensity = 0.0, np.zeros_like(weights)
     cr_rate = np.zeros(3)
@@ -34,6 +35,8 @@ def evaluate_numpy(report, ratios, weights, staged, mu, qq=(1, 1, 1), variation=
             index, direction = variation
             event_factor = staged[f"arr_ratio_{direction}_{base}.npy"][index, :len(weights)]
             rate_factor = staged[f"list_weight_{direction}_{process}.npy"][index]
+            if anchor_corrections is not None:
+                event_factor = event_factor * anchor_corrections[process][direction][index]
         intensity += factors[process] * report["sr_component_yields"][process] * ratios[process] * event_factor
         sr_rate += factors[process] * report["sr_component_yields"][process] * rate_factor
     for process in PROCESSES:
@@ -98,6 +101,26 @@ def validate(args):
     ratios = {p: ratios_archive[p] for p in SR_PROCESSES}
     weights = np.load(directory / "asimov_weights.npy", mmap_mode="r")
     u = np.load(directory / "reference_weights_normalized.npy", mmap_mode="r")
+    anchor_corrections, anchor_errors = None, []
+    anchor_mode = report.get("systematic_normalization_mode", "provided")
+    if anchor_mode == "same_sample_anchors_to_supplied_rates":
+        anchor_path = directory / "anchor_normalization.json"
+        assert sha256(anchor_path) == report["anchor_normalization_sha256"]
+        saved_anchors = json.loads(anchor_path.read_text())["components"]
+        anchor_corrections = {}
+        for process in SR_PROCESSES:
+            base = "qqZZ" if process.startswith("qqZZ_") else process
+            anchor_corrections[process] = {}
+            for direction in ("down", "up"):
+                values = staged[f"arr_ratio_{direction}_{base}.npy"][:, :size]
+                rates = staged[f"list_weight_{direction}_{process}.npy"]
+                # Recompute directly from inputs, without importing the construction helper.
+                means = np.array([np.sum(u * ratios[process] * row) for row in values])
+                scale = rates / means
+                np.testing.assert_allclose(scale, saved_anchors[process][direction]["multipliers"], rtol=3e-13)
+                anchor_corrections[process][direction] = scale
+    elif anchor_mode != "provided":
+        raise ValueError(f"Unknown systematic normalization mode: {anchor_mode}")
     source = ROOT.TFile.Open(str(args.input), "READ")
     if not source or source.IsZombie():
         raise RuntimeError("Cannot reopen Asimov workspace")
@@ -120,7 +143,16 @@ def validate(args):
             original = staged[f"arr_ratio_{direction}_{base}.npy"]
             for item in report["systematic_mapping"]:
                 name = f"var_{item['workspace_name'][6:]}_ratio_{process}_{direction}"
-                np.testing.assert_array_equal(arrays[name][3:], original[item["array_index"], :size])
+                expected_values = original[item["array_index"], :size]
+                if anchor_corrections is None:
+                    np.testing.assert_array_equal(arrays[name][3:], expected_values)
+                else:
+                    expected_values = expected_values * anchor_corrections[process][direction][item["array_index"]]
+                    np.testing.assert_allclose(arrays[name][3:], expected_values, rtol=3e-13, atol=0)
+                    target = staged[f"list_weight_{direction}_{process}.npy"][item["array_index"]]
+                    actual = np.sum(u * ratios[process] * arrays[name][3:])
+                    anchor_errors.append(abs(actual/target - 1))
+                    np.testing.assert_allclose(actual, target, rtol=3e-13)
     channel_rows, channel_counts = {}, {}
     for label in ("CR0", "CR1", "CR2", "SR"):
         w.cat("cat").setLabel(label)
@@ -159,7 +191,8 @@ def validate(args):
             index, direction = variation
             alpha = w.var(report["systematic_mapping"][index]["workspace_name"])
             alpha.setVal(-1 if direction == "down" else 1)
-        manual, intensity, rate, cr = evaluate_numpy(report, ratios, weights, staged, mu, qq, variation)
+        manual, intensity, rate, cr = evaluate_numpy(report, ratios, weights, staged, mu, qq, variation,
+                                                    anchor_corrections)
         native = nll.getVal()
         residual = (native - nominal_root) - (manual - nominal_numpy)
         if not math.isfinite(residual) or abs(residual) > 1e-6:
@@ -167,6 +200,8 @@ def validate(args):
         # Check rate and shape separately so a compensation cannot hide a bug.
         root_sr_rate = sum(w.function(f"nfFactor_{p}").getVal() for p in SR_PROCESSES)
         np.testing.assert_allclose(root_sr_rate, rate, rtol=1e-12)
+        if anchor_corrections is not None:
+            np.testing.assert_allclose(np.sum(u * intensity), rate, rtol=3e-13)
         for c in range(3):
             root_cr = sum(w.function(f"nu_CR{c}_{p}").getVal() for p in PROCESSES)
             np.testing.assert_allclose(root_cr, cr[c], rtol=1e-12)
@@ -190,17 +225,30 @@ def validate(args):
         scores[parameter] = (values[1]-values[0])/(2*step)
     if max(abs(v) for v in scores.values()) > 2e-4:
         raise ValueError(f"Nominal score closure failed: {scores}")
+    systematic_scores = {}
+    if anchor_corrections is not None:
+        for variable in mc.GetNuisanceParameters():
+            variable.setVal(step)
+            plus = nll.getVal()
+            variable.setVal(-step)
+            minus = nll.getVal()
+            variable.setVal(0)
+            systematic_scores[variable.GetName()] = (plus-minus)/(2*step)
     result = {"passed": True, "workspace_sha256": report["workspace_sha256"],
               "dataset_rows": data.numEntries(), "floating_parameters": len(floating),
               "channel_rows": channel_rows, "channel_counts": channel_counts,
               "negative_sr_weights": int(np.sum(weights < 0)),
-              "all_nominal_and_systematic_columns_match_staged_inputs": True,
+              "all_columns_match_requested_construction": True,
+              "systematic_normalization_mode": anchor_mode,
+              "systematic_anchor_count_checked": len(anchor_errors),
+              "maximum_anchor_relative_closure_error": max(anchor_errors, default=0.0),
+              "nominal_systematic_scores": systematic_scores,
               "native_likelihood_settings_checked": len(checks),
               "maximum_absolute_delta_nll_difference": max(abs(x["difference"]) for x in checks),
               "nominal_score_finite_difference": scores,
               "continuous_domain": continuous_domain(report, ratios),
               "checks": checks,
-              "scope": "No fit or profile scan; validates serialization, input mapping, normalization, weighted likelihood, rates, and nominal score closure. Systematic variations are not subset-renormalized."}
+              "scope": "No fit or profile scan; validates serialization, input mapping, requested normalization, weighted likelihood, rates, and nominal scores. Anchor normalization does not guarantee closure between anchors."}
     write_json(args.output, result)
     print(json.dumps({k: v for k, v in result.items() if k != "checks"}, indent=2), flush=True)
     source.Close()

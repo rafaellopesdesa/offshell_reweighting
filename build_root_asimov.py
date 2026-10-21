@@ -119,6 +119,39 @@ def import_arg(workspace, arg, recycle=True):
         raise RuntimeError(f"Could not import {arg.GetName()}")
 
 
+def normalize_systematic_anchors(directory, size, components, output):
+    """Match every SR anchor integral to its supplied full-sample rate factor."""
+    u = load(output, "reference_weights_normalized.npy")
+    corrections, records = {}, {}
+    maximum_error = 0.0
+    for process in SR_PROCESSES:
+        base = "qqZZ" if process.startswith("qqZZ_") else process
+        measure = u * components[process]
+        corrections[process], records[process] = {}, {}
+        for direction in ("down", "up"):
+            variations = load(directory, f"arr_ratio_{direction}_{base}.npy")[:, :size]
+            rates = np.asarray(load(directory, f"list_weight_{direction}_{process}.npy"), dtype=float)
+            means = np.asarray(variations @ measure, dtype=float)
+            if not np.all(np.isfinite(means)) or np.any(means <= 0) or np.any(rates <= 0):
+                raise ValueError(f"Nonpositive anchor integral or rate: {process}, {direction}")
+            scale = rates / means
+            corrected_means = (variations * scale[:, None]) @ measure
+            np.testing.assert_allclose(corrected_means, rates, rtol=3e-13, atol=1e-14)
+            maximum_error = max(maximum_error, float(np.max(np.abs(corrected_means/rates - 1))))
+            corrections[process][direction] = scale
+            records[process][direction] = {"original_reference_means": means.tolist(),
+                                           "target_rate_factors": rates.tolist(),
+                                           "multipliers": scale.tolist()}
+    report = {"formula": "v_corrected=v*R/sum(u*rhat*v); R=list_weight_{direction}_{process}",
+              "scope": "Each subset, SR process, qqZZ jet bin, nuisance, and direction independently",
+              "anchor_count": len(SR_PROCESSES)*127*2,
+              "maximum_relative_closure_error": maximum_error,
+              "rate_factors_unchanged": True, "cr_inputs_unchanged": True,
+              "interpolation_codes_unchanged": True, "components": records}
+    write_json(output / "anchor_normalization.json", report)
+    return corrections, report
+
+
 def create_model(template, directory, sr_yields, cr_yields):
     workspace = ROOT.RooWorkspace("combined", template.GetTitle())
     changes = []
@@ -188,7 +221,8 @@ def create_model(template, directory, sr_yields, cr_yields):
     return workspace, mapping, changes
 
 
-def create_data(workspace, template, directory, size, components, weights, cr_counts, mapping):
+def create_data(workspace, template, directory, size, components, weights, cr_counts, mapping,
+                anchor_corrections=None):
     original = template.data("obsData_4l_offshell")
     category = workspace.cat("cat")
     category_codes = {}
@@ -207,8 +241,11 @@ def create_data(workspace, template, directory, size, components, weights, cr_co
             variations = load(directory, f"arr_ratio_{direction}_{base}.npy")
             for item in mapping:
                 name = f"var_{item['workspace_name'][6:]}_ratio_{process}_{direction}"
-                # Preserve provided relative variations, including their rate part.
-                columns[name] = np.concatenate([np.ones(3), variations[item["array_index"], :size]])
+                values = variations[item["array_index"], :size]
+                if anchor_corrections is not None:
+                    # Preserve the intended full-MC rate while closing this subset's anchor.
+                    values = values * anchor_corrections[process][direction][item["array_index"]]
+                columns[name] = np.concatenate([np.ones(3), values])
     expected_names = {v.GetName() for v in original.get()} | {"total_weight"}
     if set(columns) != expected_names:
         raise ValueError(f"Dataset columns differ from template: {set(columns) ^ expected_names}")
@@ -280,13 +317,22 @@ def build(args):
         if sha256(args.staged / name) != item["sha256"]:
             raise ValueError(f"Staged input checksum changed: {name}")
     components, yields, cr_yields, weights, report = prepare_sample(args.staged, args.size, args.output)
+    anchor_corrections = None
+    report["systematic_normalization_mode"] = "provided"
+    if args.normalize_systematic_anchors:
+        anchor_corrections, anchor_report = normalize_systematic_anchors(
+            args.staged, args.size, components, args.output)
+        report["systematic_normalization_mode"] = "same_sample_anchors_to_supplied_rates"
+        report["systematics"] = "Up/down event factors scaled to supplied rate factors on this subset; interpolation and full-MC rate factors unchanged"
+        report["anchor_normalization_sha256"] = sha256(args.output / "anchor_normalization.json")
+        report["anchor_normalization_maximum_relative_error"] = anchor_report["maximum_relative_closure_error"]
     source = ROOT.TFile.Open(str(args.template), "READ")
     if not source or source.IsZombie():
         raise RuntimeError("Cannot open template")
     template = source.Get("combined")
     workspace, mapping, changes = create_model(template, args.staged, yields, cr_yields)
     columns = create_data(workspace, template, args.staged, args.size, components, weights,
-                          np.array(report["cr_asimov_counts"]), mapping)
+                          np.array(report["cr_asimov_counts"]), mapping, anchor_corrections)
     report["structure_validation"] = check_structure(workspace, template)
     data = workspace.data("obsData_4l_offshell")
     exported = data.to_numpy(copy=False)
@@ -322,6 +368,8 @@ def main():
     parser.add_argument("--staged", type=Path, required=True)
     parser.add_argument("--size", type=int, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--normalize-systematic-anchors", action="store_true",
+                        help="Normalize each SR up/down anchor to its supplied varied rate on this subset")
     build(parser.parse_args())
 
 
