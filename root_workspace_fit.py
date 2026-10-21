@@ -134,6 +134,24 @@ def require_minimum(record):
 
 def fit(args):
     source, w, mc, data, parameters, floating, nll = load_model(args)
+    initial_seed = None
+    if args.initial_parameters:
+        seed = json.loads(args.initial_parameters.read_text())
+        if seed["input_sha256"] != sha256(args.input):
+            raise RuntimeError("Initial parameter seed is for a different input file")
+        values = seed["parameters"]
+        if set(values) != {v.GetName() for v in floating}:
+            raise RuntimeError("Initial parameter seed must contain all floating parameters")
+        for variable in floating:
+            value = values[variable.GetName()]
+            if not math.isfinite(value) or not variable.getMin() <= value <= variable.getMax():
+                raise RuntimeError("Invalid initial parameter value: " + variable.GetName())
+            variable.setVal(value)
+        if not math.isfinite(nll.getVal()):
+            raise RuntimeError("Initial parameter seed has a non-finite likelihood")
+        initial_seed = {"path": str(args.initial_parameters.resolve()),
+                        "sha256": sha256(args.initial_parameters)}
+        print("Starting from saved parameter seed", initial_seed, flush=True)
     initial_records = [parameter_record(v) for v in floating]
     initial_nll = nll.getVal()
     attempts = []
@@ -175,6 +193,7 @@ def fit(args):
         "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
         "mu_hat": w.var("mu").getVal(), "nll_min": nll.getVal(),
         "initial_nll": initial_nll, "attempts": attempts,
+        "initial_parameter_seed": initial_seed,
         "parameters": best_records, "complete": False,
     }
     write_json(args.output / "bestfit_checkpoint.json", summary)
@@ -423,6 +442,8 @@ def main():
     parser.add_argument("--model-config", default="ModelConfig_4l_offshell")
     parser.add_argument("--data", default="obsData_4l_offshell")
     parser.add_argument("--starts", type=float, nargs="+", default=[1.0, 1.4])
+    parser.add_argument("--initial-parameters", type=Path,
+                        help="JSON with input_sha256 and a complete parameter-value map to seed a global refit")
     parser.add_argument("--hesse", action="store_true")
     parser.add_argument("--fit-strategy", type=int, choices=(0, 1, 2), default=1,
                         help="Migrad strategy for global starts/refinement; explicit Hesse always uses 1")

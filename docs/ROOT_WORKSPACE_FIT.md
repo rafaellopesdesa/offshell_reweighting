@@ -23,6 +23,15 @@ earlier entries and explicitly leaves visual plot inspection for a manual check.
 The comparison also saves a separate plot for each sample so that a large
 discrepancy in one curve does not obscure the other on the combined plot.
 
+If a physical profile point improves the saved global minimum, the scan
+raises an error rather than accepting a negative likelihood-ratio statistic.
+Independently validate that point, then seed a new unconditional fit with
+`--initial-parameters seed.json --starts MU`. The seed must contain the exact
+input SHA-256 and a `parameters` object mapping all 131 names to values.
+Use a separate output directory to preserve the earlier local minimum.
+A successful covariance or agreement between two starts does not establish
+global optimality; all profiles must still be checked against the new minimum.
+
 ```bash
 python3 root_workspace_fit.py fit \
   --input /path/to/read-only/HZZ_4l_offshell_v2.root \
