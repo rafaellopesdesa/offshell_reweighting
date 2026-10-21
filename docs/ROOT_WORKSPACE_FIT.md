@@ -311,6 +311,16 @@ normally. The saved `warm_start_fraction` records this choice. This only
 chooses a physical starting point: no density, bound, or likelihood term is
 clipped or changed.
 
+When a weighted-Asimov input has its construction-side
+`reference_weights_normalized.npy` alongside it, validation also compares
+the finite-reference integral `sum(u_i * intensity_i)` with the model's
+full-MC expected SR yield at every checked setting. The sidecar path and
+checksum are recorded. Nominal same-sample normalization closes this integral
+exactly; supplied systematic variations can cause a mismatch at fitted
+nuisance values. This is a diagnostic of the quadrature, not a normalization
+correction or an additional likelihood term. Signed reference weights are
+retained.
+
 ```bash
 python3 compare_asimov_hepdata.py \
   --fits /work/path/to/asimov_fits \

@@ -8,7 +8,7 @@ from pathlib import Path
 
 import ROOT
 
-from root_workspace_fit import load_model, restore, write_json
+from root_workspace_fit import load_model, restore, sha256, write_json
 
 
 CPP = r'''
@@ -21,6 +21,7 @@ CPP = r'''
 #include <algorithm>
 #include <cmath>
 #include <limits>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
@@ -28,7 +29,8 @@ CPP = r'''
 // This assembles the extended likelihood explicitly, independently of
 // RooAddPdf/RooSimultaneous normalization and constraint extraction.
 std::vector<double> offshell_check_intensity(RooWorkspace &w, RooAbsData &data,
-                                           double muLow, double muHigh) {
+                                           double muLow, double muHigh,
+                                           const std::vector<double> &referenceWeights = {}) {
     const std::array<std::string,10> processes = {
         "S", "SBI", "B", "EWB", "EWSBI", "EWSBI10", "qqZZ_0", "qqZZ_1", "qqZZ_2", "ttV"};
     std::array<RooAbsReal*,10> shapes, coefficients;
@@ -68,7 +70,8 @@ std::vector<double> offshell_check_intensity(RooWorkspace &w, RooAbsData &data,
     };
     double continuousMin=std::numeric_limits<double>::infinity();
     double currentMin=std::numeric_limits<double>::infinity();
-    double nll=srYield, bad=0.;
+    double nll=srYield, bad=0., referenceIntegral=0.;
+    std::size_t referenceIndex=0;
     for(int c=0;c<3;++c) {
         if(currentCR[c]<=0) ++bad;
         nll+=currentCR[c];
@@ -96,6 +99,7 @@ std::vector<double> offshell_check_intensity(RooWorkspace &w, RooAbsData &data,
         continuousMin=std::min(continuousMin,minimum(values));
         if(intensity<=0 || !std::isfinite(intensity)) ++bad;
         nll-=weight*std::log(intensity);
+        if(!referenceWeights.empty()) referenceIntegral+=referenceWeights.at(referenceIndex++)*intensity;
     }
     for(auto *arg : variables) {
         const std::string name=arg->GetName();
@@ -105,9 +109,28 @@ std::vector<double> offshell_check_intensity(RooWorkspace &w, RooAbsData &data,
         const double pull=alpha->getVal()-nominal->getVal();
         nll+=.5*pull*pull;
     }
-    return {nll,currentMin,continuousMin,bad};
+    std::vector<double> result={nll,currentMin,continuousMin,bad};
+    if(!referenceWeights.empty()) {
+        if(referenceIndex!=referenceWeights.size()) throw std::runtime_error("Reference weight count mismatch");
+        result.push_back(srYield);
+        result.push_back(referenceIntegral);
+    }
+    return result;
 }
 '''
+
+
+def intensity_check(workspace, data, interval, reference_weights=None):
+    arguments = [workspace, data, *interval]
+    if reference_weights is not None:
+        arguments.append(reference_weights)
+    result = list(ROOT.offshell_check_intensity(*arguments))
+    extra = {}
+    if len(result) == 6:
+        rate, integral = result[4:]
+        extra = {"sr_model_expected_yield": rate, "sr_reference_integral": integral,
+                 "sr_integral_relative_difference": integral/rate-1}
+    return result[:4], extra
 
 
 def validate_saved_fit(bestfit_path):
@@ -159,6 +182,15 @@ def main():
     args = parser.parse_args()
     source, w, mc, data, parameters, floating, nll = load_model(args)
     ROOT.gInterpreter.Declare(CPP)
+    reference_weights, reference_record = None, None
+    reference_path = args.input.parent/"reference_weights_normalized.npy"
+    if args.weighted_asimov and reference_path.exists():
+        import numpy as np
+        weights = np.load(reference_path, mmap_mode="r", allow_pickle=False)
+        if weights.ndim != 1 or not np.all(np.isfinite(weights)) or abs(weights.sum()-1) > 1e-12:
+            raise RuntimeError("Invalid normalized signed reference weights")
+        reference_weights = ROOT.std.vector("double")(weights.tolist())
+        reference_record = {"path": str(reference_path.resolve()), "sha256": sha256(reference_path)}
     if args.bestfit:
         restore(w, json.loads(args.bestfit.read_text())["parameters"])
     baseline_mu = w.var("mu").getVal()
@@ -180,11 +212,11 @@ def main():
             original = w.var(parameter).getVal()
             w.var(parameter).setVal(original + shift)
         native = nll.getVal()
-        explicit, min_current, min_interval, invalid = ROOT.offshell_check_intensity(w, data, *args.range)
+        (explicit, min_current, min_interval, invalid), integral = intensity_check(w, data, args.range, reference_weights)
         row = {"name": name, "mu": mu, "native_nll": native,
                "explicit_nll": explicit, "minimum_current_intensity": min_current,
                "minimum_continuous_interval_intensity": min_interval,
-               "invalid_intensities": invalid}
+               "invalid_intensities": invalid, **integral}
         if records:
             row["delta_nll_disagreement"] = (native-records[0]["native_nll"])-(explicit-records[0]["explicit_nll"])
         else:
@@ -198,7 +230,9 @@ def main():
                 (args.scan_points or r["minimum_continuous_interval_intensity"] > 0) and
                 math.isfinite(r["delta_nll_disagreement"]) and
                 abs(r["delta_nll_disagreement"]) < 1e-6 for r in records)
-    report = {"passed": valid, "checks": records, "mu_interval": args.range}
+    report = {"passed": valid, "checks": records, "mu_interval": args.range,
+              "quadrature_reference": reference_record,
+              "quadrature_note": "Finite-subset integral versus full-MC expected SR rate; diagnostic only, no systematic renormalization"}
     if args.bestfit:
         report["saved_artifacts"] = validate_saved_fit(args.bestfit)
     if args.scan_points:
@@ -210,13 +244,13 @@ def main():
             if abs(w.var("mu").getVal() - point["mu"]) > 1e-12:
                 raise RuntimeError("Saved scan coordinate and parameter disagree")
             native = nll.getVal()
-            explicit, current, interval, invalid = ROOT.offshell_check_intensity(w, data, *args.range)
+            (explicit, current, interval, invalid), integral = intensity_check(w, data, args.range, reference_weights)
             residual = (native-baseline["native_nll"])-(explicit-baseline["explicit_nll"])
             scan_checks.append({"mu": point["mu"], "delta_nll_disagreement": residual,
                                 "saved_nll_difference": native-point["nll"],
                                 "minimum_current_intensity": current,
                                 "minimum_continuous_interval_intensity": interval,
-                                "invalid_intensities": invalid})
+                                "invalid_intensities": invalid, **integral})
             valid = valid and invalid == 0 and current > 0 and math.isfinite(residual) and abs(residual) < 1e-6 and abs(native-point["nll"]) < 1e-6
         report["scan_checks"] = scan_checks
         report["domain_scope"] = "Positivity required at the global minimum and every profiled point; fixed-nuisance continuous domains are diagnostic"
