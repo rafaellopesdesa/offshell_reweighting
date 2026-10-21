@@ -58,6 +58,8 @@ def completed_report(directory):
     for size in (4096, 8192):
         path = directory / f"n_{size}" / "bestfit.json"
         lines.append(f"- {size} fitted mu, alpha, and qqZZ factors: [bestfit.json]({path})")
+        path = directory / "hepdata_comparison" / f"expected_scan_comparison_{size}.png"
+        lines.append(f"- {size} comparison plot: [{path.name}]({path})")
     return "\n".join(lines) + "\n"
 
 

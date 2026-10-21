@@ -20,6 +20,8 @@ For the two-sample Asimov workflow, `report_asimov_fits.py --fits RESULTS
 comparison in the project status document. Run it after provenance succeeds;
 it requires the completed run summary and unchanged-input check. It preserves
 earlier entries and explicitly leaves visual plot inspection for a manual check.
+The comparison also saves a separate plot for each sample so that a large
+discrepancy in one curve does not obscure the other on the combined plot.
 
 ```bash
 python3 root_workspace_fit.py fit \

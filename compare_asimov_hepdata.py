@@ -21,16 +21,16 @@ def metrics(rows):
             "mean_delta_q": sum(r["delta_q"] for r in rows)/len(rows)}
 
 
-def make_plot(scans, bestfits, reference, comparisons, output):
+def make_plot(scans, bestfits, reference, comparisons, output, stem="expected_scan_comparison"):
     import ROOT
     ROOT.gROOT.SetBatch(True)
     ROOT.gStyle.SetOptStat(0)
     ROOT.gStyle.SetTextFont(42)
     ROOT.gStyle.SetLabelFont(42, "XYZ")
     ROOT.gStyle.SetTitleFont(42, "XYZ")
-    canvas = ROOT.TCanvas("expected_comparison", "Asimov profile comparison", 1100, 900)
-    upper = ROOT.TPad("profiles", "", 0, .31, 1, 1)
-    lower = ROOT.TPad("residuals", "", 0, 0, 1, .31)
+    canvas = ROOT.TCanvas(stem, "Asimov profile comparison", 1100, 900)
+    upper = ROOT.TPad(stem + "_profiles", "", 0, .31, 1, 1)
+    lower = ROOT.TPad(stem + "_residuals", "", 0, 0, 1, .31)
     for pad in (upper, lower):
         pad.SetLeftMargin(.13)
         pad.SetRightMargin(.04)
@@ -116,8 +116,8 @@ def make_plot(scans, bestfits, reference, comparisons, output):
     lower.RedrawAxis()
     canvas.cd()
     for extension in ("png", "pdf"):
-        canvas.SaveAs(str(output/f"expected_scan_comparison.{extension}"))
-    root_file = ROOT.TFile.Open(str(output/"expected_scan_comparison.root"), "RECREATE")
+        canvas.SaveAs(str(output/f"{stem}.{extension}"))
+    root_file = ROOT.TFile.Open(str(output/f"{stem}.root"), "RECREATE")
     for obj in objects + [canvas]:
         obj.Write()
     root_file.Close()
@@ -198,6 +198,10 @@ def main():
     }
     write_json(args.output/"comparison_summary.json", summary)
     make_plot(scans, bestfits, reference, comparisons, args.output)
+    for size in scans:
+        make_plot({size: scans[size]}, {size: bestfits[size]}, reference,
+                  {size: comparisons[size]}, args.output,
+                  stem=f"expected_scan_comparison_{size}")
     print(json.dumps(summary, indent=2))
 
 
