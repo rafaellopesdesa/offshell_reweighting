@@ -106,3 +106,14 @@ Use the same CPU setup as 04. Workspaces, arrays, Z checks, jet fractions, domai
 This small diagnostic lists all Type values, all subType values, and every Type/subType combination with event counts and signed finite-weight sums. It applies no event cuts, includes missing labels, counts nonfinite weights separately, and shows exact label representations so whitespace and capitalization are visible. It compares exact `Type == "ttV"` and `subType == "ttV"` matches and highlights labels containing `tt` or `top`. All analysis notebooks use subType alone: ttV in 05 is `subType == "ttV"`, qqZZ is `subType == "qqZZ"`, and every other process is `subType == process_name`. It reads only the two label columns and `weight_kFact`, and saves CSV tables under `HZZ_OffShell/inspection/auxA/`.
 
 Keep datasets, reports, and notebook outputs containing event data out of this public repository.
+
+## Fit an existing ROOT data workspace
+
+Use `root_workspace_fit.py` to fit the supplied observed workspace with
+RooFit/Minuit2, save the full best-fit parameter vector and covariance, and
+profile the signal strength while floating all systematic and `qqZZ`
+parameters. `root_workspace_validation.py` checks the native likelihood
+against the stored event intensities and control-region counts.
+See [ROOT workspace fitting](docs/ROOT_WORKSPACE_FIT.md) for Slurm execution,
+statistical conventions, and saved outputs. Generated results stay outside
+this repository.
