@@ -63,6 +63,26 @@
   });
   document.querySelector('#contents-button').addEventListener('click', () => dialog.showModal());
   document.querySelector('#close-contents').addEventListener('click', () => dialog.close());
+  if (data.review && data.review.state === 'lower_minimum_found') {
+    document.querySelector('#snapshot-stamp').textContent = '4,096 GLOBAL BASELINE UNDER REVIEW';
+    document.querySelectorAll('[data-status="4096"]').forEach(el => { el.textContent = 'LOCAL MINIMUM · UNDER REVIEW'; el.classList.remove('complete'); });
+    document.querySelector('#overview .blue p').textContent = 'A lower minimum was found later. The value above is a local minimum.';
+    document.querySelector('#minima-title').textContent = 'A later profile reveals another 4,096 minimum.';
+    document.querySelector('#minima .blue p').textContent = 'The original starts converged near μ̂ = 0.126. A later profile at μ = 1.20 improves NLL by 86.162, so this is not the global minimum.';
+    document.querySelector('#fit-state-note').textContent = 'Both local covariance checks passed. That does not establish global optimality. The 4,096 fit is being repeated from the lower solution; the 8,192 result is unaffected.';
+    document.querySelector('#scan-4096-title').textContent = '4,096: the global baseline is under review.';
+    const figure = document.querySelector('#scan-4096 figure');
+    figure.replaceChildren();
+    const alert = document.createElement('article'); alert.className = 'review-alert';
+    const title = document.createElement('h3'); title.textContent = 'The previous curve is superseded.';
+    const detail = document.createElement('p'); detail.textContent = 'A converged profile at μ = 1.20 has NLL 86.162 below the original fitted baseline. Its intensities are positive, and an independent likelihood calculation agrees within 3 × 10⁻¹¹ in ΔNLL.';
+    const next = document.createElement('p'); next.textContent = 'A new unconditional fit and profile comparison are required. The archived 4,096 CSV uses the old local-minimum baseline and must not be interpreted as a validated likelihood-ratio scan.';
+    alert.append(title,detail,next);figure.appendChild(alert);
+    document.querySelector('[data-points="4096"]').hidden = true;
+    document.querySelector('#scan-4096 .download').textContent = '↓ Superseded 4,096 table (archive)';
+    document.querySelector('#nuisance-table caption').textContent += ' · 4,096 values belong to the superseded local minimum';
+    document.querySelector('#snapshot-note').textContent = data.review.note + ' Review update: ' + data.review.updated_utc;
+  }
   if (!reading) Reveal.initialize({ width: 1200, height: 720, margin: .055, minScale: .15, maxScale: 1.7,
     center: false, hash: true, slideNumber: 'c/t', controls: true, progress: true,
     transition: 'fade', transitionSpeed: 'fast', keyboardCondition: () => !dialog.open,

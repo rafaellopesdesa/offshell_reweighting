@@ -1994,5 +1994,15 @@
     "asimov_fits/n_8192/scan_2/scan_points.json": "a3f8171feabcbcb19aedcddefd7d37c67cd51d949fdf3b3990e5e7b94efb2085",
     "asimov_fits/n_8192/scan_3/scan_points.json": "647b73b47307005421865051ec3ffc16ad5396b2faba866f6495815a38caf011"
   },
-  "status": "preliminary"
+  "status": "preliminary",
+  "review": {
+    "affected_sample": 4096,
+    "updated_utc": "2026-10-21T23:23:42+00:00",
+    "state": "lower_minimum_found",
+    "profile_mu": 1.2,
+    "nll_improvement": 86.16219830209229,
+    "independent_delta_nll_agreement": 2.9103830456733704e-11,
+    "note": "The displayed 4096 fit is a local minimum. A later physical profile point has lower NLL; its old scan baseline is superseded and requires refitting. The 8192 result is unaffected.",
+    "source_sha256": "f7903d5b6da7e59c1897e7770dda423b30a6655aff131dbd75bb13bf0e971074"
+  }
 }
