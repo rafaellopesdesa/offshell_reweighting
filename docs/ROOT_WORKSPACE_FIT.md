@@ -282,6 +282,16 @@ hard-coded in the scripts. Each process uses one CPU. Overlapping chunks
 allow independent convergence checks before merging. The finalizer expects
 chunk directories named `scan_*` under that sample's output directory.
 
+`release_root_scans.py --run /work/path/to/asimov_fits` is an optional
+lightweight Slurm controller for runs with saved `fit_jobs.json`,
+`scan_jobs.json`, and `finalize_jobs.json` submission manifests. When both
+global starts have produced `bestfit_checkpoint.json`, it replaces only held,
+pending scan jobs with jobs using that checkpoint. It leaves fits and
+already-active scans untouched. Finalization depends on both the completed fit and all new
+scan jobs, so the final covariance and minimum still govern the result.
+Use a small workflow allocation for this controller; its polling interval is
+30 seconds. Submission changes are recorded in `scan_release_history.json`.
+
 The validator independently reconstructs every saved profile-point likelihood
 and verifies the saved covariance and snapshot. It records continuous
 intensity minima at fixed profile nuisance settings across the requested
