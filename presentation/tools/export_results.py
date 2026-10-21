@@ -32,7 +32,7 @@ plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 12,
 
 def save_csv(path, rows, fields):
     with path.open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields, extrasaction="ignore")
+        writer = csv.DictWriter(stream, fieldnames=fields, extrasaction="ignore", lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
