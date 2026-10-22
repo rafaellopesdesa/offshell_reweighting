@@ -69,3 +69,30 @@ python3 presentation/tools/check_presentation.py --output /work/path/browser_che
 This checks all desktop slides, local downloads, JavaScript errors, navigation,
 mobile overflow, and hosting under a GitHub project subpath. It creates a
 temporary localhost server and writes screenshots plus a JSON report.
+
+
+## Data-like 4096 follow-up and source decomposition
+
+The new snapshot adds the data-like injection, full nuisance-dependent
+same-reference normalization, both 42-point scans through mu=2, controlled
+normalizer timing, and covariance-propagation tables/ranking. The original
+4096/8192 results remain as historical true-Asimov slides.
+
+After all numerical and accounting checks pass, run:
+
+```bash
+python presentation/tools/export_shifted_results.py \
+  --results /path/to/results/asimov_data_like_4096 \
+  --analysis-commit ANALYSIS_COMMIT
+python presentation/tools/export_decomposition.py \
+  --results /path/to/results/asimov_data_like_4096/decomposition \
+  --analysis-commit ANALYSIS_COMMIT
+python presentation/tools/check_presentation.py --output /path/to/browser_checks
+```
+
+Both exporters require complete validated results. `decomposition_snapshot`
+records observed-Hessian and propagated totals separately, with no forced
+closure. Its plot ranks unit auxiliary-observation responses, not conventional
+conditional nuisance impacts. Covariance CSVs and all named-nuisance diagnostics
+are included in `presentation/data/`; no ROOT workspaces or event arrays are
+published.

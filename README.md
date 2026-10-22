@@ -10,6 +10,9 @@ the **/ (root)** folder. The displayed timestamp identifies the frozen snapshot;
 the corrected scans include nominal and up/down anchor normalization, with
 the supplied physical rate variations retained. Discussion slides explain
 the original displacement and the before/after global fits.
+The follow-up includes true/data-like 4096 scans through mu=2, full
+nuisance-dependent normalization, measured profiling cost, and covariance-based
+source tables and an impact-style auxiliary ranking.
 
 Notebooks for the off-shell HZZ reweighting project. Input data and generated inspection reports live in `My Drive/Colab Notebooks/HZZ_OffShell/`.
 

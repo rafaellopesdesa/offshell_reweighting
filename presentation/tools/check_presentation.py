@@ -43,6 +43,11 @@ def main():
             page.wait_for_url("**/presentation/**")
             page.wait_for_function("window.Reveal && Reveal.isReady()")
             assert page.evaluate("window.RESULTS.status") == "complete"
+            assert page.evaluate("window.SHIFTED_RESULTS.complete") is True
+            assert page.evaluate("window.DECOMPOSITION_RESULTS.complete") is True
+            assert page.locator('#uncertainty-primary tbody tr').count() == 8
+            assert page.locator('#shifted-fit-table tbody tr').count() == 3
+            assert "NaN" not in page.locator('#data-like-scan').inner_text()
             ids = page.locator(".slides > section").evaluate_all("els => els.map(e => e.id)")
             for i, id_ in enumerate(ids):
                 page.evaluate("i => Reveal.slide(i)", i)
