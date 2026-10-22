@@ -93,6 +93,50 @@ measurement of the speedup from pruning. The report includes the canceled
 checksum-helper prototype separately; no fit had started when it was replaced.
 Original and revised source snapshots, logs and outputs are preserved.
 
+`kept_nuisances.csv` copies the selection and original unpruned ranking
+diagnostics; it is not a newly computed covariance decomposition.
+
 The standalone report script `report_pruned_asimov.py` exports the likelihood
 comparison, per-mu cost figure, full tables, convergence diagnostics, source
 checksums and Slurm accounting from completed validated outputs.
+
+## Completed results
+
+All 42 profile points passed convergence and independent likelihood checks.
+The source workspaces and their saved fit baselines remain unchanged.
+
+![Pruned profile and HEPData](../reports/pruned_data_like_4096/pruned_vs_hepdata.svg)
+
+| Quantity | Pruned data-like 4096 |
+|---|---:|
+| Global mu_hat | 1.0000274369 |
+| Global EDM | 1.37e-08 |
+| q(0) | 2.70714139 |
+| q(2) | 1.38365433 |
+| RMS delta q vs HEPData, 41 shared points | 0.061185 |
+| Maximum absolute delta q vs HEPData | 0.246859 |
+| Maximum independent profile delta-NLL disagreement | 1.56e-10 |
+| Maximum SR integral mismatch | 3.33e-15 |
+
+The largest HEPData residual is at mu=0. The pruned-minus-unpruned q differences range from 9.8662e-09 to 0.0164693; the lower endpoint is within minimization precision. No values are clipped or rescaled.
+
+The displaced-start global minimization took **286.44 seconds**, 1,410 likelihood calls and **1.614 GiB** process peak RSS through the fit. Stage accounting below also includes the recovery check.
+
+| Stage | Jobs | Elapsed | Total CPU minutes | Largest job peak RSS |
+|---|---:|---:|---:|---:|
+| Superseded setup/check | 1 | 3m57s | 3.59 | 3.668 GiB |
+| Build and construction checks | 1 | 3m23s | 3.35 | 3.105 GiB |
+| Global fit and recovery check | 1 | 5m21s | 5.29 | 1.757 GiB |
+| 42 independent profiles | 42 | 26m37s | 139.26 | 1.718 GiB |
+| Merge and likelihood checks | 1 | 9m26s | 9.38 | 2.044 GiB |
+
+![Profiling time and memory](../reports/pruned_data_like_4096/profile_cost_vs_mu.svg)
+
+Per-point minimizer wall time is 71.34–245.75 seconds (median 188.91); process peak RSS is 1.604–1.614 GiB. These are single measurements on different nodes, not a controlled before/after speed benchmark.
+
+Download the [per-mu scan and resource table](../reports/pruned_data_like_4096/profile_resources.csv),
+[stage accounting](../reports/pruned_data_like_4096/resources.csv),
+[all job measurements](../reports/pruned_data_like_4096/job_resources.csv),
+[validation table](../reports/pruned_data_like_4096/scan_validation.csv), and
+[complete numerical summary](../reports/pruned_data_like_4096/summary.json).
+Standalone figures are available as SVG, PNG and PDF in the same directory.

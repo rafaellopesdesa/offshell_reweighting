@@ -1,0 +1,26 @@
+[
+  {
+    "label": "true_4096_unpruned",
+    "workspace": "/work/pi_rclsa_umass_edu/rclsa_umass_edu/OffShellWorkspace/codex/results/asimov_anchor_normalized/n_4096/workspace/HZZ_4l_asimov_4096.root",
+    "sha256": "a9ab9f5129fe31007e6448952d7bef0466ca9324928a01bf744520d050dc671f",
+    "free_constrained_nuisances": 127,
+    "free_qqzz_normalizations": 3,
+    "generation_mu": 1
+  },
+  {
+    "label": "data_like_4096_unpruned",
+    "workspace": "/work/pi_rclsa_umass_edu/rclsa_umass_edu/OffShellWorkspace/codex/results/asimov_data_like_4096/data_like/workspace/HZZ_4l_data_like_asimov_4096.root",
+    "sha256": "dd1484ad2369b8cb965bfef36909862320ff4647c5a7f18066171add73cc70d9",
+    "free_constrained_nuisances": 127,
+    "free_qqzz_normalizations": 3,
+    "generation_mu": 1
+  },
+  {
+    "label": "data_like_4096_pruned54",
+    "workspace": "/work/pi_rclsa_umass_edu/rclsa_umass_edu/OffShellWorkspace/codex/results/asimov_data_like_4096_pruned54/workspace/HZZ_4l_data_like_asimov_4096_pruned54.root",
+    "sha256": "91839f4ae7262b1782392bfb05c0835db00aa7183327fd09cd1286666b34fa20",
+    "free_constrained_nuisances": 54,
+    "free_qqzz_normalizations": 3,
+    "generation_mu": 1
+  }
+]

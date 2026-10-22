@@ -1,0 +1,6 @@
+phase,jobs,wall_seconds,cpu_seconds,largest_job_peak_rss_gib
+superseded_build_validation,1,237.0,215.514,3.6675987243652344
+build_validation,1,203.0,200.874,3.105487823486328
+global_fit,1,321.0,317.506,1.7572402954101562
+scan_array,42,1597.0,8355.828,1.7175445556640625
+finalize,1,566.0,563.051,2.0442047119140625
