@@ -1,0 +1,6 @@
+sample,phase,job_count,wall_seconds,total_cpu_seconds,largest_job_peak_rss_gib
+true,upper_extension,2,1895.0,3503.803,1.1786270141601562
+true,finalize,1,271.0,265.096,0.9263420104980469
+data_like,global_workflow,3,2100.0,1711.549,4.763690948486328
+data_like,scan,5,3125.0,12568.061,1.3374099731445312
+data_like,finalize,1,488.0,484.347,2.0740394592285156

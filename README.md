@@ -2,6 +2,10 @@
 
 ## Data-like 4096 Asimov
 
+The [completed results report](docs/DATA_LIKE_ASIMOV_RESULTS.md) compares both
+42-point scans through mu=2 with HEPData and includes source uncertainties,
+validation, execution time and memory.
+
 The [RooSameSampleNormalizer documentation](docs/ROO_SAME_SAMPLE_NORMALIZER.md)
 explains the new fully interpolated same-reference normalization, its RooFit
 graph, serialization, validation and measured evaluation overhead.
@@ -9,6 +13,10 @@ The separate data-like workspace keeps mu=1 and injects the observed-fit
 systematic and cumulative qqZZ nuisance values, including consistent CR and
 auxiliary measurements. Existing anchor-normalized workspaces are preserved
 as the true-Asimov baseline.
+
+The [covariance source-decomposition method](docs/UNCERTAINTY_DECOMPOSITION.md)
+distinguishes propagated SR/CR and auxiliary-source variances from conventional
+conditional nuisance impacts. All three free qqZZ factors remain profiled.
 
 ## Corrected ROOT Asimov results
 

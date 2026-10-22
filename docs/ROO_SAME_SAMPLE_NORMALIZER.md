@@ -280,7 +280,10 @@ The covariance validator rejected it. A displaced mu=1.4 start converged with
 quality 3 and was repeated to save that result as the profile baseline.
 The initial artifacts were preserved. This is separate from the normalization
 or score checks, and does not justify accepting a non-positive-definite
-covariance. No explicit full Hesse calculation was requested.
+covariance. The profile baseline was saved without an explicit full Hesse.
+The subsequent requested [uncertainty decomposition](UNCERTAINTY_DECOMPOSITION.md)
+computes separate full observed-Hesse matrices and validates their curvature;
+those results do not replace the scan baseline.
 
 The driver now preserves each attempt's ROOT fit result. For future multistart
 runs, it prefers quality 3 when candidate NLLs differ by at most 1e-7; otherwise
