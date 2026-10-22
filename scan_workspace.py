@@ -148,6 +148,11 @@ def scan(args):
     if not source or source.IsZombie():
         raise RuntimeError(f"Cannot open {args.input}")
     w = source.Get("combined")
+    for process in ("S", "SBI", "B", "EWB", "EWSBI", "EWSBI10", "ttV", "qqZZ_0", "qqZZ_1", "qqZZ_2"):
+        normalizer = w.function("reference_Z_" + process)
+        if (not normalizer or normalizer.ClassName() != "RooSameSampleNormalizer"
+                or not w.function("prod_process_" + process).dependsOn(normalizer)):
+            raise RuntimeError(f"Missing same-sample normalizer for {process}")
     mc, data = w.obj("ModelConfig_4l_offshell"), w.data("obsData_4l_offshell")
     if not w.getSnapshot("asimov_generation"):
         raise RuntimeError("Missing Asimov generation snapshot")

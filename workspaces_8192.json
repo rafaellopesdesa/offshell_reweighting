@@ -1,0 +1,26 @@
+[
+  {
+    "label": "true_8192_unpruned",
+    "filename": "HZZ_4l_true_asimov_8192.root",
+    "sha256": "6d3f797475d2f6c7c1b57dba0e0d8079a291a062d9b605eadda663c541d1b2eb",
+    "constrained_nps": 127,
+    "reference_events": 8192,
+    "normalizer": "RooSameSampleNormalizer_v1"
+  },
+  {
+    "label": "data_like_8192_unpruned",
+    "filename": "HZZ_4l_data_like_asimov_8192.root",
+    "sha256": "783c3dc31718ee2a3bcf2cd11036a37b3136856ae54fff0a01f52746a888ee83",
+    "constrained_nps": 127,
+    "reference_events": 8192,
+    "normalizer": "RooSameSampleNormalizer_v1"
+  },
+  {
+    "label": "data_like_8192_pruned54",
+    "filename": "HZZ_4l_data_like_asimov_8192_pruned54.root",
+    "sha256": "d43de5a4cec2bd393a1ddfabdf0f92cc650a0c04fcbe44eceb57a8e4d6d6dc7d",
+    "constrained_nps": 54,
+    "reference_events": 8192,
+    "normalizer": "RooSameSampleNormalizer_v1"
+  }
+]

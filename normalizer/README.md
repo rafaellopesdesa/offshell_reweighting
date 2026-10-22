@@ -1,10 +1,10 @@
 # RooSameSampleNormalizer
 
-This is the unchanged version-1 class used to serialize the two data-like
-workspaces. At every nuisance point it integrates the interpolated process
+This is the unchanged version-1 class used to serialize all three current
+4096 workspaces and their archived 8192 counterparts. At every nuisance point it integrates the interpolated process
 shape over the fixed, same-sample reference measure. Physical rate modifiers
 remain separate; the Asimov observation weights do not define this measure.
-The true-Asimov workspace uses the earlier nominal/anchor normalization.
+The historical anchor-only true-Asimov file is preserved outside this manifest.
 
 With ROOT >= 6.34.04 (including RooFit and PyROOT) and a C++ compiler:
 

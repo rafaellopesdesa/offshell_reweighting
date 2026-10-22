@@ -12,7 +12,7 @@ Upload these three files to **MyDrive/HZZ_OffShell/workspaces/06_root_scans/**:
 
 | File | Constrained NPs | Free qqZZ factors |
 | --- | ---: | ---: |
-| `HZZ_4l_asimov_4096.root` | 127 | 3 |
+| `HZZ_4l_true_asimov_4096.root` | 127 | 3 |
 | `HZZ_4l_data_like_asimov_4096.root` | 127 | 3 |
 | `HZZ_4l_data_like_asimov_4096_pruned54.root` | 54 | 3 |
 
@@ -27,7 +27,7 @@ the notebook saves every completed point and resumes if interrupted.
 It runs one workspace per subprocess to release memory between models.
 Keep the same code/ROOT version when resuming, or choose a new output folder.
 
-Results go to **MyDrive/HZZ_OffShell/likelihoods/06_root_scans/root_6_38_00/**:
+Results go to **MyDrive/HZZ_OffShell/likelihoods/06_root_scans/full_normalization_v1/root_6_38_00/**:
 
 - `asimov_vs_hepdata.png` and `.pdf`: curves and residuals.
 - `fit_summary.csv`: fitted mu, number of NPs, comparison and measured costs.
@@ -42,13 +42,25 @@ relative to its continuous global minimum. Neighboring points reuse Minuit
 state within each side of the minimum. Failed fits stop the calculation;
 the HEPData values are never re-zeroed or rescaled.
 
-The true model normalizes nominal/up/down shape anchors. The data-like models
-normalize the interpolated shape at every nuisance point, keeping physical
+All three models use `RooSameSampleNormalizer` to normalize the interpolated
+shape at every nuisance point, keeping physical
 rate variations separate. All three generate at mu=1; the data-like inputs
 shift the nuisance values, including qqZZ, CR expectations and Gaussian
 auxiliaries, to the observed-data best fit. Pruning fixes 73 alphas at these
-generating values. Thus true versus data-like combines a nuisance shift and
-a finite-reference model refinement.
+generating values. The true and data-like unpruned models now differ only in
+their generating nuisance values and corresponding Asimov observations.
+
+Use the new `HZZ_4l_true_asimov_4096.root`, not the historical
+`HZZ_4l_asimov_4096.root` with anchor-only normalization. Its old scan belongs
+to the old model and is preserved separately. The new output folder keeps the
+updated demonstration separate from those earlier results.
+
+The matching three **8192-event workspaces** are archived for future use;
+[workspaces_8192.json](workspaces_8192.json) records their names and checksums.
+They use the same class, observed nuisance injection and 54-NP selection.
+The 8192 reference includes two signed negative weights, retained without
+clipping. They have construction/likelihood validation, with no new fits or
+scans. Notebook 06 continues to select the three 4096 files only.
 
 See [normalizer/](normalizer/) for the standalone shared-library build and
 [reference/](reference/) for the exact HEPData series and provenance.
@@ -76,8 +88,10 @@ The analysis and presentation branches retain the full studies and results.
 ## Validation
 
 The standalone library builds with ROOT 6.34.10 and with the notebook's pinned
-ROOT 6.38.00 wheel. Under Slurm on Unity, Python 3.12, all 126 preserved profile
-vectors reproduce the original likelihood statistics within 1.5e-11; independent
-global fits, representative profiles, checkpoint resume, and notebook plot/CSV
-exports are also checked. This is validation of the same software environment
-outside Colab; mount and authorize your Drive in your own Colab session.
+ROOT 6.38.00 wheel. The original demonstration's global fits, representative
+profiles, resume and exports were tested on Unity; its 126 saved profile vectors
+agree across ROOT versions within 1.5e-11. Those old true-model profiles validate
+the historical model, not the replacement. The replacement and the three 8192
+files pass serialization, normalization, generating-score and independent NLL
+checks; no replacement-model fit/scan is claimed. All six files are also checked
+with the notebook's ROOT wheel. Mount and authorize Drive in your own Colab session.
