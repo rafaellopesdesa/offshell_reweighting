@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-10-22T10:36:36.531185+00:00",
+  "scope": "Separate exact-zero exploratory profile, corrected 4096 workspace; completed 31-point scan preserved",
+  "reference_events": 4096,
+  "source_commit": "177916fbbbf58fb680c95687f3b129179b836284",
+  "mu": 0.0,
+  "q": 2.826202441523492,
+  "baseline_mu_hat": 1.0014440126204893,
+  "baseline_nll": -19980.44553431794,
+  "profile_nll": -19979.032433097178,
+  "profiled_nuisance_parameters": 130,
+  "initialization": "Saved unconditional-fit nuisance vector; mu fixed at exactly zero; all 130 nuisance parameters free",
+  "fit_diagnostics": {
+    "migrad_status": 0,
+    "fit_status": 0,
+    "covariance_quality": 3,
+    "edm": 3.4781573707478125e-06,
+    "invalid_nll_evaluations": 0,
+    "seconds": 438.18987773600384,
+    "warm_start_fraction": 1.0
+  },
+  "explicit_full_hesse_performed": false,
+  "maximum_absolute_conditional_alpha": 0.17297552948161254,
+  "validation": {
+    "mu": 0.0,
+    "delta_nll_disagreement": 1.0186340659856796e-10,
+    "saved_nll_difference": 0.0,
+    "minimum_current_intensity": 19.163957334039054,
+    "minimum_continuous_interval_intensity": 0.37716871590103906,
+    "invalid_intensities": 0.0,
+    "sr_model_expected_yield": 2037.2814570559517,
+    "sr_reference_integral": 2037.2906552440388,
+    "sr_integral_relative_difference": 4.5149324141569025e-06
+  },
+  "validation_passed": true,
+  "all_preserved_file_checksums_match": true,
+  "hepdata": {
+    "doi": "10.17182/hepdata.156805.v1/t2",
+    "series": "Exp NSBI",
+    "mu": 0.0,
+    "q": 2.954,
+    "delta_q_local_minus_hepdata": -0.1277975584765083,
+    "reference_sha256": "e5496434f535861883fe83f5192fb678ac90e8f38f70922d17b5d226b94abfe4"
+  },
+  "q_at_0p01": 1.9950542283477262,
+  "resources": {
+    "elapsed_seconds": 500,
+    "total_cpu_seconds": 481.48,
+    "peak_rss_gib": 1.3457069396972656,
+    "allocated_cpus": 1,
+    "requested_memory": "2097152K",
+    "scope": "Workspace loading, one exact-zero profile, and independent validation"
+  },
+  "sources_sha256": {
+    "results/asimov_anchor_normalized/n_4096/zero_point/attempt_1/submission.json": "670d3335973182fd379d862248f70e80f37903735598518a3c9041ef3dabcd6c",
+    "results/asimov_anchor_normalized/n_4096/zero_point/attempt_1/scan_points.json": "e63a2997f7691f0a1bc5c5b99c8bf8d198f59ee85e1dd0bb6c10b7458bd1f55f",
+    "results/asimov_anchor_normalized/n_4096/zero_point/attempt_1/likelihood_validation.json": "94974483415ac35f1167150ffb547f376941ba416bb4701f9721b94ac3b6bffd",
+    "results/asimov_anchor_normalized/n_4096/fit/bestfit.json": "9c0c4d4a6f0c2a4869d5d9c356eb67fba4e7f640c6da94db6e8ce0bc2e576c8b",
+    "results/asimov_anchor_normalized/n_4096/fit/scan_points.json": "54d4947799f1a149539ac8178d75d019028cde94e202d574ac07b159bdc56c73"
+  },
+  "slurm_accounting_sha256": "be613567db620e5628271c0af629626657fe3c64f93c3a5d9866ea9e5ec1e555"
+}

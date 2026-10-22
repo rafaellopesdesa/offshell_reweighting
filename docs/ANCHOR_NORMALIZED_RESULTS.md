@@ -154,3 +154,36 @@ Its source hashes identify the saved inputs; raw events, ROOT workspaces,
 and full Slurm logs remain in the work area. Parameter errors are MIGRAD
 estimates. The [presentation branch](https://github.com/rafaellopesdesa/offshell_reweighting/tree/codex/asimov-results-slides-20261021)
 provides the comparison figures and discussion as a 17-slide Reveal.js deck.
+
+## Separate exact-zero 4096 test
+
+At the user's subsequent request, the corrected 4096 workspace was profiled
+at **exactly mu=0**, with all 130 nuisances free and the original global-fit
+baseline unchanged. The usual fitting procedure converged:
+
+- **q(0) = 2.8262024415**, from profile NLL -19979.032433097178 and
+  global NLL -19980.44553431794.
+- MIGRAD and fit status 0, EDM 3.48e-6, covariance quality 3, and zero
+  invalid NLL evaluations. No explicit full Hesse was performed.
+- Independent native/explicit Delta-NLL agreement 1.02e-10; all fitted
+  intensities positive, with minimum 19.16396. Relative SR integral
+  mismatch is 4.51e-6.
+- HEPData's expected q(0) is 2.954, giving local minus published
+  **-0.1277975585**. The earlier local q(0.01)=1.9950542283 is a different
+  coordinate; the rise to exact zero is 0.8311482132.
+
+The profile started from the saved global nuisance vector. The largest
+conditional absolute alpha is 0.17298. Numerical source
+[`177916f`](https://github.com/rafaellopesdesa/offshell_reweighting/commit/177916fbbbf58fb680c95687f3b129179b836284)
+adds only an explicit zero opt-in and a separate batch workflow; it changes
+neither the native likelihood nor the fit bounds. The original workspace,
+global artifacts and completed 31-point scan pass their unchanged-file checks.
+
+The Slurm job took **8m20s elapsed**, **481.48 CPU seconds**, and **1.35 GiB
+peak RSS**, including loading and independent validation. It requested one
+CPU and 2 GiB. The minimization itself took 438.19 seconds.
+
+Download the [zero-point summary](../reports/anchor_normalized/zero_4096.json)
+and [conditional nuisance values](../reports/anchor_normalized/zero_4096_parameters.csv).
+The point remains a separate exploratory result; the 31-point tables,
+30-coordinate comparison statistics and slideshow snapshot above are unchanged.
