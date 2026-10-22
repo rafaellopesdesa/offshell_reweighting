@@ -13,6 +13,7 @@ import json
 import math
 import os
 from pathlib import Path
+import resource
 import time
 
 import ROOT
@@ -128,6 +129,7 @@ def diagnostics(result, status, nll, elapsed):
         "nll": nll.getVal(),
         "invalid_nll_evaluations": int(result.numInvalidNLL()),
         "seconds": elapsed,
+        "process_peak_rss_gib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024**2,
     }
 
 
@@ -180,10 +182,12 @@ def fit(args):
         minim = minimizer(nll, args.fit_strategy, verbose=True)
         minim.setEps(args.fit_eps)
         t0 = time.monotonic()
+        cpu0 = time.process_time()
         status = minim.minimize("Minuit2", "Migrad")
         result = minim.save()
         diagnostic = diagnostics(result, status, nll, time.monotonic() - t0)
         diagnostic["likelihood_evaluations"] = int(minim.evalCounter())
+        diagnostic["cpu_seconds"] = time.process_time() - cpu0
         diagnostic["start_mu"] = start_mu
         diagnostic["mu_hat"] = w.var("mu").getVal()
         diagnostic["strategy"] = args.fit_strategy
@@ -323,6 +327,7 @@ def scan(args):
                         var.setError(nominal_errors[var.GetName()])
                 minim = minimizer(nll, 0)
             t0 = time.monotonic()
+            cpu0 = time.process_time()
             calls_before = minim.evalCounter()
             status = minim.minimize("Minuit2", "Migrad")
             result = minim.save()
@@ -334,6 +339,9 @@ def scan(args):
                 row = diagnostics(result, status, nll, time.monotonic() - t0)
                 minim.setStrategy(0)
             row.update({"mu": value, "q": 2.0 * (row["nll"] - best["nll_min"]),
+                        "cpu_seconds": time.process_time() - cpu0,
+                        "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
+                        "slurm_array_task_id": os.environ.get("SLURM_ARRAY_TASK_ID"),
                         "likelihood_evaluations": int(minim.evalCounter() - calls_before),
                         "warm_start_fraction": start_fraction,
                         "parameters": {v.GetName(): v.getVal() for v in floating}})
@@ -353,7 +361,7 @@ def scan(args):
         "range": [lower, upper], "points": len(records), "mu_hat": best["mu_hat"],
         "baseline_nll": best["nll_min"], "definition": "2 * (NLL_profile(mu) - NLL_global_min)",
         "exact_zero_opt_in": bool(args.allow_zero and 0.0 in grid),
-        "profiled": 130, "all_converged": all(r["migrad_status"] == 0 and r["edm"] <= 1e-4 for r in records),
+        "profiled": len(floating)-1, "all_converged": all(r["migrad_status"] == 0 and r["edm"] <= 1e-4 for r in records),
         "max_edm": max(r["edm"] for r in records),
     })
     source.Close()
@@ -396,7 +404,9 @@ def plot(args):
     kind = "Asimov" if args.weighted_asimov else "Observed"
     text.DrawLatex(0.16, 0.84, kind + " H* #rightarrow ZZ #rightarrow 4l workspace")
     text.DrawLatex(0.16, 0.79, "Signal region + three control regions")
-    text.DrawLatex(0.16, 0.74, "127 systematic + 3 qqZZ parameters profiled")
+    constrained_count = sum(r["name"].startswith("alpha_") for r in best["parameters"])
+    qqzz_count = sum(r["name"].startswith("mu_qqZZ") for r in best["parameters"])
+    text.DrawLatex(0.16, 0.74, f"{constrained_count} systematic + {qqzz_count} qqZZ parameters profiled")
     text.DrawLatex(0.16, 0.68, f"#hat{{#mu}} = {best['mu_hat']:.5f}")
     canvas.RedrawAxis()
     for extension in ("png", "pdf"):

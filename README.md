@@ -2,6 +2,9 @@
 
 ## Data-like 4096 Asimov
 
+The [54-NP pruning study](docs/PRUNED_DATA_LIKE_ASIMOV.md) documents the separate
+restricted data-like workspace, its scan and per-coordinate resource accounting.
+
 The [completed results report](docs/DATA_LIKE_ASIMOV_RESULTS.md) compares both
 42-point scans through mu=2 with HEPData and includes source uncertainties,
 validation, execution time and memory.
