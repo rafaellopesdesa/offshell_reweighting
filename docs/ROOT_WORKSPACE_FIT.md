@@ -82,6 +82,10 @@ it does not assume closure between anchors or when several nuisances vary.
 against explicit intensities, verifies saved artifacts, and compares
 unchanged nominal inputs with the earlier workspace. Report the Migrad
 covariance as an estimate, not a validated full-Hesse uncertainty.
+After both jobs finish, `report_anchor_global_fits.py --results OUTPUT`
+requires both independent validations and saves `summary.json` and
+`global_fit_comparison.csv`, including mu displacement, starting-point
+agreement, maximum nuisance pulls, and numerical validation precision.
 
 ```bash
 python3 root_workspace_fit.py fit \
