@@ -1,5 +1,32 @@
 # Fit the observed ROOT workspace
 
+## Anchor-normalized profile follow-up (2026-10-22)
+
+After both new global fits finish, submit their profiles with:
+
+```bash
+python3 submit_anchor_scans.py --results /work/path/results/asimov_anchor_normalized \
+  --reference /work/path/results/hepdata_comparison --setup /work/path/setup_root.sh
+```
+
+The submitter requires both original global jobs to be COMPLETED with exit 0
+and independent global validation to pass. It does not interrupt them or
+resume the canceled nominal-only scans. It requires committed source and
+records its commit, script checksums, exact commands, and job dependencies.
+Four overlapping chunks per sample cover 0.01, 0.05, ..., 1.50 with all 130
+nuisance parameters profiled. Each requests one CPU and 4 GB; 4096 chunks
+request two hours and 8192 chunks three hours. Dependent jobs merge all 31
+coordinates, check overlaps, validate every native likelihood independently,
+and compare with the official Table 2 Exp NSBI values at 30 shared coordinates.
+
+New fit directories are `n_SIZE/fit/`; construction outputs are in
+`n_SIZE/workspace/`. The comparison tool accepts `--sample-subdirectory fit`
+and `--normalization-mode anchors`, and requires successful final profile
+validation. Anchor correction preserves supplied physical rate factors. It
+does not impose normalization throughout nonlinear nuisance interpolation.
+The unconditional results contain MIGRAD covariance estimates, with no
+explicit full Hesse calculation; do not describe their errors as Hesse errors.
+
 `root_workspace_fit.py` reads an existing ROOT file and fits its native
 extended likelihood with RooFit/Minuit2. It does not rebuild the model or
 renormalize the supplied density ratios. ROOT >= 6.34.04 with RooFit,

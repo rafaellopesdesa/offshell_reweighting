@@ -126,6 +126,9 @@ def make_plot(scans, bestfits, reference, comparisons, output, stem="expected_sc
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--fits", type=Path, required=True)
+    parser.add_argument("--sample-subdirectory", default="",
+                        help="Optional fit directory within each n_SIZE directory")
+    parser.add_argument("--normalization-mode", choices=("nominal", "anchors"), default="nominal")
     parser.add_argument("--reference", type=Path, required=True)
     parser.add_argument("--crosscheck-table", type=Path, required=True)
     parser.add_argument("--reference-csv", type=Path, required=True)
@@ -144,9 +147,13 @@ def main():
     inputs = {str(p.resolve()): digest(p) for p in
               (args.reference, args.crosscheck_table, args.reference_csv)}
     for size in (4096, 8192):
-        directory = args.fits/f"n_{size}"
+        directory = args.fits/f"n_{size}"/args.sample_subdirectory
         best_path, scan_path = directory/"bestfit.json", directory/"scan_points.json"
         best = json.loads(best_path.read_text())
+        validation_path = directory/"likelihood_validation.json"
+        validation = json.loads(validation_path.read_text())
+        if not validation["passed"] or len(validation.get("scan_checks", [])) != 31:
+            raise ValueError("Require independent likelihood validation of all 31 profile points")
         if not best["complete"] or best["fit_status"] or best["covariance_quality"] != 3:
             raise ValueError("Require successful global fits with accurate covariance")
         scan = {}
@@ -154,6 +161,8 @@ def main():
             require_minimum(row)
             if abs(row["q"]-2*(row["nll"]-best["nll_min"])) > 1e-8:
                 raise ValueError("Scan has a different global-minimum baseline")
+            if row["q"] < -2e-4:
+                raise ValueError("Profile improves the global minimum; refit before comparing")
             mu = round(row["mu"], 10)
             if mu in scan:
                 raise ValueError("Duplicate scan point")
@@ -172,7 +181,7 @@ def main():
             writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
             writer.writeheader()
             writer.writerows(rows)
-        inputs.update({str(p.resolve()): digest(p) for p in (best_path, scan_path)})
+        inputs.update({str(p.resolve()): digest(p) for p in (best_path, scan_path, validation_path)})
     pairwise = [{"mu": mu, "q_4096": scans[4096][mu], "q_8192": scans[8192][mu],
                  "delta_q": scans[4096][mu]-scans[8192][mu]} for mu in sorted(scans[4096])]
     with (args.output/"sample_comparison.csv").open("w", newline="") as stream:
@@ -193,7 +202,10 @@ def main():
         "reference_rounding_half_step": .0005,
         "reference_crosschecks": {"tables_1_and_2_identical": True, "csv_matches_json": True},
         "results": reports, "sample_difference_4096_minus_8192": metrics(pairwise),
-        "model_caveat": "Finite reference samples with nominal-only same-sample normalization; supplied systematics and NumPy yields retained. These inputs differ from the observed ROOT template.",
+        "normalization_mode": args.normalization_mode,
+        "model_caveat": ("Finite reference samples with nominal and up/down anchor same-sample normalization to supplied physical rates; nonlinear interpolation is not normalized at every nuisance point. NumPy inputs differ from the observed ROOT template."
+                         if args.normalization_mode == "anchors" else
+                         "Finite reference samples with nominal-only same-sample normalization; supplied systematics and NumPy yields retained. These inputs differ from the observed ROOT template."),
         "inputs_sha256": inputs,
     }
     write_json(args.output/"comparison_summary.json", summary)
