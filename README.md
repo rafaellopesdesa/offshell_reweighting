@@ -7,7 +7,9 @@ with observed-data validation, Asimov fit results, scan figures, and downloadabl
 tables. See the [presentation setup and refresh instructions](presentation/README.md).
 For GitHub Pages, select branch `codex/asimov-results-slides-20261021` and
 the **/ (root)** folder. The displayed timestamp identifies the frozen snapshot;
-unfinished scans are explicitly labeled preliminary.
+the corrected scans include nominal and up/down anchor normalization, with
+the supplied physical rate variations retained. Discussion slides explain
+the original displacement and the before/after global fits.
 
 Notebooks for the off-shell HZZ reweighting project. Input data and generated inspection reports live in `My Drive/Colab Notebooks/HZZ_OffShell/`.
 

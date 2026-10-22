@@ -24,18 +24,38 @@
     document.querySelector(`[data-caption="${size}"]`).textContent = sample.complete
       ? 'Completed profile, normalized to the continuous global minimum.'
       : `Partial scan. Markers show converged coordinates only; gaps have not been interpolated. Baseline: ${sample.fit_complete ? 'final global fit' : 'saved best-fit checkpoint'}.`;
-    const choices = size === '4096' ? [.05, .1, .4, .8, 1.2] : [.25, .4, .8, 1.2, 1.5];
+    const choices = [.05, .1, .5, 1, 1.5];
     for (const mu of choices) {
       const row = sample.rows.find(r => Math.abs(r.mu - mu) < 1e-9);
       if (row) addRow(`[data-points="${size}"] tbody`, [fmt(mu, 2), fmt(row.q, 3), fmt(row.reference_q, 3)]);
     }
     addRow('#fit-table tbody', [Number(size).toLocaleString('en-US'), ...sample.start_mu_estimates.map(x => fmt(x, 6)),
       sample.start_nll_spread.toExponential(2), sample.fit_complete ? `Quality ${sample.covariance_quality}` : 'Pending']);
+    document.querySelectorAll(`[data-shift="${size}"]`).forEach(el => { el.textContent = `+${fmt(100*(sample.mu_hat-1), 3)}%`; });
     const diagnostic = data.quadrature_first_start[size].fitted;
-    addRow('#quadrature-table tbody', [Number(size).toLocaleString('en-US'), fmt(diagnostic.sr_model_expected_yield, 3),
-      fmt(diagnostic.sr_reference_integral, 3), `+${fmt(100 * diagnostic.sr_integral_relative_difference, 3)}%`]);
+    const corrected = sample.global_diagnostics;
+    addRow('#quadrature-table tbody', [Number(size).toLocaleString('en-US'),
+      `${fmt(100*diagnostic.sr_integral_relative_difference, 3)}%`,
+      `${fmt(100*corrected.sr_integral_relative_difference_at_minimum, 6)}%`,
+      fmt(corrected.maximum_absolute_alpha, 5)]);
+    addRow('#before-table tbody', [Number(size).toLocaleString('en-US'),
+      fmt(sample.before.mu_hat, 6)+(size === '4096' ? '*' : ''), fmt(sample.mu_hat, 6),
+      '+'+fmt(sample.mu_hat-1, 6)]);
+    addRow('#score-table tbody', [Number(size).toLocaleString('en-US'),
+      fmt(sample.before.maximum_absolute_nominal_alpha_score, 6), fmt(corrected.largest_nominal_systematic_score, 6)]);
+    addRow('#comparison-table tbody', [Number(size).toLocaleString('en-US'),
+      fmt(sample.comparison.max_abs_delta_q, 4), fmt(sample.comparison.rms_delta_q, 4),
+      fmt(sample.comparison.largest_residual.mu, 2), fmt(sample.rows.find(r => r.mu === .01).q, 4)]);
+
   }
   const small = data.samples['4096'], large = data.samples['8192'];
+  const elapsed = seconds => `${Math.floor(seconds/60)}m ${String(Math.round(seconds%60)).padStart(2,'0')}s`;
+  const phaseNames = {build_global_validate: 'Build + global fits + checks', scan: '4 parallel profile chunks', finalize: 'Merge + profile validation'};
+  const phaseOrder = Object.keys(phaseNames);
+  const resourceRows = [...data.resources.phases].sort((a,b) => phaseOrder.indexOf(a.phase)-phaseOrder.indexOf(b.phase) || a.reference_events-b.reference_events);
+  for (const r of resourceRows) addRow('#resource-table tbody', [Number(r.reference_events).toLocaleString('en-US'), phaseNames[r.phase], elapsed(r.wall_seconds), fmt(r.total_cpu_seconds/60, 2), fmt(r.largest_job_peak_rss_gib, 2)+' GiB']);
+  document.querySelector('#sample-difference').textContent = `Between the two corrected samples: maximum |Δq| = ${fmt(data.sample_difference.max_abs_delta_q, 4)} at μ = ${fmt(data.sample_difference.largest_residual.mu, 2)}; RMS Δq = ${fmt(data.sample_difference.rms_delta_q, 4)} across all 31 coordinates.`;
+  for (const r of large.before.control_regions) addRow('#cr-table tbody', [r.channel, fmt(r.combined_data_count, 6), fmt(r.model_expected_count, 6), r.data_minus_model.toExponential(2)]);
   for (const [label, key] of [['Dataset rows (SR + 3 CR)', 'dataset_rows'], ['Total weighted count', 'sum_weights'], ['Negative event weights retained', 'negative_weights']]) {
     addRow('#construction-table tbody', [label, ...[small, large].map(s => key === 'sum_weights' ? fmt(s.construction[key], 6) : s.construction[key])]);
   }
@@ -43,9 +63,7 @@
   const alphaSmall = small.parameters.filter(p => p.name.startsWith('alpha_')).sort((a,b) => Math.abs(b.value) - Math.abs(a.value));
   const alphaLarge = Object.fromEntries(large.parameters.map(p => [p.name, p.value]));
   for (const p of alphaSmall.slice(0, 6)) addRow('#nuisance-table tbody', [p.name.replace('alpha_ATLAS_', ''), fmt(p.value, 4), fmt(alphaLarge[p.name], 4)]);
-  document.querySelector('#fit-state-note').textContent = [small, large].every(s => s.fit_complete)
-    ? 'Both full covariance calculations have completed successfully. Scan validation is tracked separately.'
-    : 'Global minimizations have converged. Final full-Hesse covariance checks remain pending for at least one sample.';
+  document.querySelector('#fit-state-note').textContent = 'Both starts converged with status 0 and EDM below 6 × 10⁻⁸. Saved covariance estimates come from MIGRAD; no explicit full Hesse calculation was run.';
   document.querySelector('#snapshot-note').textContent = data.status === 'complete'
     ? 'Both scans and their numerical validation are complete in this snapshot.'
     : 'Asimov scans and final checks were still in progress at this snapshot. Counts and tables are not live; update the export to incorporate later results.';
@@ -63,26 +81,6 @@
   });
   document.querySelector('#contents-button').addEventListener('click', () => dialog.showModal());
   document.querySelector('#close-contents').addEventListener('click', () => dialog.close());
-  if (data.review && data.review.state === 'lower_minimum_found') {
-    document.querySelector('#snapshot-stamp').textContent = '4,096 GLOBAL BASELINE UNDER REVIEW';
-    document.querySelectorAll('[data-status="4096"]').forEach(el => { el.textContent = 'LOCAL MINIMUM · UNDER REVIEW'; el.classList.remove('complete'); });
-    document.querySelector('#overview .blue p').textContent = 'A lower minimum was found later. The value above is a local minimum.';
-    document.querySelector('#minima-title').textContent = 'A later profile reveals another 4,096 minimum.';
-    document.querySelector('#minima .blue p').textContent = 'The original starts converged near μ̂ = 0.126. A later profile at μ = 1.20 improves NLL by 86.162, so this is not the global minimum.';
-    document.querySelector('#fit-state-note').textContent = 'Both local covariance checks passed. That does not establish global optimality. The 4,096 fit is being repeated from the lower solution; the 8,192 result is unaffected.';
-    document.querySelector('#scan-4096-title').textContent = '4,096: the global baseline is under review.';
-    const figure = document.querySelector('#scan-4096 figure');
-    figure.replaceChildren();
-    const alert = document.createElement('article'); alert.className = 'review-alert';
-    const title = document.createElement('h3'); title.textContent = 'The previous curve is superseded.';
-    const detail = document.createElement('p'); detail.textContent = 'A converged profile at μ = 1.20 has NLL 86.162 below the original fitted baseline. Its intensities are positive, and an independent likelihood calculation agrees within 3 × 10⁻¹¹ in ΔNLL.';
-    const next = document.createElement('p'); next.textContent = 'A new unconditional fit and profile comparison are required. The archived 4,096 CSV uses the old local-minimum baseline and must not be interpreted as a validated likelihood-ratio scan.';
-    alert.append(title,detail,next);figure.appendChild(alert);
-    document.querySelector('[data-points="4096"]').hidden = true;
-    document.querySelector('#scan-4096 .download').textContent = '↓ Superseded 4,096 table (archive)';
-    document.querySelector('#nuisance-table caption').textContent += ' · 4,096 values belong to the superseded local minimum';
-    document.querySelector('#snapshot-note').textContent = data.review.note + ' Review update: ' + data.review.updated_utc;
-  }
   if (!reading) Reveal.initialize({ width: 1200, height: 720, margin: .055, minScale: .15, maxScale: 1.7,
     center: false, hash: true, slideNumber: 'c/t', controls: true, progress: true,
     transition: 'fade', transitionSpeed: 'fast', keyboardCondition: () => !dialog.open,

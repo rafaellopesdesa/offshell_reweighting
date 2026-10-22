@@ -1,8 +1,11 @@
 # Off-shell workspace results slideshow
 
 A static Reveal.js 6.0.2 presentation of the observed-workspace validation and
-the available 4096/8192 reference-sample Asimov results. The page displays its
-snapshot time and labels incomplete scans as preliminary. It does not query
+the corrected 4096/8192 reference-sample Asimov results. The 17 slides include
+the control-region checks, nuisance-score diagnosis, anchor correction,
+before/after fits, completed expected-scan comparisons, and measured Slurm
+execution time and memory for both sizes. The page displays
+its snapshot time. It does not query
 Unity or update automatically. Only aggregate fit results are included.
 
 ## Enable GitHub Pages
@@ -37,17 +40,32 @@ python3 presentation/tools/export_results.py \
 ```
 
 This reads saved JSON results only. It never opens ROOT workspaces or event
-arrays, changes inputs, or launches fits. Partial profiles use markers only;
-missing points are not interpolated. Profiles are rebased to the chosen saved
-global minimum. Final global fits are used when available; otherwise the
-two-start checkpoint is used. Both full profile coverage and successful final
-validation are required before the snapshot is labeled complete.
+arrays, changes inputs, or launches fits. It reads the corrected experiment
+under `asimov_anchor_normalized/n_SIZE/{workspace,fit}` and its completed
+HEPData comparison. Both scans must contain all 31 coordinates, pass the
+independent likelihood checks, and agree at overlaps before export. The
+aggregate CSVs and figures reproduce the saved continuous-fit baseline.
+
+The discussion includes the original CR and nuisance-score diagnosis, the
+physical-rate-preserving anchor correction, and the before/after minima.
+The old 4096 estimate is labeled as a known higher local minimum, not a valid
+global baseline. Historical first-start integral discrepancies are explicitly
+separated from the new selected-fit diagnostics. The new global fits saved
+MIGRAD covariance estimates; their parameter errors are not full Hesse errors.
 
 Review the regenerated tables, figures, and text before committing an update.
-The first-start normalization diagnostic is deliberately preserved and labeled
-as such; it is not silently replaced with a later fit. Error columns in a
-checkpoint parameter CSV are provisional until the full covariance is saved.
 
 Reveal.js is vendored with its MIT license and source/checksum manifest under
 `vendor/reveal/`. It is unmodified. See the
 [official documentation](https://revealjs.com/installation/).
+
+To validate the rendered slides after export, use Playwright with Chromium
+inside an allocation:
+
+```bash
+python3 presentation/tools/check_presentation.py --output /work/path/browser_checks
+```
+
+This checks all desktop slides, local downloads, JavaScript errors, navigation,
+mobile overflow, and hosting under a GitHub project subpath. It creates a
+temporary localhost server and writes screenshots plus a JSON report.
