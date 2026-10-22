@@ -26,6 +26,17 @@ hardware benchmark. See [sacct field definitions](https://slurm.schedmd.com/sacc
 
 ## Anchor-normalized profile follow-up (2026-10-22)
 
+For the separately requested exact-zero experiment, use `run_root_zero.slurm`
+with a new output directory and the saved unconditional `bestfit.json`.
+It profiles only mu=0 with `--allow-zero --grid 0`, starting from the saved
+global-fit nuisance values, then independently checks that point's likelihood
+and positivity. All 130 nuisance parameters and the original bounds remain
+unchanged. The existing minimizer tries strategy 0 and, only if necessary,
+strategy 1. No full Hesse or new global fit is run. Zero stays forbidden in
+ordinary scans unless explicitly opted in; negative coordinates are rejected.
+Keep this exploratory point separate from the completed 31-point scans and
+their published snapshots until it has been assessed.
+
 After both new global fits finish, submit their profiles with:
 
 ```bash

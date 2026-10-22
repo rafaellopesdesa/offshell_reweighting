@@ -327,6 +327,7 @@ def scan(args):
     write_json(args.output / "scan_summary.json", {
         "range": [lower, upper], "points": len(records), "mu_hat": best["mu_hat"],
         "baseline_nll": best["nll_min"], "definition": "2 * (NLL_profile(mu) - NLL_global_min)",
+        "exact_zero_opt_in": bool(args.allow_zero and 0.0 in grid),
         "profiled": 130, "all_converged": all(r["migrad_status"] == 0 and r["edm"] <= 1e-4 for r in records),
         "max_edm": max(r["edm"] for r in records),
     })
@@ -459,6 +460,8 @@ def main():
     parser.add_argument("--points", type=int, default=41)
     parser.add_argument("--grid", type=float, nargs="+",
                         help="Explicit evaluated mu coordinates; --range sets the plot axis")
+    parser.add_argument("--allow-zero", action="store_true",
+                        help="Explicitly allow an exact mu=0 profile; default scans require positive coordinates")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--scan-parts", type=Path, nargs="+",
                         help="Optional scan_points.json chunks to combine during finalization")
@@ -471,8 +474,9 @@ def main():
         parser.error("Require at least two points and an increasing scan range")
     if args.mode in ("scan", "finalize"):
         grid = scan_grid(args)
-        if len(set(grid)) != len(grid) or any(not math.isfinite(x) or x <= 0 for x in grid):
-            parser.error("Scan coordinates must be unique, finite, and positive; use 0.01 as the zero proxy")
+        if len(set(grid)) != len(grid) or any(
+                not math.isfinite(x) or x < 0 or (x == 0 and not args.allow_zero) for x in grid):
+            parser.error("Scan coordinates must be unique, finite, and positive; exact zero requires --allow-zero")
     {"fit": fit, "scan": scan, "plot": plot, "finalize": finalize}[args.mode](args)
 
 
