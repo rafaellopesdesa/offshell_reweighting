@@ -231,6 +231,63 @@ from multiple threads. All substantial construction, validation and fitting
 runs through Slurm. The custom arrays and backend clones increase memory use;
 use measured batch accounting when sizing later jobs.
 
+### Measured evaluation overhead
+
+An alternating true/data-like/data-like/true benchmark on one CPU of the same
+Slurm allocation compared the native likelihoods at identical trial parameter
+sequences. Initialization and initial cache evaluations were excluded.
+
+| Updated parameters | True model, mean CPU ms | Data-like model, mean CPU ms | New / old |
+| --- | ---: | ---: | ---: |
+| One alpha | 159.548 | 161.276 | 1.011 |
+| All 127 alpha | 159.577 | 196.100 | 1.229 |
+| Only mu | 0.08157 | 0.08092 | 0.992 |
+
+The sub-percent mu-only difference is timing variation, not evidence of a
+speed improvement. Peak process RSS in these evaluation runs was 1.10 versus
+1.63 GiB. The datasets have different fixed Asimov weights, so this compares
+practical model-evaluation cost rather than isolating the C++ class alone.
+
+The common numerical-gradient pattern changes one or a few nuisances per
+evaluation. The expensive all-nuisance update occurs less often in this
+minimization workflow. A complete profile also depends on how many likelihood
+evaluations Minuit needs; the two models can have different curvatures and
+iteration counts. Use the separately recorded single-profile and full-scan
+timings to assess that cost. The scripts are
+[benchmark_normalized_nll.py](../benchmark_normalized_nll.py) and
+[report_normalizer_timing.py](../report_normalizer_timing.py).
+
+A complete mu=0.5 profile on that same CPU, initialized from each model's
+global-fit nuisance vector, gave:
+
+| Model | Minimization time | Likelihood evaluations | Seconds / evaluation |
+| --- | ---: | ---: | ---: |
+| Preserved true Asimov | 251.99 s | 1,579 | 0.15959 |
+| Data-like Asimov | 304.10 s | 1,841 | 0.16518 |
+
+The complete profile was 20.7% slower, with 16.6% more likelihood evaluations
+and 3.5% more time per evaluation. Both points converged and passed independent
+likelihood validation. This is one coordinate and two different generated
+models, so it is not a universal profile-time multiplier. The raw aggregate
+measurements are in [timing.json](../reports/data_like_4096/timing.json).
+
+### Minimum validation versus covariance validation
+
+A strategy-0 fit started at an almost exact stationary point can return a
+converged likelihood with an inadequate covariance estimate. This happened
+for the initial mu=1 start: quality 1 and a non-positive-definite saved matrix.
+The covariance validator rejected it. A displaced mu=1.4 start converged with
+quality 3 and was repeated to save that result as the profile baseline.
+The initial artifacts were preserved. This is separate from the normalization
+or score checks, and does not justify accepting a non-positive-definite
+covariance. No explicit full Hesse calculation was requested.
+
+The driver now preserves each attempt's ROOT fit result. For future multistart
+runs, it prefers quality 3 when candidate NLLs differ by at most 1e-7; otherwise
+the lower NLL wins. That numerical tie tolerance is much smaller than the scan
+agreement tolerance. The baseline always retains the selected fit's actual
+parameters and NLL.
+
 The true-Asimov files under `results/asimov_anchor_normalized/` are preserved.
 They retain the previous nominal/anchor normalization. Therefore the new
 true-versus-data-like comparison includes both the nuisance shift and this

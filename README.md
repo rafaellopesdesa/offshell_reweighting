@@ -1,5 +1,15 @@
 # Off-shell HZZ reweighting
 
+## Data-like 4096 Asimov
+
+The [RooSameSampleNormalizer documentation](docs/ROO_SAME_SAMPLE_NORMALIZER.md)
+explains the new fully interpolated same-reference normalization, its RooFit
+graph, serialization, validation and measured evaluation overhead.
+The separate data-like workspace keeps mu=1 and injects the observed-fit
+systematic and cumulative qqZZ nuisance values, including consistent CR and
+auxiliary measurements. Existing anchor-normalized workspaces are preserved
+as the true-Asimov baseline.
+
 ## Corrected ROOT Asimov results
 
 The [anchor-normalized results report](docs/ANCHOR_NORMALIZED_RESULTS.md)

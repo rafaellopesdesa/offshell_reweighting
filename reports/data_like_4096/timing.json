@@ -1,0 +1,57 @@
+{
+  "complete": true,
+  "hostname": "cpu001",
+  "cpu_affinity": 6,
+  "slurm_job_id": "65957135",
+  "method": "Same CPU and trial parameter sequence; native CPU backend; first evaluations and initialization excluded. Data weights differ between the two workspaces, so this measures practical model evaluation cost, not a full profile or an isolated class microbenchmark.",
+  "updates": {
+    "one_alpha": {
+      "true": 0.15954802863281253,
+      "data_like": 0.16127603400390628,
+      "data_like_over_true": 1.0108306281556798
+    },
+    "all_alpha": {
+      "true": 0.15957651245312532,
+      "data_like": 0.19609970862500026,
+      "data_like_over_true": 1.2288757637976542
+    },
+    "mu_only": {
+      "true": 8.156871874998028e-05,
+      "data_like": 8.091827343792435e-05,
+      "data_like_over_true": 0.9920257995709159
+    }
+  },
+  "profiles": {
+    "true": {
+      "mu": 0.5,
+      "q": 0.15552803259924985,
+      "seconds": 251.98723972402513,
+      "likelihood_evaluations": 1579,
+      "edm": 7.422581358608642e-06,
+      "migrad_status": 0,
+      "seconds_per_evaluation": 0.15958659893858462
+    },
+    "data_like": {
+      "mu": 0.5,
+      "q": 0.17682461539516225,
+      "seconds": 304.0963578289957,
+      "likelihood_evaluations": 1841,
+      "edm": 5.461376481187334e-06,
+      "migrad_status": 0,
+      "seconds_per_evaluation": 0.1651799879570862
+    }
+  },
+  "source_sha256": {
+    "0_true.json": "cbf07f8d9a551b0e8be789c4273f5dda76d84aca30fe169b5d9511d8fd3b1474",
+    "1_data_like.json": "480299219c03d229e0ec2a3426aec2e6c7a91fc730befcf0ae2be2f0e74c9478",
+    "2_data_like.json": "eefcbafc6267f89b775d957ad5f9731d462518bce4e62462ffc3874f044af299",
+    "3_true.json": "c114893fde665aec6fa1df705b25d086a2a7e383f3d0c7885e45f2734bcc2bbe"
+  },
+  "peak_rss_gib": {
+    "true": 1.1064071655273438,
+    "data_like": 1.6281623840332031
+  },
+  "profile_time_ratio": 1.2067926858599671,
+  "profile_call_ratio": 1.1659278024065864,
+  "profile_method": "One mu=0.5 point from each global-fit nuisance vector, 130 free nuisances, same Minuit settings and allocated CPU. Different Asimov data/model; call counts and profile curvatures can differ. Timing includes minimization only; loading and independent checks are excluded."
+}

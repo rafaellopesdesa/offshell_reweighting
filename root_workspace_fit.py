@@ -136,6 +136,17 @@ def require_minimum(record):
         raise RuntimeError(f"Unconverged minimization: {record}")
 
 
+def prefer_fit_candidate(candidate, current):
+    """Resolve numerical NLL ties using the usable MIGRAD covariance."""
+    if current is None:
+        return True
+    candidate_accurate = candidate["covariance_quality"] == 3
+    current_accurate = current["covariance_quality"] == 3
+    if abs(candidate["nll"]-current["nll"]) <= 1e-7 and candidate_accurate != current_accurate:
+        return candidate_accurate
+    return candidate["nll"] < current["nll"]
+
+
 def fit(args):
     source, w, mc, data, parameters, floating, nll = load_model(args)
     initial_seed = None
@@ -161,6 +172,7 @@ def fit(args):
     attempts = []
     best_records, best_value = None, math.inf
     best_result = None
+    best_diagnostic = None
     for start_mu in args.starts:
         restore(w, initial_records)
         w.var("mu").setVal(start_mu)
@@ -171,6 +183,7 @@ def fit(args):
         status = minim.minimize("Minuit2", "Migrad")
         result = minim.save()
         diagnostic = diagnostics(result, status, nll, time.monotonic() - t0)
+        diagnostic["likelihood_evaluations"] = int(minim.evalCounter())
         diagnostic["start_mu"] = start_mu
         diagnostic["mu_hat"] = w.var("mu").getVal()
         diagnostic["strategy"] = args.fit_strategy
@@ -181,10 +194,14 @@ def fit(args):
             "input_sha256": sha256(args.input), "diagnostics": diagnostic,
             "parameters": [parameter_record(v) for v in floating],
         })
+        attempt_file = ROOT.TFile.Open(str(args.output / f"global_fit_attempt_{len(attempts)-1}.root"), "RECREATE")
+        result.Write("fit_result")
+        attempt_file.Close()
         print("GLOBAL FIT", json.dumps(diagnostic), flush=True)
         require_minimum(diagnostic)
-        if diagnostic["nll"] < best_value:
+        if prefer_fit_candidate(diagnostic, best_diagnostic):
             best_value = diagnostic["nll"]
+            best_diagnostic = diagnostic
             best_records = [parameter_record(v) for v in floating]
             best_result = result.Clone("bestfit_result")
         del minim
@@ -200,6 +217,8 @@ def fit(args):
         "mu_hat": w.var("mu").getVal(), "nll_min": nll.getVal(),
         "initial_nll": initial_nll, "attempts": attempts,
         "initial_parameter_seed": initial_seed,
+        "minimum_selection": "Lowest NLL; prefer covariance quality 3 for numerical ties within 1e-7 NLL. All attempt results are saved.",
+        "lowest_attempt_nll": min(row["nll"] for row in attempts),
         "parameters": best_records, "complete": False,
     }
     write_json(args.output / "bestfit_checkpoint.json", summary)
@@ -304,6 +323,7 @@ def scan(args):
                         var.setError(nominal_errors[var.GetName()])
                 minim = minimizer(nll, 0)
             t0 = time.monotonic()
+            calls_before = minim.evalCounter()
             status = minim.minimize("Minuit2", "Migrad")
             result = minim.save()
             row = diagnostics(result, status, nll, time.monotonic() - t0)
@@ -314,6 +334,7 @@ def scan(args):
                 row = diagnostics(result, status, nll, time.monotonic() - t0)
                 minim.setStrategy(0)
             row.update({"mu": value, "q": 2.0 * (row["nll"] - best["nll_min"]),
+                        "likelihood_evaluations": int(minim.evalCounter() - calls_before),
                         "warm_start_fraction": start_fraction,
                         "parameters": {v.GetName(): v.getVal() for v in floating}})
             records.append(row)

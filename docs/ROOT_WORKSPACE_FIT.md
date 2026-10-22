@@ -1,5 +1,47 @@
 # ROOT workspace fits and Asimov validation
 
+## Data-like 4096 workflow
+
+See [RooSameSampleNormalizer](ROO_SAME_SAMPLE_NORMALIZER.md) for the class
+definition, fixed-reference convention, loading example and validation.
+The source true-Asimov workspace and the observed global-fit JSON are read-only.
+Use a separate output directory for the data-like workspace, fits and scans.
+
+`run_shifted_asimov.slurm SETUP_ROOT REPOSITORY TRUE_WORKSPACE OBSERVED_BESTFIT OUTPUT`
+builds the new model, checks construction at several generating points, fits
+from mu=1 and 1.4, and checks parameter recovery. Request a single CPU and
+size memory from measured peak usage; the full construction/validation workflow
+used a 6-GiB request. Recheck Unity partitions and limits before submission.
+
+The fit driver now saves each attempt's RooFitResult, parameter JSON, and
+evaluation count. Among numerically tied minima (within 1e-7 NLL), it prefers
+covariance quality 3. A genuinely lower NLL takes precedence outside that tiny
+tolerance. The saved baseline is always the selected fit's actual NLL and
+parameter vector. No full Hesse is implied by covariance quality 3.
+
+`run_shifted_scan.slurm SETUP_ROOT REPOSITORY INPUT OUTPUT BESTFIT BUILD_CACHE mu...`
+profiles an explicit grid with the same likelihood and nuisance bounds. For
+this experiment the full grid is 0, 0.01, 0.05, ..., 2.00, with overlapping
+chunks. `run_shifted_finalize.slurm` takes the same six leading arguments,
+followed by the chunks' `scan_points.json` paths. It checks the 42-point grid,
+overlaps, independent likelihood agreement, positive fitted intensities, and
+the new model's SR integral closure. Its BUILD_CACHE argument points to a
+persistent project directory used by the custom-class loader.
+
+`benchmark_normalized_nll.py` measures fixed parameter updates in a Slurm
+allocation, pinning its process to one allocated CPU. The controlled study
+uses alternating true/data-like/data-like/true runs at the same parameter
+sequence. `report_normalizer_timing.py` combines these with separately timed,
+validated single-point profiles and reports call counts as well as wall time.
+
+The earlier true-Asimov scans and workspaces remain unchanged. Their 4096
+upper extension is merged into a new output directory with the previously
+validated zero point and the original positive scan. The new data-like model
+has full nuisance normalization; the true baseline retains nominal/anchor
+normalization, which must remain explicit in the comparison.
+
+## Earlier anchor-normalized workflow
+
 The corrected experiment is documented in
 [Anchor-normalized results](ANCHOR_NORMALIZED_RESULTS.md), with downloadable
 aggregate tables under [reports/anchor_normalized](../reports/anchor_normalized/).
