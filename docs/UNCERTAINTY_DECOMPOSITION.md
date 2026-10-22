@@ -94,3 +94,21 @@ the independently evaluated quadratic form along `V[:,mu]` instead of its
 Hesse prediction leaves 2.3030% and 0.00551%. This is a closure diagnostic;
 it does not replace the saved covariance or rescale any source component.
 Both totals remain visible in the tables and slides.
+
+
+## Complete nuisance ranking download
+
+The [combined CSV](../reports/data_like_4096/decomposition/all_np_uncertainty_ranking.csv)
+contains both models and all 130 NPs. The 127 Gaussian auxiliary sources are
+sorted by the larger absolute response across the models, exactly as in the
+slide plot; each model's individual rank is also included. The three
+unconstrained qqZZ parameters follow with blank auxiliary-source fields
+and their fitted errors and conditional impacts retained.
+[Column definitions and totals](../reports/data_like_4096/decomposition/all_np_uncertainty_ranking_README.md)
+accompany the table. Regenerate it from saved results without ROOT or refitting:
+
+```bash
+python export_np_ranking.py \
+  --summary reports/data_like_4096/decomposition/summary.json \
+  --output reports/data_like_4096/decomposition
+```

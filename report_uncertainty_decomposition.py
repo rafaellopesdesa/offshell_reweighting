@@ -13,6 +13,8 @@ from pathlib import Path
 
 import numpy as np
 
+from export_np_ranking import write_ranking
+
 
 def group(name):
     short=name.removeprefix("alpha_ATLAS_")
@@ -145,6 +147,7 @@ def main():
             writer=csv.writer(f,lineterminator="\n");writer.writerow(["parameter",*covariance["parameter_order"]])
             for parameter,row in zip(covariance["parameter_order"],covariance["covariance"]):writer.writerow([parameter,*row])
     (args.output/"summary.json").write_text(json.dumps(result,indent=2,allow_nan=False)+"\n")
+    write_ranking(args.output/"summary.json", args.output)
     plot(samples,args.output)
     print(json.dumps({name:{k:v for k,v in s.items() if k not in ("groups","impacts","source_sha256")} for name,s in samples.items()},indent=2))
 
