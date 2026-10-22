@@ -45,6 +45,9 @@ def main():
             assert page.evaluate("window.RESULTS.status") == "complete"
             assert page.evaluate("window.SHIFTED_RESULTS.complete") is True
             assert page.evaluate("window.DECOMPOSITION_RESULTS.complete") is True
+            assert page.evaluate("window.PRUNED_RESULTS.complete") is True
+            assert page.evaluate("window.PRUNED_RESULTS.profiled_nuisances") == 57
+            assert page.locator("#pruned-resources tbody tr").count() == 5
             assert page.locator('#uncertainty-primary tbody tr').count() == 8
             assert page.locator('#shifted-fit-table tbody tr').count() == 3
             assert "NaN" not in page.locator('#data-like-scan').inner_text()

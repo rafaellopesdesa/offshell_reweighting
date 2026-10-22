@@ -104,3 +104,20 @@ with true/data-like source responses side by side and per-model ranks.
 importance metric and the unconstrained qqZZ rows. The analysis exporter
 `export_np_ranking.py` creates these files from the saved decomposition summary;
 `export_decomposition.py` copies them into the presentation.
+
+
+## Pruned data-like follow-up
+
+The pruned model keeps the first 54 constrained NPs in the shared ranking and
+all three qqZZ normalizations. The other 73 coordinates are fixed at their
+injected values; the data are unchanged and all older workspaces are retained.
+Four slides show the restriction, its HEPData comparison, stage accounting and
+per-mu minimization time/process RSS. Each coordinate uses a fresh Slurm process.
+
+After the complete scan and independent checks pass, export its report with:
+
+```bash
+python presentation/tools/export_pruned_results.py \
+  --report /path/to/results/asimov_data_like_4096_pruned54/report \
+  --analysis-commit ANALYSIS_COMMIT
+```

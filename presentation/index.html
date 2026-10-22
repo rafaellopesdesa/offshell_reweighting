@@ -15,7 +15,7 @@
     <section id="overview" aria-labelledby="overview-title">
       <p class="eyebrow">H* → ZZ → 4ℓ · reference-sample study</p>
       <h1 id="overview-title">How small can the<br>reference sample be?</h1>
-      <p class="lead">New: a data-like 4,096-event Asimov with shifted nuisances,<br>compared with the preserved true Asimov through μ = 2.</p>
+      <p class="lead">New: prune the data-like 4,096-event Asimov to 54 constrained NPs,<br>then compare its profile with HEPData through μ = 2.</p>
       <div class="three-cards">
         <article><span class="pill complete">VALIDATED</span><h3>Observed data</h3><div class="big">0.87314</div><p>Fitted signal strength μ̂.<br>Published scan reproduced.</p></article>
         <article class="blue"><span class="pill" data-status="4096"></span><h3>True · 4,096 events</h3><div class="big" data-mu="4096"></div><p>Original: <span data-count="4096"></span><br>New 42-point comparison follows.</p></article>
@@ -29,6 +29,33 @@
       <div class="figure-layout"><figure><img src="assets/observed.svg" alt="Observed profile likelihood compared with HEPData, with absolute residuals below."><figcaption>41 local points; 21 coordinates shared with HEPData. Shading marks ±0.0005 rounding precision.</figcaption></figure>
       <aside><span class="pill complete">COMPLETE + VALIDATED</span><dl><dt>Fitted μ̂</dt><dd>0.87313964</dd><dt>Maximum |Δq|</dt><dd>0.000552</dd><dt>RMS Δq</dt><dd>0.000277</dd></dl><p>Native RooFit likelihood; 127 systematic parameters and 3 qqZZ factors profiled.</p><p>Accurate covariance: quality 3.<br>EDM: 8.10 × 10⁻⁷.</p><a class="download" href="data/observed_scan.csv" download>↓ Scan table</a></aside></div>
       <p class="footnote"><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData Table 2 · Obs NSBI, stat+syst, 4ℓ only</a>. No shifts, interpolation, or rescaling.</p>
+    </section>
+
+    <section id="pruned-model" aria-labelledby="pruned-model-title">
+      <p class="eyebrow">New / data-like 4,096 events · 54 constrained NPs</p><h2 id="pruned-model-title">Keep the leading nuisance parameters.</h2>
+      <p class="lead small">Retain the first 54 constrained NPs in the published shared ranking. All three cumulative qqZZ normalizations remain free.</p>
+      <table><caption>Three preserved 4,096-event workspace variants</caption><thead><tr><th>Workspace</th><th>Free constrained NPs</th><th>Free qqZZ scales</th><th>Generating μ</th></tr></thead><tbody><tr><td>True Asimov · unpruned</td><td>127</td><td>3</td><td>1</td></tr><tr><td>Data-like Asimov · unpruned</td><td>127</td><td>3</td><td>1</td></tr><tr><td>Data-like Asimov · pruned</td><td>54</td><td>3</td><td>1</td></tr></tbody></table>
+      <p class="note">The other 73 α parameters are fixed at their data-like generating values. The SR/CR data, reference weights and fixed shape/rate factors are retained exactly.</p>
+      <p class="footnote">The selected NPs carry 96.11% of the unpruned data-like auxiliary variance. This local ranking does not predict the full scan change. <a href="data/pruned54_kept_nuisances.csv" download>54 retained NPs</a> · <a href="data/pruned54_fixed_nuisances.csv" download>73 fixed values</a> · <a href="data/pruned54_bestfit_parameters.csv" download>New global fit</a>.</p>
+    </section>
+
+    <section id="pruned-scan" aria-labelledby="pruned-scan-title">
+      <p class="eyebrow">New / expected profile with 57 nuisance parameters</p><h2 id="pruned-scan-title">Pruned data-like Asimov against HEPData.</h2>
+      <div class="figure-layout"><figure><img src="assets/pruned54_pruned_vs_hepdata.svg" alt="Pruned data-like 4096-event profile likelihood compared only with the HEPData expected NSBI curve, with residuals below."><figcaption>42 evaluated points: 0, 0.01, 0.05, …, 2.00. Residuals use 41 exact published coordinates.</figcaption></figure><aside><span class="pill complete">COMPLETE + VALIDATED</span><dl><dt>Fitted μ̂</dt><dd id="pruned-mu" class="small-value"></dd><dt>RMS Δq versus HEPData</dt><dd id="pruned-rms" class="small-value"></dd><dt>q(0) / q(2)</dt><dd class="small-value"><span id="pruned-qzero"></span> / <span id="pruned-qtwo"></span></dd></dl><a class="download" href="data/pruned54_profile_resources.csv" download>↓ Scan + resources</a><br><a class="download" href="assets/pruned54_pruned_vs_hepdata.pdf" download>↓ PDF figure</a></aside></div>
+      <p class="footnote" id="pruned-validation-note"></p>
+    </section>
+
+    <section id="pruned-resources-slide" aria-labelledby="pruned-resources-title">
+      <p class="eyebrow">New / measured time and memory</p><h2 id="pruned-resources-title">Record the cost of the pruned study.</h2>
+      <table id="pruned-resources"><caption>One CPU per job; 42 profiles run as independent array tasks, up to six concurrently</caption><thead><tr><th>Stage</th><th>Jobs</th><th>Elapsed</th><th>CPU minutes</th><th>Peak RSS / job</th></tr></thead><tbody></tbody></table>
+      <p class="note">Elapsed spans each stage; CPU time sums its jobs; memory is the largest individual job peak. Requested memory: build/checks 4 GiB; global fit, profiles and final validation 3 GiB.</p>
+      <p class="footnote">Superseded setup/check costs are included separately. Earlier unpruned scans used warm starts and different nodes, so these costs do not measure a controlled speedup. <a href="data/pruned54_resources.csv" download>Stage table</a> · <a href="data/pruned54_job_resources.csv" download>All job measurements</a>.</p>
+    </section>
+
+    <section id="pruned-cost" aria-labelledby="pruned-cost-title">
+      <p class="eyebrow">New / per-coordinate profiling cost</p><h2 id="pruned-cost-title">Time and peak memory along the scan.</h2>
+      <figure><img src="assets/pruned54_profile_cost_vs_mu.svg" alt="Measured minimizer wall and CPU time, and process peak RSS, versus mu for the pruned 4096 Asimov scan."><figcaption id="pruned-cost-note"></figcaption></figure>
+      <p class="footnote">Each coordinate starts from the saved global fit in a fresh process. These are single measurements on different nodes. Timing covers minimization; peak RSS includes loading. <a href="data/pruned54_profile_resources.csv" download>Per-μ measurements</a> · <a href="assets/pruned54_profile_cost_vs_mu.pdf" download>PDF figure</a> · <a href="data/pruned54_snapshot.json" download>Checks and provenance</a>.</p>
     </section>
 
     <section id="data-like-injection" aria-labelledby="shifted-injection-title">
@@ -196,4 +223,6 @@
   <script src="vendor/reveal/reveal.js"></script><script src="data/snapshot.js"></script><script src="data/shifted_snapshot.js"></script><script src="slides.js"></script><script src="shifted.js"></script>
 <script src="data/decomposition_snapshot.js"></script>
 <script src="decomposition.js"></script>
+<script src="data/pruned54_snapshot.js"></script>
+<script src="pruned.js"></script>
 </body></html>
