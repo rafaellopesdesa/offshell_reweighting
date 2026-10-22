@@ -1,0 +1,225 @@
+{
+  "created_utc": "2026-10-22T02:32:25.704475+00:00",
+  "export_source_sha256": "b68955945a722f10ab67f3a5cbcdd1ffe95817a90a7cab84fba56e73e0053b61",
+  "global_fit_commit": "07edd50330768454416f8fc42cc2815040c23f8e",
+  "scan_commit": "e2a3ed3de56c54faddb95d480eba3998f828d6fd",
+  "reference_doi": "10.17182/hepdata.156805.v1/t2",
+  "reference_series": "Exp NSBI",
+  "comparison_method": "Shared coordinates only; no interpolation, rescaling, or minimum shift",
+  "sample_difference_4096_minus_8192": {
+    "points": 31,
+    "max_abs_delta_q": 0.10183983996830648,
+    "largest_residual": {
+      "mu": 0.01,
+      "q_4096": 1.9950542283477262,
+      "q_8192": 1.8932143883794197,
+      "delta_q": 0.10183983996830648
+    },
+    "rms_delta_q": 0.02758311855183924,
+    "mean_delta_q": 0.012365927587867896
+  },
+  "resource_phases": [
+    {
+      "reference_events": 4096,
+      "phase": "build_global_validate",
+      "job_count": 1,
+      "wall_seconds": 1451.0,
+      "total_cpu_seconds": 1436.922,
+      "sum_job_elapsed_seconds": 1451,
+      "largest_job_peak_rss_gib": 1.1285324096679688
+    },
+    {
+      "reference_events": 4096,
+      "phase": "scan",
+      "job_count": 4,
+      "wall_seconds": 2943.0,
+      "total_cpu_seconds": 8754.091,
+      "sum_job_elapsed_seconds": 8795,
+      "largest_job_peak_rss_gib": 1.1871261596679688
+    },
+    {
+      "reference_events": 4096,
+      "phase": "finalize",
+      "job_count": 1,
+      "wall_seconds": 266.0,
+      "total_cpu_seconds": 262.267,
+      "sum_job_elapsed_seconds": 266,
+      "largest_job_peak_rss_gib": 0.9271278381347656
+    },
+    {
+      "reference_events": 8192,
+      "phase": "build_global_validate",
+      "job_count": 1,
+      "wall_seconds": 2869.0,
+      "total_cpu_seconds": 2836.836,
+      "sum_job_elapsed_seconds": 2869,
+      "largest_job_peak_rss_gib": 1.9764976501464844
+    },
+    {
+      "reference_events": 8192,
+      "phase": "scan",
+      "job_count": 4,
+      "wall_seconds": 5804.0,
+      "total_cpu_seconds": 17229.0,
+      "sum_job_elapsed_seconds": 17251,
+      "largest_job_peak_rss_gib": 1.0540618896484375
+    },
+    {
+      "reference_events": 8192,
+      "phase": "finalize",
+      "job_count": 1,
+      "wall_seconds": 457.0,
+      "total_cpu_seconds": 451.769,
+      "sum_job_elapsed_seconds": 457,
+      "largest_job_peak_rss_gib": 1.3535003662109375
+    }
+  ],
+  "resource_definitions": {
+    "wall_seconds": "First job start to last job end in the phase; excludes waiting before the first start",
+    "total_cpu_seconds": "Sum of Slurm TotalCPU for parent jobs, without double-counting job steps",
+    "largest_job_peak_rss_gib": "Largest Slurm-reported MaxRSS among the individual jobs' steps; not summed concurrent memory",
+    "configuration": "One CPU and 4 GiB requested per job; four scan chunks per sample run in parallel on different CPU nodes",
+    "global_stage": "Includes construction from already staged inputs, construction checks, two unconditional starts, serialization, and independent global validation; no explicit full Hesse",
+    "excluded_shared_setup": "ROOT installation and earlier input staging are excluded; the shared final HEPData comparison job is excluded from per-sample stage totals",
+    "finalize_stage": "Merge scan chunks, make figures, and independently validate the global minimum and all 31 profile points"
+  },
+  "evaluated_grid": [
+    0.01,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0,
+    1.05,
+    1.1,
+    1.15,
+    1.2,
+    1.25,
+    1.3,
+    1.35,
+    1.4,
+    1.45,
+    1.5
+  ],
+  "model_caveat": "Finite reference samples with nominal and up/down anchor same-sample normalization to supplied physical rates; nonlinear interpolation is not normalized at every nuisance point. NumPy inputs differ from the observed ROOT template.",
+  "samples": {
+    "4096": {
+      "reference_events": 4096,
+      "mu_hat": 1.0014440126204893,
+      "mu_hat_minus_one": 0.001444012620489321,
+      "percent_above_one": 0.1444012620489321,
+      "fit_status": 0,
+      "edm": 2.5355249800563933e-08,
+      "maximum_absolute_alpha": 0.049773481857369434,
+      "start_mu_spread": 0.000129168829701376,
+      "start_nll_spread": 5.479523679241538e-08,
+      "maximum_global_delta_nll_disagreement": 4.3655745685100555e-11,
+      "maximum_anchor_relative_closure_error": 6.217248937900877e-15,
+      "sr_integral_relative_difference_at_minimum": 3.1979795109826625e-06,
+      "largest_nominal_systematic_score": 0.17140951968031004,
+      "workspace_sha256": "a9ab9f5129fe31007e6448952d7bef0466ca9324928a01bf744520d050dc671f",
+      "nll_min": -19980.44553431794,
+      "start_mu_estimates": [
+        1.0015731814501907,
+        1.0014440126204893
+      ],
+      "covariance_quality": 3,
+      "full_hesse_performed": false,
+      "profile_points": 31,
+      "maximum_profile_edm": 6.838948600356783e-06,
+      "maximum_overlap_delta_q": 2.41625020862557e-05,
+      "maximum_profile_delta_nll_disagreement": 1.5279510989785194e-10,
+      "minimum_profile_intensity": 0.3920436905715709,
+      "maximum_profile_absolute_sr_integral_mismatch": 4.5482371680005684e-06,
+      "comparison": {
+        "points": 30,
+        "max_abs_delta_q": 0.09051852722628972,
+        "largest_residual": {
+          "mu": 0.2,
+          "q_local": 0.5234814727737103,
+          "q_hepdata": 0.614,
+          "delta_q": -0.09051852722628972
+        },
+        "rms_delta_q": 0.043755465841230474,
+        "mean_delta_q": -0.03271123535508523
+      },
+      "q_at_0p01": 1.9950542283477262
+    },
+    "8192": {
+      "reference_events": 8192,
+      "mu_hat": 1.0012011702723733,
+      "mu_hat_minus_one": 0.0012011702723733197,
+      "percent_above_one": 0.12011702723733197,
+      "fit_status": 0,
+      "edm": 2.4633715039728816e-08,
+      "maximum_absolute_alpha": 0.048616997091834875,
+      "start_mu_spread": 0.00010410136410210491,
+      "start_nll_spread": 3.160312189720571e-08,
+      "maximum_global_delta_nll_disagreement": 3.1650415621697903e-10,
+      "maximum_anchor_relative_closure_error": 8.215650382226158e-15,
+      "sr_integral_relative_difference_at_minimum": 2.933663656889962e-06,
+      "largest_nominal_systematic_score": 0.15515466657234356,
+      "workspace_sha256": "8698e645d079720373b79b8d77ae2ddbeb38621d410ec5b43319c0815cabac89",
+      "nll_min": -19946.139640280897,
+      "start_mu_estimates": [
+        1.0013052716364754,
+        1.0012011702723733
+      ],
+      "covariance_quality": 3,
+      "full_hesse_performed": false,
+      "profile_points": 31,
+      "maximum_profile_edm": 7.14370383049117e-06,
+      "maximum_overlap_delta_q": 2.2297317627817392e-05,
+      "maximum_profile_delta_nll_disagreement": 2.6193447411060333e-10,
+      "minimum_profile_intensity": 0.22817079055321574,
+      "maximum_profile_absolute_sr_integral_mismatch": 4.322750986940349e-06,
+      "comparison": {
+        "points": 30,
+        "max_abs_delta_q": 0.16462302229838688,
+        "largest_residual": {
+          "mu": 0.05,
+          "q_local": 1.1893769777016132,
+          "q_hepdata": 1.354,
+          "delta_q": -0.16462302229838688
+        },
+        "rms_delta_q": 0.05993946319035036,
+        "mean_delta_q": -0.042094699196938506
+      },
+      "q_at_0p01": 1.8932143883794197
+    }
+  },
+  "sources_sha256": {
+    "scan_jobs.json": "9fcfbcf7225fd32d82489a2d220dcb37bdfb17037307a7e17c3c2fdd96789109",
+    "summary.json": "06e5dd34e9d10dfe2cffe6889899e14327b3006209c5fd35a7dd9b8949d4f795",
+    "comparison/comparison_summary.json": "8f0591a64397c2455293a86d43ac7fc1ac43eac79aeb2d572e6d1cad2443f254",
+    "resources.json": "eb2f8f07cd7a1a29fea0ff717690dc709e318d5b1f442a5e3461dbf67ad2bc52",
+    "n_4096/fit/bestfit.json": "9c0c4d4a6f0c2a4869d5d9c356eb67fba4e7f640c6da94db6e8ce0bc2e576c8b",
+    "n_4096/fit/scan_points.json": "54d4947799f1a149539ac8178d75d019028cde94e202d574ac07b159bdc56c73",
+    "n_4096/fit/scan_summary.json": "861550d3765ac6681a176e0913ad788c15ad4c9935f8640440bfa3c26bd14af8",
+    "n_4096/fit/likelihood_validation.json": "92644ec7d0d043b398e75ae3f0a04b0a35fcb6f609c99c0158d1006354f515c7",
+    "n_4096/fit/global_validation.json": "f3294b75b892bc896600b1a809e82ab0fb64b72fa160b2222dbfb64d4f2487b7",
+    "n_4096/workspace/construction.json": "1c0e4869b8bcba0a72839db2e29c734c42e55048f0f98eceaa00a43affbee15b",
+    "n_8192/fit/bestfit.json": "57f5003cfb206f9b6da24ab621c02332789e657751773f4db1177af970632b4d",
+    "n_8192/fit/scan_points.json": "20f9cd339a244bd670bb3261bf1f59047d6331d069acb8e62068d182e9c80d84",
+    "n_8192/fit/scan_summary.json": "8d5da168bb48fc6092b5e1e0f92d55d4d5410590bfcbe5afbd6d916cc2eb85f5",
+    "n_8192/fit/likelihood_validation.json": "b7ee91ee808f93a22a0c7621f380255578b82607ad5e7625935603cfc54b68e6",
+    "n_8192/fit/global_validation.json": "b9b8377d70b3802f7aabb4896c5981226510324e9c25bc4c05120de4d38bc574",
+    "n_8192/workspace/construction.json": "8e6ab195de5e1203142c4a14ef99a1260999b9c8650cba03369f0811bd503bdc",
+    "slurm_accounting.txt": "40d7bedf0d037814d7599629d7ae8c873d4b3a4e8dd39aaefd8653281593784f"
+  }
+}

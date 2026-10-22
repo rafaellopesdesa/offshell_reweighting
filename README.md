@@ -1,5 +1,15 @@
 # Off-shell HZZ reweighting
 
+## Corrected ROOT Asimov results
+
+The [anchor-normalized results report](docs/ANCHOR_NORMALIZED_RESULTS.md)
+documents the 4096/8192 fits, expected likelihood scans, and HEPData comparison.
+[Download the aggregate tables](reports/anchor_normalized/) for the fitted
+parameters, scan points, validation, execution time, and peak memory.
+See [ROOT workflow instructions](docs/ROOT_WORKSPACE_FIT.md) for reproduction.
+The [slideshow branch](https://github.com/rafaellopesdesa/offshell_reweighting/tree/codex/asimov-results-slides-20261021)
+contains the figures and discussion in Reveal.js format.
+
 Notebooks for the off-shell HZZ reweighting project. Input data and generated inspection reports live in `My Drive/Colab Notebooks/HZZ_OffShell/`.
 
 ## Process selections

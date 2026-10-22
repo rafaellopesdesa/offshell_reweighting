@@ -1,4 +1,28 @@
-# Fit the observed ROOT workspace
+# ROOT workspace fits and Asimov validation
+
+The corrected experiment is documented in
+[Anchor-normalized results](ANCHOR_NORMALIZED_RESULTS.md), with downloadable
+aggregate tables under [reports/anchor_normalized](../reports/anchor_normalized/).
+
+After the corrected profiles, independent validation, and comparison finish,
+collect measured Slurm execution time and memory, then export the aggregate
+results (including parameter values, scans, validation and resource CSVs):
+
+```bash
+python3 collect_anchor_resources.py --results /work/path/results/asimov_anchor_normalized
+python3 report_anchor_scans.py --results /work/path/results/asimov_anchor_normalized \
+  --output reports/anchor_normalized
+```
+
+The collector requires completed jobs and final peak-memory accounting.
+It saves raw Slurm accounting and its checksum. Per-phase elapsed time spans
+the first start to the last finish; CPU time sums parent-job TotalCPU without
+counting job steps again. Memory is the largest individual job's peak RSS,
+not summed concurrent memory. Every job requests one CPU and 4 GiB, with
+four profile chunks per sample running in parallel. The global stage includes
+construction, both starts, and checks; finalization includes numerical scan
+validation. Measurements come from different nodes and are not a controlled
+hardware benchmark. See [sacct field definitions](https://slurm.schedmd.com/sacct.html).
 
 ## Anchor-normalized profile follow-up (2026-10-22)
 
@@ -39,7 +63,8 @@ installation, without using the observed dataset.
 
 Run the numerical work inside a Slurm allocation on Unity. Activate the
 project ROOT environment before running the commands below. Keep the input
-file read-only and all generated outputs outside this public repository.
+file read-only and generated ROOT files, event arrays, and full job outputs
+outside this public repository; publish only the reviewed aggregate reports.
 The command-line driver requires `SLURM_JOB_ID` for fitting and scanning.
 
 For the two-sample Asimov workflow, `report_asimov_fits.py --fits RESULTS
@@ -200,8 +225,9 @@ using the quadratic dependence on `sqrt(mu)`, at the tested fixed nuisance
 settings. It does not claim positivity everywhere in the nuisance-parameter
 domain; RooFit must reject invalid minimizer trial points.
 
-Do not commit input data, fitted workspaces, or generated result files to this
-public repository.
+Keep input event data, fitted workspaces, and full job outputs outside the
+public repository. Reviewed aggregate figures, tables, and provenance can
+be exported for the results report and slideshow.
 
 ## Compare the observed scan with HEPData
 
@@ -444,8 +470,9 @@ provided NumPy yields/systematics also differ from the observed ROOT template;
 these two nested subsets alone cannot separate input-model differences from
 quadrature effects or estimate a distribution of finite-sample fluctuations.
 
-The current `root_workspace_fit.py` driver deliberately rejects non-Poisson
-weighted datasets. Before profiling these Asimov workspaces, add an explicit
-Asimov-data mode with the appropriate weighted-likelihood conventions; do not
-silently remove the observed-data guard. Keep all generated arrays, ROOT
-files, and numerical result manifests outside the public repository.
+The `root_workspace_fit.py` driver requires explicit `--weighted-asimov`
+for these signed, weighted datasets; the observed-data guard remains active
+without that flag. Keep event arrays, ROOT files, and full job manifests
+outside the public repository. The validated aggregate reports under
+`reports/anchor_normalized/` and the presentation's figures and tables are
+the reviewable public results requested for this experiment.
