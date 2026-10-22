@@ -96,3 +96,11 @@ closure. Its plot ranks unit auxiliary-observation responses, not conventional
 conditional nuisance impacts. Covariance CSVs and all named-nuisance diagnostics
 are included in `presentation/data/`; no ROOT workspaces or event arrays are
 published.
+
+
+The ranking slide links [all 130 NPs in one sorted CSV](data/all_np_uncertainty_ranking.csv),
+with true/data-like source responses side by side and per-model ranks.
+[Column definitions](data/all_np_uncertainty_ranking_README.md) explain the
+importance metric and the unconstrained qqZZ rows. The analysis exporter
+`export_np_ranking.py` creates these files from the saved decomposition summary;
+`export_decomposition.py` copies them into the presentation.

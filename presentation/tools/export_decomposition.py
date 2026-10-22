@@ -24,6 +24,8 @@ def main():
         for kind in ("uncertainties","impacts","covariance"):
             name=f"{sample}_{kind}.csv";shutil.copyfile(args.results/"report"/name,args.output/"data"/name)
     shutil.copyfile(args.results/"report/auxiliary_impacts.svg",args.output/"assets/auxiliary_impacts.svg")
+    for name in ("all_np_uncertainty_ranking.csv", "all_np_uncertainty_ranking_README.md"):
+        shutil.copyfile(args.results/"report"/name,args.output/"data"/name)
     shutil.copyfile(args.results/"resources.csv",args.output/"data/decomposition_resources.csv")
     print("Exported complete covariance decomposition")
 
