@@ -178,11 +178,14 @@ def main():
     parser.add_argument("--model-config", default="ModelConfig_4l_offshell")
     parser.add_argument("--data", default="obsData_4l_offshell")
     parser.add_argument("--weighted-asimov", action="store_true")
+    parser.add_argument("--allow-approximate-covariance", action="store_true",
+                        help="Accept a positive-definite MIGRAD covariance estimate without requiring quality 3")
     parser.add_argument("--range", type=float, nargs=2, default=[0.5, 1.5])
     parser.add_argument("--scan-points", type=Path,
                         help="Also validate every saved profile point independently")
     args = parser.parse_args()
     source, w, mc, data, parameters, floating, nll = load_model(args)
+    exact_reference_normalization = bool(w.function("reference_Z_S"))
     ROOT.gInterpreter.Declare(CPP)
     reference_weights, reference_record = None, None
     reference_path = args.input.parent/"reference_weights_normalized.npy"
@@ -232,11 +235,16 @@ def main():
                 (args.scan_points or r["minimum_continuous_interval_intensity"] > 0) and
                 math.isfinite(r["delta_nll_disagreement"]) and
                 abs(r["delta_nll_disagreement"]) < 1e-6 for r in records)
+    if exact_reference_normalization:
+        valid = valid and all(abs(r["sr_integral_relative_difference"]) < 3e-12 for r in records)
     report = {"passed": valid, "checks": records, "mu_interval": args.range,
               "quadrature_reference": reference_record,
-              "quadrature_note": "Finite-subset integral versus full-MC expected SR rate; diagnostic only, no systematic renormalization"}
+              "quadrature_note": ("Fully interpolated same-reference model: relative SR closure required below 3e-12"
+                                  if exact_reference_normalization else
+                                  "Finite-subset integral versus full-MC expected SR rate; diagnostic only, no systematic renormalization")}
     if args.bestfit:
-        report["saved_artifacts"] = validate_saved_fit(args.bestfit)
+        report["saved_artifacts"] = validate_saved_fit(
+            args.bestfit, require_accurate_covariance=not args.allow_approximate_covariance)
     if args.scan_points:
         baseline = records[0]
         scan_checks = []
@@ -254,6 +262,8 @@ def main():
                                 "minimum_continuous_interval_intensity": interval,
                                 "invalid_intensities": invalid, **integral})
             valid = valid and invalid == 0 and current > 0 and math.isfinite(residual) and abs(residual) < 1e-6 and abs(native-point["nll"]) < 1e-6
+            if exact_reference_normalization:
+                valid = valid and abs(integral["sr_integral_relative_difference"]) < 3e-12
         report["scan_checks"] = scan_checks
         report["domain_scope"] = "Positivity required at the global minimum and every profiled point; fixed-nuisance continuous domains are diagnostic"
         report["all_fixed_nuisance_vectors_positive_over_interval"] = all(

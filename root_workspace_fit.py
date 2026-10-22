@@ -54,6 +54,10 @@ def load_model(args):
     source = ROOT.TFile.Open(str(args.input), "READ")
     if not source or source.IsZombie():
         raise RuntimeError(f"Cannot read {args.input}")
+    metadata = source.Get("asimov_metadata")
+    if metadata and json.loads(str(metadata.GetString())).get("normalization_implementation") == "RooSameSampleNormalizer_v1":
+        from same_sample_normalizer import load_normalizer
+        load_normalizer()
     workspace = source.Get(args.workspace)
     if not workspace:
         raise RuntimeError(f"Missing workspace {args.workspace}")
