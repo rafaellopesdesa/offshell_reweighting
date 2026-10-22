@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate a fully normalized, nuisance-shifted Asimov from a preserved sample."""
+"""Generate a fully normalized nominal or nuisance-shifted preserved Asimov."""
 import argparse
 from datetime import datetime, timezone
 import json
@@ -111,7 +111,7 @@ def make_dataset(workspace, columns, original, weights, cr_counts, name="obsData
     weight_var = ROOT.RooRealVar("total_weight", "Fixed Asimov event weight", 0)
     variables.add(weight_var)
     data = ROOT.RooDataSet.from_numpy(columns, variables, name=name,
-        title="Data-like Asimov at mu=1 with observed-fit nuisance parameters", weight_name="total_weight")
+        title="Same-reference Asimov at the saved generating parameters", weight_name="total_weight")
     if data.numEntries() != len(weights)+3:
         raise RuntimeError("Dataset import discarded events")
     return data, columns
@@ -122,29 +122,40 @@ def build(args):
         raise RuntimeError("Run numerical workspace construction through Slurm")
     started = time.monotonic()
     args.output.mkdir(parents=True, exist_ok=True)
-    target = args.output / "HZZ_4l_data_like_asimov_4096.root"
+    source_sha = sha256(args.source)
+    original_report = json.loads((args.source.parent/"construction.json").read_text())
+    size = original_report["reference_events"]
+    if original_report["workspace_sha256"] != source_sha or size not in (4096, 8192):
+        raise ValueError("Input must be a preserved, checked 4096 or 8192 workspace")
+    if original_report.get("normalization_implementation") == "RooSameSampleNormalizer_v1":
+        raise ValueError("Input must be an anchor model, not an already normalized model")
+    nominal = args.generation == "nominal"
+    stem = "true_asimov" if nominal else "data_like_asimov"
+    target = args.output / f"HZZ_4l_{stem}_{size}.root"
     if target.exists():
         raise FileExistsError(target)
     ROOT.gROOT.SetBatch(True)
     ROOT.RooMsgService.instance().setGlobalKillBelow(ROOT.RooFit.WARNING)
     load_normalizer()
     ROOT.gInterpreter.Declare(CPP)
-    source_sha = sha256(args.source)
-    original_report = json.loads((args.source.parent/"construction.json").read_text())
-    if original_report["workspace_sha256"] != source_sha or original_report["reference_events"] != 4096:
-        raise ValueError("Input must be the preserved, checked 4096 workspace")
     u = np.load(args.source.parent/"reference_weights_normalized.npy", allow_pickle=False)
-    if np.any(u < 0) or not np.isfinite(u).all() or abs(u.sum()-1)>1e-13:
-        raise ValueError("This experiment requires nonnegative normalized reference weights")
+    if len(u) != size or not np.isfinite(u).all() or abs(u.sum()-1)>1e-13:
+        raise ValueError("Reference weights must be finite and normalized on this sample")
     source = ROOT.TFile.Open(str(args.source), "READ")
     template = source.Get("combined")
     original = template.data("obsData_4l_offshell")
     columns = original.to_numpy(copy=True)
     workspace = normalized_model(template, columns, u)
-    observed = json.loads(args.observed_bestfit.read_text())
-    parameters = {r["name"]: r["value"] for r in observed["parameters"]}
-    parameters["mu"] = args.mu
     expected = {v.GetName() for v in workspace.obj("ModelConfig_4l_offshell").GetNuisanceParameters()} | {"mu", "mu_qqZZ", "mu_qqZZ_1", "mu_qqZZ_2"}
+    observed = None
+    if nominal:
+        parameters = {name: (0. if name.startswith("alpha_") else 1.) for name in sorted(expected)}
+    else:
+        if args.observed_bestfit is None:
+            raise ValueError("Data-like generation requires --observed-bestfit")
+        observed = json.loads(args.observed_bestfit.read_text())
+        parameters = {r["name"]: r["value"] for r in observed["parameters"]}
+    parameters["mu"] = args.mu
     if parameters.keys() != expected:
         raise ValueError("Observed fit does not provide exactly the 131 model parameters")
     set_generation(workspace, parameters)
@@ -176,13 +187,17 @@ def build(args):
     # Keep the custom class implementation with the persistent workspace too.
     embedded = bool(workspace.importClassCode("RooSameSampleNormalizer", True))
     report = {
-        "data_kind": "weighted_reference_asimov", "label": "data-like Asimov",
+        "data_kind": "weighted_reference_asimov", "label": "true Asimov" if nominal else "data-like Asimov",
+        "generation_mode": args.generation,
         "normalization_implementation": "RooSameSampleNormalizer_v1",
         "normalization": "rho=rhat*V/sum_reference(u*rhat*V), recomputed at every trial alpha; physical rates unchanged",
-        "reference_events": 4096, "negative_reference_weights": 0,
+        "reference_events": size, "negative_reference_weights": int(np.count_nonzero(u < 0)),
+        "negative_asimov_weights": int(np.count_nonzero(weights < 0)),
+        "signed_weight_convention": "Original signed reference weights preserved; no clipping or absolute values",
         "source_workspace": str(args.source.resolve()), "source_workspace_sha256": source_sha,
-        "observed_bestfit": str(args.observed_bestfit.resolve()), "observed_bestfit_sha256": sha256(args.observed_bestfit),
-        "generation_parameters": parameters, "observed_mu_not_injected": observed["mu_hat"],
+        "observed_bestfit": str(args.observed_bestfit.resolve()) if observed else None,
+        "observed_bestfit_sha256": sha256(args.observed_bestfit) if observed else None,
+        "generation_parameters": parameters, "observed_mu_not_injected": observed["mu_hat"] if observed else None,
         "qqZZ_parameterization": "cumulative: beta0, beta0*beta1, beta0*beta1*beta2",
         "global_observables": {v.GetName(): v.getVal() for v in mc.GetGlobalObservables()},
         "sr_asimov_yield": float(weights.sum()), "cr_asimov_counts": cr_counts.tolist(),
@@ -215,7 +230,8 @@ def build(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True)
-    parser.add_argument("--observed-bestfit", type=Path, required=True)
+    parser.add_argument("--observed-bestfit", type=Path)
+    parser.add_argument("--generation", choices=("nominal", "data-like"), default="data-like")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--mu", type=float, default=1.)
     build(parser.parse_args())

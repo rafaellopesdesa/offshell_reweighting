@@ -1,8 +1,8 @@
 # RooSameSampleNormalizer
 
 `RooSameSampleNormalizer` is a scalar `RooAbsReal` that integrates one process's
-interpolated event contribution over a fixed reference sample. The data-like
-4096 workspace uses ten instances, one per SR component, to keep each process
+interpolated event contribution over a fixed reference sample. Every current
+true/data-like/pruned workspace at 4096 or 8192 uses ten instances, one per SR component, to keep each process
 shape normalized as nuisance parameters change during fitting.
 
 The implementation is in [RooSameSampleNormalizer.h](../RooSameSampleNormalizer.h)
@@ -164,6 +164,12 @@ Negative signal/interference basis coefficients are allowed; the combined
 intensity entering each logarithm must be positive.
 
 ## Serialization and loading
+
+The current [six-workspace family](SAME_SAMPLE_WORKSPACE_FAMILY.md) uses this
+same version-1 class for true, data-like and pruned data-like models at both
+4096 and 8192 events. The original anchor-only true models and their fitted
+results remain separately preserved. No class or serialization-version change
+was needed; the builder now supports nominal generation and signed 8192 inputs.
 
 The `ClassDefOverride(..., 1)` dictionary streams the proxy, fixed measure,
 and anchor arrays into the ROOT file. Polynomial and evaluation caches are

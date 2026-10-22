@@ -40,7 +40,11 @@ def main(args):
         raise RuntimeError("Workspace processing requires a Slurm allocation")
     started = time.monotonic()
     args.output.mkdir(parents=True, exist_ok=True)
-    target = args.output / f"HZZ_4l_data_like_asimov_4096_pruned{args.keep}.root"
+    original = json.loads((args.input.parent / "construction.json").read_text())
+    size = original["reference_events"]
+    if size not in (4096, 8192):
+        raise ValueError("Expected a 4096 or 8192 reference sample")
+    target = args.output / f"HZZ_4l_data_like_asimov_{size}_pruned{args.keep}.root"
     if target.exists():
         raise FileExistsError(target)
     rows = list(csv.DictReader(args.ranking.open()))
@@ -52,7 +56,6 @@ def main(args):
     keep = [r["parameter"] for r in constrained[:args.keep]]
     remove = [r["parameter"] for r in constrained[args.keep:]]
     source_sha = sha256(args.input)
-    original = json.loads((args.input.parent / "construction.json").read_text())
     if original["workspace_sha256"] != source_sha or original["label"] != "data-like Asimov":
         raise ValueError("Input must be the preserved, validated data-like workspace")
     ROOT.gROOT.SetBatch(True)

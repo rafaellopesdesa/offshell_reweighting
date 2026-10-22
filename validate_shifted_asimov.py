@@ -47,16 +47,22 @@ def main(args):
         assert w.var(name).getVal()==value and not w.var(name).isConstant()
     for v in mc.GetGlobalObservables():
         assert v.isConstant() and v.getVal()==generation["alpha_"+v.GetName()[4:]]
-    observed = json.loads(Path(construction["observed_bestfit"]).read_text())
-    for row in observed["parameters"]:
-        if row["name"] != "mu":
-            assert generation[row["name"]]==row["value"]
+    nominal_generation = construction.get("generation_mode") == "nominal"
+    if nominal_generation:
+        for name, value in generation.items():
+            assert value == (0. if name.startswith("alpha_") else 1.)
+    else:
+        observed = json.loads(Path(construction["observed_bestfit"]).read_text())
+        for row in observed["parameters"]:
+            if row["name"] != "mu":
+                assert generation[row["name"]]==row["value"]
     np.testing.assert_array_equal(u, np.load(Path(construction["source_workspace"]).parent/"reference_weights_normalized.npy"))
     np.testing.assert_array_equal(np.load(args.input.parent/"event_rows.npy"),
         np.load(Path(construction["source_workspace"]).parent/"event_rows.npy"))
     generation_nll = nll.getVal()
     report = {"passed": False, "input_sha256": sha256(args.input), "generation_nll": generation_nll,
-              "all_130_nuisances_match_observed_fit": True, "mu_generation": 1.,
+              "all_130_nuisances_match_observed_fit": not nominal_generation,
+              "nominal_generation": nominal_generation, "mu_generation": 1.,
               "global_observables_fixed_at_injection": True, "reference_selection_and_weights_unchanged": True}
     if args.bestfit:
         best = json.loads(args.bestfit.read_text())
@@ -76,10 +82,10 @@ def main(args):
         # Check multiple generating points, including one-at-a-time and
         # simultaneous variations. Main injection checks all 131 scores.
         nominal = {n: (1. if n in ("mu","mu_qqZZ","mu_qqZZ_1","mu_qqZZ_2") else 0.) for n in generation}
-        cases = [("observed_nuisances_mu1", generation),
+        cases = [("generation_mu1", generation),
                  ("single_lumi_mu05", dict(nominal, mu=.5, alpha_ATLAS_alpha_LUMI=.37)),
                  ("single_shape_mu15", dict(nominal, mu=1.5, alpha_ATLAS_QCD_ggZZk_Shape=-1.3)),
-                 ("observed_nuisances_mu15", dict(generation, mu=1.5))]
+                 ("generating_nuisances_mu15", dict(generation, mu=1.5))]
         records = []
         for index, (label, values) in enumerate(cases):
             set_generation(w, values)

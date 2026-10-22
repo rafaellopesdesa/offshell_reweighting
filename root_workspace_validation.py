@@ -210,6 +210,12 @@ def main():
         # report the continuous fixed-nuisance domain separately. The nominal
         # and perturbed fixed-setting checks remain available without a scan.
         checks = checks[:1]
+    # A pruned model is a conditional restriction. Its fixed coordinates are
+    # not admissible nuisance probes, and their auxiliary PDFs can be factored
+    # out of the active NLL. Keep those values fixed in the independent check.
+    skipped_fixed = [name for name, _, parameter, _ in checks
+                     if parameter and w.var(parameter).isConstant()]
+    checks = [row for row in checks if row[0] not in skipped_fixed]
     records = []
     for name, mu, parameter, shift in checks:
         w.var("mu").setVal(mu)
@@ -238,6 +244,7 @@ def main():
     if exact_reference_normalization:
         valid = valid and all(abs(r["sr_integral_relative_difference"]) < 3e-12 for r in records)
     report = {"passed": valid, "checks": records, "mu_interval": args.range,
+              "skipped_fixed_parameter_probes": skipped_fixed,
               "quadrature_reference": reference_record,
               "quadrature_note": ("Fully interpolated same-reference model: relative SR closure required below 3e-12"
                                   if exact_reference_normalization else

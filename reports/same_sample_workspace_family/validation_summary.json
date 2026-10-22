@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "workspace_count": 6,
+  "normalizers_per_workspace": 10,
+  "all_normalizers_connected_to_component_shapes": true,
+  "original_input_hashes_unchanged": true,
+  "root_versions": [
+    "6.34.10",
+    "6.38.00"
+  ],
+  "maximum_cross_version_generation_nll_difference": 0.0,
+  "maximum_absolute_generating_score": 5.4569682106375694e-08,
+  "maximum_process_integral_error": 6.328271240363392e-15,
+  "maximum_cached_vs_direct_normalizer_error": 1.9984014443252818e-15,
+  "maximum_independent_delta_nll_disagreement": 2.7284841053187847e-10,
+  "shared_parameter_models_identical": true,
+  "model_pair_checks": [
+    {
+      "passed": true,
+      "reference_events": 4096,
+      "input_sha256": [
+        "203f7efad0257fd6e3667e79f15d95b15868b5a0cc94c54280d73942ebb799fd",
+        "dd1484ad2369b8cb965bfef36909862320ff4647c5a7f18066171add73cc70d9"
+      ],
+      "same_reference_and_shape_model": true,
+      "checks": [
+        {
+          "case": "nominal",
+          "maximum_absolute_shape_difference": 0.0,
+          "physical_rates_identical": true,
+          "cr_expectations_identical": true
+        },
+        {
+          "case": "observed_nuisances",
+          "maximum_absolute_shape_difference": 0.0,
+          "physical_rates_identical": true,
+          "cr_expectations_identical": true
+        },
+        {
+          "case": "simultaneous_shift",
+          "maximum_absolute_shape_difference": 0.0,
+          "physical_rates_identical": true,
+          "cr_expectations_identical": true
+        }
+      ],
+      "nominal_dataset_maximum_weight_change": 2.2737367544323206e-13,
+      "nominal_observables_unchanged": true
+    },
+    {
+      "passed": true,
+      "reference_events": 8192,
+      "input_sha256": [
+        "6d3f797475d2f6c7c1b57dba0e0d8079a291a062d9b605eadda663c541d1b2eb",
+        "783c3dc31718ee2a3bcf2cd11036a37b3136856ae54fff0a01f52746a888ee83"
+      ],
+      "same_reference_and_shape_model": true,
+      "checks": [
+        {
+          "case": "nominal",
+          "maximum_absolute_shape_difference": 0.0,
+          "physical_rates_identical": true,
+          "cr_expectations_identical": true
+        },
+        {
+          "case": "observed_nuisances",
+          "maximum_absolute_shape_difference": 0.0,
+          "physical_rates_identical": true,
+          "cr_expectations_identical": true
+        },
+        {
+          "case": "simultaneous_shift",
+          "maximum_absolute_shape_difference": 0.0,
+          "physical_rates_identical": true,
+          "cr_expectations_identical": true
+        }
+      ],
+      "nominal_dataset_maximum_weight_change": 2.2737367544323206e-13,
+      "nominal_observables_unchanged": true
+    }
+  ],
+  "nested_selection_preserved": true,
+  "independent_normalization_per_size": true,
+  "pruning_selection_identical_between_sizes": true,
+  "negative_weights_preserved_in_8192": 2,
+  "demo_preflight_passed_without_minimization": true,
+  "notebook_schema_and_syntax_passed": true,
+  "new_fits_or_scans": false,
+  "slurm_allocation": "65967774",
+  "scope": "New true 4096 and all three 8192 models: construction/stationarity/native NLL checks; existing data-like 4096 models unchanged; all six: class graph and ROOT-version audits.",
+  "fixed_parameter_probe_note": "The generic validator now skips nuisance probes fixed by pruning. The initial inadmissible luminosity probe is retained separately; it did not modify the workspace."
+}
