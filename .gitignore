@@ -6,3 +6,8 @@
 *.inspection.json
 .ipynb_checkpoints/
 __pycache__/
+build/
+*.so
+*.pcm
+*.d
+results/
