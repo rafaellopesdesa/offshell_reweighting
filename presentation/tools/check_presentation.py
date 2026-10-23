@@ -47,11 +47,22 @@ def main():
             assert page.evaluate("window.DECOMPOSITION_RESULTS.complete") is True
             assert page.evaluate("window.PRUNED_RESULTS.complete") is True
             assert page.evaluate("window.PRUNED_RESULTS.profiled_nuisances") == 57
+            assert page.evaluate("window.FAMILY_RESULTS.complete") is True
+            assert page.evaluate("window.FAMILY_RESULTS.models.length") == 6
+            assert page.evaluate("window.FAMILY_RESULTS.grid.length === 61 && window.FAMILY_RESULTS.grid[20] === 1")
+            assert page.evaluate("window.FAMILY_RESULTS.models.every(m => m.points === 61)")
             assert page.locator("#pruned-resources tbody tr").count() == 5
             assert page.locator('#uncertainty-primary tbody tr').count() == 8
             assert page.locator('#shifted-fit-table tbody tr').count() == 3
             assert "NaN" not in page.locator('#data-like-scan').inner_text()
             ids = page.locator(".slides > section").evaluate_all("els => els.map(e => e.id)")
+            family_ids = ["family-true-4096", "family-data-like-4096", "family-pruned-4096",
+                          "family-true-8192", "family-data-like-8192", "family-pruned-8192"]
+            assert ids[1:7] == family_ids, "Comparisons must appear consecutively after the overview"
+            for model in page.evaluate("window.FAMILY_RESULTS.models"):
+                selector = f'[data-family-model="{model["label"]}"]'
+                assert page.locator(selector + " [data-family-mu]").inner_text() == f'{model["mu_hat"]:.7f}'
+                assert page.locator(selector + " [data-family-rms]").inner_text() == f'{model["rms_delta_q"]:.5f}'
             for i, id_ in enumerate(ids):
                 page.evaluate("i => Reveal.slide(i)", i)
                 page.wait_for_timeout(300)
@@ -93,9 +104,20 @@ def main():
             mobile.screenshot(path=str(args.output/"mobile_scan.png"))
             assert not mobile.locator("#contents").evaluate("el => el.open")
             assert abs(mobile.locator("#scan-8192").bounding_box()["y"]-48) < 3
+            mobile.locator("#contents-button").click()
+            mobile.locator('#contents-list a[href="#family-pruned-8192"]').click()
+            mobile.wait_for_timeout(100)
+            mobile.screenshot(path=str(args.output/"mobile_family.png"))
+            assert abs(mobile.locator("#family-pruned-8192").bounding_box()["y"]-48) < 3
+            assert mobile.evaluate("document.documentElement.scrollWidth <= innerWidth")
+            mobile.goto(page_url + "#/family-true-4096")
+            mobile.wait_for_load_state("load")
+            mobile.wait_for_url("**/presentation/#family-true-4096")
+            assert mobile.url.endswith("#family-true-4096")
+            assert abs(mobile.locator("#family-true-4096").bounding_box()["y"]-48) < 3
             browser.close()
             assert not report["javascript_errors"], report["javascript_errors"]
-            report.update(status="passed", slides=len(ids), navigation="passed", mobile_navigation="passed", project_subpath_redirect="passed")
+            report.update(status="passed", slides=len(ids), navigation="passed", mobile_navigation="passed", project_subpath_redirect="passed", six_consecutive_comparisons=True)
     finally:
         server.shutdown()
         (args.output/"browser_checks.json").write_text(json.dumps(report, indent=2)+"\n")

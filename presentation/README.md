@@ -1,12 +1,45 @@
 # Off-shell workspace results slideshow
 
-A static Reveal.js 6.0.2 presentation of the observed-workspace validation and
-the corrected 4096/8192 reference-sample Asimov results. The 17 slides include
-the control-region checks, nuisance-score diagnosis, anchor correction,
-before/after fits, completed expected-scan comparisons, and measured Slurm
-execution time and memory for both sizes. The page displays
-its snapshot time. It does not query
-Unity or update automatically. Only aggregate fit results are included.
+A static Reveal.js 6.0.2 presentation with 35 slides. After the overview,
+six consecutive slides compare the current true, data-like and pruned Asimov
+scans at 4096 and 8192 events with HEPData Table 2 Exp NSBI (4l, stat+syst).
+Each comparison uses all 61 coordinates from 0 through 3, including mu=1,
+with common axes, an signed difference panel, and original CSV/comparison
+CSV/PDF downloads. All current models use RooSameSampleNormalizer.
+
+Earlier observed, anchor-normalized, data-like, covariance and pruning studies
+follow with their original figures and conventions. They remain identified as
+earlier studies. The page displays its frozen snapshot time and does not query
+Unity or update automatically. No event arrays or ROOT workspaces are published.
+
+## Refresh the current six-model comparisons
+
+After all six scan validations and the CSV bundle complete, run inside an
+allocation using the analysis report generator and presentation exporter:
+
+```bash
+python /path/to/analysis/report_family_scan_comparisons.py \
+  --run /path/to/results/asimov_scans_0_3_61 \
+  --hepdata /path/to/results/hepdata_comparison/table_2.json \
+  --output /path/to/results/asimov_scans_0_3_61/presentation_report
+python presentation/tools/export_family_results.py \
+  --run /path/to/results/asimov_scans_0_3_61 \
+  --report /path/to/results/asimov_scans_0_3_61/presentation_report
+python presentation/tools/check_presentation.py --output /path/to/browser_checks
+```
+
+The generator cross-checks the cached official HEPData JSON and CSV and uses
+all 61 exact shared coordinates. It preserves the published values and the
+continuous fitted likelihood baseline: no shifts, rescaling, clipping or
+smoothing. Every figure uses the same x, q and residual limits. The exporter
+requires all six complete validated scans and verifies the original scan CSV
+hashes. `data/family_snapshot.json` records numerical results and provenance;
+`data/family_scans_csv.zip` contains the complete original scan/parameter tables.
+
+The current true files replace the old anchor-only true models in the current
+comparison. Their historical results remain on the later slides. Both pruned
+models retain the same 54 ranked constrained NPs and all three qqZZ factors.
+The 8192 reference sample preserves its two negative quadrature weights.
 
 ## Enable GitHub Pages
 
