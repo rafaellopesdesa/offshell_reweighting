@@ -10,3 +10,7 @@ and read-only workspace loading with ROOT 6.34.10. See
 [the scientific summary](../../docs/STRUCTURED_SUMMARY.md) for definitions and
 reproducible commands. Final diagnostic exports are added after independent
 8192 full-Hesse and source-response validation.
+
+The native-workspace inventory contains graph structure, counts and formula
+coefficients only, with no event values. native_nll_example.json records
+successful execution of the exact read-only snippet displayed in the deck.

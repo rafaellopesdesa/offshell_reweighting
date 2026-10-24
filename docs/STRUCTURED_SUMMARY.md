@@ -5,6 +5,14 @@ implementation, validated likelihood results and measured computing cost.
 The original research chronology is retained separately in the presentation
 branch as `presentation/history-20261023.html`.
 
+## Native workspace primer
+
+Four slides before the custom class reconstruct the supplied observed-data
+workspace: precomputed neural outputs, shape/rate factors, channel and
+constraint composition, then serialization/ModelConfig. The inspection is
+read-only and exports aggregate graph structure without event values. See
+[NATIVE_NRE_WORKSPACE.md](NATIVE_NRE_WORKSPACE.md).
+
 ## Method and executable example
 
 The opening reference is [Finite Asimov Sample Construction in Unbinned Neural

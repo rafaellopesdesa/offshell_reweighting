@@ -1,0 +1,683 @@
+{
+  "source_basename": "HZZ_4l_offshell_v2.root",
+  "source_sha256": "e0daa756e1b3addf6078315705ce51427f020aeb043c2cee5062a0cad9b1c9eb",
+  "root_version": "6.34.10",
+  "workspace": "combined",
+  "dataset": "obsData_4l_offshell",
+  "data_rows": 2077,
+  "sum_weights": 3837.0,
+  "channels": {
+    "CR0": {
+      "rows": 1,
+      "count": 1377.0
+    },
+    "CR1": {
+      "rows": 1,
+      "count": 231.0
+    },
+    "CR2": {
+      "rows": 1,
+      "count": 155.0
+    },
+    "SR": {
+      "rows": 2074,
+      "count": 2074.0
+    }
+  },
+  "model_config_sets": {
+    "observables": {
+      "count": 13,
+      "names": [
+        "obs_CR0",
+        "obs_CR1",
+        "obs_CR2",
+        "r_S",
+        "r_SBI",
+        "r_B",
+        "r_EWB",
+        "r_EWSBI",
+        "r_EWSBI10",
+        "r_qqZZ_0",
+        "r_qqZZ_1",
+        "r_qqZZ_2",
+        "r_ttV"
+      ]
+    },
+    "parameters_of_interest": {
+      "count": 4,
+      "names": [
+        "mu",
+        "mu_qqZZ",
+        "mu_qqZZ_1",
+        "mu_qqZZ_2"
+      ]
+    },
+    "nuisances": {
+      "count": 127
+    },
+    "global_observables": {
+      "count": 127
+    },
+    "conditional_observables": {
+      "count": 0,
+      "names": []
+    },
+    "external_constraints": {
+      "count": 0,
+      "names": []
+    }
+  },
+  "pdf_classes": {
+    "RooProdPdf": 5,
+    "RooAddPdf": 4,
+    "RooWrapperPdf": 10,
+    "RooGaussian": 127,
+    "RooUniform": 24,
+    "RooSimultaneous": 1
+  },
+  "function_classes": {
+    "RooProduct": 75,
+    "RooRatio": 10,
+    "PiecewiseInterpolation": 10,
+    "RooStats::HistFactory::FlexibleInterpVar": 34,
+    "RooAddition": 1,
+    "RooFormulaVar": 44
+  },
+  "selected_nodes": {
+    "simPdf": {
+      "class": "RooSimultaneous",
+      "servers": [
+        "cat",
+        "constrainedCR0",
+        "constrainedCR1",
+        "constrainedCR2",
+        "pdf_SR_4l_offshell"
+      ],
+      "server_count": 5
+    },
+    "pdf_SR_4l_offshell": {
+      "class": "RooProdPdf",
+      "servers": [
+        "pdfSRUnc",
+        "constraintPdf"
+      ],
+      "server_count": 2
+    },
+    "pdfSRUnc": {
+      "class": "RooAddPdf",
+      "servers": [
+        "pdf_process_S",
+        "nfFactor_S",
+        "pdf_process_SBI",
+        "nfFactor_SBI",
+        "pdf_process_B",
+        "nfFactor_B",
+        "pdf_process_EWB",
+        "nfFactor_EWB",
+        "pdf_process_EWSBI",
+        "nfFactor_EWSBI",
+        "pdf_process_EWSBI10",
+        "nfFactor_EWSBI10",
+        "pdf_process_qqZZ_0",
+        "nfFactor_qqZZ_0",
+        "pdf_process_qqZZ_1",
+        "nfFactor_qqZZ_1",
+        "pdf_process_qqZZ_2",
+        "nfFactor_qqZZ_2",
+        "pdf_process_ttV",
+        "nfFactor_ttV"
+      ],
+      "server_count": 20
+    },
+    "pdf_process_S": {
+      "class": "RooWrapperPdf",
+      "servers": [
+        "prod_process_S"
+      ],
+      "server_count": 1,
+      "self_normalized": true
+    },
+    "prod_process_S": {
+      "class": "RooProduct",
+      "servers": [
+        "s_factor_S",
+        "dummyFactor",
+        "r_S"
+      ],
+      "server_count": 3
+    },
+    "s_factor_S": {
+      "class": "RooRatio",
+      "servers": [
+        "s_factor_S_nr",
+        "s_factor_S_dr"
+      ],
+      "server_count": 2
+    },
+    "s_factor_S_nr": {
+      "class": "RooProduct",
+      "servers": [
+        "piecewise_interp_S"
+      ],
+      "server_count": 1
+    },
+    "s_factor_S_dr": {
+      "class": "RooProduct",
+      "servers": [
+        "mod_S"
+      ],
+      "server_count": 1
+    },
+    "piecewise_interp_S": {
+      "class": "PiecewiseInterpolation",
+      "servers": [
+        "1",
+        "var_ATLAS_alpha_LUMI_ratio_S_down",
+        "var_ATLAS_EG_RESOLUTION_ALL_ratio_S_down",
+        "var_ATLAS_EG_SCALE_AF2_ratio_S_down",
+        "var_ATLAS_EG_SCALE_ALL_ratio_S_down",
+        "var_ATLAS_EL_EFF_ID_CorrUncertaintyNP0_ratio_S_down"
+      ],
+      "server_count": 382,
+      "servers_truncated": true,
+      "interpolation_codes": [
+        5
+      ]
+    },
+    "mod_S": {
+      "class": "RooStats::HistFactory::FlexibleInterpVar",
+      "servers": [
+        "alpha_ATLAS_alpha_LUMI",
+        "alpha_ATLAS_EG_RESOLUTION_ALL",
+        "alpha_ATLAS_EG_SCALE_AF2",
+        "alpha_ATLAS_EG_SCALE_ALL",
+        "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP0",
+        "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP1"
+      ],
+      "server_count": 127,
+      "servers_truncated": true,
+      "interpolation_codes": [
+        4
+      ]
+    },
+    "nfFactor_S": {
+      "class": "RooProduct",
+      "servers": [
+        "nu_SR_S",
+        "f_s"
+      ],
+      "server_count": 2
+    },
+    "nfFactor_SBI": {
+      "class": "RooProduct",
+      "servers": [
+        "nu_SR_SBI",
+        "f_sbi"
+      ],
+      "server_count": 2
+    },
+    "nfFactor_B": {
+      "class": "RooProduct",
+      "servers": [
+        "nu_SR_B",
+        "f_b"
+      ],
+      "server_count": 2
+    },
+    "nfFactor_EWB": {
+      "class": "RooProduct",
+      "servers": [
+        "nu_SR_EWB",
+        "f_ewb"
+      ],
+      "server_count": 2
+    },
+    "nfFactor_EWSBI": {
+      "class": "RooProduct",
+      "servers": [
+        "nu_SR_EWSBI",
+        "f_ewsbi"
+      ],
+      "server_count": 2
+    },
+    "nfFactor_EWSBI10": {
+      "class": "RooProduct",
+      "servers": [
+        "nu_SR_EWSBI10",
+        "f_ewsbi10"
+      ],
+      "server_count": 2
+    },
+    "nfFactor_qqZZ_0": {
+      "class": "RooProduct",
+      "servers": [
+        "nu_SR_qqZZ_0",
+        "f_qqZZ_0"
+      ],
+      "server_count": 2
+    },
+    "nfFactor_qqZZ_1": {
+      "class": "RooProduct",
+      "servers": [
+        "nu_SR_qqZZ_1",
+        "f_qqZZ_1"
+      ],
+      "server_count": 2
+    },
+    "nfFactor_qqZZ_2": {
+      "class": "RooProduct",
+      "servers": [
+        "nu_SR_qqZZ_2",
+        "f_qqZZ_2"
+      ],
+      "server_count": 2
+    },
+    "nfFactor_ttV": {
+      "class": "RooProduct",
+      "servers": [
+        "nu_SR_ttV",
+        "f_ttV"
+      ],
+      "server_count": 2
+    },
+    "nominal_yield_SR_S": {
+      "class": "RooFormulaVar",
+      "servers": [
+        "40.8622",
+        "ATLAS_LUMI"
+      ],
+      "server_count": 2,
+      "formula": "@0*@1/140.1"
+    },
+    "constraintPdf": {
+      "class": "RooProdPdf",
+      "servers": [
+        "gauss_ATLAS_alpha_LUMI",
+        "gauss_ATLAS_EG_RESOLUTION_ALL",
+        "gauss_ATLAS_EG_SCALE_AF2",
+        "gauss_ATLAS_EG_SCALE_ALL",
+        "gauss_ATLAS_EL_EFF_ID_CorrUncertaintyNP0",
+        "gauss_ATLAS_EL_EFF_ID_CorrUncertaintyNP1"
+      ],
+      "server_count": 127,
+      "servers_truncated": true
+    },
+    "gauss_ATLAS_EG_SCALE_ALL": {
+      "class": "RooGaussian",
+      "servers": [
+        "nom_ATLAS_EG_SCALE_ALL",
+        "alpha_ATLAS_EG_SCALE_ALL",
+        "1"
+      ],
+      "server_count": 3
+    },
+    "pdf_CR0": {
+      "class": "RooAddPdf",
+      "servers": [
+        "pdf_S_CR0",
+        "nu_CR0_S",
+        "pdf_SBI_CR0",
+        "nu_CR0_SBI",
+        "pdf_B_CR0",
+        "nu_CR0_B",
+        "pdf_EWB_CR0",
+        "nu_CR0_EWB",
+        "pdf_EWSBI_CR0",
+        "nu_CR0_EWSBI",
+        "pdf_EWSBI10_CR0",
+        "nu_CR0_EWSBI10",
+        "pdf_qqZZ_CR0",
+        "nu_CR0_qqZZ",
+        "pdf_ttV_CR0",
+        "nu_CR0_ttV"
+      ],
+      "server_count": 16
+    },
+    "constrainedCR0": {
+      "class": "RooProdPdf",
+      "servers": [
+        "pdf_CR0",
+        "constraintPdf"
+      ],
+      "server_count": 2
+    },
+    "nu_CR0_qqZZ": {
+      "class": "RooProduct",
+      "servers": [
+        "n_CR0_qqZZ",
+        "interpFactor_CR0_qqZZ"
+      ],
+      "server_count": 2
+    }
+  },
+  "formula_nodes": {
+    "nominal_yield_SR_S": {
+      "formula": "@0*@1/140.1",
+      "servers": [
+        "40.8622",
+        "ATLAS_LUMI"
+      ]
+    },
+    "f_s": {
+      "formula": "@0 - sqrt(@0)",
+      "servers": [
+        "mu"
+      ]
+    },
+    "nominal_yield_SR_SBI": {
+      "formula": "@0*@1/140.1",
+      "servers": [
+        "398.342",
+        "ATLAS_LUMI"
+      ]
+    },
+    "f_sbi": {
+      "formula": "sqrt(@0)",
+      "servers": [
+        "mu"
+      ]
+    },
+    "nominal_yield_SR_B": {
+      "formula": "@0*@1/140.1",
+      "servers": [
+        "408.455",
+        "ATLAS_LUMI"
+      ]
+    },
+    "f_b": {
+      "formula": "1.0 - sqrt(@0)",
+      "servers": [
+        "mu"
+      ]
+    },
+    "nominal_yield_SR_EWB": {
+      "formula": "@0*@1/140.1",
+      "servers": [
+        "29.9842",
+        "ATLAS_LUMI"
+      ]
+    },
+    "f_ewb": {
+      "formula": "(1.0/(-10.0+sqrt(10.0)))*((1.0-sqrt(10.0))*@0+9.0*sqrt(@0)-10.0+sqrt(10.0))",
+      "servers": [
+        "mu"
+      ]
+    },
+    "nominal_yield_SR_EWSBI": {
+      "formula": "@0*@1/140.1",
+      "servers": [
+        "25.7514",
+        "ATLAS_LUMI"
+      ]
+    },
+    "f_ewsbi": {
+      "formula": "(1.0/(-10.0+sqrt(10.0)))*(sqrt(10.0)*@0-10.0*sqrt(@0))",
+      "servers": [
+        "mu"
+      ]
+    },
+    "nominal_yield_SR_EWSBI10": {
+      "formula": "@0*@1/140.1",
+      "servers": [
+        "55.3522",
+        "ATLAS_LUMI"
+      ]
+    },
+    "f_ewsbi10": {
+      "formula": "(1.0/(-10.0+sqrt(10.0)))*(-(@0)+sqrt(@0))",
+      "servers": [
+        "mu"
+      ]
+    },
+    "nominal_yield_SR_qqZZ_0": {
+      "formula": "@0*@1/140.1",
+      "servers": [
+        "723.948",
+        "ATLAS_LUMI"
+      ]
+    },
+    "f_qqZZ_0": {
+      "formula": "@0",
+      "servers": [
+        "mu_qqZZ"
+      ]
+    },
+    "nominal_yield_SR_qqZZ_1": {
+      "formula": "@0*@1/140.1",
+      "servers": [
+        "559.266",
+        "ATLAS_LUMI"
+      ]
+    },
+    "f_qqZZ_1": {
+      "formula": "@0*@1",
+      "servers": [
+        "mu_qqZZ",
+        "mu_qqZZ_1"
+      ]
+    },
+    "nominal_yield_SR_qqZZ_2": {
+      "formula": "@0*@1/140.1",
+      "servers": [
+        "305.385",
+        "ATLAS_LUMI"
+      ]
+    },
+    "f_qqZZ_2": {
+      "formula": "@0*@1*@2",
+      "servers": [
+        "mu_qqZZ",
+        "mu_qqZZ_1",
+        "mu_qqZZ_2"
+      ]
+    },
+    "nominal_yield_SR_ttV": {
+      "formula": "@0*@1/140.1",
+      "servers": [
+        "75.7874",
+        "ATLAS_LUMI"
+      ]
+    },
+    "f_ttV": {
+      "formula": "@0",
+      "servers": [
+        "1"
+      ]
+    },
+    "n_CR0_S": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_s",
+        "0.971801"
+      ]
+    },
+    "n_CR0_SBI": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_sbi",
+        "201.285"
+      ]
+    },
+    "n_CR0_B": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_b",
+        "201.457"
+      ]
+    },
+    "n_CR0_EWB": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ewb",
+        "0.249443"
+      ]
+    },
+    "n_CR0_EWSBI": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ewsbi",
+        "0.424941"
+      ]
+    },
+    "n_CR0_EWSBI10": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ewsbi10",
+        "0.503326"
+      ]
+    },
+    "n_CR0_qqZZ": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_qqZZ_0",
+        "1069"
+      ]
+    },
+    "n_CR0_ttV": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ttV",
+        "1.79871"
+      ]
+    },
+    "n_CR1_S": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_s",
+        "0.293853"
+      ]
+    },
+    "n_CR1_SBI": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_sbi",
+        "57.2214"
+      ]
+    },
+    "n_CR1_B": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_b",
+        "57.25"
+      ]
+    },
+    "n_CR1_EWB": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ewb",
+        "0.960854"
+      ]
+    },
+    "n_CR1_EWSBI": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ewsbi",
+        "0.958734"
+      ]
+    },
+    "n_CR1_EWSBI10": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ewsbi10",
+        "1.14812"
+      ]
+    },
+    "n_CR1_qqZZ": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_qqZZ_1",
+        "196.828"
+      ]
+    },
+    "n_CR1_ttV": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ttV",
+        "2.39372"
+      ]
+    },
+    "n_CR2_S": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_s",
+        "0.418159"
+      ]
+    },
+    "n_CR2_SBI": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_sbi",
+        "26.5074"
+      ]
+    },
+    "n_CR2_B": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_b",
+        "27.0421"
+      ]
+    },
+    "n_CR2_EWB": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ewb",
+        "12.9907"
+      ]
+    },
+    "n_CR2_EWSBI": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ewsbi",
+        "12.4546"
+      ]
+    },
+    "n_CR2_EWSBI10": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ewsbi10",
+        "12.7671"
+      ]
+    },
+    "n_CR2_qqZZ": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_qqZZ_2",
+        "125.941"
+      ]
+    },
+    "n_CR2_ttV": {
+      "formula": "@0*@1*@2/140.1",
+      "servers": [
+        "ATLAS_LUMI",
+        "f_ttV",
+        "17.4437"
+      ]
+    }
+  },
+  "global_observations_all_zero": true,
+  "dataset_columns": 2554,
+  "scope": "Aggregate graph inspection of the supplied file; not the original production builder and no event values exported"
+}
