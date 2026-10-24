@@ -18,7 +18,7 @@ def figures(samples, names, output):
     import matplotlib.pyplot as plt
     from matplotlib.lines import Line2D
     from matplotlib.patches import Patch
-    plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'svg.fonttype':'none',
+    plt.rcParams.update({'font.family':'DejaVu Sans','font.size':11,'svg.fonttype':'none',
         'svg.hashsalt':'offshell-summary-diagnostics','axes.spines.top':False,'axes.spines.right':False})
     color='#c95639'
     def label(name):
@@ -38,7 +38,7 @@ def figures(samples, names, output):
         lookup={r['name']:r for r in s['impacts']};rows=[lookup[n] for n in names]
         qq=[r for r in s['impacts'] if not r['constrained']]
         for center in (False,True):
-            fig,(ax,qax)=plt.subplots(2,1,figsize=(7.3,6.5),gridspec_kw={'height_ratios':[5,1],'hspace':.37})
+            fig,(ax,qax)=plt.subplots(2,1,figsize=(9,6.5),gridspec_kw={'height_ratios':[5,1],'hspace':.37})
             x=[r['pull_from_anchor'] if center else r['value'] for r in rows]
             injection=[0. if center else r['anchor'] for r in rows]
             y=np.arange(len(rows))
@@ -46,7 +46,7 @@ def figures(samples, names, output):
             ax.axvline(0,color='#8997a3',lw=.8)
             ax.errorbar(x,y,xerr=[r['posterior_sigma'] for r in rows],fmt='o',ms=3.5,color=color,capsize=2,lw=1.1)
             ax.scatter(injection,y,marker='D',facecolors='white',edgecolors='#253746',s=16,zorder=4)
-            ax.set_yticks(y,[label(n) for n in names],fontsize=8.3);ax.invert_yaxis()
+            ax.set_yticks(y,[label(n) for n in names],fontsize=9.5);ax.invert_yaxis()
             ax.set_xlim((-centered_limit,centered_limit) if center else (-nominal_limit,nominal_limit))
             ax.set_xlabel('α̂ − αA  (Asimov constraint units)' if center else 'α̂  (original nominal units)')
             ax.grid(axis='x',alpha=.16)
@@ -59,35 +59,35 @@ def figures(samples, names, output):
             qax.scatter([r['injected_value'] for r in qq],qy,marker='D',facecolors='white',edgecolors='#253746',s=16,zorder=4)
             qax.set_yticks(qy,['qqZZ β₀','qqZZ β₁','qqZZ β₂'],fontsize=9);qax.invert_yaxis()
             qax.set_xlim(.65,1.3);qax.set_xlabel('Free normalization factors; no Gaussian pull');qax.grid(axis='x',alpha=.16)
-            fig.subplots_adjust(left=.37,right=.98,bottom=.12,top=.88)
+            fig.subplots_adjust(left=.32,right=.98,bottom=.12,top=.88)
             fig.text(.03,.025,'15 leading sources, shared order. Compact labels; all 130 full NP names and values in CSV.',fontsize=8,color='#536777')
             save(fig,f'data_like_{size}_pulls_'+('asimov' if center else 'nominal'))
-        fig,ax=plt.subplots(figsize=(7.3,6.5));y=np.arange(len(rows));response=np.array([r['unit_auxiliary_response'] for r in rows])
+        fig,ax=plt.subplots(figsize=(9,6.5));y=np.arange(len(rows));response=np.array([r['unit_auxiliary_response'] for r in rows])
         ax.barh(y,response,height=.55,color=color,alpha=.85)
         ax.barh(y,-response,height=.55,facecolor='none',edgecolor=color,lw=1.1)
         ax.axvline(0,color='#8997a3',lw=.8);ax.set_xlim(-impact_limit,impact_limit)
-        ax.set_yticks(y,[label(n) for n in names],fontsize=8.3);ax.invert_yaxis();ax.grid(axis='x',alpha=.16)
+        ax.set_yticks(y,[label(n) for n in names],fontsize=9.5);ax.invert_yaxis();ax.grid(axis='x',alpha=.16)
         ax.set_xlabel('Local Δμ̂ from an auxiliary-observation shift')
         ax.set_title(f'Data-like, unpruned · {size:,} events',fontsize=12,pad=35)
         ax.legend(handles=[Patch(color=color,label='+1σ auxiliary'),Patch(facecolor='none',edgecolor=color,label='−1σ auxiliary')],
                   loc='lower center',bbox_to_anchor=(.5,1.005),frameon=False,ncols=2,fontsize=8.5)
-        fig.subplots_adjust(left=.37,right=.98,bottom=.15,top=.88)
+        fig.subplots_adjust(left=.32,right=.98,bottom=.15,top=.88)
         fig.text(.035,.045,f"Primary σμ = {s['primary_sigma']:.4f}   Auxiliary σμ = {s['auxiliary_sigma']:.4f}   Hesse σμ = {s['hessian_sigma']:.4f}",fontsize=8.5)
         fig.text(.035,.02,'Linear covariance response V(μ,α); not finite nuisance refits. Source variances add in quadrature.',fontsize=8,color='#536777')
         save(fig,f'data_like_{size}_auxiliary_impacts')
         groups=[r for r in s['groups'] if r['kind'] in ('auxiliary','primary')]
         groups=sorted(groups,key=lambda r:r['variance'],reverse=True)
         totals=[r for r in s['groups'] if r['source'] in ('Propagated source total','Observed-Hessian total')]
-        rows_group=groups+totals;y=np.arange(len(rows_group));fig,ax=plt.subplots(figsize=(7.3,6.5))
+        rows_group=groups+totals;y=np.arange(len(rows_group));fig,ax=plt.subplots(figsize=(9,6.5))
         colors=['#126c96' if r['kind']=='primary' else color if r['kind']=='auxiliary' else '#253746' for r in rows_group]
         ax.barh(y,[r['sigma'] for r in rows_group],height=.6,color=colors,alpha=.85)
         ax.axhline(len(groups)-.5,color='#9aa6af',lw=.8)
-        ax.set_yticks(y,[r['source'] for r in rows_group],fontsize=9);ax.invert_yaxis();ax.set_xlim(0,total_limit);ax.grid(axis='x',alpha=.16)
+        ax.set_yticks(y,[r['source'] for r in rows_group],fontsize=10.5);ax.invert_yaxis();ax.set_xlim(0,total_limit);ax.grid(axis='x',alpha=.16)
         ax.set_xlabel('Contribution to σμ  (combine sources in quadrature)')
         ax.set_title(f'Data-like, unpruned · {size:,} events',fontsize=12,pad=22)
         ax.legend(handles=[Patch(color='#126c96',label='Primary data'),Patch(color=color,label='Gaussian auxiliaries')],
                   loc='lower center',bbox_to_anchor=(.5,1.0),frameon=False,ncols=2,fontsize=8.5)
-        fig.subplots_adjust(left=.35,right=.98,bottom=.15,top=.86)
+        fig.subplots_adjust(left=.30,right=.98,bottom=.15,top=.86)
         fig.text(.035,.05,f"Source/Hesse variance difference: {100*s['closure_relative']:+.4f}%. No rescaling to enforce closure.",fontsize=8.5)
         note='Signed quadrature estimate: negative integration terms retained.' if s['negative_rows'] else 'Positive quadrature masses supply the generating Poisson measure.'
         fig.text(.035,.025,note+' Local errors, not profile intervals.',fontsize=8,color='#536777')

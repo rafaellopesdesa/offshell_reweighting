@@ -127,3 +127,24 @@ The presentation exporter requires complete reports and matching scan hashes,
 records the generated artifact hashes, and preserves the original scan assets.
 `check_summary_presentation.py` checks all slides, diagnostic switches, local
 downloads/checksums, navigation, mobile deep links and the archived deck.
+
+## Validated data-like covariance results (2026-10-24)
+
+| Reference events | Hesse sigma_mu | Primary sigma_mu | Auxiliary sigma_mu | Source/Hesse variance difference | Hesse wall minutes |
+|---|---:|---:|---:|---:|---:|
+| 4096 | 1.032008 | 0.992873 | 0.284740 | +0.1722% | 30.97 |
+| 8192 | 1.024409 | 0.985176 | 0.283953 | +0.1704% | 52.70 |
+
+Both full covariances have quality 3 and pass independent directional checks.
+The maximum curvature disagreement is 0.213% for 4096 and 0.208% for 8192.
+Comparing the source sum to the independently evaluated profile-tangent
+curvature leaves 0.00551% and 0.00565%, respectively. No source is rescaled.
+The 8192 negative quadrature terms contribute -0.0008782 to the SR variance
+estimate; the aggregate SR variance remains positive. Both Asimov-centered
+maximum nuisance shifts are below 7e-5.
+
+The 4096 covariance was reused for the identical workspace and optimum. The
+8192 calculation is new; its Hesse phase took 52.70 minutes, in addition to
+initialization. This diagnostic work is separate from the scan-cost plots.
+The full 131-by-131 covariances, all 130-NP rankings, source tables and
+validation details are in [the report](../reports/structured_summary_20261024/).

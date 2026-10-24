@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "workspaces": [
+    {
+      "model": "true_4096_unpruned",
+      "sha256": "203f7efad0257fd6e3667e79f15d95b15868b5a0cc94c54280d73942ebb799fd",
+      "unchanged": true
+    },
+    {
+      "model": "data_like_4096_unpruned",
+      "sha256": "dd1484ad2369b8cb965bfef36909862320ff4647c5a7f18066171add73cc70d9",
+      "unchanged": true
+    },
+    {
+      "model": "data_like_4096_pruned54",
+      "sha256": "91839f4ae7262b1782392bfb05c0835db00aa7183327fd09cd1286666b34fa20",
+      "unchanged": true
+    },
+    {
+      "model": "true_8192_unpruned",
+      "sha256": "6d3f797475d2f6c7c1b57dba0e0d8079a291a062d9b605eadda663c541d1b2eb",
+      "unchanged": true
+    },
+    {
+      "model": "data_like_8192_unpruned",
+      "sha256": "783c3dc31718ee2a3bcf2cd11036a37b3136856ae54fff0a01f52746a888ee83",
+      "unchanged": true
+    },
+    {
+      "model": "data_like_8192_pruned54",
+      "sha256": "d43de5a4cec2bd393a1ddfabdf0f92cc650a0c04fcbe44eceb57a8e4d6d6dc7d",
+      "unchanged": true
+    }
+  ],
+  "all_six_scan_csvs_unchanged": true,
+  "original_csv_bundle_unchanged": true,
+  "original_observed_workspace_unchanged": true
+}

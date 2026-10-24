@@ -142,3 +142,8 @@ The grouped plot includes all primary regions and auxiliary groups, with
 propagated and Hesse totals separately displayed. Adjacent paper-figure slots
 are configured in the presentation branch. See
 [STRUCTURED_SUMMARY.md](STRUCTURED_SUMMARY.md) for reproducibility and costs.
+
+The paired study is now validated: Hesse sigma_mu is 1.032008 (4096) and
+1.024409 (8192), with source/Hesse variance differences +0.1722% and +0.1704%.
+Both native directional checks pass, with at most 0.213% disagreement.
+See the [completed summary](STRUCTURED_SUMMARY.md#validated-data-like-covariance-results-2026-10-24).

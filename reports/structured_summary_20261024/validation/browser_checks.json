@@ -1,0 +1,178 @@
+{
+  "javascript_errors": [],
+  "desktop_bounds": [
+    {
+      "id": "overview",
+      "bottom": 773.0211181640625,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "paper-result",
+      "bottom": 633.4307861328125,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "same-sample",
+      "bottom": 700.330322265625,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "exact-closure",
+      "bottom": 726.3379516601562,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "shape-systematics",
+      "bottom": 634.8079833984375,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "native-inputs",
+      "bottom": 804.2903442382812,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "native-sr",
+      "bottom": 688.5889282226562,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "native-channels",
+      "bottom": 753.4580078125,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "native-package",
+      "bottom": 774.2217407226562,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "normalizer-graph",
+      "bottom": 702.6079711914062,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "normalizer-load",
+      "bottom": 818.962646484375,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "normalizer-create",
+      "bottom": 786.9871826171875,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "workspace-family",
+      "bottom": 762.9393920898438,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "family-true-4096",
+      "bottom": 763.0453491210938,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "family-data-like-4096",
+      "bottom": 763.0453491210938,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "family-pruned-4096",
+      "bottom": 763.0453491210938,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "family-true-8192",
+      "bottom": 763.0453491210938,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "family-data-like-8192",
+      "bottom": 763.0453491210938,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "family-pruned-8192",
+      "bottom": 763.0453491210938,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "diagnostics-method",
+      "bottom": 696.9580078125,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "pulls-4096",
+      "bottom": 853.056884765625,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "uncertainties-4096",
+      "bottom": 854.6459350585938,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "pulls-8192",
+      "bottom": 853.056884765625,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "uncertainties-8192",
+      "bottom": 830.9159545898438,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "cost-overview",
+      "bottom": 776.9054565429688,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "cost-true-4096",
+      "bottom": 783.0322265625,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "cost-data-like-4096",
+      "bottom": 783.0322265625,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "cost-pruned-4096",
+      "bottom": 783.0322265625,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "cost-true-8192",
+      "bottom": 783.0322265625,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "cost-data-like-8192",
+      "bottom": 783.0322265625,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "cost-pruned-8192",
+      "bottom": 783.0322265625,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "resource-totals",
+      "bottom": 830.439208984375,
+      "right": 1388.9599227905273
+    },
+    {
+      "id": "downloads",
+      "bottom": 643.8479614257812,
+      "right": 1388.9599227905273
+    }
+  ],
+  "local_links_checked": 76,
+  "diagnostic_views_checked": 8,
+  "status": "passed",
+  "slides": 33,
+  "navigation": "passed",
+  "mobile": "passed",
+  "paper_slots": "passed",
+  "archive": "passed"
+}
