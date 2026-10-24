@@ -301,3 +301,12 @@ The true-Asimov files under `results/asimov_anchor_normalized/` are preserved.
 They retain the previous nominal/anchor normalization. Therefore the new
 true-versus-data-like comparison includes both the nuisance shift and this
 refinement of the finite-reference model.
+
+## Small executable example
+
+[`normalizer_usage_example.py`](../normalizer_usage_example.py) checks a
+two-event constructor, both anchors, an interior nuisance point and cache
+updates. Run with the project's loader, or pass `--library` with the path to
+the standalone shared library. The structured presentation shows the same
+example alongside compilation and read-only workspace-loading snippets.
+See [STRUCTURED_SUMMARY.md](STRUCTURED_SUMMARY.md) for the full workflow.

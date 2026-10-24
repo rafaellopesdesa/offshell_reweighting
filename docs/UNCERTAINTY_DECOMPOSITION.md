@@ -1,7 +1,7 @@
 # Covariance-based uncertainty decomposition
 
-This study compares the preserved true 4096 Asimov and the data-like 4096
-Asimov. Their profile-scan baselines and input workspaces remain unchanged.
+The original 2026-10-22 study compared the then-preserved anchor-normalized
+true 4096 Asimov and the fully normalized data-like 4096 Asimov. Their profile-scan baselines and input workspaces remain unchanged.
 The numerical table and ranking are exported under
 [`reports/data_like_4096/decomposition/`](../reports/data_like_4096/decomposition/).
 
@@ -65,8 +65,9 @@ The report uses the **observed Hessian**, evaluated near the saved optimum.
 It reports both the propagated source sum and `V[mu, mu]`, and their relative
 difference. It does not rescale the components to make the totals agree.
 Exact closure requires the source score covariance to equal the information
-used for `V`. The preserved true model only normalizes its anchors; the new
-data-like model normalizes every nuisance point. Observed curvature,
+used for `V`. In that original study, the preserved true model only normalized its anchors;
+the data-like model normalized every nuisance point. The current six-workspace
+family now uses RooSameSampleNormalizer throughout. Observed curvature,
 generation/fit differences and this model distinction can affect closure.
 
 `validate_covariance_curvature.py` independently checks four native-NLL
@@ -112,3 +113,32 @@ python export_np_ranking.py \
   --summary reports/data_like_4096/decomposition/summary.json \
   --output reports/data_like_4096/decomposition
 ```
+
+## Structured-summary update: unpruned data-like 4096 and 8192
+
+The 2026-10-24 report uses the current unpruned data-like workspaces at both
+reference sizes. Generating mu remains one. It reuses the validated 4096 full
+Hesse only after verifying identical workspace bytes and the same optimum.
+A separate full Hesse and independent directional checks are run for 8192.
+Neither refinement replaces any published scan baseline.
+
+The 8192 sample contains two negative reference weights. An explicit
+`--allow-signed-quadrature` option permits the existing weighted sums to
+approximate the population Poisson score integral. Negative coefficients are
+retained as integration terms, not interpreted as negative Poisson means.
+Replacing them with absolute or squared weights would define a different
+calculation. The output records positive and negative contributions separately,
+and requires finite nonnegative aggregate estimates and derivative stability.
+`test_signed_score_quadrature.py` verifies exact polynomial integration with
+both positive and signed rules and checks that no clipping occurs.
+
+`report_summary_diagnostics.py` provides two pull origins and two uncertainty
+views. The original-nominal view shows fitted alpha and injected alpha_A; the
+Asimov-centered view shows their difference. Unconstrained qqZZ parameters
+remain in their raw factor coordinates. Fifteen auxiliary sources are shown
+in one shared order across both sample sizes, while the complete 130-NP
+tables retain model-specific ranks, conditional impacts and correlations.
+The grouped plot includes all primary regions and auxiliary groups, with
+propagated and Hesse totals separately displayed. Adjacent paper-figure slots
+are configured in the presentation branch. See
+[STRUCTURED_SUMMARY.md](STRUCTURED_SUMMARY.md) for reproducibility and costs.

@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "root_version": "6.34.10",
+  "anchors": [
+    {
+      "alpha": 0.0,
+      "Z": 1.0
+    },
+    {
+      "alpha": 1.0,
+      "Z": 0.96
+    },
+    {
+      "alpha": -1.0,
+      "Z": 1.02
+    },
+    {
+      "alpha": 1.0,
+      "Z": 0.96
+    }
+  ],
+  "normalized_high_shapes": [
+    1.25,
+    0.8333333333333334
+  ],
+  "interior_Z": 0.9896099916048684
+}
