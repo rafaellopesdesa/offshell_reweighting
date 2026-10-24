@@ -1,0 +1,111 @@
+/* Structured summary; historical slides retain style.css without these overrides. */
+.summary .reveal h2{font-size:40px;margin-bottom:18px}
+.summary .reveal h3{font-size:23px}
+.summary .reveal .lead{font-size:25px}
+.summary .reveal .footnote{font-size:14px;margin-top:17px}
+.summary .reveal .note{font-size:18px;margin-top:19px}
+.summary .reveal .compact{margin-top:18px}
+.summary .reveal .compact article{padding:16px 21px}
+.summary .reveal .compact h3{margin-top:3px;margin-bottom:10px}
+.summary .reveal .compact p{font-size:18px;margin-top:7px}
+.summary .agenda-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+.summary .agenda-grid a{padding:21px 18px;border-top:3px solid var(--blue);background:white;color:var(--ink);border-radius:0 0 9px 9px}
+.summary .agenda-grid span{display:block;font-size:17px;color:var(--blue);margin-bottom:19px;font-weight:700}
+.summary .agenda-grid strong{font-size:21px}
+.summary .agenda-grid p{font-size:17px;line-height:1.5;color:var(--muted);margin:12px 0 0}
+.summary .method-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.summary .method-grid article{padding:18px 22px}
+.summary .method-grid p{font-size:19px;margin:12px 0 0}
+.summary .reveal .formula{font-family:Georgia,serif;font-size:26px;line-height:1.5;color:var(--ink)}
+.summary .reveal .formula.large{font-size:31px}
+.summary .theorem-box{border-left:4px solid var(--blue);padding:16px 25px;background:#edf2f5;border-radius:0 10px 10px 0;margin:20px 0}
+.summary .theorem-box p{margin:0}
+.summary .flow-grid{display:grid;grid-template-columns:1fr 25px 1.25fr 25px 1fr;gap:13px;align-items:center;margin:28px 0}
+.summary .flow-grid article{padding:20px 18px;min-height:205px}
+.summary .flow-grid h3{font-size:21px;overflow-wrap:anywhere}
+.summary .flow-grid .formula{font-size:24px}
+.summary .flow-arrow{color:var(--blue);font-size:30px}
+.summary .reveal .code-block{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:18px;line-height:1.6;background:#172d40;color:#f2f7fa;padding:20px 24px;border-radius:10px;width:100%;margin:18px 0;box-shadow:none;white-space:pre-wrap;overflow-wrap:anywhere}
+.summary .reveal .code-block code{font:inherit;max-height:none;padding:0;background:transparent;white-space:pre-wrap;overflow-wrap:anywhere}
+.summary .example-layout{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);gap:25px;align-items:start}
+.summary .example-layout aside{padding-top:24px}
+.summary .example-layout aside p{margin:12px 0 22px}
+.summary .example-layout .code-block{font-size:16px;line-height:1.85}
+.summary .model-table{margin:28px 0 20px;font-size:21px}
+.summary .model-table td,.summary .model-table th{text-align:left}
+.summary .plot-controls{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+.summary .plot-controls button{font-size:15px;padding:7px 12px;border:1px solid var(--line);border-radius:5px;color:var(--blue);background:white}
+.summary .plot-controls button[aria-pressed=true]{color:white;background:var(--blue);border-color:var(--blue)}
+.summary .diagnostic-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px}
+.summary .reveal .diagnostic-layout img{height:425px}
+.summary .paper-comparison{display:flex;flex-direction:column;min-width:0}
+.summary .paper-comparison>figcaption{font-size:16px;font-weight:700;margin:0 0 10px}
+.summary .paper-slot{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:2px dashed #bdcbd5;border-radius:9px;background:#f1f5f7;color:var(--muted);min-height:388px;padding:30px;text-align:center;font-size:20px}
+.summary .paper-slot span{font-size:16px}
+.summary .reveal .paper-slot img{border:0;background:white;width:100%;height:auto;max-height:380px;object-fit:contain}
+.summary .reveal .diagnostic-downloads{font-size:14px;margin-top:13px;line-height:1.5;color:var(--muted)}
+.summary .cost-overview-figure img{height:380px}
+.summary .metric-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:18px 0}
+.summary .metric-strip>div{border-left:3px solid var(--blue);padding:3px 15px}
+.summary .metric-strip strong{display:block;font-size:28px}
+.summary .metric-strip>div>span{display:block;font-size:15px;color:var(--muted);margin-top:5px}
+.summary .cost-slide h2{font-size:37px}
+.summary #resource-summary-table{font-size:18px;margin:25px 0 20px}
+.summary #resource-summary-table td,.summary #resource-summary-table th{padding:11px 10px}
+.summary #resource-summary-table th{font-size:13px}
+.summary .download-cards{margin-top:25px}
+.summary .download-cards ul{font-size:19px;line-height:1.5;margin:12px 0 0;padding-left:22px}
+.summary .download-cards li{margin-bottom:12px}
+.summary #contents{max-height:85vh;overflow:auto}
+.summary #contents li{font-size:17px}
+.summary.reading .agenda-grid,.summary.reading .method-grid,.summary.reading .flow-grid,.summary.reading .example-layout,.summary.reading .diagnostic-layout,.summary.reading .metric-strip{grid-template-columns:1fr}
+.summary.reading .reveal h2{font-size:29px}
+.summary.reading .reveal h3{font-size:23px}
+.summary.reading .reveal .formula.large{font-size:24px}
+.summary.reading .reveal .formula{font-size:22px;overflow-wrap:anywhere}
+.summary.reading .flow-arrow{transform:rotate(90deg);justify-self:center}
+.summary.reading .flow-grid article{min-height:0}
+.summary.reading .reveal .code-block{font-size:13px;padding:16px;line-height:1.7}
+.summary.reading .example-layout aside{padding-top:0}
+.summary.reading .reveal .diagnostic-layout img,.summary.reading .cost-overview-figure img{height:auto}
+.summary.reading .paper-slot{min-height:240px}
+.summary.reading .plot-controls{flex-wrap:wrap}
+.summary.reading .reveal .model-table{font-size:17px}
+.summary.reading .download-cards ul{font-size:17px}
+.summary.reading .agenda-grid a{padding:16px}
+.summary.reading .agenda-grid span{margin-bottom:9px}
+
+.summary .plot-controls>span{font-size:16px;color:var(--muted)}
+
+.summary #paper-result .big{font-size:36px}
+
+.summary .native-chain{display:flex;justify-content:space-between;align-items:center;gap:15px;background:#edf2f5;border-radius:10px;padding:20px 24px;margin:22px 0 15px}
+.summary .native-chain span{display:flex;flex-direction:column;gap:8px;font-size:20px}
+.summary .native-chain code{font-size:16px}
+.summary .native-chain b{color:var(--blue);font-size:27px}
+.summary .native-intensity{margin:0 0 12px}
+.summary .native-channel-grid{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:18px;margin:22px 0}
+.summary .native-channel-grid article{padding:17px 20px}
+.summary .native-channel-grid h3{margin:0 0 15px}
+.summary .native-channel-grid .big{font-size:30px;color:var(--blue)}
+.summary .native-channel-grid p{font-size:17px}
+.summary .native-package-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.8fr);gap:26px;align-items:start}
+.summary .native-package-layout>div{padding-top:15px}
+.summary .native-package-layout p{font-size:18px;line-height:1.5;margin-bottom:18px}
+.summary .native-package-layout h3{font-size:22px;margin-bottom:12px}
+.summary .native-package-layout .code-block{font-size:14px;line-height:1.8;padding:19px}
+.summary #native-package .theorem-box{margin-top:8px;padding:13px 22px}
+.summary #native-package .theorem-box>p:not(.formula){font-size:18px;margin-top:8px}
+.summary #native-inputs .flow-grid{margin:20px 0}
+.summary #native-inputs .flow-grid article{min-height:205px}
+.summary #native-inputs .note{font-size:17px;margin-top:16px}
+.summary #native-channels .formula{font-size:27px}
+.summary.reading .native-channel-grid,.summary.reading .native-package-layout{grid-template-columns:1fr}
+.summary.reading .native-chain{flex-direction:column;align-items:flex-start}
+.summary.reading .native-chain b{transform:rotate(90deg);align-self:center}
+.summary.reading #native-channels .formula{font-size:22px}
+.summary.reading .native-package-layout .code-block{font-size:12px}
+/* Reveal's reset removes the browser's mathematical sub/sup defaults. */
+.summary .reveal sub,.summary .reveal sup{font-size:.7em;line-height:0;position:relative;vertical-align:baseline}
+.summary .reveal sub{bottom:-.25em}
+.summary .reveal sup{top:-.5em}

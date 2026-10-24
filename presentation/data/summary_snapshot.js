@@ -1,0 +1,8608 @@
+window.SUMMARY_RESULTS = {
+  "complete": true,
+  "created_utc": "2026-10-24T18:25:25.396738+00:00",
+  "resources": {
+    "complete": true,
+    "created_utc": "2026-10-24T16:50:25.984710+00:00",
+    "models": [
+      {
+        "label": "true_4096_unpruned",
+        "title": "True Asimov",
+        "reference_events": 4096,
+        "constrained_nps": 127,
+        "color": "#126c96",
+        "points": 61,
+        "computed_points": 66,
+        "median_wall_minutes": 4.62037997355219,
+        "minimum_wall_minutes": 1.8616643796131636,
+        "maximum_wall_minutes": 10.270970349968412,
+        "median_cpu_minutes": 4.618812090149999,
+        "maximum_process_peak_rss_gib": 1.632049560546875,
+        "maximum_slurm_peak_rss_gib": 1.34698486328125,
+        "minimizer_cpu_hours_including_overlaps": 4.7092113255250005,
+        "whole_job_cpu_hours": 4.735538888888889,
+        "scan_wall_hours": 1.7230555555555556,
+        "scan_csv_sha256": "bd5f281c16915515e752e62e6f43bd2d5fc01d39594a993c87248ebe4486ef00",
+        "rows": [
+          {
+            "mu": 0.0,
+            "wall_seconds": 445.8828223021701,
+            "cpu_seconds": 445.723197111,
+            "process_peak_rss_gib": 1.630950927734375,
+            "cpu_utilization_percent": 99.96420019269952,
+            "worker_index": 12,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.05,
+            "wall_seconds": 326.37576721282676,
+            "cpu_seconds": 326.30536210699984,
+            "process_peak_rss_gib": 1.630950927734375,
+            "cpu_utilization_percent": 99.97842820671762,
+            "worker_index": 12,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.1,
+            "wall_seconds": 331.6239690859802,
+            "cpu_seconds": 331.5576414090001,
+            "process_peak_rss_gib": 1.630950927734375,
+            "cpu_utilization_percent": 99.97999913059272,
+            "worker_index": 12,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.15,
+            "wall_seconds": 332.67935457779095,
+            "cpu_seconds": 332.61187147299984,
+            "process_peak_rss_gib": 1.630950927734375,
+            "cpu_utilization_percent": 99.97971527121761,
+            "worker_index": 12,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.2,
+            "wall_seconds": 327.7495350460522,
+            "cpu_seconds": 327.685893353,
+            "process_peak_rss_gib": 1.63067626953125,
+            "cpu_utilization_percent": 99.98058221713625,
+            "worker_index": 12,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.25,
+            "wall_seconds": 275.0116769731976,
+            "cpu_seconds": 274.94972621400007,
+            "process_peak_rss_gib": 1.63067626953125,
+            "cpu_utilization_percent": 99.97747340771876,
+            "worker_index": 12,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.3,
+            "wall_seconds": 277.2227984131314,
+            "cpu_seconds": 277.1287254089999,
+            "process_peak_rss_gib": 1.63067626953125,
+            "cpu_utilization_percent": 99.96606592074319,
+            "worker_index": 12,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.35,
+            "wall_seconds": 163.24511905713007,
+            "cpu_seconds": 163.19982499399998,
+            "process_peak_rss_gib": 1.63067626953125,
+            "cpu_utilization_percent": 99.97225395565165,
+            "worker_index": 12,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.4,
+            "wall_seconds": 276.81517368974164,
+            "cpu_seconds": 276.72479544600003,
+            "process_peak_rss_gib": 1.63067626953125,
+            "cpu_utilization_percent": 99.96735069016017,
+            "worker_index": 12,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.45,
+            "wall_seconds": 162.312347301282,
+            "cpu_seconds": 162.26874793199994,
+            "process_peak_rss_gib": 1.63067626953125,
+            "cpu_utilization_percent": 99.97313859973873,
+            "worker_index": 12,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.5,
+            "wall_seconds": 168.66811614998733,
+            "cpu_seconds": 168.64179084900002,
+            "process_peak_rss_gib": 1.6317787170410156,
+            "cpu_utilization_percent": 99.98439224816865,
+            "worker_index": 13,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.55,
+            "wall_seconds": 168.85276730798068,
+            "cpu_seconds": 168.82614568299982,
+            "process_peak_rss_gib": 1.6317787170410156,
+            "cpu_utilization_percent": 99.9842338237002,
+            "worker_index": 13,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.6,
+            "wall_seconds": 170.18382733801263,
+            "cpu_seconds": 170.15685643000006,
+            "process_peak_rss_gib": 1.6317787170410156,
+            "cpu_utilization_percent": 99.98415189713708,
+            "worker_index": 13,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.65,
+            "wall_seconds": 220.84765318600694,
+            "cpu_seconds": 220.81171124399998,
+            "process_peak_rss_gib": 1.6317787170410156,
+            "cpu_utilization_percent": 99.98372545893585,
+            "worker_index": 13,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.7,
+            "wall_seconds": 189.1357185030065,
+            "cpu_seconds": 189.10616513900015,
+            "process_peak_rss_gib": 1.6315040588378906,
+            "cpu_utilization_percent": 99.9843745199266,
+            "worker_index": 13,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.75,
+            "wall_seconds": 169.57701344499947,
+            "cpu_seconds": 169.54952587100001,
+            "process_peak_rss_gib": 1.6315040588378906,
+            "cpu_utilization_percent": 99.98379050707342,
+            "worker_index": 13,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.8,
+            "wall_seconds": 211.36182636398007,
+            "cpu_seconds": 211.32783336900002,
+            "process_peak_rss_gib": 1.6315040588378906,
+            "cpu_utilization_percent": 99.98391715497313,
+            "worker_index": 13,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.85,
+            "wall_seconds": 169.3756641719956,
+            "cpu_seconds": 169.34791262099992,
+            "process_peak_rss_gib": 1.6315040588378906,
+            "cpu_utilization_percent": 99.98361538469453,
+            "worker_index": 13,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.9,
+            "wall_seconds": 168.4602929370012,
+            "cpu_seconds": 168.433537953,
+            "process_peak_rss_gib": 1.6315040588378906,
+            "cpu_utilization_percent": 99.9841179286022,
+            "worker_index": 13,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.95,
+            "wall_seconds": 170.80223855600343,
+            "cpu_seconds": 170.762182336,
+            "process_peak_rss_gib": 1.6315040588378906,
+            "cpu_utilization_percent": 99.97654818792654,
+            "worker_index": 13,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 1.0,
+            "wall_seconds": 111.69986277678981,
+            "cpu_seconds": 111.60076372500001,
+            "process_peak_rss_gib": 1.6301345825195312,
+            "cpu_utilization_percent": 99.91128095476014,
+            "worker_index": 14,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.05,
+            "wall_seconds": 220.12840485293418,
+            "cpu_seconds": 219.954895099,
+            "process_peak_rss_gib": 1.6301345825195312,
+            "cpu_utilization_percent": 99.9211779351919,
+            "worker_index": 14,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.1,
+            "wall_seconds": 223.77182825095952,
+            "cpu_seconds": 223.57641433700002,
+            "process_peak_rss_gib": 1.6301345825195312,
+            "cpu_utilization_percent": 99.91267269187239,
+            "worker_index": 14,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.15,
+            "wall_seconds": 222.5934903388843,
+            "cpu_seconds": 222.43572120299996,
+            "process_peak_rss_gib": 1.6301345825195312,
+            "cpu_utilization_percent": 99.92912230468009,
+            "worker_index": 14,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.2,
+            "wall_seconds": 278.60627140989527,
+            "cpu_seconds": 278.3563308910001,
+            "process_peak_rss_gib": 1.6301345825195312,
+            "cpu_utilization_percent": 99.9102889832198,
+            "worker_index": 14,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.25,
+            "wall_seconds": 225.02246930496767,
+            "cpu_seconds": 224.66026138400002,
+            "process_peak_rss_gib": 1.6301345825195312,
+            "cpu_utilization_percent": 99.83903477635528,
+            "worker_index": 14,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.3,
+            "wall_seconds": 280.1235169810243,
+            "cpu_seconds": 279.8798276040002,
+            "process_peak_rss_gib": 1.6304092407226562,
+            "cpu_utilization_percent": 99.91300645527714,
+            "worker_index": 14,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.35,
+            "wall_seconds": 279.1431608158164,
+            "cpu_seconds": 278.90581346700014,
+            "process_peak_rss_gib": 1.6304092407226562,
+            "cpu_utilization_percent": 99.9149728948678,
+            "worker_index": 14,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.4,
+            "wall_seconds": 279.5317385569215,
+            "cpu_seconds": 279.17926320499987,
+            "process_peak_rss_gib": 1.6304092407226562,
+            "cpu_utilization_percent": 99.87390506933443,
+            "worker_index": 14,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.45,
+            "wall_seconds": 279.4816868188791,
+            "cpu_seconds": 279.2180470180001,
+            "process_peak_rss_gib": 1.6304092407226562,
+            "cpu_utilization_percent": 99.905668309119,
+            "worker_index": 14,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.5,
+            "wall_seconds": 323.60377370897913,
+            "cpu_seconds": 323.533530144,
+            "process_peak_rss_gib": 1.63177490234375,
+            "cpu_utilization_percent": 99.97829334183157,
+            "worker_index": 15,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.55,
+            "wall_seconds": 201.55453013200895,
+            "cpu_seconds": 201.52344333400004,
+            "process_peak_rss_gib": 1.63177490234375,
+            "cpu_utilization_percent": 99.98457648260818,
+            "worker_index": 15,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.6,
+            "wall_seconds": 202.52422643400496,
+            "cpu_seconds": 202.49411466699996,
+            "process_peak_rss_gib": 1.63177490234375,
+            "cpu_utilization_percent": 99.98513177038856,
+            "worker_index": 15,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.65,
+            "wall_seconds": 203.70503663201816,
+            "cpu_seconds": 203.67553912200003,
+            "process_peak_rss_gib": 1.63177490234375,
+            "cpu_utilization_percent": 99.9855194989256,
+            "worker_index": 15,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.7,
+            "wall_seconds": 203.38192129100207,
+            "cpu_seconds": 203.35017523399995,
+            "process_peak_rss_gib": 1.63177490234375,
+            "cpu_utilization_percent": 99.98439091498368,
+            "worker_index": 15,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.75,
+            "wall_seconds": 202.3616767860076,
+            "cpu_seconds": 202.33029116199987,
+            "process_peak_rss_gib": 1.63177490234375,
+            "cpu_utilization_percent": 99.9844903321092,
+            "worker_index": 15,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.8,
+            "wall_seconds": 202.51850150697283,
+            "cpu_seconds": 202.48489921500004,
+            "process_peak_rss_gib": 1.63177490234375,
+            "cpu_utilization_percent": 99.98340779152386,
+            "worker_index": 15,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.85,
+            "wall_seconds": 203.46509100400726,
+            "cpu_seconds": 203.43300070700002,
+            "process_peak_rss_gib": 1.632049560546875,
+            "cpu_utilization_percent": 99.98422810672392,
+            "worker_index": 15,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.9,
+            "wall_seconds": 204.1088304669829,
+            "cpu_seconds": 204.07650224299982,
+            "process_peak_rss_gib": 1.632049560546875,
+            "cpu_utilization_percent": 99.98416128106308,
+            "worker_index": 15,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.95,
+            "wall_seconds": 202.01776431500912,
+            "cpu_seconds": 201.98458899000002,
+            "process_peak_rss_gib": 1.632049560546875,
+            "cpu_utilization_percent": 99.98357801596231,
+            "worker_index": 15,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 2.0,
+            "wall_seconds": 549.3395766038448,
+            "cpu_seconds": 548.3009289190001,
+            "process_peak_rss_gib": 1.6298408508300781,
+            "cpu_utilization_percent": 99.81092793436332,
+            "worker_index": 16,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.05,
+            "wall_seconds": 281.9903353997506,
+            "cpu_seconds": 281.2687118350001,
+            "process_peak_rss_gib": 1.6298408508300781,
+            "cpu_utilization_percent": 99.744096348647,
+            "worker_index": 16,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.1,
+            "wall_seconds": 281.1257337429561,
+            "cpu_seconds": 280.50868386699995,
+            "process_peak_rss_gib": 1.6298408508300781,
+            "cpu_utilization_percent": 99.7805075089567,
+            "worker_index": 16,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.15,
+            "wall_seconds": 280.3643548870459,
+            "cpu_seconds": 280.1101628860001,
+            "process_peak_rss_gib": 1.6298408508300781,
+            "cpu_utilization_percent": 99.90933512173892,
+            "worker_index": 16,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.2,
+            "wall_seconds": 279.45615230081603,
+            "cpu_seconds": 279.25370289600005,
+            "process_peak_rss_gib": 1.6298408508300781,
+            "cpu_utilization_percent": 99.92755593206691,
+            "worker_index": 16,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.25,
+            "wall_seconds": 279.8975179451518,
+            "cpu_seconds": 279.737878682,
+            "process_peak_rss_gib": 1.6298408508300781,
+            "cpu_utilization_percent": 99.94296510225465,
+            "worker_index": 16,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.3,
+            "wall_seconds": 280.02353228162974,
+            "cpu_seconds": 279.67151458299986,
+            "process_peak_rss_gib": 1.6301155090332031,
+            "cpu_utilization_percent": 99.87428995850398,
+            "worker_index": 16,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.35,
+            "wall_seconds": 279.6935452101752,
+            "cpu_seconds": 279.23467021900024,
+            "process_peak_rss_gib": 1.6301155090332031,
+            "cpu_utilization_percent": 99.83593651014358,
+            "worker_index": 16,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.4,
+            "wall_seconds": 276.0873898230493,
+            "cpu_seconds": 275.612476283,
+            "process_peak_rss_gib": 1.6301155090332031,
+            "cpu_utilization_percent": 99.82798434207601,
+            "worker_index": 16,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.45,
+            "wall_seconds": 280.3739139973186,
+            "cpu_seconds": 279.907093111,
+            "process_peak_rss_gib": 1.6301155090332031,
+            "cpu_utilization_percent": 99.8335005993735,
+            "worker_index": 16,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.5,
+            "wall_seconds": 616.2582209981047,
+            "cpu_seconds": 615.389804585,
+            "process_peak_rss_gib": 1.6306838989257812,
+            "cpu_utilization_percent": 99.85908238080813,
+            "worker_index": 1,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.55,
+            "wall_seconds": 280.06357286684215,
+            "cpu_seconds": 279.85808223900005,
+            "process_peak_rss_gib": 1.6306838989257812,
+            "cpu_utilization_percent": 99.92662714906527,
+            "worker_index": 1,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.6,
+            "wall_seconds": 279.4793784143403,
+            "cpu_seconds": 279.2829381959999,
+            "process_peak_rss_gib": 1.6306838989257812,
+            "cpu_utilization_percent": 99.92971208843568,
+            "worker_index": 1,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.65,
+            "wall_seconds": 278.77698875404894,
+            "cpu_seconds": 278.5798824540002,
+            "process_peak_rss_gib": 1.6306838989257812,
+            "cpu_utilization_percent": 99.92929606531382,
+            "worker_index": 1,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.7,
+            "wall_seconds": 278.91834226436913,
+            "cpu_seconds": 278.713216161,
+            "process_peak_rss_gib": 1.6306838989257812,
+            "cpu_utilization_percent": 99.92645657445694,
+            "worker_index": 1,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.75,
+            "wall_seconds": 278.44819453172386,
+            "cpu_seconds": 278.25047141699997,
+            "process_peak_rss_gib": 1.6306838989257812,
+            "cpu_utilization_percent": 99.9289910588013,
+            "worker_index": 1,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.8,
+            "wall_seconds": 278.70847461698577,
+            "cpu_seconds": 278.5085323390001,
+            "process_peak_rss_gib": 1.6309585571289062,
+            "cpu_utilization_percent": 99.92826114158875,
+            "worker_index": 1,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.85,
+            "wall_seconds": 278.7836499470286,
+            "cpu_seconds": 278.581520148,
+            "process_peak_rss_gib": 1.6309585571289062,
+            "cpu_utilization_percent": 99.92749582012179,
+            "worker_index": 1,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.9,
+            "wall_seconds": 278.92840877501294,
+            "cpu_seconds": 278.72907499899975,
+            "process_peak_rss_gib": 1.6309585571289062,
+            "cpu_utilization_percent": 99.92853586449347,
+            "worker_index": 1,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.95,
+            "wall_seconds": 278.23254793602973,
+            "cpu_seconds": 278.0337559039999,
+            "process_peak_rss_gib": 1.6309585571289062,
+            "cpu_utilization_percent": 99.92855184143463,
+            "worker_index": 1,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 3.0,
+            "wall_seconds": 277.07758957287297,
+            "cpu_seconds": 276.87386493700023,
+            "process_peak_rss_gib": 1.6309585571289062,
+            "cpu_utilization_percent": 99.92647379523304,
+            "worker_index": 1,
+            "chunk_index": "5"
+          }
+        ]
+      },
+      {
+        "label": "data_like_4096_unpruned",
+        "title": "Data-like Asimov",
+        "reference_events": 4096,
+        "constrained_nps": 127,
+        "color": "#c95639",
+        "points": 61,
+        "computed_points": 66,
+        "median_wall_minutes": 4.552013594116821,
+        "minimum_wall_minutes": 1.8779090484502377,
+        "maximum_wall_minutes": 10.224405612350287,
+        "median_cpu_minutes": 4.551383449066664,
+        "maximum_process_peak_rss_gib": 1.632598876953125,
+        "maximum_slurm_peak_rss_gib": 1.3483352661132812,
+        "minimizer_cpu_hours_including_overlaps": 5.299788788839167,
+        "whole_job_cpu_hours": 5.328667777777778,
+        "scan_wall_hours": 1.7761111111111112,
+        "scan_csv_sha256": "d304763fd34477774b5478f34c91234dc54ae866e8ec716802a2f6f55819b850",
+        "rows": [
+          {
+            "mu": 0.0,
+            "wall_seconds": 501.4841994509916,
+            "cpu_seconds": 501.4098895070001,
+            "process_peak_rss_gib": 1.6298408508300781,
+            "cpu_utilization_percent": 99.9851819969457,
+            "worker_index": 17,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.05,
+            "wall_seconds": 334.9948171779979,
+            "cpu_seconds": 334.9149422729997,
+            "process_peak_rss_gib": 1.6298408508300781,
+            "cpu_utilization_percent": 99.97615637588933,
+            "worker_index": 17,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.1,
+            "wall_seconds": 334.0657400659984,
+            "cpu_seconds": 334.01863028000025,
+            "process_peak_rss_gib": 1.6298408508300781,
+            "cpu_utilization_percent": 99.98589804929148,
+            "worker_index": 17,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.15,
+            "wall_seconds": 315.3970694509917,
+            "cpu_seconds": 315.35233224599983,
+            "process_peak_rss_gib": 1.6298408508300781,
+            "cpu_utilization_percent": 99.98581559268456,
+            "worker_index": 17,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.2,
+            "wall_seconds": 326.24042710100184,
+            "cpu_seconds": 326.1964678889999,
+            "process_peak_rss_gib": 1.6298408508300781,
+            "cpu_utilization_percent": 99.98652551665882,
+            "worker_index": 17,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.25,
+            "wall_seconds": 261.90879559799214,
+            "cpu_seconds": 261.8725039609999,
+            "process_peak_rss_gib": 1.6295661926269531,
+            "cpu_utilization_percent": 99.986143406559,
+            "worker_index": 17,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.3,
+            "wall_seconds": 214.90615700901253,
+            "cpu_seconds": 214.8772558579999,
+            "process_peak_rss_gib": 1.6295661926269531,
+            "cpu_utilization_percent": 99.98655173429424,
+            "worker_index": 17,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.35,
+            "wall_seconds": 267.56944094298524,
+            "cpu_seconds": 267.533271369,
+            "process_peak_rss_gib": 1.6295661926269531,
+            "cpu_utilization_percent": 99.98648217305468,
+            "worker_index": 17,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.4,
+            "wall_seconds": 164.95139222202124,
+            "cpu_seconds": 164.92915828799994,
+            "process_peak_rss_gib": 1.6295661926269531,
+            "cpu_utilization_percent": 99.9865209176341,
+            "worker_index": 17,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.45,
+            "wall_seconds": 260.76620624400675,
+            "cpu_seconds": 260.731389015,
+            "process_peak_rss_gib": 1.6295661926269531,
+            "cpu_utilization_percent": 99.98664810540129,
+            "worker_index": 17,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.5,
+            "wall_seconds": 212.0122741930245,
+            "cpu_seconds": 211.98763357100006,
+            "process_peak_rss_gib": 1.6304054260253906,
+            "cpu_utilization_percent": 99.9883777379785,
+            "worker_index": 18,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.55,
+            "wall_seconds": 213.6965649049962,
+            "cpu_seconds": 213.67147537000005,
+            "process_peak_rss_gib": 1.6304054260253906,
+            "cpu_utilization_percent": 99.98825927079956,
+            "worker_index": 18,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.6,
+            "wall_seconds": 271.5126719660184,
+            "cpu_seconds": 271.481668978,
+            "process_peak_rss_gib": 1.6304054260253906,
+            "cpu_utilization_percent": 99.98858138451001,
+            "worker_index": 18,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.65,
+            "wall_seconds": 217.74974622999434,
+            "cpu_seconds": 217.72415914599992,
+            "process_peak_rss_gib": 1.6304054260253906,
+            "cpu_utilization_percent": 99.98824931627364,
+            "worker_index": 18,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.7,
+            "wall_seconds": 259.95719383700634,
+            "cpu_seconds": 259.92730038900004,
+            "process_peak_rss_gib": 1.6301307678222656,
+            "cpu_utilization_percent": 99.98850062675125,
+            "worker_index": 18,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.75,
+            "wall_seconds": 215.7267628989939,
+            "cpu_seconds": 215.7019599529999,
+            "process_peak_rss_gib": 1.6301307678222656,
+            "cpu_utilization_percent": 99.98850261058911,
+            "worker_index": 18,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.8,
+            "wall_seconds": 270.2342091219907,
+            "cpu_seconds": 270.20347174799997,
+            "process_peak_rss_gib": 1.6301307678222656,
+            "cpu_utilization_percent": 99.9886256539871,
+            "worker_index": 18,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.85,
+            "wall_seconds": 214.19616414001212,
+            "cpu_seconds": 214.17144731899998,
+            "process_peak_rss_gib": 1.6301307678222656,
+            "cpu_utilization_percent": 99.98846066123016,
+            "worker_index": 18,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.9,
+            "wall_seconds": 201.23011805000715,
+            "cpu_seconds": 201.207660057,
+            "process_peak_rss_gib": 1.6301307678222656,
+            "cpu_utilization_percent": 99.98883964625932,
+            "worker_index": 18,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.95,
+            "wall_seconds": 218.90168724997784,
+            "cpu_seconds": 218.87197909,
+            "process_peak_rss_gib": 1.6301307678222656,
+            "cpu_utilization_percent": 99.98642853769148,
+            "worker_index": 18,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 1.0,
+            "wall_seconds": 112.67454290701426,
+            "cpu_seconds": 112.6605363370004,
+            "process_peak_rss_gib": 1.6304054260253906,
+            "cpu_utilization_percent": 99.98756900214326,
+            "worker_index": 18,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 1.05,
+            "wall_seconds": 219.3513866449939,
+            "cpu_seconds": 219.32586013499997,
+            "process_peak_rss_gib": 1.6298599243164062,
+            "cpu_utilization_percent": 99.98836273142177,
+            "worker_index": 19,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.1,
+            "wall_seconds": 198.86532155200257,
+            "cpu_seconds": 198.84293912099997,
+            "process_peak_rss_gib": 1.6298599243164062,
+            "cpu_utilization_percent": 99.98874493007231,
+            "worker_index": 19,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.15,
+            "wall_seconds": 217.07269671399263,
+            "cpu_seconds": 217.048441894,
+            "process_peak_rss_gib": 1.6298599243164062,
+            "cpu_utilization_percent": 99.98882640683982,
+            "worker_index": 19,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.2,
+            "wall_seconds": 270.13978634099476,
+            "cpu_seconds": 270.1095701229999,
+            "process_peak_rss_gib": 1.6298599243164062,
+            "cpu_utilization_percent": 99.9888145991362,
+            "worker_index": 19,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.25,
+            "wall_seconds": 267.3208478470042,
+            "cpu_seconds": 267.290269199,
+            "process_peak_rss_gib": 1.6298599243164062,
+            "cpu_utilization_percent": 99.98856106874925,
+            "worker_index": 19,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.3,
+            "wall_seconds": 262.6240942919976,
+            "cpu_seconds": 262.5935776670001,
+            "process_peak_rss_gib": 1.6301345825195312,
+            "cpu_utilization_percent": 99.98838011223617,
+            "worker_index": 19,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.35,
+            "wall_seconds": 271.70567744702566,
+            "cpu_seconds": 271.6747367820001,
+            "process_peak_rss_gib": 1.6301345825195312,
+            "cpu_utilization_percent": 99.98861243338148,
+            "worker_index": 19,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.4,
+            "wall_seconds": 268.2478271720174,
+            "cpu_seconds": 268.2166795390001,
+            "process_peak_rss_gib": 1.6301345825195312,
+            "cpu_utilization_percent": 99.98838848636886,
+            "worker_index": 19,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.45,
+            "wall_seconds": 268.40192973599187,
+            "cpu_seconds": 268.36946654099984,
+            "process_peak_rss_gib": 1.6301345825195312,
+            "cpu_utilization_percent": 99.98790500685895,
+            "worker_index": 19,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.5,
+            "wall_seconds": 493.92506964399945,
+            "cpu_seconds": 493.78158679500007,
+            "process_peak_rss_gib": 1.6303977966308594,
+            "cpu_utilization_percent": 99.97095048261008,
+            "worker_index": 20,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.55,
+            "wall_seconds": 282.64644982799655,
+            "cpu_seconds": 282.57748142599996,
+            "process_peak_rss_gib": 1.6303977966308594,
+            "cpu_utilization_percent": 99.97559905598017,
+            "worker_index": 20,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.6,
+            "wall_seconds": 276.80813538999064,
+            "cpu_seconds": 276.77099120900004,
+            "process_peak_rss_gib": 1.6303977966308594,
+            "cpu_utilization_percent": 99.98658125385721,
+            "worker_index": 20,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.65,
+            "wall_seconds": 271.0779029550031,
+            "cpu_seconds": 271.039227555,
+            "process_peak_rss_gib": 1.6303977966308594,
+            "cpu_utilization_percent": 99.9857327360211,
+            "worker_index": 20,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.7,
+            "wall_seconds": 280.9429228010122,
+            "cpu_seconds": 280.8763520279999,
+            "process_peak_rss_gib": 1.6303977966308594,
+            "cpu_utilization_percent": 99.97630452038139,
+            "worker_index": 20,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.75,
+            "wall_seconds": 282.9592728689895,
+            "cpu_seconds": 282.912818517,
+            "process_peak_rss_gib": 1.6303977966308594,
+            "cpu_utilization_percent": 99.98358267198014,
+            "worker_index": 20,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.8,
+            "wall_seconds": 271.8583659309952,
+            "cpu_seconds": 271.814687867,
+            "process_peak_rss_gib": 1.6306724548339844,
+            "cpu_utilization_percent": 99.98393352220533,
+            "worker_index": 20,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.85,
+            "wall_seconds": 282.9802588230232,
+            "cpu_seconds": 282.9305263289998,
+            "process_peak_rss_gib": 1.6306724548339844,
+            "cpu_utilization_percent": 99.98242545461291,
+            "worker_index": 20,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.9,
+            "wall_seconds": 282.715443426976,
+            "cpu_seconds": 282.66260762799993,
+            "process_peak_rss_gib": 1.6306724548339844,
+            "cpu_utilization_percent": 99.98131131489119,
+            "worker_index": 20,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.95,
+            "wall_seconds": 283.05530024599284,
+            "cpu_seconds": 283.0106264599999,
+            "process_peak_rss_gib": 1.6306724548339844,
+            "cpu_utilization_percent": 99.98421729395136,
+            "worker_index": 20,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 2.0,
+            "wall_seconds": 543.222335605009,
+            "cpu_seconds": 543.1294664850001,
+            "process_peak_rss_gib": 1.6298484802246094,
+            "cpu_utilization_percent": 99.98290403138422,
+            "worker_index": 21,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.05,
+            "wall_seconds": 272.7847688110196,
+            "cpu_seconds": 272.7420300450001,
+            "process_peak_rss_gib": 1.6298484802246094,
+            "cpu_utilization_percent": 99.98433242214887,
+            "worker_index": 21,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.1,
+            "wall_seconds": 271.8064161029761,
+            "cpu_seconds": 271.762225392,
+            "process_peak_rss_gib": 1.6298484802246094,
+            "cpu_utilization_percent": 99.98374184406326,
+            "worker_index": 21,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.15,
+            "wall_seconds": 326.0065185150015,
+            "cpu_seconds": 325.9538962910001,
+            "process_peak_rss_gib": 1.6298484802246094,
+            "cpu_utilization_percent": 99.98385853625224,
+            "worker_index": 21,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.2,
+            "wall_seconds": 272.2066933049937,
+            "cpu_seconds": 272.159777095,
+            "process_peak_rss_gib": 1.6298484802246094,
+            "cpu_utilization_percent": 99.98276449068021,
+            "worker_index": 21,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.25,
+            "wall_seconds": 325.2196460730047,
+            "cpu_seconds": 325.165326436,
+            "process_peak_rss_gib": 1.6298484802246094,
+            "cpu_utilization_percent": 99.98329755361935,
+            "worker_index": 21,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.3,
+            "wall_seconds": 327.1757332579582,
+            "cpu_seconds": 327.1161558010001,
+            "process_peak_rss_gib": 1.6298484802246094,
+            "cpu_utilization_percent": 99.98179038024463,
+            "worker_index": 21,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.35,
+            "wall_seconds": 325.5322128170519,
+            "cpu_seconds": 325.47880708599996,
+            "process_peak_rss_gib": 1.6301231384277344,
+            "cpu_utilization_percent": 99.98359433292643,
+            "worker_index": 21,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.4,
+            "wall_seconds": 325.86198483302724,
+            "cpu_seconds": 325.80813453300016,
+            "process_peak_rss_gib": 1.6301231384277344,
+            "cpu_utilization_percent": 99.98347450683617,
+            "worker_index": 21,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.45,
+            "wall_seconds": 325.3642652289709,
+            "cpu_seconds": 325.31093661700015,
+            "process_peak_rss_gib": 1.6301231384277344,
+            "cpu_utilization_percent": 99.98360956697773,
+            "worker_index": 21,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.5,
+            "wall_seconds": 613.4643367410172,
+            "cpu_seconds": 613.3723030780001,
+            "process_peak_rss_gib": 1.63232421875,
+            "cpu_utilization_percent": 99.98499771584017,
+            "worker_index": 2,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.55,
+            "wall_seconds": 278.16405686197686,
+            "cpu_seconds": 278.127159646,
+            "process_peak_rss_gib": 1.63232421875,
+            "cpu_utilization_percent": 99.98673544799674,
+            "worker_index": 2,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.6,
+            "wall_seconds": 277.2024759410124,
+            "cpu_seconds": 277.16683565000005,
+            "process_peak_rss_gib": 1.63232421875,
+            "cpu_utilization_percent": 99.98714286699953,
+            "worker_index": 2,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.65,
+            "wall_seconds": 387.9580232570006,
+            "cpu_seconds": 387.90711881699985,
+            "process_peak_rss_gib": 1.63232421875,
+            "cpu_utilization_percent": 99.98687887942789,
+            "worker_index": 2,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.7,
+            "wall_seconds": 273.1208156470093,
+            "cpu_seconds": 273.08300694399986,
+            "process_peak_rss_gib": 1.63232421875,
+            "cpu_utilization_percent": 99.98615678452781,
+            "worker_index": 2,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.75,
+            "wall_seconds": 332.7824084769818,
+            "cpu_seconds": 332.7392911910001,
+            "process_peak_rss_gib": 1.63232421875,
+            "cpu_utilization_percent": 99.98704339986628,
+            "worker_index": 2,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.8,
+            "wall_seconds": 274.67749233799987,
+            "cpu_seconds": 274.54634437000004,
+            "process_peak_rss_gib": 1.632598876953125,
+            "cpu_utilization_percent": 99.95225383525839,
+            "worker_index": 2,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.85,
+            "wall_seconds": 379.33952277500066,
+            "cpu_seconds": 379.29247083500013,
+            "process_peak_rss_gib": 1.632598876953125,
+            "cpu_utilization_percent": 99.98759635177049,
+            "worker_index": 2,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.9,
+            "wall_seconds": 273.7483420460194,
+            "cpu_seconds": 273.7123594149998,
+            "process_peak_rss_gib": 1.632598876953125,
+            "cpu_utilization_percent": 99.98685558029297,
+            "worker_index": 2,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.95,
+            "wall_seconds": 274.7324582230067,
+            "cpu_seconds": 274.69769762399983,
+            "process_peak_rss_gib": 1.632598876953125,
+            "cpu_utilization_percent": 99.98734747279893,
+            "worker_index": 2,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 3.0,
+            "wall_seconds": 329.1518308870145,
+            "cpu_seconds": 329.1087253219998,
+            "process_peak_rss_gib": 1.632598876953125,
+            "cpu_utilization_percent": 99.98690404823253,
+            "worker_index": 2,
+            "chunk_index": "5"
+          }
+        ]
+      },
+      {
+        "label": "data_like_4096_pruned54",
+        "title": "Data-like Asimov \u00b7 pruned to 54 NPs",
+        "reference_events": 4096,
+        "constrained_nps": 54,
+        "color": "#7d4698",
+        "points": 61,
+        "computed_points": 66,
+        "median_wall_minutes": 2.369918294219921,
+        "minimum_wall_minutes": 1.175653321847009,
+        "maximum_wall_minutes": 3.716548764000375,
+        "median_cpu_minutes": 2.369014507933334,
+        "maximum_process_peak_rss_gib": 1.6130828857421875,
+        "maximum_slurm_peak_rss_gib": 1.5379066467285156,
+        "minimizer_cpu_hours_including_overlaps": 2.628739757131389,
+        "whole_job_cpu_hours": 2.6534247222222223,
+        "scan_wall_hours": 0.9272222222222222,
+        "scan_csv_sha256": "de2c6bc5c98ce9f23a641c568fb782f6eafa8001482141fa3769014cf760de97",
+        "rows": [
+          {
+            "mu": 0.0,
+            "wall_seconds": 213.45782589400187,
+            "cpu_seconds": 213.41964768000003,
+            "process_peak_rss_gib": 1.6130828857421875,
+            "cpu_utilization_percent": 99.9821143994876,
+            "worker_index": 7,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.05,
+            "wall_seconds": 167.5262095319922,
+            "cpu_seconds": 167.49766083100008,
+            "process_peak_rss_gib": 1.6128082275390625,
+            "cpu_utilization_percent": 99.98295866594732,
+            "worker_index": 7,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.1,
+            "wall_seconds": 166.6882072800072,
+            "cpu_seconds": 166.66105501399988,
+            "process_peak_rss_gib": 1.6128082275390625,
+            "cpu_utilization_percent": 99.98371074567878,
+            "worker_index": 7,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.15,
+            "wall_seconds": 168.82326468103565,
+            "cpu_seconds": 168.79498665000006,
+            "process_peak_rss_gib": 1.6128082275390625,
+            "cpu_utilization_percent": 99.98324992050769,
+            "worker_index": 7,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.2,
+            "wall_seconds": 143.52316784398863,
+            "cpu_seconds": 143.49728394500005,
+            "process_peak_rss_gib": 1.6128082275390625,
+            "cpu_utilization_percent": 99.9819653513942,
+            "worker_index": 7,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.25,
+            "wall_seconds": 141.25388760498026,
+            "cpu_seconds": 141.230324591,
+            "process_peak_rss_gib": 1.6128082275390625,
+            "cpu_utilization_percent": 99.98331867930872,
+            "worker_index": 7,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.3,
+            "wall_seconds": 143.4656723869848,
+            "cpu_seconds": 143.441390743,
+            "process_peak_rss_gib": 1.6128082275390625,
+            "cpu_utilization_percent": 99.98307494498104,
+            "worker_index": 7,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.35,
+            "wall_seconds": 95.62028161203489,
+            "cpu_seconds": 95.60376355699998,
+            "process_peak_rss_gib": 1.6128082275390625,
+            "cpu_utilization_percent": 99.9827253645812,
+            "worker_index": 7,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.4,
+            "wall_seconds": 119.74740576703334,
+            "cpu_seconds": 119.69851335699997,
+            "process_peak_rss_gib": 1.6128082275390625,
+            "cpu_utilization_percent": 99.95917038058555,
+            "worker_index": 7,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.45,
+            "wall_seconds": 91.751253445982,
+            "cpu_seconds": 91.73598306599999,
+            "process_peak_rss_gib": 1.6128082275390625,
+            "cpu_utilization_percent": 99.98335676145176,
+            "worker_index": 7,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.5,
+            "wall_seconds": 118.58317553577945,
+            "cpu_seconds": 118.56396274200006,
+            "process_peak_rss_gib": 1.60540771484375,
+            "cpu_utilization_percent": 99.9837980441217,
+            "worker_index": 8,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.55,
+            "wall_seconds": 119.64386981166899,
+            "cpu_seconds": 119.62170090299992,
+            "process_peak_rss_gib": 1.605133056640625,
+            "cpu_utilization_percent": 99.9814709197354,
+            "worker_index": 8,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.6,
+            "wall_seconds": 119.65475817583501,
+            "cpu_seconds": 119.63417825900012,
+            "process_peak_rss_gib": 1.605133056640625,
+            "cpu_utilization_percent": 99.98280058632967,
+            "worker_index": 8,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.65,
+            "wall_seconds": 120.24128006817773,
+            "cpu_seconds": 120.22157008700003,
+            "process_peak_rss_gib": 1.605133056640625,
+            "cpu_utilization_percent": 99.98360797459365,
+            "worker_index": 8,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.7,
+            "wall_seconds": 143.45558091206476,
+            "cpu_seconds": 143.42997484,
+            "process_peak_rss_gib": 1.605133056640625,
+            "cpu_utilization_percent": 99.98215052220209,
+            "worker_index": 8,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.75,
+            "wall_seconds": 118.37425985606387,
+            "cpu_seconds": 118.35620774400002,
+            "process_peak_rss_gib": 1.605133056640625,
+            "cpu_utilization_percent": 99.98474996837506,
+            "worker_index": 8,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.8,
+            "wall_seconds": 142.71474456274882,
+            "cpu_seconds": 142.69338495700003,
+            "process_peak_rss_gib": 1.605133056640625,
+            "cpu_utilization_percent": 99.9850333574052,
+            "worker_index": 8,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.85,
+            "wall_seconds": 120.01112217782065,
+            "cpu_seconds": 119.992810829,
+            "process_peak_rss_gib": 1.605133056640625,
+            "cpu_utilization_percent": 99.98474195683838,
+            "worker_index": 8,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.9,
+            "wall_seconds": 119.64763983525336,
+            "cpu_seconds": 119.629240098,
+            "process_peak_rss_gib": 1.605133056640625,
+            "cpu_utilization_percent": 99.98462172987391,
+            "worker_index": 8,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.95,
+            "wall_seconds": 117.3817147440277,
+            "cpu_seconds": 117.36340680599999,
+            "process_peak_rss_gib": 1.605133056640625,
+            "cpu_utilization_percent": 99.9844030749869,
+            "worker_index": 8,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 1.0,
+            "wall_seconds": 70.53919931082055,
+            "cpu_seconds": 70.418302271,
+            "process_peak_rss_gib": 1.605133056640625,
+            "cpu_utilization_percent": 99.82861013308667,
+            "worker_index": 8,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 1.05,
+            "wall_seconds": 117.63236965797842,
+            "cpu_seconds": 117.617299646,
+            "process_peak_rss_gib": 1.6043014526367188,
+            "cpu_utilization_percent": 99.98718889025001,
+            "worker_index": 9,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.1,
+            "wall_seconds": 119.88111329078674,
+            "cpu_seconds": 119.86559733700003,
+            "process_peak_rss_gib": 1.6043014526367188,
+            "cpu_utilization_percent": 99.98705721580255,
+            "worker_index": 9,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.15,
+            "wall_seconds": 119.74546773266047,
+            "cpu_seconds": 119.73204628799999,
+            "process_peak_rss_gib": 1.6043014526367188,
+            "cpu_utilization_percent": 99.98879168880909,
+            "worker_index": 9,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.2,
+            "wall_seconds": 142.8795454800129,
+            "cpu_seconds": 142.86307249600003,
+            "process_peak_rss_gib": 1.6043014526367188,
+            "cpu_utilization_percent": 99.9884707191939,
+            "worker_index": 9,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.25,
+            "wall_seconds": 118.44454451883212,
+            "cpu_seconds": 118.43046992999996,
+            "process_peak_rss_gib": 1.6043014526367188,
+            "cpu_utilization_percent": 99.98811714892456,
+            "worker_index": 9,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.3,
+            "wall_seconds": 143.24476447189227,
+            "cpu_seconds": 143.22800543899996,
+            "process_peak_rss_gib": 1.6043014526367188,
+            "cpu_utilization_percent": 99.98830042204048,
+            "worker_index": 9,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.35,
+            "wall_seconds": 144.15634996490553,
+            "cpu_seconds": 144.13924525000004,
+            "process_peak_rss_gib": 1.6043014526367188,
+            "cpu_utilization_percent": 99.98813460877051,
+            "worker_index": 9,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.4,
+            "wall_seconds": 143.3730192235671,
+            "cpu_seconds": 143.35618494800008,
+            "process_peak_rss_gib": 1.6043014526367188,
+            "cpu_utilization_percent": 99.98825840757335,
+            "worker_index": 9,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.45,
+            "wall_seconds": 142.81802765326574,
+            "cpu_seconds": 142.80118568099988,
+            "process_peak_rss_gib": 1.6043014526367188,
+            "cpu_utilization_percent": 99.98820739052162,
+            "worker_index": 9,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.5,
+            "wall_seconds": 212.19254094315693,
+            "cpu_seconds": 212.083947201,
+            "process_peak_rss_gib": 1.613067626953125,
+            "cpu_utilization_percent": 99.94882301626897,
+            "worker_index": 10,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.55,
+            "wall_seconds": 143.93088719435036,
+            "cpu_seconds": 143.87239182199997,
+            "process_peak_rss_gib": 1.613067626953125,
+            "cpu_utilization_percent": 99.9593587078558,
+            "worker_index": 10,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.6,
+            "wall_seconds": 128.95997348660603,
+            "cpu_seconds": 128.925910263,
+            "process_peak_rss_gib": 1.613067626953125,
+            "cpu_utilization_percent": 99.97358620455239,
+            "worker_index": 10,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.65,
+            "wall_seconds": 140.72267356188968,
+            "cpu_seconds": 140.66577027099999,
+            "process_peak_rss_gib": 1.613067626953125,
+            "cpu_utilization_percent": 99.95956352345405,
+            "worker_index": 10,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.7,
+            "wall_seconds": 143.31946693733335,
+            "cpu_seconds": 143.26958659700006,
+            "process_peak_rss_gib": 1.613067626953125,
+            "cpu_utilization_percent": 99.96519639557751,
+            "worker_index": 10,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.75,
+            "wall_seconds": 142.19509765319526,
+            "cpu_seconds": 142.14087047600003,
+            "process_peak_rss_gib": 1.613067626953125,
+            "cpu_utilization_percent": 99.96186424279726,
+            "worker_index": 10,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.8,
+            "wall_seconds": 140.123829186894,
+            "cpu_seconds": 140.06037451600002,
+            "process_peak_rss_gib": 1.613067626953125,
+            "cpu_utilization_percent": 99.95471528913949,
+            "worker_index": 10,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.85,
+            "wall_seconds": 139.6837255419232,
+            "cpu_seconds": 139.59068441499994,
+            "process_peak_rss_gib": 1.613067626953125,
+            "cpu_utilization_percent": 99.93339157689108,
+            "worker_index": 10,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.9,
+            "wall_seconds": 138.79656752431765,
+            "cpu_seconds": 138.72535069399987,
+            "process_peak_rss_gib": 1.613067626953125,
+            "cpu_utilization_percent": 99.94868977555565,
+            "worker_index": 10,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.95,
+            "wall_seconds": 134.25588833726943,
+            "cpu_seconds": 134.19497324999998,
+            "process_peak_rss_gib": 1.613067626953125,
+            "cpu_utilization_percent": 99.95462762339598,
+            "worker_index": 10,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 2.0,
+            "wall_seconds": 222.9929258400225,
+            "cpu_seconds": 222.618844048,
+            "process_peak_rss_gib": 1.612548828125,
+            "cpu_utilization_percent": 99.83224499583862,
+            "worker_index": 11,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.05,
+            "wall_seconds": 139.62057819700567,
+            "cpu_seconds": 139.60558642200002,
+            "process_peak_rss_gib": 1.612548828125,
+            "cpu_utilization_percent": 99.98926248895452,
+            "worker_index": 11,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.1,
+            "wall_seconds": 139.32623005000642,
+            "cpu_seconds": 139.310552692,
+            "process_peak_rss_gib": 1.612548828125,
+            "cpu_utilization_percent": 99.98874773400472,
+            "worker_index": 11,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.15,
+            "wall_seconds": 140.62965455499943,
+            "cpu_seconds": 140.61384907000001,
+            "process_peak_rss_gib": 1.612548828125,
+            "cpu_utilization_percent": 99.9887609160035,
+            "worker_index": 11,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.2,
+            "wall_seconds": 165.04514328402,
+            "cpu_seconds": 165.02617511999995,
+            "process_peak_rss_gib": 1.612548828125,
+            "cpu_utilization_percent": 99.98850728737443,
+            "worker_index": 11,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.25,
+            "wall_seconds": 127.69850652501918,
+            "cpu_seconds": 127.68363143499994,
+            "process_peak_rss_gib": 1.612548828125,
+            "cpu_utilization_percent": 99.98835139859969,
+            "worker_index": 11,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.3,
+            "wall_seconds": 158.57420541299507,
+            "cpu_seconds": 158.55629622100003,
+            "process_peak_rss_gib": 1.612548828125,
+            "cpu_utilization_percent": 99.98870611273227,
+            "worker_index": 11,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.35,
+            "wall_seconds": 141.2938950470416,
+            "cpu_seconds": 141.27733017800006,
+            "process_peak_rss_gib": 1.612548828125,
+            "cpu_utilization_percent": 99.98827630235827,
+            "worker_index": 11,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.4,
+            "wall_seconds": 164.73292086197762,
+            "cpu_seconds": 164.71365363100017,
+            "process_peak_rss_gib": 1.612548828125,
+            "cpu_utilization_percent": 99.9883039583851,
+            "worker_index": 11,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.45,
+            "wall_seconds": 140.69585324201034,
+            "cpu_seconds": 140.67951799699995,
+            "process_peak_rss_gib": 1.612548828125,
+            "cpu_utilization_percent": 99.98838967557751,
+            "worker_index": 11,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.5,
+            "wall_seconds": 187.60784088098444,
+            "cpu_seconds": 187.58623489599995,
+            "process_peak_rss_gib": 1.612548828125,
+            "cpu_utilization_percent": 99.9884834317782,
+            "worker_index": 11,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.55,
+            "wall_seconds": 142.51423111278564,
+            "cpu_seconds": 142.494129756,
+            "process_peak_rss_gib": 1.6125411987304688,
+            "cpu_utilization_percent": 99.98589519332303,
+            "worker_index": 3,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.6,
+            "wall_seconds": 167.18950446788222,
+            "cpu_seconds": 167.16424519899994,
+            "process_peak_rss_gib": 1.6125411987304688,
+            "cpu_utilization_percent": 99.98489183339427,
+            "worker_index": 3,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.65,
+            "wall_seconds": 143.09518619487062,
+            "cpu_seconds": 143.07316517999993,
+            "process_peak_rss_gib": 1.6125411987304688,
+            "cpu_utilization_percent": 99.98461093244555,
+            "worker_index": 3,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.7,
+            "wall_seconds": 160.04860713006929,
+            "cpu_seconds": 160.01420197200002,
+            "process_peak_rss_gib": 1.6125411987304688,
+            "cpu_utilization_percent": 99.97850330678523,
+            "worker_index": 3,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.75,
+            "wall_seconds": 142.83767718682066,
+            "cpu_seconds": 142.81507173299997,
+            "process_peak_rss_gib": 1.6125411987304688,
+            "cpu_utilization_percent": 99.98417402588315,
+            "worker_index": 3,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.8,
+            "wall_seconds": 166.80165768088773,
+            "cpu_seconds": 166.77421348300004,
+            "process_peak_rss_gib": 1.6125411987304688,
+            "cpu_utilization_percent": 99.98354680746628,
+            "worker_index": 3,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.85,
+            "wall_seconds": 141.68650448182598,
+            "cpu_seconds": 141.66247571999997,
+            "process_peak_rss_gib": 1.6125411987304688,
+            "cpu_utilization_percent": 99.98304089587509,
+            "worker_index": 3,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.9,
+            "wall_seconds": 166.78867886029184,
+            "cpu_seconds": 166.75865789700015,
+            "process_peak_rss_gib": 1.6125411987304688,
+            "cpu_utilization_percent": 99.98200059890347,
+            "worker_index": 3,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.95,
+            "wall_seconds": 142.60251931287348,
+            "cpu_seconds": 142.5794987050001,
+            "process_peak_rss_gib": 1.6125411987304688,
+            "cpu_utilization_percent": 99.98385680141958,
+            "worker_index": 3,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 3.0,
+            "wall_seconds": 142.4734846460633,
+            "cpu_seconds": 142.4462959179998,
+            "process_peak_rss_gib": 1.6128158569335938,
+            "cpu_utilization_percent": 99.98091663994109,
+            "worker_index": 3,
+            "chunk_index": "5"
+          }
+        ]
+      },
+      {
+        "label": "true_8192_unpruned",
+        "title": "True Asimov",
+        "reference_events": 8192,
+        "constrained_nps": 127,
+        "color": "#126c96",
+        "points": 61,
+        "computed_points": 66,
+        "median_wall_minutes": 9.158684535813517,
+        "minimum_wall_minutes": 3.902175452886149,
+        "maximum_wall_minutes": 18.714477263883843,
+        "median_cpu_minutes": 9.15150067761668,
+        "maximum_process_peak_rss_gib": 2.377788543701172,
+        "maximum_slurm_peak_rss_gib": 2.5498046875,
+        "minimizer_cpu_hours_including_overlaps": 10.308429614233056,
+        "whole_job_cpu_hours": 10.353055555555555,
+        "scan_wall_hours": 3.2375,
+        "scan_csv_sha256": "51e0d1aa17708228673dde6d8aedd58d471f43fa9e1b07af5491dc0c6ab55795",
+        "rows": [
+          {
+            "mu": 0.0,
+            "wall_seconds": 876.2959982800239,
+            "cpu_seconds": 876.1487111739998,
+            "process_peak_rss_gib": 2.3772354125976562,
+            "cpu_utilization_percent": 99.98319208277645,
+            "worker_index": 27,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.05,
+            "wall_seconds": 767.1065920039837,
+            "cpu_seconds": 766.9639396089997,
+            "process_peak_rss_gib": 2.3769607543945312,
+            "cpu_utilization_percent": 99.98140383664135,
+            "worker_index": 27,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.1,
+            "wall_seconds": 664.9161742410215,
+            "cpu_seconds": 664.771983355,
+            "process_peak_rss_gib": 2.3769607543945312,
+            "cpu_utilization_percent": 99.97831442644839,
+            "worker_index": 27,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.15,
+            "wall_seconds": 656.5630989790079,
+            "cpu_seconds": 656.4496100940005,
+            "process_peak_rss_gib": 2.3769607543945312,
+            "cpu_utilization_percent": 99.98271470248878,
+            "worker_index": 27,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.2,
+            "wall_seconds": 655.748568992014,
+            "cpu_seconds": 655.6328862239998,
+            "process_peak_rss_gib": 2.3769607543945312,
+            "cpu_utilization_percent": 99.98235867015431,
+            "worker_index": 27,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.25,
+            "wall_seconds": 546.6518201110011,
+            "cpu_seconds": 546.5602888799999,
+            "process_peak_rss_gib": 2.3769607543945312,
+            "cpu_utilization_percent": 99.98325602739553,
+            "worker_index": 27,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.3,
+            "wall_seconds": 441.9072295560036,
+            "cpu_seconds": 441.81502430599994,
+            "process_peak_rss_gib": 2.3769607543945312,
+            "cpu_utilization_percent": 99.97913470433687,
+            "worker_index": 27,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.35,
+            "wall_seconds": 550.9559981249913,
+            "cpu_seconds": 550.8544478270001,
+            "process_peak_rss_gib": 2.3769607543945312,
+            "cpu_utilization_percent": 99.98156834695749,
+            "worker_index": 27,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.4,
+            "wall_seconds": 440.83102969499305,
+            "cpu_seconds": 440.7593419320001,
+            "process_peak_rss_gib": 2.3769607543945312,
+            "cpu_utilization_percent": 99.98373804061784,
+            "worker_index": 27,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.45,
+            "wall_seconds": 443.4711665629875,
+            "cpu_seconds": 443.39517592799996,
+            "process_peak_rss_gib": 2.3766860961914062,
+            "cpu_utilization_percent": 99.98286458270185,
+            "worker_index": 27,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.5,
+            "wall_seconds": 414.99051602277905,
+            "cpu_seconds": 414.7648265170001,
+            "process_peak_rss_gib": 2.3769607543945312,
+            "cpu_utilization_percent": 99.9456157437182,
+            "worker_index": 28,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.55,
+            "wall_seconds": 449.93024865491316,
+            "cpu_seconds": 449.6774664059999,
+            "process_peak_rss_gib": 2.3769607543945312,
+            "cpu_utilization_percent": 99.94381745844629,
+            "worker_index": 28,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.6,
+            "wall_seconds": 453.5532082989812,
+            "cpu_seconds": 453.29283344700025,
+            "process_peak_rss_gib": 2.3769607543945312,
+            "cpu_utilization_percent": 99.94259221471336,
+            "worker_index": 28,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.65,
+            "wall_seconds": 565.3105120407417,
+            "cpu_seconds": 564.9856877099996,
+            "process_peak_rss_gib": 2.3768386840820312,
+            "cpu_utilization_percent": 99.94254054650965,
+            "worker_index": 28,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.7,
+            "wall_seconds": 451.07793189864606,
+            "cpu_seconds": 450.8203100370001,
+            "process_peak_rss_gib": 2.3768386840820312,
+            "cpu_utilization_percent": 99.9428875049237,
+            "worker_index": 28,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.75,
+            "wall_seconds": 455.5107614439912,
+            "cpu_seconds": 455.262881911,
+            "process_peak_rss_gib": 2.3768386840820312,
+            "cpu_utilization_percent": 99.94558206875169,
+            "worker_index": 28,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.8,
+            "wall_seconds": 568.7873678081669,
+            "cpu_seconds": 568.4837908970001,
+            "process_peak_rss_gib": 2.3767166137695312,
+            "cpu_utilization_percent": 99.94662734646575,
+            "worker_index": 28,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.85,
+            "wall_seconds": 457.3381241131574,
+            "cpu_seconds": 457.094054699,
+            "process_peak_rss_gib": 2.3767166137695312,
+            "cpu_utilization_percent": 99.94663261134623,
+            "worker_index": 28,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.9,
+            "wall_seconds": 458.1952767409384,
+            "cpu_seconds": 457.953077891,
+            "process_peak_rss_gib": 2.3767166137695312,
+            "cpu_utilization_percent": 99.94714069257519,
+            "worker_index": 28,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.95,
+            "wall_seconds": 461.88525263639167,
+            "cpu_seconds": 461.56716369900005,
+            "process_peak_rss_gib": 2.3765945434570312,
+            "cpu_utilization_percent": 99.93113247596108,
+            "worker_index": 28,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 1.0,
+            "wall_seconds": 234.13052717316896,
+            "cpu_seconds": 234.00043885700052,
+            "process_peak_rss_gib": 2.3770828247070312,
+            "cpu_utilization_percent": 99.94443769561403,
+            "worker_index": 28,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 1.05,
+            "wall_seconds": 496.65319364587776,
+            "cpu_seconds": 496.30805923099996,
+            "process_peak_rss_gib": 2.3712310791015625,
+            "cpu_utilization_percent": 99.93050796425082,
+            "worker_index": 29,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.1,
+            "wall_seconds": 501.2809636029415,
+            "cpu_seconds": 500.183187178,
+            "process_peak_rss_gib": 2.3712310791015625,
+            "cpu_utilization_percent": 99.78100576230719,
+            "worker_index": 29,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.15,
+            "wall_seconds": 488.5473462899681,
+            "cpu_seconds": 488.351450613,
+            "process_peak_rss_gib": 2.3712310791015625,
+            "cpu_utilization_percent": 99.95990241714426,
+            "worker_index": 29,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.2,
+            "wall_seconds": 626.5310807600617,
+            "cpu_seconds": 626.2761178170001,
+            "process_peak_rss_gib": 2.3713531494140625,
+            "cpu_utilization_percent": 99.95930561932342,
+            "worker_index": 29,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.25,
+            "wall_seconds": 504.9450806970708,
+            "cpu_seconds": 504.72053214900006,
+            "process_peak_rss_gib": 2.3713531494140625,
+            "cpu_utilization_percent": 99.9555301048263,
+            "worker_index": 29,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.3,
+            "wall_seconds": 629.1972809610888,
+            "cpu_seconds": 628.9122320470001,
+            "process_peak_rss_gib": 2.3713531494140625,
+            "cpu_utilization_percent": 99.95469641673381,
+            "worker_index": 29,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.35,
+            "wall_seconds": 631.0758742690086,
+            "cpu_seconds": 630.7934199849997,
+            "process_peak_rss_gib": 2.3714752197265625,
+            "cpu_utilization_percent": 99.9552424208363,
+            "worker_index": 29,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.4,
+            "wall_seconds": 626.7398381221574,
+            "cpu_seconds": 626.4167219769997,
+            "process_peak_rss_gib": 2.3714752197265625,
+            "cpu_utilization_percent": 99.94844493272906,
+            "worker_index": 29,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.45,
+            "wall_seconds": 629.0729946808424,
+            "cpu_seconds": 628.6600498380003,
+            "process_peak_rss_gib": 2.3714752197265625,
+            "cpu_utilization_percent": 99.93435660943423,
+            "worker_index": 29,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.5,
+            "wall_seconds": 1122.8686358330306,
+            "cpu_seconds": 1121.864223195,
+            "process_peak_rss_gib": 2.3709793090820312,
+            "cpu_utilization_percent": 99.91054940836554,
+            "worker_index": 30,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.55,
+            "wall_seconds": 616.1779856651556,
+            "cpu_seconds": 615.8407105860001,
+            "process_peak_rss_gib": 2.3711013793945312,
+            "cpu_utilization_percent": 99.94526336756556,
+            "worker_index": 30,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.6,
+            "wall_seconds": 629.500995219918,
+            "cpu_seconds": 629.1013105920001,
+            "process_peak_rss_gib": 2.3711013793945312,
+            "cpu_utilization_percent": 99.93650770515808,
+            "worker_index": 30,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.65,
+            "wall_seconds": 629.3868244970217,
+            "cpu_seconds": 628.9835084390002,
+            "process_peak_rss_gib": 2.3711013793945312,
+            "cpu_utilization_percent": 99.93591920861326,
+            "worker_index": 30,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.7,
+            "wall_seconds": 629.603292566957,
+            "cpu_seconds": 629.1642807420003,
+            "process_peak_rss_gib": 2.3712234497070312,
+            "cpu_utilization_percent": 99.93027167580925,
+            "worker_index": 30,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.75,
+            "wall_seconds": 629.3152491769288,
+            "cpu_seconds": 628.8966778959998,
+            "process_peak_rss_gib": 2.3712234497070312,
+            "cpu_utilization_percent": 99.93348782164799,
+            "worker_index": 30,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.8,
+            "wall_seconds": 625.3987283189781,
+            "cpu_seconds": 624.9593005099996,
+            "process_peak_rss_gib": 2.3712234497070312,
+            "cpu_utilization_percent": 99.92973637631793,
+            "worker_index": 30,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.85,
+            "wall_seconds": 628.9751500780694,
+            "cpu_seconds": 627.7141506029993,
+            "process_peak_rss_gib": 2.3712234497070312,
+            "cpu_utilization_percent": 99.79951521536047,
+            "worker_index": 30,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.9,
+            "wall_seconds": 625.4907157400157,
+            "cpu_seconds": 625.0058808140002,
+            "process_peak_rss_gib": 2.3713455200195312,
+            "cpu_utilization_percent": 99.92248727058372,
+            "worker_index": 30,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.95,
+            "wall_seconds": 610.5928445188329,
+            "cpu_seconds": 610.21787236,
+            "process_peak_rss_gib": 2.3713455200195312,
+            "cpu_utilization_percent": 99.93858883833984,
+            "worker_index": 30,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 2.0,
+            "wall_seconds": 1092.2902649217285,
+            "cpu_seconds": 1091.161752657,
+            "process_peak_rss_gib": 2.377513885498047,
+            "cpu_utilization_percent": 99.89668384851811,
+            "worker_index": 31,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.05,
+            "wall_seconds": 546.7878433219157,
+            "cpu_seconds": 546.2533963219998,
+            "process_peak_rss_gib": 2.377513885498047,
+            "cpu_utilization_percent": 99.90225697106415,
+            "worker_index": 31,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.1,
+            "wall_seconds": 550.6137644308619,
+            "cpu_seconds": 550.3803512360003,
+            "process_peak_rss_gib": 2.377788543701172,
+            "cpu_utilization_percent": 99.95760854342193,
+            "worker_index": 31,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.15,
+            "wall_seconds": 534.5509889861569,
+            "cpu_seconds": 534.252309594,
+            "process_peak_rss_gib": 2.377788543701172,
+            "cpu_utilization_percent": 99.94412518201055,
+            "worker_index": 31,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.2,
+            "wall_seconds": 550.6658489508554,
+            "cpu_seconds": 550.2083863130001,
+            "process_peak_rss_gib": 2.377788543701172,
+            "cpu_utilization_percent": 99.91692554772973,
+            "worker_index": 31,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.25,
+            "wall_seconds": 549.5832372996956,
+            "cpu_seconds": 549.1362720860002,
+            "process_peak_rss_gib": 2.377788543701172,
+            "cpu_utilization_percent": 99.91867197116645,
+            "worker_index": 31,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.3,
+            "wall_seconds": 550.3213899405673,
+            "cpu_seconds": 549.8273769949997,
+            "process_peak_rss_gib": 2.377788543701172,
+            "cpu_utilization_percent": 99.91023192000205,
+            "worker_index": 31,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.35,
+            "wall_seconds": 549.7507376978174,
+            "cpu_seconds": 549.2182222800002,
+            "process_peak_rss_gib": 2.377788543701172,
+            "cpu_utilization_percent": 99.90313511537116,
+            "worker_index": 31,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.4,
+            "wall_seconds": 549.5210721488111,
+            "cpu_seconds": 549.0900406570008,
+            "process_peak_rss_gib": 2.377788543701172,
+            "cpu_utilization_percent": 99.92156233606751,
+            "worker_index": 31,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.45,
+            "wall_seconds": 548.7004968579859,
+            "cpu_seconds": 548.1722708219995,
+            "process_peak_rss_gib": 2.377788543701172,
+            "cpu_utilization_percent": 99.90373144565913,
+            "worker_index": 31,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.5,
+            "wall_seconds": 923.348739617999,
+            "cpu_seconds": 923.1474813770001,
+            "process_peak_rss_gib": 2.3733978271484375,
+            "cpu_utilization_percent": 99.9782034422788,
+            "worker_index": 4,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.55,
+            "wall_seconds": 457.6200204580091,
+            "cpu_seconds": 457.5597099020001,
+            "process_peak_rss_gib": 2.3733978271484375,
+            "cpu_utilization_percent": 99.98682082222962,
+            "worker_index": 4,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.6,
+            "wall_seconds": 454.71106181299547,
+            "cpu_seconds": 454.6516023480001,
+            "process_peak_rss_gib": 2.3736724853515625,
+            "cpu_utilization_percent": 99.9869236818743,
+            "worker_index": 4,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.65,
+            "wall_seconds": 453.54172600098536,
+            "cpu_seconds": 453.48006620800015,
+            "process_peak_rss_gib": 2.3736724853515625,
+            "cpu_utilization_percent": 99.98640482463898,
+            "worker_index": 4,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.7,
+            "wall_seconds": 449.90616349098855,
+            "cpu_seconds": 449.83233674600024,
+            "process_peak_rss_gib": 2.3736724853515625,
+            "cpu_utilization_percent": 99.98359063489696,
+            "worker_index": 4,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.75,
+            "wall_seconds": 442.1441505799885,
+            "cpu_seconds": 442.07881800799987,
+            "process_peak_rss_gib": 2.3736724853515625,
+            "cpu_utilization_percent": 99.98522369414977,
+            "worker_index": 4,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.8,
+            "wall_seconds": 442.59055003899266,
+            "cpu_seconds": 442.521668075,
+            "process_peak_rss_gib": 2.3736724853515625,
+            "cpu_utilization_percent": 99.9844366392399,
+            "worker_index": 4,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.85,
+            "wall_seconds": 441.7290433649905,
+            "cpu_seconds": 441.6608107369998,
+            "process_peak_rss_gib": 2.3736724853515625,
+            "cpu_utilization_percent": 99.98455328464007,
+            "worker_index": 4,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.9,
+            "wall_seconds": 451.81231953800307,
+            "cpu_seconds": 451.74059548700006,
+            "process_peak_rss_gib": 2.3736724853515625,
+            "cpu_utilization_percent": 99.98412525557596,
+            "worker_index": 4,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.95,
+            "wall_seconds": 437.133428066998,
+            "cpu_seconds": 437.0685118860001,
+            "process_peak_rss_gib": 2.3736724853515625,
+            "cpu_utilization_percent": 99.9851495729153,
+            "worker_index": 4,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 3.0,
+            "wall_seconds": 453.53896460999385,
+            "cpu_seconds": 453.46780758300065,
+            "process_peak_rss_gib": 2.3739471435546875,
+            "cpu_utilization_percent": 99.98431071362207,
+            "worker_index": 4,
+            "chunk_index": "5"
+          }
+        ]
+      },
+      {
+        "label": "data_like_8192_unpruned",
+        "title": "Data-like Asimov",
+        "reference_events": 8192,
+        "constrained_nps": 127,
+        "color": "#c95639",
+        "points": 61,
+        "computed_points": 66,
+        "median_wall_minutes": 10.425961618781246,
+        "minimum_wall_minutes": 3.627054574349313,
+        "maximum_wall_minutes": 20.286566882945287,
+        "median_cpu_minutes": 10.418965962483329,
+        "maximum_process_peak_rss_gib": 2.3789100646972656,
+        "maximum_slurm_peak_rss_gib": 2.5480613708496094,
+        "minimizer_cpu_hours_including_overlaps": 11.108609297714443,
+        "whole_job_cpu_hours": 11.156666666666666,
+        "scan_wall_hours": 3.8958333333333335,
+        "scan_csv_sha256": "b98336154de2105f461f890f573e410c91650440679d46ffd61b0c1391df4d3f",
+        "rows": [
+          {
+            "mu": 0.0,
+            "wall_seconds": 992.5940410275944,
+            "cpu_seconds": 992.0347709199996,
+            "process_peak_rss_gib": 2.3789100646972656,
+            "cpu_utilization_percent": 99.94365570570866,
+            "worker_index": 32,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.05,
+            "wall_seconds": 770.3944692299701,
+            "cpu_seconds": 770.0993083399999,
+            "process_peak_rss_gib": 2.3786354064941406,
+            "cpu_utilization_percent": 99.96168704452599,
+            "worker_index": 32,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.1,
+            "wall_seconds": 660.674956834875,
+            "cpu_seconds": 660.511642591,
+            "process_peak_rss_gib": 2.3786354064941406,
+            "cpu_utilization_percent": 99.97528069708328,
+            "worker_index": 32,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.15,
+            "wall_seconds": 661.1021793400869,
+            "cpu_seconds": 660.9406816229998,
+            "process_peak_rss_gib": 2.3786354064941406,
+            "cpu_utilization_percent": 99.97557144385028,
+            "worker_index": 32,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.2,
+            "wall_seconds": 656.4196221241727,
+            "cpu_seconds": 656.2712961980001,
+            "process_peak_rss_gib": 2.3786354064941406,
+            "cpu_utilization_percent": 99.9774037945891,
+            "worker_index": 32,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.25,
+            "wall_seconds": 549.816876262892,
+            "cpu_seconds": 549.6696064359999,
+            "process_peak_rss_gib": 2.3786354064941406,
+            "cpu_utilization_percent": 99.97321474962843,
+            "worker_index": 32,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.3,
+            "wall_seconds": 548.4515415038913,
+            "cpu_seconds": 548.3192811500003,
+            "process_peak_rss_gib": 2.3786354064941406,
+            "cpu_utilization_percent": 99.97588476941311,
+            "worker_index": 32,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.35,
+            "wall_seconds": 329.8928525550291,
+            "cpu_seconds": 329.82213525300017,
+            "process_peak_rss_gib": 2.3786354064941406,
+            "cpu_utilization_percent": 99.97856355435371,
+            "worker_index": 32,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.4,
+            "wall_seconds": 548.8569218907505,
+            "cpu_seconds": 548.731509078,
+            "process_peak_rss_gib": 2.3786354064941406,
+            "cpu_utilization_percent": 99.97715018108572,
+            "worker_index": 32,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.45,
+            "wall_seconds": 441.6693143709563,
+            "cpu_seconds": 441.0953380489999,
+            "process_peak_rss_gib": 2.3783607482910156,
+            "cpu_utilization_percent": 99.87004387597679,
+            "worker_index": 32,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.5,
+            "wall_seconds": 425.0248765759752,
+            "cpu_seconds": 424.96431257400036,
+            "process_peak_rss_gib": 2.3739547729492188,
+            "cpu_utilization_percent": 99.98575048066297,
+            "worker_index": 33,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.55,
+            "wall_seconds": 428.9744700330193,
+            "cpu_seconds": 428.91590868699996,
+            "process_peak_rss_gib": 2.3739547729492188,
+            "cpu_utilization_percent": 99.98634852418726,
+            "worker_index": 33,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.6,
+            "wall_seconds": 532.202768239018,
+            "cpu_seconds": 532.1306521490001,
+            "process_peak_rss_gib": 2.3739547729492188,
+            "cpu_utilization_percent": 99.98644950866066,
+            "worker_index": 33,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.65,
+            "wall_seconds": 428.27974971802905,
+            "cpu_seconds": 428.22030479800014,
+            "process_peak_rss_gib": 2.3739547729492188,
+            "cpu_utilization_percent": 99.98612007220326,
+            "worker_index": 33,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.7,
+            "wall_seconds": 532.4652607039898,
+            "cpu_seconds": 532.3852519909997,
+            "process_peak_rss_gib": 2.3739547729492188,
+            "cpu_utilization_percent": 99.9849739093055,
+            "worker_index": 33,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.75,
+            "wall_seconds": 427.62851249595406,
+            "cpu_seconds": 427.56844035300014,
+            "process_peak_rss_gib": 2.3739547729492188,
+            "cpu_utilization_percent": 99.98595225968369,
+            "worker_index": 33,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.8,
+            "wall_seconds": 532.1014329090249,
+            "cpu_seconds": 532.0283322090002,
+            "process_peak_rss_gib": 2.3739547729492188,
+            "cpu_utilization_percent": 99.98626188626761,
+            "worker_index": 33,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.85,
+            "wall_seconds": 426.4229378880118,
+            "cpu_seconds": 426.3659176310001,
+            "process_peak_rss_gib": 2.3739547729492188,
+            "cpu_utilization_percent": 99.98662823878703,
+            "worker_index": 33,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.9,
+            "wall_seconds": 425.3303912029951,
+            "cpu_seconds": 425.27220330099993,
+            "process_peak_rss_gib": 2.3736801147460938,
+            "cpu_utilization_percent": 99.9863193641464,
+            "worker_index": 33,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.95,
+            "wall_seconds": 421.7199233600404,
+            "cpu_seconds": 421.592203972,
+            "process_peak_rss_gib": 2.3736801147460938,
+            "cpu_utilization_percent": 99.9697146421201,
+            "worker_index": 33,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 1.0,
+            "wall_seconds": 217.62327446095878,
+            "cpu_seconds": 217.59271249500034,
+            "process_peak_rss_gib": 2.3742294311523438,
+            "cpu_utilization_percent": 99.98595648097192,
+            "worker_index": 33,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 1.05,
+            "wall_seconds": 521.6993272018153,
+            "cpu_seconds": 520.647141584,
+            "process_peak_rss_gib": 2.3707275390625,
+            "cpu_utilization_percent": 99.79831570351857,
+            "worker_index": 34,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.1,
+            "wall_seconds": 522.5156764970161,
+            "cpu_seconds": 521.3093178859999,
+            "process_peak_rss_gib": 2.3707275390625,
+            "cpu_utilization_percent": 99.7691248960981,
+            "worker_index": 34,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.15,
+            "wall_seconds": 514.4727817219682,
+            "cpu_seconds": 513.899262654,
+            "process_peak_rss_gib": 2.3707275390625,
+            "cpu_utilization_percent": 99.88852295236134,
+            "worker_index": 34,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.2,
+            "wall_seconds": 641.9619820879307,
+            "cpu_seconds": 639.8710333780002,
+            "process_peak_rss_gib": 2.370849609375,
+            "cpu_utilization_percent": 99.67428776652321,
+            "worker_index": 34,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.25,
+            "wall_seconds": 636.942399085965,
+            "cpu_seconds": 636.5446283339998,
+            "process_peak_rss_gib": 2.370849609375,
+            "cpu_utilization_percent": 99.93754996487341,
+            "worker_index": 34,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.3,
+            "wall_seconds": 636.3926071911119,
+            "cpu_seconds": 636.2129572119998,
+            "process_peak_rss_gib": 2.370849609375,
+            "cpu_utilization_percent": 99.97177057415782,
+            "worker_index": 34,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.35,
+            "wall_seconds": 636.4355196901597,
+            "cpu_seconds": 636.2395831540002,
+            "process_peak_rss_gib": 2.3709716796875,
+            "cpu_utilization_percent": 99.96921345052286,
+            "worker_index": 34,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.4,
+            "wall_seconds": 635.8526004881132,
+            "cpu_seconds": 635.6757118670002,
+            "process_peak_rss_gib": 2.3709716796875,
+            "cpu_utilization_percent": 99.97218087635763,
+            "worker_index": 34,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.45,
+            "wall_seconds": 628.0681498278864,
+            "cpu_seconds": 627.8757087679996,
+            "process_peak_rss_gib": 2.3709716796875,
+            "cpu_utilization_percent": 99.96935984416031,
+            "worker_index": 34,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.5,
+            "wall_seconds": 1138.2975888550282,
+            "cpu_seconds": 1137.14794646,
+            "process_peak_rss_gib": 2.3714599609375,
+            "cpu_utilization_percent": 99.89900335322817,
+            "worker_index": 35,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.55,
+            "wall_seconds": 633.3140149728861,
+            "cpu_seconds": 632.7497107899999,
+            "process_peak_rss_gib": 2.3714599609375,
+            "cpu_utilization_percent": 99.91089662165295,
+            "worker_index": 35,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.6,
+            "wall_seconds": 632.2107565449551,
+            "cpu_seconds": 631.5991175060001,
+            "process_peak_rss_gib": 2.3714599609375,
+            "cpu_utilization_percent": 99.90325393349876,
+            "worker_index": 35,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.65,
+            "wall_seconds": 632.502952856943,
+            "cpu_seconds": 631.9429297290003,
+            "process_peak_rss_gib": 2.3714599609375,
+            "cpu_utilization_percent": 99.91145920735813,
+            "worker_index": 35,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.7,
+            "wall_seconds": 632.4517627840396,
+            "cpu_seconds": 632.0794359200004,
+            "process_peak_rss_gib": 2.37158203125,
+            "cpu_utilization_percent": 99.9411296029281,
+            "worker_index": 35,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.75,
+            "wall_seconds": 632.5676912791096,
+            "cpu_seconds": 632.2225052180002,
+            "process_peak_rss_gib": 2.37158203125,
+            "cpu_utilization_percent": 99.94543096875348,
+            "worker_index": 35,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.8,
+            "wall_seconds": 632.5359483219218,
+            "cpu_seconds": 632.1440976640006,
+            "process_peak_rss_gib": 2.37158203125,
+            "cpu_utilization_percent": 99.93805084770902,
+            "worker_index": 35,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.85,
+            "wall_seconds": 625.5576971268747,
+            "cpu_seconds": 625.1379577489997,
+            "process_peak_rss_gib": 2.3717041015625,
+            "cpu_utilization_percent": 99.93290157250038,
+            "worker_index": 35,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.9,
+            "wall_seconds": 615.4834327960853,
+            "cpu_seconds": 615.0314350969993,
+            "process_peak_rss_gib": 2.3717041015625,
+            "cpu_utilization_percent": 99.92656216642054,
+            "worker_index": 35,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.95,
+            "wall_seconds": 614.4625756959431,
+            "cpu_seconds": 614.1367627030004,
+            "process_peak_rss_gib": 2.3717041015625,
+            "cpu_utilization_percent": 99.94697594193208,
+            "worker_index": 35,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 2.0,
+            "wall_seconds": 1083.7392829520395,
+            "cpu_seconds": 1083.594977539,
+            "process_peak_rss_gib": 2.3772506713867188,
+            "cpu_utilization_percent": 99.98668448995902,
+            "worker_index": 36,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.05,
+            "wall_seconds": 540.9994064840139,
+            "cpu_seconds": 540.930466004,
+            "process_peak_rss_gib": 2.3772506713867188,
+            "cpu_utilization_percent": 99.9872568289008,
+            "worker_index": 36,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.1,
+            "wall_seconds": 544.7501376510481,
+            "cpu_seconds": 544.6788843719999,
+            "process_peak_rss_gib": 2.3772506713867188,
+            "cpu_utilization_percent": 99.98692000715126,
+            "worker_index": 36,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.15,
+            "wall_seconds": 644.1856393479975,
+            "cpu_seconds": 644.100917795,
+            "process_peak_rss_gib": 2.3775253295898438,
+            "cpu_utilization_percent": 99.9868482704639,
+            "worker_index": 36,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.2,
+            "wall_seconds": 545.6462614890188,
+            "cpu_seconds": 545.5748967129998,
+            "process_peak_rss_gib": 2.3775253295898438,
+            "cpu_utilization_percent": 99.98692105470965,
+            "worker_index": 36,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.25,
+            "wall_seconds": 648.5996294980287,
+            "cpu_seconds": 648.483163376,
+            "process_peak_rss_gib": 2.3775253295898438,
+            "cpu_utilization_percent": 99.98204344918933,
+            "worker_index": 36,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.3,
+            "wall_seconds": 648.5436878449982,
+            "cpu_seconds": 648.4580793889995,
+            "process_peak_rss_gib": 2.3775253295898438,
+            "cpu_utilization_percent": 99.98679989373066,
+            "worker_index": 36,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.35,
+            "wall_seconds": 647.046160819009,
+            "cpu_seconds": 646.9572582720002,
+            "process_peak_rss_gib": 2.3775253295898438,
+            "cpu_utilization_percent": 99.9862602465802,
+            "worker_index": 36,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.4,
+            "wall_seconds": 646.8470925370348,
+            "cpu_seconds": 646.7570349319994,
+            "process_peak_rss_gib": 2.3775253295898438,
+            "cpu_utilization_percent": 99.98607745074928,
+            "worker_index": 36,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.45,
+            "wall_seconds": 646.7608717660187,
+            "cpu_seconds": 646.670200175,
+            "process_peak_rss_gib": 2.3775253295898438,
+            "cpu_utilization_percent": 99.98598066225449,
+            "worker_index": 36,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.5,
+            "wall_seconds": 1217.1940129767172,
+            "cpu_seconds": 1216.987566557,
+            "process_peak_rss_gib": 2.378185272216797,
+            "cpu_utilization_percent": 99.98303915254954,
+            "worker_index": 5,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.55,
+            "wall_seconds": 554.8411135370843,
+            "cpu_seconds": 554.747512786,
+            "process_peak_rss_gib": 2.378185272216797,
+            "cpu_utilization_percent": 99.98313017027746,
+            "worker_index": 5,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.6,
+            "wall_seconds": 660.897777991835,
+            "cpu_seconds": 660.7913112029999,
+            "process_peak_rss_gib": 2.378459930419922,
+            "cpu_utilization_percent": 99.9838905815119,
+            "worker_index": 5,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.65,
+            "wall_seconds": 549.4082138878293,
+            "cpu_seconds": 549.321707908,
+            "process_peak_rss_gib": 2.378459930419922,
+            "cpu_utilization_percent": 99.98425469848418,
+            "worker_index": 5,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.7,
+            "wall_seconds": 766.74944951199,
+            "cpu_seconds": 766.6300046669999,
+            "process_peak_rss_gib": 2.378459930419922,
+            "cpu_utilization_percent": 99.9844219196941,
+            "worker_index": 5,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.75,
+            "wall_seconds": 549.7240023198538,
+            "cpu_seconds": 549.6387607309998,
+            "process_peak_rss_gib": 2.378459930419922,
+            "cpu_utilization_percent": 99.98449374804552,
+            "worker_index": 5,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.8,
+            "wall_seconds": 656.913020700682,
+            "cpu_seconds": 656.8128078869995,
+            "process_peak_rss_gib": 2.378459930419922,
+            "cpu_utilization_percent": 99.98474488851271,
+            "worker_index": 5,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.85,
+            "wall_seconds": 549.1747614368796,
+            "cpu_seconds": 549.0905293919996,
+            "process_peak_rss_gib": 2.378459930419922,
+            "cpu_utilization_percent": 99.98466206920004,
+            "worker_index": 5,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.9,
+            "wall_seconds": 655.5453314110637,
+            "cpu_seconds": 655.4436447420003,
+            "process_peak_rss_gib": 2.378459930419922,
+            "cpu_utilization_percent": 99.98448823228678,
+            "worker_index": 5,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.95,
+            "wall_seconds": 542.8261029361747,
+            "cpu_seconds": 542.7418321709993,
+            "process_peak_rss_gib": 2.378459930419922,
+            "cpu_utilization_percent": 99.98447555032456,
+            "worker_index": 5,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 3.0,
+            "wall_seconds": 542.1252496819943,
+            "cpu_seconds": 542.0398189799998,
+            "process_peak_rss_gib": 2.378734588623047,
+            "cpu_utilization_percent": 99.98424151945615,
+            "worker_index": 5,
+            "chunk_index": "5"
+          }
+        ]
+      },
+      {
+        "label": "data_like_8192_pruned54",
+        "title": "Data-like Asimov \u00b7 pruned to 54 NPs",
+        "reference_events": 8192,
+        "constrained_nps": 54,
+        "color": "#7d4698",
+        "points": 61,
+        "computed_points": 66,
+        "median_wall_minutes": 4.717923414716885,
+        "minimum_wall_minutes": 2.2835926887889704,
+        "maximum_wall_minutes": 8.128321896799996,
+        "median_cpu_minutes": 4.716962344849995,
+        "maximum_process_peak_rss_gib": 2.3603858947753906,
+        "maximum_slurm_peak_rss_gib": 2.530017852783203,
+        "minimizer_cpu_hours_including_overlaps": 5.445491567001111,
+        "whole_job_cpu_hours": 5.481575833333333,
+        "scan_wall_hours": 1.906388888888889,
+        "scan_csv_sha256": "b576421a8b9d6c2de0ad9e9eee4ab111dc552a2d5f5f0c6416fe752cd8c974f4",
+        "rows": [
+          {
+            "mu": 0.0,
+            "wall_seconds": 425.4838884670171,
+            "cpu_seconds": 425.1605773330002,
+            "process_peak_rss_gib": 2.359394073486328,
+            "cpu_utilization_percent": 99.92401330748817,
+            "worker_index": 22,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.05,
+            "wall_seconds": 330.15578228101367,
+            "cpu_seconds": 330.06725517799987,
+            "process_peak_rss_gib": 2.359394073486328,
+            "cpu_utilization_percent": 99.9731862630416,
+            "worker_index": 22,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.1,
+            "wall_seconds": 331.0123872400145,
+            "cpu_seconds": 330.9334634820002,
+            "process_peak_rss_gib": 2.359394073486328,
+            "cpu_utilization_percent": 99.97615685664445,
+            "worker_index": 22,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.15,
+            "wall_seconds": 333.8378892799956,
+            "cpu_seconds": 333.60605045499983,
+            "process_peak_rss_gib": 2.359394073486328,
+            "cpu_utilization_percent": 99.9305534714781,
+            "worker_index": 22,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.2,
+            "wall_seconds": 284.6170464180177,
+            "cpu_seconds": 284.3205487760001,
+            "process_peak_rss_gib": 2.359394073486328,
+            "cpu_utilization_percent": 99.89582576105364,
+            "worker_index": 22,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.25,
+            "wall_seconds": 282.63388688501436,
+            "cpu_seconds": 282.56418712699997,
+            "process_peak_rss_gib": 2.359394073486328,
+            "cpu_utilization_percent": 99.97533920692152,
+            "worker_index": 22,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.3,
+            "wall_seconds": 283.68349116598256,
+            "cpu_seconds": 283.54248160099996,
+            "process_peak_rss_gib": 2.359394073486328,
+            "cpu_utilization_percent": 99.95029334826535,
+            "worker_index": 22,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.35,
+            "wall_seconds": 187.94026772899088,
+            "cpu_seconds": 187.80743317399993,
+            "process_peak_rss_gib": 2.359119415283203,
+            "cpu_utilization_percent": 99.92932086529615,
+            "worker_index": 22,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.4,
+            "wall_seconds": 235.17236375098582,
+            "cpu_seconds": 235.05099609800004,
+            "process_peak_rss_gib": 2.359119415283203,
+            "cpu_utilization_percent": 99.94839204273411,
+            "worker_index": 22,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.45,
+            "wall_seconds": 188.22645973804174,
+            "cpu_seconds": 188.109122227,
+            "process_peak_rss_gib": 2.359119415283203,
+            "cpu_utilization_percent": 99.93766152154961,
+            "worker_index": 22,
+            "chunk_index": "0"
+          },
+          {
+            "mu": 0.5,
+            "wall_seconds": 226.40161746600643,
+            "cpu_seconds": 226.29588185600005,
+            "process_peak_rss_gib": 2.3603858947753906,
+            "cpu_utilization_percent": 99.95329732570384,
+            "worker_index": 23,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.55,
+            "wall_seconds": 225.85957194119692,
+            "cpu_seconds": 225.75393242699965,
+            "process_peak_rss_gib": 2.3603858947753906,
+            "cpu_utilization_percent": 99.95322778959984,
+            "worker_index": 23,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.6,
+            "wall_seconds": 225.78338340716437,
+            "cpu_seconds": 225.67980735200013,
+            "process_peak_rss_gib": 2.3602638244628906,
+            "cpu_utilization_percent": 99.95412591768215,
+            "worker_index": 23,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.65,
+            "wall_seconds": 225.17259961832315,
+            "cpu_seconds": 225.08047458600004,
+            "process_peak_rss_gib": 2.3602638244628906,
+            "cpu_utilization_percent": 99.959086925994,
+            "worker_index": 23,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.7,
+            "wall_seconds": 270.7705865530297,
+            "cpu_seconds": 270.65525701699994,
+            "process_peak_rss_gib": 2.3602638244628906,
+            "cpu_utilization_percent": 99.95740691871374,
+            "worker_index": 23,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.75,
+            "wall_seconds": 225.23721882794052,
+            "cpu_seconds": 225.13136707000012,
+            "process_peak_rss_gib": 2.3602638244628906,
+            "cpu_utilization_percent": 99.95300432206932,
+            "worker_index": 23,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.8,
+            "wall_seconds": 272.7323468369432,
+            "cpu_seconds": 272.60727703099997,
+            "process_peak_rss_gib": 2.3601417541503906,
+            "cpu_utilization_percent": 99.95414192434681,
+            "worker_index": 23,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.85,
+            "wall_seconds": 226.4938950878568,
+            "cpu_seconds": 226.39049292100003,
+            "process_peak_rss_gib": 2.3601417541503906,
+            "cpu_utilization_percent": 99.95434659869457,
+            "worker_index": 23,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.9,
+            "wall_seconds": 225.58943322813138,
+            "cpu_seconds": 225.48607009100004,
+            "process_peak_rss_gib": 2.3601417541503906,
+            "cpu_utilization_percent": 99.95418086048967,
+            "worker_index": 23,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 0.95,
+            "wall_seconds": 225.62707527261227,
+            "cpu_seconds": 225.524747643,
+            "process_peak_rss_gib": 2.3601417541503906,
+            "cpu_utilization_percent": 99.95464745111435,
+            "worker_index": 23,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 1.0,
+            "wall_seconds": 137.01556132733822,
+            "cpu_seconds": 136.93376251200002,
+            "process_peak_rss_gib": 2.3601417541503906,
+            "cpu_utilization_percent": 99.94029961666706,
+            "worker_index": 23,
+            "chunk_index": "1"
+          },
+          {
+            "mu": 1.05,
+            "wall_seconds": 265.4506932848599,
+            "cpu_seconds": 265.31231192999996,
+            "process_peak_rss_gib": 2.3562545776367188,
+            "cpu_utilization_percent": 99.94786928105273,
+            "worker_index": 24,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.1,
+            "wall_seconds": 265.51734114205465,
+            "cpu_seconds": 265.38026901499995,
+            "process_peak_rss_gib": 2.3562545776367188,
+            "cpu_utilization_percent": 99.9483754520646,
+            "worker_index": 24,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.15,
+            "wall_seconds": 264.9766447660513,
+            "cpu_seconds": 264.83619417,
+            "process_peak_rss_gib": 2.3562545776367188,
+            "cpu_utilization_percent": 99.94699510359665,
+            "worker_index": 24,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.2,
+            "wall_seconds": 318.5176001419313,
+            "cpu_seconds": 318.347292001,
+            "process_peak_rss_gib": 2.3563766479492188,
+            "cpu_utilization_percent": 99.94653101089064,
+            "worker_index": 24,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.25,
+            "wall_seconds": 264.89027743204497,
+            "cpu_seconds": 264.7632419610002,
+            "process_peak_rss_gib": 2.3563766479492188,
+            "cpu_utilization_percent": 99.95204222960679,
+            "worker_index": 24,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.3,
+            "wall_seconds": 315.71506698196754,
+            "cpu_seconds": 315.541254039,
+            "process_peak_rss_gib": 2.3563766479492188,
+            "cpu_utilization_percent": 99.94494626289804,
+            "worker_index": 24,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.35,
+            "wall_seconds": 317.4178040330298,
+            "cpu_seconds": 317.266660816,
+            "process_peak_rss_gib": 2.3563766479492188,
+            "cpu_utilization_percent": 99.95238350996402,
+            "worker_index": 24,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.4,
+            "wall_seconds": 318.86606475291774,
+            "cpu_seconds": 318.70010818000037,
+            "process_peak_rss_gib": 2.3564987182617188,
+            "cpu_utilization_percent": 99.94795414399273,
+            "worker_index": 24,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.45,
+            "wall_seconds": 319.00853892508894,
+            "cpu_seconds": 318.8422182889999,
+            "process_peak_rss_gib": 2.3564987182617188,
+            "cpu_utilization_percent": 99.94786326514975,
+            "worker_index": 24,
+            "chunk_index": "2"
+          },
+          {
+            "mu": 1.5,
+            "wall_seconds": 487.6993138079997,
+            "cpu_seconds": 486.88053498700003,
+            "process_peak_rss_gib": 2.3552627563476562,
+            "cpu_utilization_percent": 99.83211401004309,
+            "worker_index": 25,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.55,
+            "wall_seconds": 325.0817478271201,
+            "cpu_seconds": 324.560348456,
+            "process_peak_rss_gib": 2.3552627563476562,
+            "cpu_utilization_percent": 99.83960976751072,
+            "worker_index": 25,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.6,
+            "wall_seconds": 324.14337214594707,
+            "cpu_seconds": 323.7332320400001,
+            "process_peak_rss_gib": 2.3552627563476562,
+            "cpu_utilization_percent": 99.87346953811466,
+            "worker_index": 25,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.65,
+            "wall_seconds": 315.7074094079435,
+            "cpu_seconds": 315.51383933700004,
+            "process_peak_rss_gib": 2.3552627563476562,
+            "cpu_utilization_percent": 99.93868687741397,
+            "worker_index": 25,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.7,
+            "wall_seconds": 314.04739877581596,
+            "cpu_seconds": 313.982182212,
+            "process_peak_rss_gib": 2.3553848266601562,
+            "cpu_utilization_percent": 99.97923352841954,
+            "worker_index": 25,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.75,
+            "wall_seconds": 315.03943999297917,
+            "cpu_seconds": 314.9556833249999,
+            "process_peak_rss_gib": 2.3553848266601562,
+            "cpu_utilization_percent": 99.97341391034051,
+            "worker_index": 25,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.8,
+            "wall_seconds": 322.3518017111346,
+            "cpu_seconds": 322.25055099400015,
+            "process_peak_rss_gib": 2.3553848266601562,
+            "cpu_utilization_percent": 99.96858999496916,
+            "worker_index": 25,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.85,
+            "wall_seconds": 325.10121075087227,
+            "cpu_seconds": 324.61107576999984,
+            "process_peak_rss_gib": 2.3553848266601562,
+            "cpu_utilization_percent": 99.84923618717372,
+            "worker_index": 25,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.9,
+            "wall_seconds": 324.217391039012,
+            "cpu_seconds": 323.9140863790003,
+            "process_peak_rss_gib": 2.3553848266601562,
+            "cpu_utilization_percent": 99.9064502187746,
+            "worker_index": 25,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 1.95,
+            "wall_seconds": 323.4015120121185,
+            "cpu_seconds": 322.72817948600004,
+            "process_peak_rss_gib": 2.3555068969726562,
+            "cpu_utilization_percent": 99.79179672910954,
+            "worker_index": 25,
+            "chunk_index": "3"
+          },
+          {
+            "mu": 2.0,
+            "wall_seconds": 472.8050446800189,
+            "cpu_seconds": 472.674030542,
+            "process_peak_rss_gib": 2.359375,
+            "cpu_utilization_percent": 99.97229002958132,
+            "worker_index": 26,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.05,
+            "wall_seconds": 278.6923110559874,
+            "cpu_seconds": 278.64579176499996,
+            "process_peak_rss_gib": 2.359375,
+            "cpu_utilization_percent": 99.98330801061172,
+            "worker_index": 26,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.1,
+            "wall_seconds": 282.67020802298794,
+            "cpu_seconds": 282.622448662,
+            "process_peak_rss_gib": 2.359375,
+            "cpu_utilization_percent": 99.98310421132742,
+            "worker_index": 26,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.15,
+            "wall_seconds": 280.788212296,
+            "cpu_seconds": 280.74036125099997,
+            "process_peak_rss_gib": 2.359375,
+            "cpu_utilization_percent": 99.98295831416542,
+            "worker_index": 26,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.2,
+            "wall_seconds": 327.1376942989882,
+            "cpu_seconds": 327.08311869299996,
+            "process_peak_rss_gib": 2.359649658203125,
+            "cpu_utilization_percent": 99.98331723707193,
+            "worker_index": 26,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.25,
+            "wall_seconds": 274.7219872600108,
+            "cpu_seconds": 274.67507387499995,
+            "process_peak_rss_gib": 2.359649658203125,
+            "cpu_utilization_percent": 99.98292332351016,
+            "worker_index": 26,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.3,
+            "wall_seconds": 330.3558649260085,
+            "cpu_seconds": 330.2959589349998,
+            "process_peak_rss_gib": 2.359649658203125,
+            "cpu_utilization_percent": 99.98186622446612,
+            "worker_index": 26,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.35,
+            "wall_seconds": 283.0754048830131,
+            "cpu_seconds": 283.01774069099974,
+            "process_peak_rss_gib": 2.359649658203125,
+            "cpu_utilization_percent": 99.97962938813522,
+            "worker_index": 26,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.4,
+            "wall_seconds": 330.19753464401583,
+            "cpu_seconds": 330.1262005179997,
+            "process_peak_rss_gib": 2.359649658203125,
+            "cpu_utilization_percent": 99.9783965297945,
+            "worker_index": 26,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.45,
+            "wall_seconds": 282.76337248599157,
+            "cpu_seconds": 282.71113580300016,
+            "process_peak_rss_gib": 2.359649658203125,
+            "cpu_utilization_percent": 99.98152636158913,
+            "worker_index": 26,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.5,
+            "wall_seconds": 377.92987965099746,
+            "cpu_seconds": 377.86090235699976,
+            "process_peak_rss_gib": 2.359649658203125,
+            "cpu_utilization_percent": 99.98174865293493,
+            "worker_index": 26,
+            "chunk_index": "4"
+          },
+          {
+            "mu": 2.55,
+            "wall_seconds": 282.2110416609794,
+            "cpu_seconds": 281.7156667940001,
+            "process_peak_rss_gib": 2.359111785888672,
+            "cpu_utilization_percent": 99.82446651836733,
+            "worker_index": 6,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.6,
+            "wall_seconds": 330.25533388199983,
+            "cpu_seconds": 329.4565742120001,
+            "process_peak_rss_gib": 2.359111785888672,
+            "cpu_utilization_percent": 99.75813875264005,
+            "worker_index": 6,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.65,
+            "wall_seconds": 282.6284623480169,
+            "cpu_seconds": 282.2137387590001,
+            "process_peak_rss_gib": 2.359111785888672,
+            "cpu_utilization_percent": 99.85326191652058,
+            "worker_index": 6,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.7,
+            "wall_seconds": 322.5300996080041,
+            "cpu_seconds": 322.273780537,
+            "process_peak_rss_gib": 2.359386444091797,
+            "cpu_utilization_percent": 99.92052863552405,
+            "worker_index": 6,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.75,
+            "wall_seconds": 282.53616505896207,
+            "cpu_seconds": 282.0489182010001,
+            "process_peak_rss_gib": 2.359386444091797,
+            "cpu_utilization_percent": 99.82754531340784,
+            "worker_index": 6,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.8,
+            "wall_seconds": 330.8364004250034,
+            "cpu_seconds": 330.27776951300007,
+            "process_peak_rss_gib": 2.359386444091797,
+            "cpu_utilization_percent": 99.83114587412823,
+            "worker_index": 6,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.85,
+            "wall_seconds": 281.70597698399797,
+            "cpu_seconds": 281.59497464199967,
+            "process_peak_rss_gib": 2.359386444091797,
+            "cpu_utilization_percent": 99.96059638379465,
+            "worker_index": 6,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.9,
+            "wall_seconds": 330.32938441698207,
+            "cpu_seconds": 329.7690489910001,
+            "process_peak_rss_gib": 2.359386444091797,
+            "cpu_utilization_percent": 99.8303706989401,
+            "worker_index": 6,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 2.95,
+            "wall_seconds": 282.2930343389744,
+            "cpu_seconds": 281.78255674599995,
+            "process_peak_rss_gib": 2.359386444091797,
+            "cpu_utilization_percent": 99.81916748524462,
+            "worker_index": 6,
+            "chunk_index": "5"
+          },
+          {
+            "mu": 3.0,
+            "wall_seconds": 281.87919194303686,
+            "cpu_seconds": 281.3433043350001,
+            "process_peak_rss_gib": 2.359386444091797,
+            "cpu_utilization_percent": 99.80988748962176,
+            "worker_index": 6,
+            "chunk_index": "5"
+          }
+        ]
+      }
+    ],
+    "jobs": [
+      {
+        "worker_index": 1,
+        "workspace": "true_4096_unpruned",
+        "profile_chunk": "chunk_5",
+        "wall_seconds": 3427,
+        "cpu_seconds": 3419.455,
+        "slurm_peak_rss_gib": 1.2901268005371094,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 2,
+        "workspace": "data_like_4096_unpruned",
+        "profile_chunk": "chunk_5",
+        "wall_seconds": 3712,
+        "cpu_seconds": 3710.0,
+        "slurm_peak_rss_gib": 1.2885551452636719,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 3,
+        "workspace": "data_like_4096_pruned54",
+        "profile_chunk": "chunk_5",
+        "wall_seconds": 1794,
+        "cpu_seconds": 1789.312,
+        "slurm_peak_rss_gib": 1.2704391479492188,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 4,
+        "workspace": "true_8192_unpruned",
+        "profile_chunk": "chunk_5",
+        "wall_seconds": 5441,
+        "cpu_seconds": 5427.0,
+        "slurm_peak_rss_gib": 2.5498046875,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 5,
+        "workspace": "data_like_8192_unpruned",
+        "profile_chunk": "chunk_5",
+        "wall_seconds": 7289,
+        "cpu_seconds": 7284.0,
+        "slurm_peak_rss_gib": 2.1497459411621094,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 6,
+        "workspace": "data_like_8192_pruned54",
+        "profile_chunk": "chunk_5",
+        "wall_seconds": 3552,
+        "cpu_seconds": 3543.67,
+        "slurm_peak_rss_gib": 2.018341064453125,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 7,
+        "workspace": "data_like_4096_pruned54",
+        "profile_chunk": "chunk_0",
+        "wall_seconds": 1660,
+        "cpu_seconds": 1656.371,
+        "slurm_peak_rss_gib": 1.2711448669433594,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 8,
+        "workspace": "data_like_4096_pruned54",
+        "profile_chunk": "chunk_1",
+        "wall_seconds": 1338,
+        "cpu_seconds": 1325.292,
+        "slurm_peak_rss_gib": 1.5379066467285156,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 9,
+        "workspace": "data_like_4096_pruned54",
+        "profile_chunk": "chunk_2",
+        "wall_seconds": 1435,
+        "cpu_seconds": 1422.117,
+        "slurm_peak_rss_gib": 1.4515800476074219,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 10,
+        "workspace": "data_like_4096_pruned54",
+        "profile_chunk": "chunk_3",
+        "wall_seconds": 1622,
+        "cpu_seconds": 1617.7,
+        "slurm_peak_rss_gib": 1.2704505920410156,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 11,
+        "workspace": "data_like_4096_pruned54",
+        "profile_chunk": "chunk_4",
+        "wall_seconds": 1756,
+        "cpu_seconds": 1741.537,
+        "slurm_peak_rss_gib": 1.3302116394042969,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 12,
+        "workspace": "true_4096_unpruned",
+        "profile_chunk": "chunk_0",
+        "wall_seconds": 3304,
+        "cpu_seconds": 3301.059,
+        "slurm_peak_rss_gib": 1.3459091186523438,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 13,
+        "workspace": "true_4096_unpruned",
+        "profile_chunk": "chunk_1",
+        "wall_seconds": 1909,
+        "cpu_seconds": 1906.111,
+        "slurm_peak_rss_gib": 1.2885704040527344,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 14,
+        "workspace": "true_4096_unpruned",
+        "profile_chunk": "chunk_2",
+        "wall_seconds": 2697,
+        "cpu_seconds": 2692.134,
+        "slurm_peak_rss_gib": 1.3459281921386719,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 15,
+        "workspace": "true_4096_unpruned",
+        "profile_chunk": "chunk_3",
+        "wall_seconds": 2373,
+        "cpu_seconds": 2370.41,
+        "slurm_peak_rss_gib": 1.34698486328125,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 16,
+        "workspace": "true_4096_unpruned",
+        "profile_chunk": "chunk_4",
+        "wall_seconds": 3367,
+        "cpu_seconds": 3358.771,
+        "slurm_peak_rss_gib": 1.3466339111328125,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 17,
+        "workspace": "data_like_4096_unpruned",
+        "profile_chunk": "chunk_0",
+        "wall_seconds": 3375,
+        "cpu_seconds": 3374.158,
+        "slurm_peak_rss_gib": 1.3005142211914062,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 18,
+        "workspace": "data_like_4096_unpruned",
+        "profile_chunk": "chunk_1",
+        "wall_seconds": 2427,
+        "cpu_seconds": 2425.736,
+        "slurm_peak_rss_gib": 1.3067245483398438,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 19,
+        "workspace": "data_like_4096_unpruned",
+        "profile_chunk": "chunk_2",
+        "wall_seconds": 2651,
+        "cpu_seconds": 2649.101,
+        "slurm_peak_rss_gib": 1.3157730102539062,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 20,
+        "workspace": "data_like_4096_unpruned",
+        "profile_chunk": "chunk_3",
+        "wall_seconds": 3371,
+        "cpu_seconds": 3367.209,
+        "slurm_peak_rss_gib": 1.3483352661132812,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 21,
+        "workspace": "data_like_4096_unpruned",
+        "profile_chunk": "chunk_4",
+        "wall_seconds": 3660,
+        "cpu_seconds": 3657.0,
+        "slurm_peak_rss_gib": 1.3465461730957031,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 22,
+        "workspace": "data_like_8192_pruned54",
+        "profile_chunk": "chunk_0",
+        "wall_seconds": 3285,
+        "cpu_seconds": 3280.604,
+        "slurm_peak_rss_gib": 2.132434844970703,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 23,
+        "workspace": "data_like_8192_pruned54",
+        "profile_chunk": "chunk_1",
+        "wall_seconds": 2513,
+        "cpu_seconds": 2504.135,
+        "slurm_peak_rss_gib": 2.1345367431640625,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 24,
+        "workspace": "data_like_8192_pruned54",
+        "profile_chunk": "chunk_2",
+        "wall_seconds": 3178,
+        "cpu_seconds": 3151.922,
+        "slurm_peak_rss_gib": 2.5240516662597656,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 25,
+        "workspace": "data_like_8192_pruned54",
+        "profile_chunk": "chunk_3",
+        "wall_seconds": 3742,
+        "cpu_seconds": 3711.0,
+        "slurm_peak_rss_gib": 2.530017852783203,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 26,
+        "workspace": "data_like_8192_pruned54",
+        "profile_chunk": "chunk_4",
+        "wall_seconds": 3546,
+        "cpu_seconds": 3542.342,
+        "slurm_peak_rss_gib": 2.131744384765625,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 27,
+        "workspace": "true_8192_unpruned",
+        "profile_chunk": "chunk_0",
+        "wall_seconds": 6846,
+        "cpu_seconds": 6839.0,
+        "slurm_peak_rss_gib": 2.1498641967773438,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 28,
+        "workspace": "true_8192_unpruned",
+        "profile_chunk": "chunk_1",
+        "wall_seconds": 4998,
+        "cpu_seconds": 4991.0,
+        "slurm_peak_rss_gib": 2.1502838134765625,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 29,
+        "workspace": "true_8192_unpruned",
+        "profile_chunk": "chunk_2",
+        "wall_seconds": 6101,
+        "cpu_seconds": 6042.0,
+        "slurm_peak_rss_gib": 2.2700843811035156,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 30,
+        "workspace": "true_8192_unpruned",
+        "profile_chunk": "chunk_3",
+        "wall_seconds": 7443,
+        "cpu_seconds": 7383.0,
+        "slurm_peak_rss_gib": 2.317096710205078,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 31,
+        "workspace": "true_8192_unpruned",
+        "profile_chunk": "chunk_4",
+        "wall_seconds": 6601,
+        "cpu_seconds": 6589.0,
+        "slurm_peak_rss_gib": 2.1499099731445312,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 32,
+        "workspace": "data_like_8192_unpruned",
+        "profile_chunk": "chunk_0",
+        "wall_seconds": 6956,
+        "cpu_seconds": 6947.0,
+        "slurm_peak_rss_gib": 2.036468505859375,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 33,
+        "workspace": "data_like_8192_unpruned",
+        "profile_chunk": "chunk_1",
+        "wall_seconds": 4836,
+        "cpu_seconds": 4822.0,
+        "slurm_peak_rss_gib": 2.5480613708496094,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 34,
+        "workspace": "data_like_8192_unpruned",
+        "profile_chunk": "chunk_2",
+        "wall_seconds": 6342,
+        "cpu_seconds": 6294.0,
+        "slurm_peak_rss_gib": 2.2557601928710938,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 35,
+        "workspace": "data_like_8192_unpruned",
+        "profile_chunk": "chunk_3",
+        "wall_seconds": 7598,
+        "cpu_seconds": 7550.0,
+        "slurm_peak_rss_gib": 2.323516845703125,
+        "allocated_cpus": 1
+      },
+      {
+        "worker_index": 36,
+        "workspace": "data_like_8192_unpruned",
+        "profile_chunk": "chunk_4",
+        "wall_seconds": 7272,
+        "cpu_seconds": 7267.0,
+        "slurm_peak_rss_gib": 2.1498641967773438,
+        "allocated_cpus": 1
+      }
+    ],
+    "historical_benchmark": {
+      "wall_hours_per_point": 24,
+      "memory_gb": 500,
+      "memory_gib": 465.66128730773926,
+      "source": "Author report, confirmed 2026-10-24: one profiled mu point",
+      "cpu_count": null,
+      "hardware": null,
+      "ram_accounting": "Unspecified: historical requirement, not certified peak RSS"
+    },
+    "definitions": {
+      "point_time": "Minimization wall/CPU time, including strategy retry; excludes loading and initial NLL setup",
+      "cpu_utilization": "100 * process CPU seconds / wall seconds; one allocated CPU per profile",
+      "point_memory": "Process peak RSS up through the selected point within its warm-start chunk; not isolated per-point allocation",
+      "aggregate_work": "All 66 profiles in six overlapping chunks per model; 61 unique coordinates shown",
+      "job_memory": "Largest Slurm step MaxRSS per model, not sum of concurrently running processes",
+      "scan_wall": "First chunk start to last chunk finish, including scheduling gaps; up to four chunks per model concurrently",
+      "scope": "Profile scan only; global fits, final likelihood validation and separate Hesse calculations excluded",
+      "comparison": "Historical and current hardware/start policy/accounting differ; no controlled hardware speedup claim"
+    },
+    "source_sha256": "b352cee30f4d757fee86000471ce43d7244ed42b4652d3ba01a3fb4c222e7049",
+    "accounting_method": "Slurm sacct; detailed job IDs, hosts and execution timestamps retained only in the local audit",
+    "public_export_source_sha256": "33f4c4f689b5a4980f36cebae58e0a54271fbdb9c437aea97a76e65a4504a59c"
+  },
+  "diagnostics": {
+    "complete": true,
+    "created_utc": "2026-10-24T18:25:24.539896+00:00",
+    "samples": {
+      "4096": {
+        "mu_hat": 0.9999693967945784,
+        "hessian_variance": 1.0650398694332315,
+        "hessian_sigma": 1.03200768865025,
+        "auxiliary_variance": 0.08107689093624723,
+        "auxiliary_sigma": 0.28474004097816524,
+        "primary_variance": 0.985796826687277,
+        "primary_sigma": 0.9928730163959926,
+        "primary_components": {
+          "SR": 0.9830140549057553,
+          "CR0": 6.986796969494528e-06,
+          "CR1": 8.852327868597442e-05,
+          "CR2": 0.0026872617058661457
+        },
+        "propagated_variance": 1.0668737176235241,
+        "propagated_sigma": 1.0328957922382704,
+        "closure_absolute": 0.0018338481902926418,
+        "closure_relative": 0.0017218587237195493,
+        "native_covariance_probe_curvature": 1.001666690475152,
+        "source_to_native_curvature_probe_relative_difference": 5.507645316749077e-05,
+        "curvature_validation": {
+          "passed": true,
+          "covariance_sha256": "304d890342deada9845d7057057c710cfe588f00a240f9247d9848cc2a2393c7",
+          "checks": [
+            {
+              "direction": "profile_mu_tangent",
+              "h_002": 1.001828168227803,
+              "h_001": 1.0017070599133149,
+              "richardson_curvature": 1.001666690475152,
+              "expected_curvature": 1.0,
+              "disagreement": 0.0016666904751521106
+            },
+            {
+              "direction": "largest_covariance_eigenvector",
+              "h_002": 1.0022612150351051,
+              "h_001": 1.0021594061981887,
+              "richardson_curvature": 1.0021254699192166,
+              "expected_curvature": 1.0,
+              "disagreement": 0.0021254699192165827
+            },
+            {
+              "direction": "whitened_direction_0",
+              "h_002": 1.0000151269196067,
+              "h_001": 1.0000151087297127,
+              "richardson_curvature": 1.0000151026664146,
+              "expected_curvature": 1.0,
+              "disagreement": 1.5102666414579247e-05
+            },
+            {
+              "direction": "whitened_direction_1",
+              "h_002": 0.9999079338740557,
+              "h_001": 0.9999078611144796,
+              "richardson_curvature": 0.9999078368612876,
+              "expected_curvature": 1.0,
+              "disagreement": -9.216313871240889e-05
+            }
+          ],
+          "maximum_absolute_disagreement": 0.0021254699192165827
+        },
+        "groups": [
+          {
+            "source": "Parton shower",
+            "kind": "auxiliary",
+            "variance": 0.039086688352139166,
+            "sigma": 0.19770353651904957,
+            "fraction_of_hessian_variance": 0.03669974192885326
+          },
+          {
+            "source": "Jets",
+            "kind": "auxiliary",
+            "variance": 0.016495431207094492,
+            "sigma": 0.1284345405531335,
+            "fraction_of_hessian_variance": 0.015488087986671008
+          },
+          {
+            "source": "Electrons",
+            "kind": "auxiliary",
+            "variance": 0.011541561005597348,
+            "sigma": 0.10743165737154643,
+            "fraction_of_hessian_variance": 0.010836740798951753
+          },
+          {
+            "source": "Higher-order theory",
+            "kind": "auxiliary",
+            "variance": 0.011111211664327363,
+            "sigma": 0.10540973230365099,
+            "fraction_of_hessian_variance": 0.010432672037188874
+          },
+          {
+            "source": "Muons",
+            "kind": "auxiliary",
+            "variance": 0.002007369827245088,
+            "sigma": 0.04480368095642464,
+            "fraction_of_hessian_variance": 0.001884783738953664
+          },
+          {
+            "source": "Parton distributions",
+            "kind": "auxiliary",
+            "variance": 0.0007030432026811922,
+            "sigma": 0.0265149618646,
+            "fraction_of_hessian_variance": 0.0006601097506850346
+          },
+          {
+            "source": "Pileup",
+            "kind": "auxiliary",
+            "variance": 6.70166244927742e-05,
+            "sigma": 0.008186368211409391,
+            "fraction_of_hessian_variance": 6.292405234410386e-05
+          },
+          {
+            "source": "Luminosity",
+            "kind": "auxiliary",
+            "variance": 6.45690526698009e-05,
+            "sigma": 0.008035487083543904,
+            "fraction_of_hessian_variance": 6.062594887096742e-05
+          },
+          {
+            "source": "SR statistics",
+            "kind": "primary",
+            "variance": 0.9830140549057553,
+            "sigma": 0.991470652569079,
+            "fraction_of_hessian_variance": 0.922983339045207
+          },
+          {
+            "source": "CR0 statistics",
+            "kind": "primary",
+            "variance": 6.986796969494528e-06,
+            "sigma": 0.002643254995170638,
+            "fraction_of_hessian_variance": 6.560127155814929e-06
+          },
+          {
+            "source": "CR1 statistics",
+            "kind": "primary",
+            "variance": 8.852327868597442e-05,
+            "sigma": 0.009408681027964251,
+            "fraction_of_hessian_variance": 8.311733788246135e-05
+          },
+          {
+            "source": "CR2 statistics",
+            "kind": "primary",
+            "variance": 0.0026872617058661457,
+            "sigma": 0.051838805019658256,
+            "fraction_of_hessian_variance": 0.0025231559709555204
+          },
+          {
+            "source": "Auxiliary subtotal",
+            "kind": "subtotal",
+            "variance": 0.08107689093624723,
+            "sigma": 0.28474004097816524,
+            "fraction_of_hessian_variance": 0.07612568624251867
+          },
+          {
+            "source": "Primary-data subtotal",
+            "kind": "subtotal",
+            "variance": 0.985796826687277,
+            "sigma": 0.9928730163959926,
+            "fraction_of_hessian_variance": 0.9255961724812009
+          },
+          {
+            "source": "Propagated source total",
+            "kind": "subtotal",
+            "variance": 1.0668737176235241,
+            "sigma": 1.0328957922382704,
+            "fraction_of_hessian_variance": 1.0017218587237195
+          },
+          {
+            "source": "Observed-Hessian total",
+            "kind": "subtotal",
+            "variance": 1.0650398694332315,
+            "sigma": 1.03200768865025,
+            "fraction_of_hessian_variance": 1.0
+          }
+        ],
+        "impacts": [
+          {
+            "name": "alpha_ATLAS_EG_RESOLUTION_ALL",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.019162092279786363,
+            "anchor": -0.019160270559218213,
+            "pull_from_anchor": -1.8217205681493598e-06,
+            "posterior_sigma": 0.9816360424312477,
+            "unit_auxiliary_response": -0.010793507432080143,
+            "auxiliary_variance": 0.00011649980268636929,
+            "conditional_postfit_np_impact": -0.010995426986714482,
+            "correlation_with_mu": -0.010654404136363812,
+            "injected_value": -0.019160270559218213
+          },
+          {
+            "name": "alpha_ATLAS_EG_SCALE_AF2",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.05392495833820074,
+            "anchor": -0.05392582017507414,
+            "pull_from_anchor": 8.618368734017445e-07,
+            "posterior_sigma": 0.9813249178857311,
+            "unit_auxiliary_response": -0.006678401538870421,
+            "auxiliary_variance": 4.460104711438681e-05,
+            "conditional_postfit_np_impact": -0.006805494711434687,
+            "correlation_with_mu": -0.006594422489560623,
+            "injected_value": -0.05392582017507414
+          },
+          {
+            "name": "alpha_ATLAS_EG_SCALE_ALL",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.17169442810736307,
+            "anchor": -0.1716931049248947,
+            "pull_from_anchor": -1.3231824683712645e-06,
+            "posterior_sigma": 0.974350040873392,
+            "unit_auxiliary_response": -0.08236347460369332,
+            "auxiliary_variance": 0.006783741948793235,
+            "conditional_postfit_np_impact": -0.08453170949719876,
+            "correlation_with_mu": -0.08190996096914427,
+            "injected_value": -0.1716931049248947
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP0",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.13280377086860018,
+            "anchor": 0.13279823872153332,
+            "pull_from_anchor": 5.532147066861226e-06,
+            "posterior_sigma": 0.9953388320076835,
+            "unit_auxiliary_response": -0.005891462671840267,
+            "auxiliary_variance": 3.470933241368726e-05,
+            "conditional_postfit_np_impact": -0.005919052369288841,
+            "correlation_with_mu": -0.0057354731310483706,
+            "injected_value": 0.13279823872153332
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP1",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.08500948675159267,
+            "anchor": 0.08501232691530956,
+            "pull_from_anchor": -2.8401637168912197e-06,
+            "posterior_sigma": 0.997228098873289,
+            "unit_auxiliary_response": -0.013437286524155847,
+            "auxiliary_variance": 0.0001805606691322603,
+            "conditional_postfit_np_impact": -0.013474636885320287,
+            "correlation_with_mu": -0.013056721411585214,
+            "injected_value": 0.08501232691530956
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP10",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.10104579311677964,
+            "anchor": -0.10100950210549253,
+            "pull_from_anchor": -3.629101128710399e-05,
+            "posterior_sigma": 0.971265765040027,
+            "unit_auxiliary_response": 0.00016159677255389877,
+            "auxiliary_variance": 2.611351689983649e-08,
+            "conditional_postfit_np_impact": 0.000166377502811745,
+            "correlation_with_mu": 0.00016121730936844868,
+            "injected_value": -0.10100950210549253
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP11",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.011790026140122409,
+            "anchor": -0.011789632143112735,
+            "pull_from_anchor": -3.939970096740464e-07,
+            "posterior_sigma": 0.9904031411979859,
+            "unit_auxiliary_response": -0.002866987563710036,
+            "auxiliary_variance": 8.219617690468009e-06,
+            "conditional_postfit_np_impact": -0.002894768245829819,
+            "correlation_with_mu": -0.002804987092311153,
+            "injected_value": -0.011789632143112735
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP12",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.0472376740980507,
+            "anchor": -0.047249606828605385,
+            "pull_from_anchor": 1.1932730554685411e-05,
+            "posterior_sigma": 0.9967565932698331,
+            "unit_auxiliary_response": 0.0034217677086916067,
+            "auxiliary_variance": 1.170849425224461e-05,
+            "conditional_postfit_np_impact": 0.0034329020061623972,
+            "correlation_with_mu": 0.0033264306496129372,
+            "injected_value": -0.047249606828605385
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP13",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.017756893642497888,
+            "anchor": -0.01776481021420667,
+            "pull_from_anchor": 7.916571708781184e-06,
+            "posterior_sigma": 0.9858502574504955,
+            "unit_auxiliary_response": -0.003300229893158873,
+            "auxiliary_variance": 1.0891517347699426e-05,
+            "conditional_postfit_np_impact": -0.003347597536459125,
+            "correlation_with_mu": -0.003243771895573187,
+            "injected_value": -0.01776481021420667
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP14",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.16206378129836282,
+            "anchor": -0.16206475292925152,
+            "pull_from_anchor": 9.716308886908998e-07,
+            "posterior_sigma": 0.9974928039186847,
+            "unit_auxiliary_response": -0.0084326985233994,
+            "auxiliary_variance": 7.111040438654243e-05,
+            "conditional_postfit_np_impact": -0.008453894093542585,
+            "correlation_with_mu": -0.008191696812452364,
+            "injected_value": -0.16206475292925152
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP15",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.040582065272086,
+            "anchor": -0.040575919051056286,
+            "pull_from_anchor": -6.146221029713905e-06,
+            "posterior_sigma": 0.9966559975104281,
+            "unit_auxiliary_response": 0.00034292320352791747,
+            "auxiliary_variance": 1.1759632351784951e-07,
+            "conditional_postfit_np_impact": 0.00034407378712867216,
+            "correlation_with_mu": 0.0003334023485606798,
+            "injected_value": -0.040575919051056286
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP2",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.044962493421389846,
+            "anchor": 0.044963077279636096,
+            "pull_from_anchor": -5.838582462502906e-07,
+            "posterior_sigma": 0.9965039297547396,
+            "unit_auxiliary_response": -0.005666574960882541,
+            "auxiliary_variance": 3.2110071787300967e-05,
+            "conditional_postfit_np_impact": -0.005686455207735311,
+            "correlation_with_mu": -0.005510089963741019,
+            "injected_value": 0.044963077279636096
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP3",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.06895058067570681,
+            "anchor": 0.06894991856557973,
+            "pull_from_anchor": 6.621101270726237e-07,
+            "posterior_sigma": 0.9926956458234356,
+            "unit_auxiliary_response": 0.004757567817281288,
+            "auxiliary_variance": 2.2634451536030636e-05,
+            "conditional_postfit_np_impact": 0.004792574478691212,
+            "correlation_with_mu": 0.004643932919685278,
+            "injected_value": 0.06894991856557973
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP4",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.15036187088750377,
+            "anchor": 0.15036209259631061,
+            "pull_from_anchor": -2.217088068412476e-07,
+            "posterior_sigma": 0.9901459653567865,
+            "unit_auxiliary_response": 0.004705498071036453,
+            "auxiliary_variance": 2.2141712096527784e-05,
+            "conditional_postfit_np_impact": 0.00475232767255774,
+            "correlation_with_mu": 0.004604934367081363,
+            "injected_value": 0.15036209259631061
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP5",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.027843156335440114,
+            "anchor": -0.027845380140362173,
+            "pull_from_anchor": 2.2238049220586753e-06,
+            "posterior_sigma": 0.9970396759621819,
+            "unit_auxiliary_response": 0.0074774351017793915,
+            "auxiliary_variance": 5.591203570132258e-05,
+            "conditional_postfit_np_impact": 0.007499636455854554,
+            "correlation_with_mu": 0.007267035447830079,
+            "injected_value": -0.027845380140362173
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP6",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.013560241459884163,
+            "anchor": -0.013528798492396535,
+            "pull_from_anchor": -3.144296748762779e-05,
+            "posterior_sigma": 0.9811718281738772,
+            "unit_auxiliary_response": 0.015924769426314222,
+            "auxiliary_variance": 0.0002535982812812722,
+            "conditional_postfit_np_impact": 0.016230357383938396,
+            "correlation_with_mu": 0.015726973318547534,
+            "injected_value": -0.013528798492396535
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP7",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.07455313330846351,
+            "anchor": 0.07456947322620625,
+            "pull_from_anchor": -1.6339917742733134e-05,
+            "posterior_sigma": 0.9915655683496624,
+            "unit_auxiliary_response": 0.00951878060778752,
+            "auxiliary_variance": 9.060718425919173e-05,
+            "conditional_postfit_np_impact": 0.009599749034882631,
+            "correlation_with_mu": 0.009302013095888871,
+            "injected_value": 0.07456947322620625
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP8",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.17525716065130617,
+            "anchor": -0.17525672056344865,
+            "pull_from_anchor": -4.400878575172573e-07,
+            "posterior_sigma": 0.9915500971468268,
+            "unit_auxiliary_response": -0.008298403213464905,
+            "auxiliary_variance": 6.886349589324466e-05,
+            "conditional_postfit_np_impact": -0.00836912147691121,
+            "correlation_with_mu": -0.00810955341607685,
+            "injected_value": -0.17525672056344865
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP9",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.1584014649179589,
+            "anchor": 0.15843439064451847,
+            "pull_from_anchor": -3.292572655957948e-05,
+            "posterior_sigma": 0.9743395166857223,
+            "unit_auxiliary_response": 0.010916941229115459,
+            "auxiliary_variance": 0.00011917960579996094,
+            "conditional_postfit_np_impact": 0.01120445290595431,
+            "correlation_with_mu": 0.01085694712275688,
+            "injected_value": 0.15843439064451847
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP0",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.068611892525048,
+            "anchor": 0.06861306680582302,
+            "pull_from_anchor": -1.1742807750209083e-06,
+            "posterior_sigma": 0.9945931091764713,
+            "unit_auxiliary_response": -0.006727190932419845,
+            "auxiliary_variance": 4.5255097841231786e-05,
+            "conditional_postfit_np_impact": -0.006763761854322516,
+            "correlation_with_mu": -0.006553983975806183,
+            "injected_value": 0.06861306680582302
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP1",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.1261368179194432,
+            "anchor": -0.1261416193118477,
+            "pull_from_anchor": 4.801392404496507e-06,
+            "posterior_sigma": 0.9978478793921606,
+            "unit_auxiliary_response": 0.001961532990253959,
+            "auxiliary_variance": 3.8476116718546375e-06,
+            "conditional_postfit_np_impact": 0.001965763550501132,
+            "correlation_with_mu": 0.0019047954507704582,
+            "injected_value": -0.1261416193118477
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP10",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.09512961293196884,
+            "anchor": 0.09512816308874467,
+            "pull_from_anchor": 1.449843224171632e-06,
+            "posterior_sigma": 0.9955711224862842,
+            "unit_auxiliary_response": -0.0016123031328468364,
+            "auxiliary_variance": 2.5995213921877236e-06,
+            "conditional_postfit_np_impact": -0.001619475591879724,
+            "correlation_with_mu": -0.001569247603181926,
+            "injected_value": 0.09512816308874467
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP11",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.08629229373984168,
+            "anchor": -0.08629149850619658,
+            "pull_from_anchor": -7.952336451011455e-07,
+            "posterior_sigma": 0.9915282902885402,
+            "unit_auxiliary_response": 0.00046194530223155663,
+            "auxiliary_variance": 2.133934622538042e-07,
+            "conditional_postfit_np_impact": 0.00046589220575554935,
+            "correlation_with_mu": 0.00045144257245300555,
+            "injected_value": -0.08629149850619658
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP12",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.047947007257080176,
+            "anchor": 0.04796289791880747,
+            "pull_from_anchor": -1.589066172729553e-05,
+            "posterior_sigma": 0.9936650776399144,
+            "unit_auxiliary_response": 0.005555041841571326,
+            "auxiliary_variance": 3.085848986160815e-05,
+            "conditional_postfit_np_impact": 0.005590456952321685,
+            "correlation_with_mu": 0.0054170690914457946,
+            "injected_value": 0.04796289791880747
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP13",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.10211736450566994,
+            "anchor": -0.1021020576970669,
+            "pull_from_anchor": -1.5306808603038347e-05,
+            "posterior_sigma": 0.9919742687338309,
+            "unit_auxiliary_response": -0.0028393488924254046,
+            "auxiliary_variance": 8.061902132917373e-06,
+            "conditional_postfit_np_impact": -0.002862321112471584,
+            "correlation_with_mu": -0.0027735463058566725,
+            "injected_value": -0.1021020576970669
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP14",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.09460715593802745,
+            "anchor": -0.0946087642428216,
+            "pull_from_anchor": 1.6083047941484185e-06,
+            "posterior_sigma": 0.9938529839511767,
+            "unit_auxiliary_response": -0.0002368996620733399,
+            "auxiliary_variance": 5.6121449890462634e-08,
+            "conditional_postfit_np_impact": -0.0002383648949078143,
+            "correlation_with_mu": -0.00023097201457827194,
+            "injected_value": -0.0946087642428216
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP15",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.06950525668309754,
+            "anchor": -0.06950757198751992,
+            "pull_from_anchor": 2.3153044223789276e-06,
+            "posterior_sigma": 0.9948614085924584,
+            "unit_auxiliary_response": 0.015520790999716802,
+            "auxiliary_variance": 0.00024089495325689008,
+            "conditional_postfit_np_impact": 0.01560095794817873,
+            "correlation_with_mu": 0.0151170946881055,
+            "injected_value": -0.06950757198751992
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP16",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.02274234068890652,
+            "anchor": 0.022744662839791777,
+            "pull_from_anchor": -2.322150885258195e-06,
+            "posterior_sigma": 0.9929618462174356,
+            "unit_auxiliary_response": -0.004536260552281976,
+            "auxiliary_variance": 2.0577659798189574e-05,
+            "conditional_postfit_np_impact": -0.004568413750802506,
+            "correlation_with_mu": -0.004426724530296355,
+            "injected_value": 0.022744662839791777
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP17",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.19598518781410815,
+            "anchor": 0.19599168546375112,
+            "pull_from_anchor": -6.497649642972503e-06,
+            "posterior_sigma": 0.9820058613207178,
+            "unit_auxiliary_response": 0.02058345444311333,
+            "auxiliary_variance": 0.0004236785968117218,
+            "conditional_postfit_np_impact": 0.020960622796518,
+            "correlation_with_mu": 0.020310529686006638,
+            "injected_value": 0.19599168546375112
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP2",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.18690717548925934,
+            "anchor": -0.1869139318991743,
+            "pull_from_anchor": 6.756409914959738e-06,
+            "posterior_sigma": 0.9937790661405035,
+            "unit_auxiliary_response": -0.013520008155199622,
+            "auxiliary_variance": 0.00018279062051666429,
+            "conditional_postfit_np_impact": -0.013604641731594015,
+            "correlation_with_mu": -0.013182694161307417,
+            "injected_value": -0.1869139318991743
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP3",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.040452183733578326,
+            "anchor": -0.040442884116855336,
+            "pull_from_anchor": -9.299616722989457e-06,
+            "posterior_sigma": 0.9915944265590205,
+            "unit_auxiliary_response": -0.00467614977268986,
+            "auxiliary_variance": 2.186637669662743e-05,
+            "conditional_postfit_np_impact": -0.004715788680778281,
+            "correlation_with_mu": -0.004569528631076385,
+            "injected_value": -0.040442884116855336
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP4",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.16290068378634254,
+            "anchor": -0.16287565221167594,
+            "pull_from_anchor": -2.5031574666600775e-05,
+            "posterior_sigma": 0.7062636320575478,
+            "unit_auxiliary_response": -0.04388768282659043,
+            "auxiliary_variance": 0.0019261287038874007,
+            "conditional_postfit_np_impact": -0.06214065234922697,
+            "correlation_with_mu": -0.06021336181177094,
+            "injected_value": -0.16287565221167594
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP5",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.09670757545921466,
+            "anchor": -0.09669353602532312,
+            "pull_from_anchor": -1.4039433891541164e-05,
+            "posterior_sigma": 0.9771686852607891,
+            "unit_auxiliary_response": -0.012010607302566539,
+            "auxiliary_variance": 0.00014425468777646468,
+            "conditional_postfit_np_impact": -0.012291232295641073,
+            "correlation_with_mu": -0.011910020081068022,
+            "injected_value": -0.09669353602532312
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP6",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.1999683023231574,
+            "anchor": 0.199968560881424,
+            "pull_from_anchor": -2.585582666025932e-07,
+            "posterior_sigma": 0.9976350987992987,
+            "unit_auxiliary_response": 0.007407520228958031,
+            "auxiliary_variance": 5.4871355942422445e-05,
+            "conditional_postfit_np_impact": 0.007425079809113908,
+            "correlation_with_mu": 0.007194791173334257,
+            "injected_value": 0.199968560881424
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP7",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.03631244241012623,
+            "anchor": 0.03631650548648812,
+            "pull_from_anchor": -4.06307636188763e-06,
+            "posterior_sigma": 0.9965358891069971,
+            "unit_auxiliary_response": 0.0076354129563360506,
+            "auxiliary_variance": 5.829953101378443e-05,
+            "conditional_postfit_np_impact": 0.0076619548174809825,
+            "correlation_with_mu": 0.0074243195101598115,
+            "injected_value": 0.03631650548648812
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP8",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.09960708570936998,
+            "anchor": -0.09961517394504128,
+            "pull_from_anchor": 8.088235671305233e-06,
+            "posterior_sigma": 0.9942869216646469,
+            "unit_auxiliary_response": 0.004025567175342287,
+            "auxiliary_variance": 1.6205191083193283e-05,
+            "conditional_postfit_np_impact": 0.004048697702472678,
+            "correlation_with_mu": 0.0039231274601916185,
+            "injected_value": -0.09961517394504128
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP9",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.1545134504949506,
+            "anchor": 0.1545149302607608,
+            "pull_from_anchor": -1.4797658101917133e-06,
+            "posterior_sigma": 0.9915698428837548,
+            "unit_auxiliary_response": -0.0022804884221368418,
+            "auxiliary_variance": 5.200627443500182e-06,
+            "conditional_postfit_np_impact": -0.0022998767444404734,
+            "correlation_with_mu": -0.002228546133651827,
+            "injected_value": 0.1545149302607608
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_Iso_TOTAL_1NPCOR_PLUS_UNCOR",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.03188576779583278,
+            "anchor": -0.03188801253622528,
+            "pull_from_anchor": 2.24474039250272e-06,
+            "posterior_sigma": 0.9972093766736093,
+            "unit_auxiliary_response": -0.0019796772651973164,
+            "auxiliary_variance": 3.9191220743391254e-06,
+            "conditional_postfit_np_impact": -0.0019852172587876424,
+            "correlation_with_mu": -0.001923645802856453,
+            "injected_value": -0.03188801253622528
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_Reco_TOTAL_1NPCOR_PLUS_UNCOR",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.007286434605040932,
+            "anchor": 0.007280570309486038,
+            "pull_from_anchor": 5.8642955548943165e-06,
+            "posterior_sigma": 0.9938762737608628,
+            "unit_auxiliary_response": -0.020609416766906412,
+            "auxiliary_variance": 0.00042474805947204314,
+            "conditional_postfit_np_impact": -0.020736400808643567,
+            "correlation_with_mu": -0.020093261936608677,
+            "injected_value": 0.007280570309486038
+          },
+          {
+            "name": "alpha_ATLAS_H4l_Shower_UEPS_VBF_OffShell",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.0036287751008257,
+            "anchor": -0.0036293595152891754,
+            "pull_from_anchor": 5.844144634753468e-07,
+            "posterior_sigma": 0.9999111538057986,
+            "unit_auxiliary_response": -0.0015108855280121093,
+            "auxiliary_variance": 2.2827750787564305e-06,
+            "conditional_postfit_np_impact": -0.0015110197763686026,
+            "correlation_with_mu": -0.0014641555416557471,
+            "injected_value": -0.0036293595152891754
+          },
+          {
+            "name": "alpha_ATLAS_HOEW",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": 0.09493215316149166,
+            "anchor": 0.09493202168307713,
+            "pull_from_anchor": 1.3147841453065023e-07,
+            "posterior_sigma": 0.9950641427885928,
+            "unit_auxiliary_response": 0.0009145347771631284,
+            "auxiliary_variance": 8.363738586408129e-07,
+            "conditional_postfit_np_impact": 0.000919071181281051,
+            "correlation_with_mu": 0.0008905662151442813,
+            "injected_value": 0.09493202168307713
+          },
+          {
+            "name": "alpha_ATLAS_HOEW_QCD_0Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": 0.20652271860379245,
+            "anchor": 0.20651940968374197,
+            "pull_from_anchor": 3.3089200504876626e-06,
+            "posterior_sigma": 0.9905726036045163,
+            "unit_auxiliary_response": -0.0007856279614497824,
+            "auxiliary_variance": 6.172112938117408e-07,
+            "conditional_postfit_np_impact": -0.0007931048754942576,
+            "correlation_with_mu": -0.0007685067506924774,
+            "injected_value": 0.20651940968374197
+          },
+          {
+            "name": "alpha_ATLAS_HOEW_QCD_1Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": 0.3921473054080443,
+            "anchor": 0.39215052994261246,
+            "pull_from_anchor": -3.224534568135873e-06,
+            "posterior_sigma": 0.9682131959851468,
+            "unit_auxiliary_response": -0.011359701389934484,
+            "auxiliary_variance": 0.00012904281566847946,
+            "conditional_postfit_np_impact": -0.011732644666525235,
+            "correlation_with_mu": -0.011368757031132408,
+            "injected_value": 0.39215052994261246
+          },
+          {
+            "name": "alpha_ATLAS_HOEW_QCD_2Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.3749541884180695,
+            "anchor": -0.37495777234082406,
+            "pull_from_anchor": 3.583922754568647e-06,
+            "posterior_sigma": 0.955254230686208,
+            "unit_auxiliary_response": -0.06636146971399245,
+            "auxiliary_variance": 0.004403844662601138,
+            "conditional_postfit_np_impact": -0.06946995635530619,
+            "correlation_with_mu": -0.0673153476658348,
+            "injected_value": -0.37495777234082406
+          },
+          {
+            "name": "alpha_ATLAS_HOQCD_0Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.05747594703584798,
+            "anchor": -0.057485906132791885,
+            "pull_from_anchor": 9.959096943908119e-06,
+            "posterior_sigma": 0.9509908256628907,
+            "unit_auxiliary_response": -0.011456950787989889,
+            "auxiliary_variance": 0.00013126172135842214,
+            "conditional_postfit_np_impact": -0.01204738308595542,
+            "correlation_with_mu": -0.011673733847576312,
+            "injected_value": -0.057485906132791885
+          },
+          {
+            "name": "alpha_ATLAS_HOQCD_1Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": 0.6022390131527585,
+            "anchor": 0.6022456828480804,
+            "pull_from_anchor": -6.66969532192585e-06,
+            "posterior_sigma": 0.8151451502941723,
+            "unit_auxiliary_response": -0.012225492764541565,
+            "auxiliary_variance": 0.00014946267333585815,
+            "conditional_postfit_np_impact": -0.014997933509301488,
+            "correlation_with_mu": -0.014532773034779515,
+            "injected_value": 0.6022456828480804
+          },
+          {
+            "name": "alpha_ATLAS_HOQCD_2Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.401313745401081,
+            "anchor": -0.4013177760716131,
+            "pull_from_anchor": 4.03067053211803e-06,
+            "posterior_sigma": 0.9299789805745923,
+            "unit_auxiliary_response": -0.050910698782985014,
+            "auxiliary_variance": 0.002591899250571832,
+            "conditional_postfit_np_impact": -0.05474392416001658,
+            "correlation_with_mu": -0.05304604293366794,
+            "injected_value": -0.4013177760716131
+          },
+          {
+            "name": "alpha_ATLAS_HOQCD_VBF",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.11293486764561544,
+            "anchor": -0.11293609877529417,
+            "pull_from_anchor": 1.2311296787304027e-06,
+            "posterior_sigma": 0.9873908581001776,
+            "unit_auxiliary_response": -0.018358550248040343,
+            "auxiliary_variance": 0.00033703636720982215,
+            "conditional_postfit_np_impact": -0.018592991921521054,
+            "correlation_with_mu": -0.018016330814200225,
+            "injected_value": -0.11293609877529417
+          },
+          {
+            "name": "alpha_ATLAS_JET_BJES_Response",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.06104732477704633,
+            "anchor": -0.0610354052616112,
+            "pull_from_anchor": -1.19195154351312e-05,
+            "posterior_sigma": 0.9866973265717339,
+            "unit_auxiliary_response": -0.014805155761094287,
+            "auxiliary_variance": 0.00021919263711026336,
+            "conditional_postfit_np_impact": -0.015004759172232273,
+            "correlation_with_mu": -0.014539386999971688,
+            "injected_value": -0.0610354052616112
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Detector1",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.29751694811771107,
+            "anchor": 0.29751961947687094,
+            "pull_from_anchor": -2.6713591598781505e-06,
+            "posterior_sigma": 0.9835281107640789,
+            "unit_auxiliary_response": -0.015219291302341616,
+            "auxiliary_variance": 0.00023162682774553118,
+            "conditional_postfit_np_impact": -0.015474180286029773,
+            "correlation_with_mu": -0.01499424903148567,
+            "injected_value": 0.29751961947687094
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Detector2",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.06597876000485131,
+            "anchor": -0.06597115914334568,
+            "pull_from_anchor": -7.600861505627221e-06,
+            "posterior_sigma": 0.996668450681779,
+            "unit_auxiliary_response": 0.010739614140778906,
+            "auxiliary_variance": 0.00011533931189281823,
+            "conditional_postfit_np_impact": 0.01077551329474951,
+            "correlation_with_mu": 0.010441311061202139,
+            "injected_value": -0.06597115914334568
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Mixed1",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.5202876712182696,
+            "anchor": -0.5202840251106909,
+            "pull_from_anchor": -3.6461075786364816e-06,
+            "posterior_sigma": 0.9912404243993264,
+            "unit_auxiliary_response": -0.003866070763769137,
+            "auxiliary_variance": 1.4946503150470478e-05,
+            "conditional_postfit_np_impact": -0.0039002351685887967,
+            "correlation_with_mu": -0.0037792694875072737,
+            "injected_value": -0.5202840251106909
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Mixed2",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.13129818719774608,
+            "anchor": -0.13129845395695008,
+            "pull_from_anchor": 2.6675920400398567e-07,
+            "posterior_sigma": 0.9916775103262621,
+            "unit_auxiliary_response": 0.0007074183404637428,
+            "auxiliary_variance": 5.004407084244759e-07,
+            "conditional_postfit_np_impact": 0.0007133552320159021,
+            "correlation_with_mu": 0.0006912305401027491,
+            "injected_value": -0.13129845395695008
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Mixed3",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.03342394994786785,
+            "anchor": -0.03343015340274893,
+            "pull_from_anchor": 6.2034548810804835e-06,
+            "posterior_sigma": 0.9928894282945928,
+            "unit_auxiliary_response": 0.01878685120673458,
+            "auxiliary_variance": 0.0003529457782639846,
+            "conditional_postfit_np_impact": 0.018921393129347003,
+            "correlation_with_mu": 0.0183345466680525,
+            "injected_value": -0.03343015340274893
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Modelling1",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.0331180055541459,
+            "anchor": -0.03312400753559982,
+            "pull_from_anchor": 6.001981453916672e-06,
+            "posterior_sigma": 0.9906387912230548,
+            "unit_auxiliary_response": 0.010560879105164593,
+            "auxiliary_variance": 0.00011153216747390209,
+            "conditional_postfit_np_impact": 0.010660675918137632,
+            "correlation_with_mu": 0.01033003536250839,
+            "injected_value": -0.03312400753559982
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Modelling2",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.24530794598527433,
+            "anchor": 0.24530905240408285,
+            "pull_from_anchor": -1.1064188085163629e-06,
+            "posterior_sigma": 0.9952489807629256,
+            "unit_auxiliary_response": 0.013452138378788713,
+            "auxiliary_variance": 0.00018096002696208022,
+            "conditional_postfit_np_impact": 0.013516354840651773,
+            "correlation_with_mu": 0.013097145485737267,
+            "injected_value": 0.24530905240408285
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Modelling3",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.3501240164448734,
+            "anchor": -0.3501227367622617,
+            "pull_from_anchor": -1.2796826117100757e-06,
+            "posterior_sigma": 0.9861251235067359,
+            "unit_auxiliary_response": -0.01260239570523701,
+            "auxiliary_variance": 0.00015882037751137625,
+            "conditional_postfit_np_impact": -0.012779712639732708,
+            "correlation_with_mu": -0.012383350221399157,
+            "injected_value": -0.3501227367622617
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Modelling4",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.03992837520405154,
+            "anchor": -0.03992716991789438,
+            "pull_from_anchor": -1.2052861571645868e-06,
+            "posterior_sigma": 0.9867073370097282,
+            "unit_auxiliary_response": -0.03336078746300927,
+            "auxiliary_variance": 0.0011129421401520766,
+            "conditional_postfit_np_impact": -0.0338102152600902,
+            "correlation_with_mu": -0.032761592410527625,
+            "injected_value": -0.03992716991789438
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical1",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.20629811761780284,
+            "anchor": -0.20629677546377362,
+            "pull_from_anchor": -1.3421540292213319e-06,
+            "posterior_sigma": 0.9920424946900692,
+            "unit_auxiliary_response": -0.0167176986296331,
+            "auxiliary_variance": 0.0002794814474712364,
+            "conditional_postfit_np_impact": -0.016851796892890146,
+            "correlation_with_mu": -0.016329138899081656,
+            "injected_value": -0.20629677546377362
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical2",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.2726952395352785,
+            "anchor": -0.2726999752205339,
+            "pull_from_anchor": 4.735685255385924e-06,
+            "posterior_sigma": 0.9920661275182742,
+            "unit_auxiliary_response": -0.0073347465284552445,
+            "auxiliary_variance": 5.379850663668626e-05,
+            "conditional_postfit_np_impact": -0.007393404859818819,
+            "correlation_with_mu": -0.007164098621676511,
+            "injected_value": -0.2726999752205339
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical3",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.0624600700315326,
+            "anchor": -0.06245200556653049,
+            "pull_from_anchor": -8.064465002115273e-06,
+            "posterior_sigma": 0.9893972461123411,
+            "unit_auxiliary_response": 0.017716898360588484,
+            "auxiliary_variance": 0.0003138884875194229,
+            "conditional_postfit_np_impact": 0.017906759322611678,
+            "correlation_with_mu": 0.017351381699521738,
+            "injected_value": -0.06245200556653049
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical4",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.12942053506562295,
+            "anchor": -0.12941767459399348,
+            "pull_from_anchor": -2.860471629478889e-06,
+            "posterior_sigma": 0.9932726671960268,
+            "unit_auxiliary_response": -0.014825652129281225,
+            "auxiliary_variance": 0.0002197999610584609,
+            "conditional_postfit_np_impact": -0.014926064734201848,
+            "correlation_with_mu": -0.014463133267663405,
+            "injected_value": -0.12941767459399348
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical5",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.15765561318512158,
+            "anchor": 0.15765457558992524,
+            "pull_from_anchor": 1.0375951963459418e-06,
+            "posterior_sigma": 0.9894104194940697,
+            "unit_auxiliary_response": 0.00036793883748940703,
+            "auxiliary_variance": 1.3537898813305627e-07,
+            "conditional_postfit_np_impact": 0.0003718768574092345,
+            "correlation_with_mu": 0.0003603431074196817,
+            "injected_value": 0.15765457558992524
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical6",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.12376319592838503,
+            "anchor": 0.12377075131195173,
+            "pull_from_anchor": -7.5553835666986036e-06,
+            "posterior_sigma": 0.989828651041093,
+            "unit_auxiliary_response": 0.0008915207540640703,
+            "auxiliary_variance": 7.948092549269686e-07,
+            "conditional_postfit_np_impact": 0.0009006819040107364,
+            "correlation_with_mu": 0.0008727472807772652,
+            "injected_value": 0.12377075131195173
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_Modelling",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.18872354200929692,
+            "anchor": 0.18870562449203643,
+            "pull_from_anchor": 1.7917517260490623e-05,
+            "posterior_sigma": 0.9464119334442911,
+            "unit_auxiliary_response": -0.0009741302205971996,
+            "auxiliary_variance": 9.489296866807488e-07,
+            "conditional_postfit_np_impact": -0.0010292877616748057,
+            "correlation_with_mu": -0.0009973644314811242,
+            "injected_value": 0.18870562449203643
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_2018data",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.25052673759011307,
+            "anchor": -0.25050614185801456,
+            "pull_from_anchor": -2.059573209850507e-05,
+            "posterior_sigma": 0.9831844346866885,
+            "unit_auxiliary_response": 0.006527170697353757,
+            "auxiliary_variance": 4.2603957312393526e-05,
+            "conditional_postfit_np_impact": 0.006638805972791637,
+            "correlation_with_mu": 0.006432903597331187,
+            "injected_value": -0.25050614185801456
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_highE",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.15548132459795433,
+            "anchor": 0.1554825542541684,
+            "pull_from_anchor": -1.2296562140745593e-06,
+            "posterior_sigma": 0.9848679090424709,
+            "unit_auxiliary_response": 0.010592753633604636,
+            "auxiliary_variance": 0.00011220642954224421,
+            "conditional_postfit_np_impact": 0.01075550694295984,
+            "correlation_with_mu": 0.010421925205835271,
+            "injected_value": 0.1554825542541684
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_negEta",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.03392280990181302,
+            "anchor": 0.033926253937489194,
+            "pull_from_anchor": -3.444035676175572e-06,
+            "posterior_sigma": 0.9924369857324437,
+            "unit_auxiliary_response": -0.018477484386941457,
+            "auxiliary_variance": 0.00034141742926966533,
+            "conditional_postfit_np_impact": -0.01861829481627451,
+            "correlation_with_mu": -0.018040848940403868,
+            "injected_value": 0.033926253937489194
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_posEta",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.14046245063632692,
+            "anchor": -0.1404569815836666,
+            "pull_from_anchor": -5.469052660328488e-06,
+            "posterior_sigma": 0.9869244315881389,
+            "unit_auxiliary_response": -0.0023720728807160142,
+            "auxiliary_variance": 5.626729751428371e-06,
+            "conditional_postfit_np_impact": -0.0024035000095183807,
+            "correlation_with_mu": -0.002328955526156872,
+            "injected_value": -0.1404569815836666
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_TotalStat",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.007641128408526918,
+            "anchor": -0.007648503994642822,
+            "pull_from_anchor": 7.375586115904512e-06,
+            "posterior_sigma": 0.992752938235181,
+            "unit_auxiliary_response": -0.004567005117272932,
+            "auxiliary_variance": 2.0857535741197143e-05,
+            "conditional_postfit_np_impact": -0.00460034409506932,
+            "correlation_with_mu": -0.004457664555858157,
+            "injected_value": -0.007648503994642822
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Composition_VBF",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.014331943510543536,
+            "anchor": 0.014331822668362748,
+            "pull_from_anchor": 1.2084218078793618e-07,
+            "posterior_sigma": 0.999929990722308,
+            "unit_auxiliary_response": -0.001387063107307652,
+            "auxiliary_variance": 1.9239440636539588e-06,
+            "conditional_postfit_np_impact": -0.0013871602213927946,
+            "correlation_with_mu": -0.0013441374871993872,
+            "injected_value": 0.014331822668362748
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Composition_gg",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.01742196573305584,
+            "anchor": 0.017423997620057904,
+            "pull_from_anchor": -2.031887002065108e-06,
+            "posterior_sigma": 0.9988498379852644,
+            "unit_auxiliary_response": -0.0029099003647188424,
+            "auxiliary_variance": 8.467520132590852e-06,
+            "conditional_postfit_np_impact": -0.002913251075445207,
+            "correlation_with_mu": -0.002822896677499963,
+            "injected_value": 0.017423997620057904
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Composition_qq",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.2521584439389028,
+            "anchor": -0.25215796528748713,
+            "pull_from_anchor": -4.786514156696065e-07,
+            "posterior_sigma": 0.9999987536560365,
+            "unit_auxiliary_response": 0.00012121285618423605,
+            "auxiliary_variance": 1.4692556504340292e-08,
+            "conditional_postfit_np_impact": 0.00012121300725733593,
+            "correlation_with_mu": 0.00011745358933892142,
+            "injected_value": -0.25215796528748713
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Response_VBF",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.009768113513357752,
+            "anchor": 0.009768298672678956,
+            "pull_from_anchor": -1.8515932120356793e-07,
+            "posterior_sigma": 0.9999758062912303,
+            "unit_auxiliary_response": -0.0005260316846243519,
+            "auxiliary_variance": 2.767093332287337e-07,
+            "conditional_postfit_np_impact": -0.0005260444115896459,
+            "correlation_with_mu": -0.0005097291593608696,
+            "injected_value": 0.009768298672678956
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Response_gg",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.11841017839974669,
+            "anchor": 0.1184043435613612,
+            "pull_from_anchor": 5.834838385482266e-06,
+            "posterior_sigma": 0.9933926265615948,
+            "unit_auxiliary_response": 0.00045208973542600636,
+            "auxiliary_variance": 2.0438512887755644e-07,
+            "conditional_postfit_np_impact": 0.00045509672946819965,
+            "correlation_with_mu": 0.00044098191755084207,
+            "injected_value": 0.1184043435613612
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Response_qq",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.10600992457157771,
+            "anchor": 0.10604112307150722,
+            "pull_from_anchor": -3.1198499929510626e-05,
+            "posterior_sigma": 0.9763813193587578,
+            "unit_auxiliary_response": 0.003369812636170597,
+            "auxiliary_variance": 1.1355637202895028e-05,
+            "conditional_postfit_np_impact": 0.0034513284608760583,
+            "correlation_with_mu": 0.0033442856083659685,
+            "injected_value": 0.10604112307150722
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_DataVsMC_MC16",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.14029453906559725,
+            "anchor": 0.14029176956120792,
+            "pull_from_anchor": 2.769504389321664e-06,
+            "posterior_sigma": 0.981699305951534,
+            "unit_auxiliary_response": 0.013676303608489381,
+            "auxiliary_variance": 0.00018704128039157968,
+            "conditional_postfit_np_impact": 0.013931255248503327,
+            "correlation_with_mu": 0.013499177769425186,
+            "injected_value": 0.14029176956120792
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_1",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.2054135297276415,
+            "anchor": 0.2054180740919525,
+            "pull_from_anchor": -4.54436431102101e-06,
+            "posterior_sigma": 0.959647105929453,
+            "unit_auxiliary_response": 0.002047365168051926,
+            "auxiliary_variance": 4.191704131352291e-06,
+            "conditional_postfit_np_impact": 0.002133456304303631,
+            "correlation_with_mu": 0.0020672872186581785,
+            "injected_value": 0.2054180740919525
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_10",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.16682645883035263,
+            "anchor": 0.16683042291600403,
+            "pull_from_anchor": -3.964085651397831e-06,
+            "posterior_sigma": 0.9711956784578022,
+            "unit_auxiliary_response": -0.02767076968850694,
+            "auxiliary_variance": 0.0007656714951543945,
+            "conditional_postfit_np_impact": -0.028491446473944762,
+            "correlation_with_mu": -0.027607785084632814,
+            "injected_value": 0.16683042291600403
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_11",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.15228610829478015,
+            "anchor": -0.15227857729117547,
+            "pull_from_anchor": -7.531003604677178e-06,
+            "posterior_sigma": 0.9894214257182572,
+            "unit_auxiliary_response": -0.019197197254737997,
+            "auxiliary_variance": 0.0003685323824373201,
+            "conditional_postfit_np_impact": -0.01940244748672392,
+            "correlation_with_mu": -0.01880068113843235,
+            "injected_value": -0.15227857729117547
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_12restTerm",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.5910616431248688,
+            "anchor": 0.5910609826563858,
+            "pull_from_anchor": 6.604684829047969e-07,
+            "posterior_sigma": 0.9664175713544076,
+            "unit_auxiliary_response": 0.027918496347358858,
+            "auxiliary_variance": 0.0007794424382974899,
+            "conditional_postfit_np_impact": 0.028888647283422064,
+            "correlation_with_mu": 0.02799266672247875,
+            "injected_value": 0.5910609826563858
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_2",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.5244428979828489,
+            "anchor": -0.5244483406962487,
+            "pull_from_anchor": 5.442713399750332e-06,
+            "posterior_sigma": 0.9806600730794677,
+            "unit_auxiliary_response": 0.0221577482444874,
+            "auxiliary_variance": 0.0004909658072660845,
+            "conditional_postfit_np_impact": 0.022594728645276303,
+            "correlation_with_mu": 0.021893953789072704,
+            "injected_value": -0.5244483406962487
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_3",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.3913852423254294,
+            "anchor": -0.39138113700654226,
+            "pull_from_anchor": -4.105318887170917e-06,
+            "posterior_sigma": 0.9811805734603827,
+            "unit_auxiliary_response": -0.01982169979486209,
+            "auxiliary_variance": 0.0003928997827576359,
+            "conditional_postfit_np_impact": -0.02020188773709189,
+            "correlation_with_mu": -0.01957532677252985,
+            "injected_value": -0.39138113700654226
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_4",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.14761066421044217,
+            "anchor": -0.14761181526596834,
+            "pull_from_anchor": 1.1510555261717847e-06,
+            "posterior_sigma": 0.9858775409340019,
+            "unit_auxiliary_response": 0.0032940567080974497,
+            "auxiliary_variance": 1.0850809596161806e-05,
+            "conditional_postfit_np_impact": 0.0033412432795423275,
+            "correlation_with_mu": 0.0032376147157510984,
+            "injected_value": -0.14761181526596834
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_5",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.08677257533285117,
+            "anchor": 0.08677161542753598,
+            "pull_from_anchor": 9.599053151926329e-07,
+            "posterior_sigma": 0.9786189528430467,
+            "unit_auxiliary_response": -0.06574749658488603,
+            "auxiliary_variance": 0.0043227333071796,
+            "conditional_postfit_np_impact": -0.06718396000187703,
+            "correlation_with_mu": -0.06510025142326807,
+            "injected_value": 0.08677161542753598
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_6",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.15329672468800534,
+            "anchor": -0.15331022137535122,
+            "pull_from_anchor": 1.349668734587639e-05,
+            "posterior_sigma": 0.9715752827530381,
+            "unit_auxiliary_response": 0.03629514976440671,
+            "auxiliary_variance": 0.0013173378964207124,
+            "conditional_postfit_np_impact": 0.037357012275529934,
+            "correlation_with_mu": 0.03619838561899544,
+            "injected_value": -0.15331022137535122
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_7",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.005581548155826408,
+            "anchor": -0.005582687942225458,
+            "pull_from_anchor": 1.1397863990498733e-06,
+            "posterior_sigma": 0.9867619970318392,
+            "unit_auxiliary_response": -0.0024096175036970226,
+            "auxiliary_variance": 5.806256514123071e-06,
+            "conditional_postfit_np_impact": -0.002441943965155838,
+            "correlation_with_mu": -0.0023662071436208252,
+            "injected_value": -0.005582687942225458
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_8",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.06453132721126327,
+            "anchor": 0.06453721028106192,
+            "pull_from_anchor": -5.883069798651164e-06,
+            "posterior_sigma": 0.9739401176631814,
+            "unit_auxiliary_response": -0.03376548311258337,
+            "auxiliary_variance": 0.0011401078498261528,
+            "conditional_postfit_np_impact": -0.03466895192036901,
+            "correlation_with_mu": -0.033593695378095575,
+            "injected_value": 0.06453721028106192
+          },
+          {
+            "name": "alpha_ATLAS_JET_Pileup_OffsetMu",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.11656392410863488,
+            "anchor": -0.11656782079264483,
+            "pull_from_anchor": 3.896684009949136e-06,
+            "posterior_sigma": 0.9517112197904434,
+            "unit_auxiliary_response": 0.011415111334302841,
+            "auxiliary_variance": 0.00013030476677452918,
+            "conditional_postfit_np_impact": 0.011994301524380815,
+            "correlation_with_mu": 0.011622298609100494,
+            "injected_value": -0.11656782079264483
+          },
+          {
+            "name": "alpha_ATLAS_JET_Pileup_OffsetNPV",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.0670886902033929,
+            "anchor": -0.06709631868640971,
+            "pull_from_anchor": 7.628483016802745e-06,
+            "posterior_sigma": 0.9860746405892618,
+            "unit_auxiliary_response": 0.006003447014145249,
+            "auxiliary_variance": 3.60413760516495e-05,
+            "conditional_postfit_np_impact": 0.0060882277740736635,
+            "correlation_with_mu": 0.005899401565541028,
+            "injected_value": -0.06709631868640971
+          },
+          {
+            "name": "alpha_ATLAS_JET_Pileup_PtTerm",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.10568260439896832,
+            "anchor": 0.10567854754928957,
+            "pull_from_anchor": 4.05684967874631e-06,
+            "posterior_sigma": 0.9861961903240102,
+            "unit_auxiliary_response": -0.04608919947671716,
+            "auxiliary_variance": 0.0021242143084046258,
+            "conditional_postfit_np_impact": -0.046734311011255046,
+            "correlation_with_mu": -0.04528484770532889,
+            "injected_value": 0.10567854754928957
+          },
+          {
+            "name": "alpha_ATLAS_JET_Pileup_RhoTopology",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.2829975889561194,
+            "anchor": -0.2830171902434717,
+            "pull_from_anchor": 1.9601287352344343e-05,
+            "posterior_sigma": 0.952827935974828,
+            "unit_auxiliary_response": 0.02007895476015523,
+            "auxiliary_variance": 0.00040316442426036037,
+            "conditional_postfit_np_impact": 0.02107301224287958,
+            "correlation_with_mu": 0.020419433376936084,
+            "injected_value": -0.2830171902434717
+          },
+          {
+            "name": "alpha_ATLAS_JET_PunchThrough_MC16",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.13488071805641677,
+            "anchor": -0.13487922045620643,
+            "pull_from_anchor": -1.497600210342842e-06,
+            "posterior_sigma": 0.9926759156584279,
+            "unit_auxiliary_response": 0.0029025266731135886,
+            "auxiliary_variance": 8.424661088135837e-06,
+            "conditional_postfit_np_impact": 0.00292394186997917,
+            "correlation_with_mu": 0.0028332558973502967,
+            "injected_value": -0.13487922045620643
+          },
+          {
+            "name": "alpha_ATLAS_JET_SingleParticle_HighPt",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.32285554651246906,
+            "anchor": 0.32285615568563675,
+            "pull_from_anchor": -6.091731676871603e-07,
+            "posterior_sigma": 0.9927786787847663,
+            "unit_auxiliary_response": -0.008717734191735594,
+            "auxiliary_variance": 7.599888943775585e-05,
+            "conditional_postfit_np_impact": -0.008781145665221918,
+            "correlation_with_mu": -0.008508798686089896,
+            "injected_value": 0.32285615568563675
+          },
+          {
+            "name": "alpha_ATLAS_JET_fJvtEfficiency",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.005777347111791252,
+            "anchor": -0.005777381020971576,
+            "pull_from_anchor": 3.39091803238864e-08,
+            "posterior_sigma": 0.9938947767962181,
+            "unit_auxiliary_response": 0.004369561703841256,
+            "auxiliary_variance": 1.90930694836761e-05,
+            "conditional_postfit_np_impact": 0.004396402723763547,
+            "correlation_with_mu": 0.004260048420291856,
+            "injected_value": -0.005777381020971576
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_ISO_STAT",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.005365173481029491,
+            "anchor": -0.005380022274214398,
+            "pull_from_anchor": 1.4848793184906242e-05,
+            "posterior_sigma": 0.993046137472009,
+            "unit_auxiliary_response": -0.0015442730345996323,
+            "auxiliary_variance": 2.384779205391557e-06,
+            "conditional_postfit_np_impact": -0.0015550868950871487,
+            "correlation_with_mu": -0.001506855919960274,
+            "injected_value": -0.005380022274214398
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_ISO_SYS",
+            "constrained": true,
+            "group": "Muons",
+            "value": 0.013243623122246312,
+            "anchor": 0.01325157930833714,
+            "pull_from_anchor": -7.956186090828446e-06,
+            "posterior_sigma": 0.9684399596869182,
+            "unit_auxiliary_response": 0.0054061248537683685,
+            "auxiliary_variance": 2.9226185934532064e-05,
+            "conditional_postfit_np_impact": 0.005582302547197749,
+            "correlation_with_mu": 0.005409167594961208,
+            "injected_value": 0.01325157930833714
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_RECO_STAT",
+            "constrained": true,
+            "group": "Muons",
+            "value": 0.07905788820199362,
+            "anchor": 0.07905516566432043,
+            "pull_from_anchor": 2.722537673194303e-06,
+            "posterior_sigma": 0.9956579815685691,
+            "unit_auxiliary_response": -0.00957334452375022,
+            "auxiliary_variance": 9.164892537041831e-05,
+            "conditional_postfit_np_impact": -0.009615093436672181,
+            "correlation_with_mu": -0.009316881591500195,
+            "injected_value": 0.07905516566432043
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_RECO_STAT_LOWPT",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.033510978495199566,
+            "anchor": -0.03351594202934102,
+            "pull_from_anchor": 4.963534141456949e-06,
+            "posterior_sigma": 0.99427839669266,
+            "unit_auxiliary_response": 0.01507481295699433,
+            "auxiliary_variance": 0.0002272499856883641,
+            "conditional_postfit_np_impact": 0.015161561396826851,
+            "correlation_with_mu": 0.01469132600810026,
+            "injected_value": -0.03351594202934102
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_RECO_SYS",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.08958039069961549,
+            "anchor": -0.08958129247271916,
+            "pull_from_anchor": 9.017731036758958e-07,
+            "posterior_sigma": 0.9954291525605948,
+            "unit_auxiliary_response": -0.013508068670893082,
+            "auxiliary_variance": 0.0001824679192175632,
+            "conditional_postfit_np_impact": -0.013570095507194626,
+            "correlation_with_mu": -0.013149219387059784,
+            "injected_value": -0.08958129247271916
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_RECO_SYS_LOWPT",
+            "constrained": true,
+            "group": "Muons",
+            "value": 0.13046570970977928,
+            "anchor": 0.1304529439622378,
+            "pull_from_anchor": 1.2765747541471084e-05,
+            "posterior_sigma": 0.9698301940330961,
+            "unit_auxiliary_response": 0.0127291326338242,
+            "auxiliary_variance": 0.00016203081760948822,
+            "conditional_postfit_np_impact": 0.013125114800653247,
+            "correlation_with_mu": 0.012718039744276927,
+            "injected_value": 0.1304529439622378
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_TTVA_STAT",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.012016517082568906,
+            "anchor": -0.01202324902122427,
+            "pull_from_anchor": 6.731938655364644e-06,
+            "posterior_sigma": 0.993788528157516,
+            "unit_auxiliary_response": 0.012209380726938874,
+            "auxiliary_variance": 0.00014906897773534644,
+            "conditional_postfit_np_impact": 0.012285692962842978,
+            "correlation_with_mu": 0.011904652550516637,
+            "injected_value": -0.01202324902122427
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_TTVA_SYS",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.031829634478592155,
+            "anchor": -0.03183018919150863,
+            "pull_from_anchor": 5.547129164756859e-07,
+            "posterior_sigma": 0.9913532202704349,
+            "unit_auxiliary_response": -0.007603011763318081,
+            "auxiliary_variance": 5.780578787315312e-05,
+            "conditional_postfit_np_impact": -0.007669326742333098,
+            "correlation_with_mu": -0.007431462794975603,
+            "injected_value": -0.03183018919150863
+          },
+          {
+            "name": "alpha_ATLAS_MUON_ID",
+            "constrained": true,
+            "group": "Muons",
+            "value": 0.228348867919091,
+            "anchor": 0.22835454328809987,
+            "pull_from_anchor": -5.675369008861786e-06,
+            "posterior_sigma": 0.9846104556099596,
+            "unit_auxiliary_response": 0.01068833111981482,
+            "auxiliary_variance": 0.00011424042212680193,
+            "conditional_postfit_np_impact": 0.010855390635876875,
+            "correlation_with_mu": 0.010518711008901985,
+            "injected_value": 0.22835454328809987
+          },
+          {
+            "name": "alpha_ATLAS_MUON_MS",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.1094163996356385,
+            "anchor": -0.10939223017060569,
+            "pull_from_anchor": -2.4169465032808368e-05,
+            "posterior_sigma": 0.9540065395129403,
+            "unit_auxiliary_response": -0.012843184431052085,
+            "auxiliary_variance": 0.00016494738633001868,
+            "conditional_postfit_np_impact": -0.013462365192600315,
+            "correlation_with_mu": -0.01304483032506044,
+            "injected_value": -0.10939223017060569
+          },
+          {
+            "name": "alpha_ATLAS_MUON_SAGITTA_RESBIAS",
+            "constrained": true,
+            "group": "Muons",
+            "value": 0.06391836905541468,
+            "anchor": 0.06392311095819282,
+            "pull_from_anchor": -4.741902778146456e-06,
+            "posterior_sigma": 0.9844117132906152,
+            "unit_auxiliary_response": -0.01261183824100057,
+            "auxiliary_variance": 0.00015905846381716437,
+            "conditional_postfit_np_impact": -0.01281154832955278,
+            "correlation_with_mu": -0.012414198528219147,
+            "injected_value": 0.06392311095819282
+          },
+          {
+            "name": "alpha_ATLAS_MUON_SAGITTA_RHO",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.1798367917285504,
+            "anchor": -0.17985368855946743,
+            "pull_from_anchor": 1.6896830917018102e-05,
+            "posterior_sigma": 0.9876453999685995,
+            "unit_auxiliary_response": -0.012019393428707623,
+            "auxiliary_variance": 0.00014446581839406,
+            "conditional_postfit_np_impact": -0.012169745770182051,
+            "correlation_with_mu": -0.011792301456686537,
+            "injected_value": -0.17985368855946743
+          },
+          {
+            "name": "alpha_ATLAS_MUON_SCALE",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.032995913492762055,
+            "anchor": -0.033007124407602936,
+            "pull_from_anchor": 1.1210914840881214e-05,
+            "posterior_sigma": 0.9835097359092763,
+            "unit_auxiliary_response": 0.022864259400706292,
+            "auxiliary_variance": 0.000522774357942786,
+            "conditional_postfit_np_impact": 0.023247618773766163,
+            "correlation_with_mu": 0.022526594549088518,
+            "injected_value": -0.033007124407602936
+          },
+          {
+            "name": "alpha_ATLAS_PRW_DATASF",
+            "constrained": true,
+            "group": "Pileup",
+            "value": -0.12506687072836753,
+            "anchor": -0.12507387314444077,
+            "pull_from_anchor": 7.002416073237372e-06,
+            "posterior_sigma": 0.9817436246020013,
+            "unit_auxiliary_response": 0.008186368211409391,
+            "auxiliary_variance": 6.70166244927742e-05,
+            "conditional_postfit_np_impact": 0.00833860083861318,
+            "correlation_with_mu": 0.008079979374493935,
+            "injected_value": -0.12507387314444077
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_CKKW_Norm",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.0769246738160274,
+            "anchor": -0.07691280906053558,
+            "pull_from_anchor": -1.1864755491822199e-05,
+            "posterior_sigma": 0.9956499646494018,
+            "unit_auxiliary_response": -0.01052876717582908,
+            "auxiliary_variance": 0.00011085493824281586,
+            "conditional_postfit_np_impact": -0.010574767789537937,
+            "correlation_with_mu": -0.010246791672035451,
+            "injected_value": -0.07691280906053558
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_CKKW_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.053706335057210335,
+            "anchor": -0.05370794411062541,
+            "pull_from_anchor": 1.6090534150775548e-06,
+            "posterior_sigma": 0.9965015279463711,
+            "unit_auxiliary_response": 0.062045679220064806,
+            "auxiliary_variance": 0.0038496663098791816,
+            "conditional_postfit_np_impact": 0.06226350635701577,
+            "correlation_with_mu": 0.06033240550605725,
+            "injected_value": -0.05370794411062541
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_CSSKIN_Norm",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": 0.02217066881624721,
+            "anchor": 0.02213695675130676,
+            "pull_from_anchor": 3.3712064940450565e-05,
+            "posterior_sigma": 0.9571740995915696,
+            "unit_auxiliary_response": -0.029806479640937942,
+            "auxiliary_variance": 0.000888426228585648,
+            "conditional_postfit_np_impact": -0.03114008167757203,
+            "correlation_with_mu": -0.030174272943934894,
+            "injected_value": 0.02213695675130676
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_CSSKIN_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": 0.1160612819416083,
+            "anchor": 0.1160663436067429,
+            "pull_from_anchor": -5.0616651346008235e-06,
+            "posterior_sigma": 0.7400425586034663,
+            "unit_auxiliary_response": 0.042014647713387435,
+            "auxiliary_variance": 0.0017652306224800519,
+            "conditional_postfit_np_impact": 0.056773285840037685,
+            "correlation_with_mu": 0.055012464019808575,
+            "injected_value": 0.1160663436067429
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_QSF_Norm",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": 0.34080279307459777,
+            "anchor": 0.3407344042972816,
+            "pull_from_anchor": 6.83887773161862e-05,
+            "posterior_sigma": 0.8334767851881738,
+            "unit_auxiliary_response": 0.055153496143035885,
+            "auxiliary_variance": 0.0030419081367998742,
+            "conditional_postfit_np_impact": 0.06617280423783356,
+            "correlation_with_mu": 0.06412045662603555,
+            "injected_value": 0.3407344042972816
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_QSF_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": 0.059266990917467656,
+            "anchor": 0.059269480005537625,
+            "pull_from_anchor": -2.4890880699693363e-06,
+            "posterior_sigma": 0.9904559714217998,
+            "unit_auxiliary_response": -0.110027774596757,
+            "auxiliary_variance": 0.012106111182714764,
+            "conditional_postfit_np_impact": -0.11108800165928841,
+            "correlation_with_mu": -0.10764261049700029,
+            "injected_value": 0.059269480005537625
+          },
+          {
+            "name": "alpha_ATLAS_PS_qqZZ_CKKW_0Jet_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.14031154681212574,
+            "anchor": -0.14030285558831893,
+            "pull_from_anchor": -8.691223806811532e-06,
+            "posterior_sigma": 0.9002537604387908,
+            "unit_auxiliary_response": 0.07132714011420208,
+            "auxiliary_variance": 0.0050875609168710145,
+            "conditional_postfit_np_impact": 0.07923003851651413,
+            "correlation_with_mu": 0.0767727211607678,
+            "injected_value": -0.14030285558831893
+          },
+          {
+            "name": "alpha_ATLAS_PS_qqZZ_CKKW_1Jet_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.10186039145548105,
+            "anchor": -0.10186427088424367,
+            "pull_from_anchor": 3.879428762620929e-06,
+            "posterior_sigma": 0.9504220968837619,
+            "unit_auxiliary_response": 0.0759747162276429,
+            "auxiliary_variance": 0.005772157505870866,
+            "conditional_postfit_np_impact": 0.07993786810802099,
+            "correlation_with_mu": 0.07745859743794228,
+            "injected_value": -0.10186427088424367
+          },
+          {
+            "name": "alpha_ATLAS_PS_qqZZ_CKKW_2Jet_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.03243181205556131,
+            "anchor": -0.03243006194719348,
+            "pull_from_anchor": -1.7501083678303497e-06,
+            "posterior_sigma": 0.9593909381619065,
+            "unit_auxiliary_response": 0.0795706852936408,
+            "auxiliary_variance": 0.006331493958099624,
+            "conditional_postfit_np_impact": 0.08293875012629365,
+            "correlation_with_mu": 0.08036640718710943,
+            "injected_value": -0.03243006194719348
+          },
+          {
+            "name": "alpha_ATLAS_PS_qqZZ_QSF_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.12881266525639098,
+            "anchor": -0.12882336170630523,
+            "pull_from_anchor": 1.0696449914249229e-05,
+            "posterior_sigma": 0.994370653562235,
+            "unit_auxiliary_response": 0.011445338680728027,
+            "auxiliary_variance": 0.00013099577751656918,
+            "conditional_postfit_np_impact": 0.011510133208101252,
+            "correlation_with_mu": 0.011153146759163403,
+            "injected_value": -0.12882336170630523
+          },
+          {
+            "name": "alpha_ATLAS_QCD_ggZZk_Norm",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.16861390126488965,
+            "anchor": -0.16861745829715225,
+            "pull_from_anchor": 3.5570322625966266e-06,
+            "posterior_sigma": 0.917181861970261,
+            "unit_auxiliary_response": -0.041895365694515734,
+            "auxiliary_variance": 0.0017552216666772058,
+            "conditional_postfit_np_impact": -0.04567836263630142,
+            "correlation_with_mu": -0.044261649538719604,
+            "injected_value": -0.16861745829715225
+          },
+          {
+            "name": "alpha_ATLAS_QCD_ggZZk_Shape",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.02740573570138599,
+            "anchor": -0.027405040809517587,
+            "pull_from_anchor": -6.94891868404518e-07,
+            "posterior_sigma": 0.9937847248230532,
+            "unit_auxiliary_response": -0.04014958183782433,
+            "auxiliary_variance": 0.001611988921752153,
+            "conditional_postfit_np_impact": -0.04040068320125679,
+            "correlation_with_mu": -0.039147657178888205,
+            "injected_value": -0.027405040809517587
+          },
+          {
+            "name": "alpha_ATLAS_VBF_PDF",
+            "constrained": true,
+            "group": "Parton distributions",
+            "value": -0.060043988133667486,
+            "anchor": -0.060044401992476626,
+            "pull_from_anchor": 4.1385880913957784e-07,
+            "posterior_sigma": 0.9949485049505059,
+            "unit_auxiliary_response": -0.013878266350587453,
+            "auxiliary_variance": 0.000192606276897848,
+            "conditional_postfit_np_impact": -0.013948728282453002,
+            "correlation_with_mu": -0.013516108877731687,
+            "injected_value": -0.060044401992476626
+          },
+          {
+            "name": "alpha_ATLAS_alpha_LUMI",
+            "constrained": true,
+            "group": "Luminosity",
+            "value": -0.01802558799007192,
+            "anchor": -0.018027369175815676,
+            "pull_from_anchor": 1.7811857437564915e-06,
+            "posterior_sigma": 0.9977925835024529,
+            "unit_auxiliary_response": -0.008035487083543904,
+            "auxiliary_variance": 6.45690526698009e-05,
+            "conditional_postfit_np_impact": -0.008053263991337484,
+            "correlation_with_mu": -0.0078034922412935194,
+            "injected_value": -0.018027369175815676
+          },
+          {
+            "name": "alpha_ATLAS_gg_PDF",
+            "constrained": true,
+            "group": "Parton distributions",
+            "value": -0.022689929680085645,
+            "anchor": -0.022688883871739694,
+            "pull_from_anchor": -1.045808345950805e-06,
+            "posterior_sigma": 0.9975475310407934,
+            "unit_auxiliary_response": -0.013496090481284386,
+            "auxiliary_variance": 0.00018214445827901502,
+            "conditional_postfit_np_impact": -0.013529270597465377,
+            "correlation_with_mu": -0.013109660660726413,
+            "injected_value": -0.022688883871739694
+          },
+          {
+            "name": "alpha_ATLAS_qq_PDF_0Jet",
+            "constrained": true,
+            "group": "Parton distributions",
+            "value": -0.05120502058603085,
+            "anchor": -0.05120431569315561,
+            "pull_from_anchor": -7.048928752431682e-07,
+            "posterior_sigma": 0.9962050384493985,
+            "unit_auxiliary_response": 0.0021938715962357773,
+            "auxiliary_variance": 4.813072580770118e-06,
+            "conditional_postfit_np_impact": 0.0022022289705044625,
+            "correlation_with_mu": 0.002133926902603536,
+            "injected_value": -0.05120431569315561
+          },
+          {
+            "name": "alpha_ATLAS_qq_PDF_1Jet",
+            "constrained": true,
+            "group": "Parton distributions",
+            "value": 0.10878530093930423,
+            "anchor": 0.1087839272016293,
+            "pull_from_anchor": 1.3737376749339836e-06,
+            "posterior_sigma": 0.9959510174829249,
+            "unit_auxiliary_response": -0.009446411726454948,
+            "auxiliary_variance": 8.923469450570556e-05,
+            "conditional_postfit_np_impact": -0.009484815578911643,
+            "correlation_with_mu": -0.009190644297734559,
+            "injected_value": 0.1087839272016293
+          },
+          {
+            "name": "alpha_ATLAS_qq_PDF_2Jet",
+            "constrained": true,
+            "group": "Parton distributions",
+            "value": 0.09655516504802121,
+            "anchor": 0.09655544157380544,
+            "pull_from_anchor": -2.76525784229098e-07,
+            "posterior_sigma": 0.9918906588958029,
+            "unit_auxiliary_response": -0.01530505473423253,
+            "auxiliary_variance": 0.00023424470041785356,
+            "conditional_postfit_np_impact": -0.015430183354353285,
+            "correlation_with_mu": -0.014951616663374115,
+            "injected_value": 0.09655544157380544
+          },
+          {
+            "name": "mu_qqZZ",
+            "constrained": false,
+            "group": "Unconstrained qqZZ",
+            "value": 1.120988821955248,
+            "anchor": null,
+            "pull_from_anchor": null,
+            "posterior_sigma": 0.046253114775839946,
+            "unit_auxiliary_response": null,
+            "auxiliary_variance": null,
+            "conditional_postfit_np_impact": -0.08552325219923798,
+            "correlation_with_mu": -0.08287075100292399,
+            "injected_value": 1.1209918827889147
+          },
+          {
+            "name": "mu_qqZZ_1",
+            "constrained": false,
+            "group": "Unconstrained qqZZ",
+            "value": 0.8458330205113981,
+            "anchor": null,
+            "pull_from_anchor": null,
+            "posterior_sigma": 0.04892782477555832,
+            "unit_auxiliary_response": null,
+            "auxiliary_variance": null,
+            "conditional_postfit_np_impact": -0.032917830785695566,
+            "correlation_with_mu": -0.03189688521482663,
+            "injected_value": 0.8458265070196692
+          },
+          {
+            "name": "mu_qqZZ_2",
+            "constrained": false,
+            "group": "Unconstrained qqZZ",
+            "value": 0.8995396867968076,
+            "anchor": null,
+            "pull_from_anchor": null,
+            "posterior_sigma": 0.07504313506209245,
+            "unit_auxiliary_response": null,
+            "auxiliary_variance": null,
+            "conditional_postfit_np_impact": -0.019354112484814497,
+            "correlation_with_mu": -0.01875384524521082,
+            "injected_value": 0.8995451014107498
+          }
+        ],
+        "conditional_diagnostics": {
+          "qqzz_block_profiling_variance_penalty": 0.01197523130515432,
+          "alpha_block_profiling_variance_penalty": 0.13019186512118464,
+          "alpha_fixed_sigma": 0.9668753819971045,
+          "note": "Freeze/float penalties are conditional diagnostics, not additive physical-source uncertainties."
+        },
+        "covariance_quality": 3,
+        "hesse_status": 0,
+        "hesse_seconds": 1857.9215603020275,
+        "maximum_step_relative_difference": 7.872912373546265e-08,
+        "input_sha256": "dd1484ad2369b8cb965bfef36909862320ff4647c5a7f18066171add73cc70d9",
+        "source_sha256": {
+          "covariance.json": "304d890342deada9845d7057057c710cfe588f00a240f9247d9848cc2a2393c7",
+          "observation_response.json": "7a8478361e19aeb5d63091708981f14b532d98b7e2fb7084723d02187a8e188e",
+          "curvature_validation.json": "a75277395dfdf2969284bc88a85f5e8f9fc17a443ad6f1974a8989e6f8354758"
+        },
+        "negative_rows": 0,
+        "quadrature": {
+          "reference_events": 4096,
+          "negative_rows": 0
+        },
+        "primary_variance_convention": "Independent Poisson observation fluctuations; the fixed positive Asimov row weights supply the generating mean measure. No SumW2 correction.",
+        "maximum_absolute_pull_from_asimov": 6.83887773161862e-05,
+        "reused_covariance": true
+      },
+      "8192": {
+        "mu_hat": 0.999968616624214,
+        "hessian_variance": 1.0494134088225693,
+        "hessian_sigma": 1.024408809422571,
+        "auxiliary_variance": 0.0806295479890566,
+        "auxiliary_sigma": 0.2839534257392515,
+        "primary_variance": 0.9705722347038243,
+        "primary_sigma": 0.9851762455032218,
+        "primary_components": {
+          "SR": 0.9678651693421847,
+          "CR0": 1.7852112970027692e-06,
+          "CR1": 6.392875388453024e-05,
+          "CR2": 0.002641351396458076
+        },
+        "propagated_variance": 1.0512017826928808,
+        "propagated_sigma": 1.0252813188061514,
+        "closure_absolute": 0.0017883738703114993,
+        "closure_relative": 0.001704165255824286,
+        "native_covariance_probe_curvature": 1.001647585023117,
+        "source_to_native_curvature_probe_relative_difference": 5.6487165299712316e-05,
+        "curvature_validation": {
+          "passed": true,
+          "covariance_sha256": "dde322b940218dcf6ecd9199e724a584b817c58c292aa5300354e4b2fe80c8af",
+          "checks": [
+            {
+              "direction": "profile_mu_tangent",
+              "h_002": 1.0017827480623964,
+              "h_001": 1.0016813757829368,
+              "richardson_curvature": 1.001647585023117,
+              "expected_curvature": 1.0,
+              "disagreement": 0.0016475850231170153
+            },
+            {
+              "direction": "largest_covariance_eigenvector",
+              "h_002": 1.002201170194894,
+              "h_001": 1.0021139314631,
+              "richardson_curvature": 1.0020848518858354,
+              "expected_curvature": 1.0,
+              "disagreement": 0.0020848518858354037
+            },
+            {
+              "direction": "whitened_direction_0",
+              "h_002": 0.9999405483540613,
+              "h_001": 0.9999404574045911,
+              "richardson_curvature": 0.999940427088101,
+              "expected_curvature": 1.0,
+              "disagreement": -5.9572911898952974e-05
+            },
+            {
+              "direction": "whitened_direction_1",
+              "h_002": 1.0000914699048735,
+              "h_001": 1.0000913607655093,
+              "richardson_curvature": 1.0000913243857212,
+              "expected_curvature": 1.0,
+              "disagreement": 9.132438572123647e-05
+            }
+          ],
+          "maximum_absolute_disagreement": 0.0020848518858354037
+        },
+        "groups": [
+          {
+            "source": "Parton shower",
+            "kind": "auxiliary",
+            "variance": 0.038581340713616484,
+            "sigma": 0.19642133467018413,
+            "fraction_of_hessian_variance": 0.036764672901315736
+          },
+          {
+            "source": "Jets",
+            "kind": "auxiliary",
+            "variance": 0.016136944095132146,
+            "sigma": 0.12703127211490936,
+            "fraction_of_hessian_variance": 0.015377108734714592
+          },
+          {
+            "source": "Electrons",
+            "kind": "auxiliary",
+            "variance": 0.012302781796327725,
+            "sigma": 0.11091790566147436,
+            "fraction_of_hessian_variance": 0.011723484465603803
+          },
+          {
+            "source": "Higher-order theory",
+            "kind": "auxiliary",
+            "variance": 0.010798020200125871,
+            "sigma": 0.10391352270097415,
+            "fraction_of_hessian_variance": 0.010289577119317671
+          },
+          {
+            "source": "Muons",
+            "kind": "auxiliary",
+            "variance": 0.00201207788823865,
+            "sigma": 0.04485619119183716,
+            "fraction_of_hessian_variance": 0.0019173357909502795
+          },
+          {
+            "source": "Parton distributions",
+            "kind": "auxiliary",
+            "variance": 0.0006699727264902208,
+            "sigma": 0.025883831371924456,
+            "fraction_of_hessian_variance": 0.0006384259252432491
+          },
+          {
+            "source": "Pileup",
+            "kind": "auxiliary",
+            "variance": 6.62238808913259e-05,
+            "sigma": 0.008137805655784973,
+            "fraction_of_hessian_variance": 6.310561722822694e-05
+          },
+          {
+            "source": "Luminosity",
+            "kind": "auxiliary",
+            "variance": 6.218668823417647e-05,
+            "sigma": 0.007885853678212427,
+            "fraction_of_hessian_variance": 5.925852262927464e-05
+          },
+          {
+            "source": "SR statistics",
+            "kind": "primary",
+            "variance": 0.9678651693421847,
+            "sigma": 0.9838013871418279,
+            "fraction_of_hessian_variance": 0.9222915975774687
+          },
+          {
+            "source": "CR0 statistics",
+            "kind": "primary",
+            "variance": 1.7852112970027692e-06,
+            "sigma": 0.001336117995164637,
+            "fraction_of_hessian_variance": 1.7011515976394444e-06
+          },
+          {
+            "source": "CR1 statistics",
+            "kind": "primary",
+            "variance": 6.392875388453024e-05,
+            "sigma": 0.007995545877832872,
+            "fraction_of_hessian_variance": 6.0918560166157615e-05
+          },
+          {
+            "source": "CR2 statistics",
+            "kind": "primary",
+            "variance": 0.002641351396458076,
+            "sigma": 0.05139407939109403,
+            "fraction_of_hessian_variance": 0.0025169788895890366
+          },
+          {
+            "source": "Auxiliary subtotal",
+            "kind": "subtotal",
+            "variance": 0.0806295479890566,
+            "sigma": 0.2839534257392515,
+            "fraction_of_hessian_variance": 0.07683296907700284
+          },
+          {
+            "source": "Primary-data subtotal",
+            "kind": "subtotal",
+            "variance": 0.9705722347038243,
+            "sigma": 0.9851762455032218,
+            "fraction_of_hessian_variance": 0.9248711961788215
+          },
+          {
+            "source": "Propagated source total",
+            "kind": "subtotal",
+            "variance": 1.0512017826928808,
+            "sigma": 1.0252813188061514,
+            "fraction_of_hessian_variance": 1.0017041652558243
+          },
+          {
+            "source": "Observed-Hessian total",
+            "kind": "subtotal",
+            "variance": 1.0494134088225693,
+            "sigma": 1.024408809422571,
+            "fraction_of_hessian_variance": 1.0
+          }
+        ],
+        "impacts": [
+          {
+            "name": "alpha_ATLAS_EG_RESOLUTION_ALL",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.019162485353536037,
+            "anchor": -0.019160270559218213,
+            "pull_from_anchor": -2.214794317823704e-06,
+            "posterior_sigma": 0.9813772554558018,
+            "unit_auxiliary_response": -0.008162954402066786,
+            "auxiliary_variance": 6.663382457022152e-05,
+            "conditional_postfit_np_impact": -0.00831785570399784,
+            "correlation_with_mu": -0.008119664363962636,
+            "injected_value": -0.019160270559218213
+          },
+          {
+            "name": "alpha_ATLAS_EG_SCALE_AF2",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.053924518089355264,
+            "anchor": -0.05392582017507414,
+            "pull_from_anchor": 1.3020857188780766e-06,
+            "posterior_sigma": 0.9843251954702079,
+            "unit_auxiliary_response": -0.00512997963475126,
+            "auxiliary_variance": 2.631669105296267e-05,
+            "conditional_postfit_np_impact": -0.005211671567850796,
+            "correlation_with_mu": -0.005087491946490056,
+            "injected_value": -0.05392582017507414
+          },
+          {
+            "name": "alpha_ATLAS_EG_SCALE_ALL",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.17169412644919368,
+            "anchor": -0.1716931049248947,
+            "pull_from_anchor": -1.0215242989830564e-06,
+            "posterior_sigma": 0.9731613211188617,
+            "unit_auxiliary_response": -0.0882651027167181,
+            "auxiliary_variance": 0.007790728357592797,
+            "conditional_postfit_np_impact": -0.09069935354113547,
+            "correlation_with_mu": -0.08853824050210972,
+            "injected_value": -0.1716931049248947
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP0",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.1328048303914438,
+            "anchor": 0.13279823872153332,
+            "pull_from_anchor": 6.591669910488429e-06,
+            "posterior_sigma": 0.9953531494011919,
+            "unit_auxiliary_response": -0.0054229606905224085,
+            "auxiliary_variance": 2.9408502650951278e-05,
+            "conditional_postfit_np_impact": -0.005448278024523137,
+            "correlation_with_mu": -0.005318460730139728,
+            "injected_value": 0.13279823872153332
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP1",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.08500875776995893,
+            "anchor": 0.08501232691530956,
+            "pull_from_anchor": -3.5691453506292437e-06,
+            "posterior_sigma": 0.9971105802251917,
+            "unit_auxiliary_response": -0.012263960018497999,
+            "auxiliary_variance": 0.00015040471533531743,
+            "conditional_postfit_np_impact": -0.012299498432489056,
+            "correlation_with_mu": -0.012006435633272153,
+            "injected_value": 0.08501232691530956
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP10",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.10104878549050468,
+            "anchor": -0.10100950210549253,
+            "pull_from_anchor": -3.928338501214823e-05,
+            "posterior_sigma": 0.9711878670427028,
+            "unit_auxiliary_response": 0.0002288763336196004,
+            "auxiliary_variance": 5.238437609115063e-08,
+            "conditional_postfit_np_impact": 0.0002356663848329736,
+            "correlation_with_mu": 0.00023005111110457145,
+            "injected_value": -0.10100950210549253
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP11",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.011788988832497231,
+            "anchor": -0.011789632143112735,
+            "pull_from_anchor": 6.433106155036283e-07,
+            "posterior_sigma": 0.9902247053875017,
+            "unit_auxiliary_response": -0.002781479638914354,
+            "auxiliary_variance": 7.736628981695126e-06,
+            "conditional_postfit_np_impact": -0.0028089378337878227,
+            "correlation_with_mu": -0.002742008666804748,
+            "injected_value": -0.011789632143112735
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP12",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.047236784772503586,
+            "anchor": -0.047249606828605385,
+            "pull_from_anchor": 1.2822056101799428e-05,
+            "posterior_sigma": 0.9966829770533563,
+            "unit_auxiliary_response": 0.002797293131354958,
+            "auxiliary_variance": 7.824848862725626e-06,
+            "conditional_postfit_np_impact": 0.002806602696902696,
+            "correlation_with_mu": 0.002739729169729315,
+            "injected_value": -0.047249606828605385
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP13",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.017755566349535155,
+            "anchor": -0.01776481021420667,
+            "pull_from_anchor": 9.243864671514002e-06,
+            "posterior_sigma": 0.9853069722132756,
+            "unit_auxiliary_response": -0.003682895751567716,
+            "auxiliary_variance": 1.356372111691553e-05,
+            "conditional_postfit_np_impact": -0.003737815579742524,
+            "correlation_with_mu": -0.0036487538425693748,
+            "injected_value": -0.01776481021420667
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP14",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.16206382764715718,
+            "anchor": -0.16206475292925152,
+            "pull_from_anchor": 9.252820943328466e-07,
+            "posterior_sigma": 0.9974252823067432,
+            "unit_auxiliary_response": -0.007902730476032733,
+            "auxiliary_variance": 6.245314897681654e-05,
+            "conditional_postfit_np_impact": -0.007923130299801611,
+            "correlation_with_mu": -0.007734344167020242,
+            "injected_value": -0.16206475292925152
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP15",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.04058230791691339,
+            "anchor": -0.040575919051056286,
+            "pull_from_anchor": -6.388865857104298e-06,
+            "posterior_sigma": 0.9966393139780074,
+            "unit_auxiliary_response": 0.00032203290112472517,
+            "auxiliary_variance": 1.0370518940680701e-07,
+            "conditional_postfit_np_impact": 0.00032311880196593507,
+            "correlation_with_mu": 0.0003154197806518938,
+            "injected_value": -0.040575919051056286
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP2",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.04496251929426942,
+            "anchor": 0.044963077279636096,
+            "pull_from_anchor": -5.579853666753953e-07,
+            "posterior_sigma": 0.9966815093696533,
+            "unit_auxiliary_response": -0.004523823270356794,
+            "auxiliary_variance": 2.046497698142164e-05,
+            "conditional_postfit_np_impact": -0.004538885519425223,
+            "correlation_with_mu": -0.004430736516199679,
+            "injected_value": 0.044963077279636096
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP3",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.06895024814804226,
+            "anchor": 0.06894991856557973,
+            "pull_from_anchor": 3.295824625298982e-07,
+            "posterior_sigma": 0.9928336363724121,
+            "unit_auxiliary_response": 0.0031544388088631235,
+            "auxiliary_variance": 9.950484198861801e-06,
+            "conditional_postfit_np_impact": 0.0031772078355329744,
+            "correlation_with_mu": 0.0031015038198703828,
+            "injected_value": 0.06894991856557973
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP4",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.1503618335808806,
+            "anchor": 0.15036209259631061,
+            "pull_from_anchor": -2.5901543002082583e-07,
+            "posterior_sigma": 0.9901845613361588,
+            "unit_auxiliary_response": 0.005240995283869494,
+            "auxiliary_variance": 2.7468031565542276e-05,
+            "conditional_postfit_np_impact": 0.0052929478892271105,
+            "correlation_with_mu": 0.005166831679445035,
+            "injected_value": 0.15036209259631061
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP5",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.027842677300519914,
+            "anchor": -0.027845380140362173,
+            "pull_from_anchor": 2.7028398422584976e-06,
+            "posterior_sigma": 0.997139281125499,
+            "unit_auxiliary_response": 0.007229176456207222,
+            "auxiliary_variance": 5.22609922349808e-05,
+            "conditional_postfit_np_impact": 0.007249916428974143,
+            "correlation_with_mu": 0.007077171108144518,
+            "injected_value": -0.027845380140362173
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP6",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.01356329082861053,
+            "anchor": -0.013528798492396535,
+            "pull_from_anchor": -3.4492336213994695e-05,
+            "posterior_sigma": 0.9813081264486471,
+            "unit_auxiliary_response": 0.01574850953654296,
+            "auxiliary_variance": 0.00024801555262258455,
+            "conditional_postfit_np_impact": 0.016048485803879763,
+            "correlation_with_mu": 0.01566609507480302,
+            "injected_value": -0.013528798492396535
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP7",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.07455118895250201,
+            "anchor": 0.07456947322620625,
+            "pull_from_anchor": -1.8284273704233245e-05,
+            "posterior_sigma": 0.9915692342345858,
+            "unit_auxiliary_response": 0.010124556815344134,
+            "auxiliary_variance": 0.00010250665070713135,
+            "conditional_postfit_np_impact": 0.010210640332300652,
+            "correlation_with_mu": 0.00996734920510503,
+            "injected_value": 0.07456947322620625
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP8",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.17525665788615044,
+            "anchor": -0.17525672056344865,
+            "pull_from_anchor": 6.267729821263224e-08,
+            "posterior_sigma": 0.9915168575965486,
+            "unit_auxiliary_response": -0.008147846901800907,
+            "auxiliary_variance": 6.638740913518664e-05,
+            "conditional_postfit_np_impact": -0.00821755761324261,
+            "correlation_with_mu": -0.008021756097426188,
+            "injected_value": -0.17525672056344865
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP9",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.15839849291037097,
+            "anchor": 0.15843439064451847,
+            "pull_from_anchor": -3.589773414749975e-05,
+            "posterior_sigma": 0.9743000453723337,
+            "unit_auxiliary_response": 0.0107737453136,
+            "auxiliary_variance": 0.00011607358808231795,
+            "conditional_postfit_np_impact": 0.01105793370817586,
+            "correlation_with_mu": 0.010794453939154323,
+            "injected_value": 0.15843439064451847
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP0",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.06861212696717053,
+            "anchor": 0.06861306680582302,
+            "pull_from_anchor": -9.398386524861468e-07,
+            "posterior_sigma": 0.9945366785587686,
+            "unit_auxiliary_response": -0.007098874702978067,
+            "auxiliary_variance": 5.039402204858194e-05,
+            "conditional_postfit_np_impact": -0.00713787118768248,
+            "correlation_with_mu": -0.006967795592958526,
+            "injected_value": 0.06861306680582302
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP1",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.12613683554637803,
+            "anchor": -0.1261416193118477,
+            "pull_from_anchor": 4.783765469668078e-06,
+            "posterior_sigma": 0.9976921618282971,
+            "unit_auxiliary_response": 0.0011801259478230863,
+            "auxiliary_variance": 1.3926972527253376e-06,
+            "conditional_postfit_np_impact": 0.0011828557875612398,
+            "correlation_with_mu": 0.001154671627851366,
+            "injected_value": -0.1261416193118477
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP10",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.09512979701015564,
+            "anchor": 0.09512816308874467,
+            "pull_from_anchor": 1.6339214109761802e-06,
+            "posterior_sigma": 0.9955733731152491,
+            "unit_auxiliary_response": -0.002910596576717033,
+            "auxiliary_variance": 8.471572432396913e-06,
+            "conditional_postfit_np_impact": -0.002923537988575854,
+            "correlation_with_mu": -0.0028538782190127457,
+            "injected_value": 0.09512816308874467
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP11",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.08629248364551761,
+            "anchor": -0.08629149850619658,
+            "pull_from_anchor": -9.851393210358328e-07,
+            "posterior_sigma": 0.992015156699365,
+            "unit_auxiliary_response": 0.0027353590120879627,
+            "auxiliary_variance": 7.482188925010836e-06,
+            "conditional_postfit_np_impact": 0.0027573762291990124,
+            "correlation_with_mu": 0.002691675631678006,
+            "injected_value": -0.08629149850619658
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP12",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.047944835646215336,
+            "anchor": 0.04796289791880747,
+            "pull_from_anchor": -1.806227259213561e-05,
+            "posterior_sigma": 0.9936348768685748,
+            "unit_auxiliary_response": 0.006872247006159567,
+            "auxiliary_variance": 4.722777891366914e-05,
+            "conditional_postfit_np_impact": 0.006916269915783702,
+            "correlation_with_mu": 0.0067514744623117795,
+            "injected_value": 0.04796289791880747
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP13",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.10211946941096253,
+            "anchor": -0.1021020576970669,
+            "pull_from_anchor": -1.741171389563201e-05,
+            "posterior_sigma": 0.9920001501523051,
+            "unit_auxiliary_response": -0.0030141768492704113,
+            "auxiliary_variance": 9.085262078677704e-06,
+            "conditional_postfit_np_impact": -0.0030384842671723734,
+            "correlation_with_mu": -0.002966085647862671,
+            "injected_value": -0.1021020576970669
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP14",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.09460676473329369,
+            "anchor": -0.0946087642428216,
+            "pull_from_anchor": 1.999509527908505e-06,
+            "posterior_sigma": 0.9937530889096386,
+            "unit_auxiliary_response": -0.0007710854580524216,
+            "auxiliary_variance": 5.945727836199129e-07,
+            "conditional_postfit_np_impact": -0.000775932640268287,
+            "correlation_with_mu": -0.000757444326065155,
+            "injected_value": -0.0946087642428216
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP15",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.06950502496354188,
+            "anchor": -0.06950757198751992,
+            "pull_from_anchor": 2.5470239780334136e-06,
+            "posterior_sigma": 0.994855322808057,
+            "unit_auxiliary_response": 0.015084627904169364,
+            "auxiliary_variance": 0.00022754599900724502,
+            "conditional_postfit_np_impact": 0.015162634765416766,
+            "correlation_with_mu": 0.014801351399900102,
+            "injected_value": -0.06950757198751992
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP16",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.022742799448450136,
+            "anchor": 0.022744662839791777,
+            "pull_from_anchor": -1.863391341640902e-06,
+            "posterior_sigma": 0.9932979894381675,
+            "unit_auxiliary_response": -0.005333219642935103,
+            "auxiliary_variance": 2.8443231759788825e-05,
+            "conditional_postfit_np_impact": -0.005369204105559195,
+            "correlation_with_mu": -0.005241270922480311,
+            "injected_value": 0.022744662839791777
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP17",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.19598602701452053,
+            "anchor": 0.19599168546375112,
+            "pull_from_anchor": -5.658449230588891e-06,
+            "posterior_sigma": 0.9822424547542189,
+            "unit_auxiliary_response": 0.019939202511558257,
+            "auxiliary_variance": 0.0003975717967969311,
+            "conditional_postfit_np_impact": 0.020299674907197463,
+            "correlation_with_mu": 0.019815990179389214,
+            "injected_value": 0.19599168546375112
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP2",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.18690607346633262,
+            "anchor": -0.1869139318991743,
+            "pull_from_anchor": 7.858432841678642e-06,
+            "posterior_sigma": 0.9936790600689742,
+            "unit_auxiliary_response": -0.01294419309457322,
+            "auxiliary_variance": 0.00016755213486959706,
+            "conditional_postfit_np_impact": -0.013026533027348615,
+            "correlation_with_mu": -0.012716147018192167,
+            "injected_value": -0.1869139318991743
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP3",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.04045339128572058,
+            "anchor": -0.040442884116855336,
+            "pull_from_anchor": -1.0507168865241112e-05,
+            "posterior_sigma": 0.991266368657231,
+            "unit_auxiliary_response": -0.005711957769640595,
+            "auxiliary_variance": 3.262646156215756e-05,
+            "conditional_postfit_np_impact": -0.005762283428800284,
+            "correlation_with_mu": -0.00562498425999315,
+            "injected_value": -0.040442884116855336
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP4",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.16290529504299722,
+            "anchor": -0.16287565221167594,
+            "pull_from_anchor": -2.964283132128598e-05,
+            "posterior_sigma": 0.7060943069329619,
+            "unit_auxiliary_response": -0.042294002931626655,
+            "auxiliary_variance": 0.0017887826839804442,
+            "conditional_postfit_np_impact": -0.05989851853548812,
+            "correlation_with_mu": -0.05847130362853004,
+            "injected_value": -0.16287565221167594
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP5",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.09670918854163923,
+            "anchor": -0.09669353602532312,
+            "pull_from_anchor": -1.5652516316119747e-05,
+            "posterior_sigma": 0.9772524532546337,
+            "unit_auxiliary_response": -0.010565722973261695,
+            "auxiliary_variance": 0.00011163450194770995,
+            "conditional_postfit_np_impact": -0.010811661754415346,
+            "correlation_with_mu": -0.010554049960298137,
+            "injected_value": -0.09669353602532312
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP6",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.19996897107884706,
+            "anchor": 0.199968560881424,
+            "pull_from_anchor": 4.1019742305636875e-07,
+            "posterior_sigma": 0.9976267894939523,
+            "unit_auxiliary_response": 0.007527313883645189,
+            "auxiliary_variance": 5.666045430291762e-05,
+            "conditional_postfit_np_impact": 0.007545220279683377,
+            "correlation_with_mu": 0.00736543869037635,
+            "injected_value": 0.199968560881424
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP7",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.03631228233270057,
+            "anchor": 0.03631650548648812,
+            "pull_from_anchor": -4.223153787549783e-06,
+            "posterior_sigma": 0.9963412600629201,
+            "unit_auxiliary_response": 0.008358332146483615,
+            "auxiliary_variance": 6.986171627094139e-05,
+            "conditional_postfit_np_impact": 0.008389025408779895,
+            "correlation_with_mu": 0.008189138292854531,
+            "injected_value": 0.03631650548648812
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP8",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.09960635118680732,
+            "anchor": -0.09961517394504128,
+            "pull_from_anchor": 8.822758233967276e-06,
+            "posterior_sigma": 0.994254231991926,
+            "unit_auxiliary_response": 0.005975944994915338,
+            "auxiliary_variance": 3.571191858225368e-05,
+            "conditional_postfit_np_impact": 0.006010479817564273,
+            "correlation_with_mu": 0.0058672668199253415,
+            "injected_value": -0.09961517394504128
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP9",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.15451335640892874,
+            "anchor": 0.1545149302607608,
+            "pull_from_anchor": -1.5738518320540518e-06,
+            "posterior_sigma": 0.9915052981932818,
+            "unit_auxiliary_response": -0.001812227754376411,
+            "auxiliary_variance": 3.284169433732169e-06,
+            "conditional_postfit_np_impact": -0.0018277539794075205,
+            "correlation_with_mu": -0.0017842036915299189,
+            "injected_value": 0.1545149302607608
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_Iso_TOTAL_1NPCOR_PLUS_UNCOR",
+            "constrained": true,
+            "group": "Electrons",
+            "value": -0.03188591757294969,
+            "anchor": -0.03188801253622528,
+            "pull_from_anchor": 2.094963275592332e-06,
+            "posterior_sigma": 0.9973200987237748,
+            "unit_auxiliary_response": -0.0018496104309575206,
+            "auxiliary_variance": 3.421058746306865e-06,
+            "conditional_postfit_np_impact": -0.0018545805236697655,
+            "correlation_with_mu": -0.0018103910339419453,
+            "injected_value": -0.03188801253622528
+          },
+          {
+            "name": "alpha_ATLAS_EL_EFF_Reco_TOTAL_1NPCOR_PLUS_UNCOR",
+            "constrained": true,
+            "group": "Electrons",
+            "value": 0.007286877638631799,
+            "anchor": 0.007280570309486038,
+            "pull_from_anchor": 6.307329145761528e-06,
+            "posterior_sigma": 0.9940014401882338,
+            "unit_auxiliary_response": -0.021370151155270065,
+            "auxiliary_variance": 0.0004566833603990905,
+            "conditional_postfit_np_impact": -0.021499114881788507,
+            "correlation_with_mu": -0.020986850839272774,
+            "injected_value": 0.007280570309486038
+          },
+          {
+            "name": "alpha_ATLAS_H4l_Shower_UEPS_VBF_OffShell",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.0036286736933492957,
+            "anchor": -0.0036293595152891754,
+            "pull_from_anchor": 6.858219398797084e-07,
+            "posterior_sigma": 0.9999117330393187,
+            "unit_auxiliary_response": -0.0014697419856295726,
+            "auxiliary_variance": 2.160141504322359e-06,
+            "conditional_postfit_np_impact": -0.0014698717267394832,
+            "correlation_with_mu": -0.0014348487764059806,
+            "injected_value": -0.0036293595152891754
+          },
+          {
+            "name": "alpha_ATLAS_HOEW",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": 0.09493177996467016,
+            "anchor": 0.09493202168307713,
+            "pull_from_anchor": -2.417184069708478e-07,
+            "posterior_sigma": 0.9951010068989327,
+            "unit_auxiliary_response": 0.0002926416726055202,
+            "auxiliary_variance": 8.563914854535648e-08,
+            "conditional_postfit_np_impact": 0.0002940823801570551,
+            "correlation_with_mu": 0.0002870752159216795,
+            "injected_value": 0.09493202168307713
+          },
+          {
+            "name": "alpha_ATLAS_HOEW_QCD_0Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": 0.20652375003228382,
+            "anchor": 0.20651940968374197,
+            "pull_from_anchor": 4.340348541853611e-06,
+            "posterior_sigma": 0.9899841709263679,
+            "unit_auxiliary_response": -0.0003827263837791693,
+            "auxiliary_variance": 1.4647948484068e-07,
+            "conditional_postfit_np_impact": -0.0003865984881566711,
+            "correlation_with_mu": -0.0003773869226823472,
+            "injected_value": 0.20651940968374197
+          },
+          {
+            "name": "alpha_ATLAS_HOEW_QCD_1Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": 0.3921459614029775,
+            "anchor": 0.39215052994261246,
+            "pull_from_anchor": -4.568539634930424e-06,
+            "posterior_sigma": 0.9666614020351829,
+            "unit_auxiliary_response": -0.01200634030656733,
+            "auxiliary_variance": 0.00014415220755710327,
+            "conditional_postfit_np_impact": -0.01242041968499984,
+            "correlation_with_mu": -0.012124475669045509,
+            "injected_value": 0.39215052994261246
+          },
+          {
+            "name": "alpha_ATLAS_HOEW_QCD_2Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.37495396672628417,
+            "anchor": -0.37495777234082406,
+            "pull_from_anchor": 3.8056145398868146e-06,
+            "posterior_sigma": 0.9583837004783612,
+            "unit_auxiliary_response": -0.06519230323336045,
+            "auxiliary_variance": 0.004250036400870419,
+            "conditional_postfit_np_impact": -0.06802317610454017,
+            "correlation_with_mu": -0.06640237323113497,
+            "injected_value": -0.37495777234082406
+          },
+          {
+            "name": "alpha_ATLAS_HOQCD_0Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.05747616565150246,
+            "anchor": -0.057485906132791885,
+            "pull_from_anchor": 9.740481289426117e-06,
+            "posterior_sigma": 0.9469263203926348,
+            "unit_auxiliary_response": -0.010833449953709688,
+            "auxiliary_variance": 0.00011736363789953244,
+            "conditional_postfit_np_impact": -0.011440647197574667,
+            "correlation_with_mu": -0.011168048431781274,
+            "injected_value": -0.057485906132791885
+          },
+          {
+            "name": "alpha_ATLAS_HOQCD_1Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": 0.6022366900356189,
+            "anchor": 0.6022456828480804,
+            "pull_from_anchor": -8.992812461583455e-06,
+            "posterior_sigma": 0.8212316959318176,
+            "unit_auxiliary_response": -0.01048474929127389,
+            "auxiliary_variance": 0.00010992996770086834,
+            "conditional_postfit_np_impact": -0.012767102564614581,
+            "correlation_with_mu": -0.012462898060990924,
+            "injected_value": 0.6022456828480804
+          },
+          {
+            "name": "alpha_ATLAS_HOQCD_2Jet",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.4013133146930831,
+            "anchor": -0.4013177760716131,
+            "pull_from_anchor": 4.461378529996285e-06,
+            "posterior_sigma": 0.9336027257998353,
+            "unit_auxiliary_response": -0.04984700311709802,
+            "auxiliary_variance": 0.0024847237197559795,
+            "conditional_postfit_np_impact": -0.05339209252457264,
+            "correlation_with_mu": -0.05211990763205969,
+            "injected_value": -0.4013177760716131
+          },
+          {
+            "name": "alpha_ATLAS_HOQCD_VBF",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.11293476737219121,
+            "anchor": -0.11293609877529417,
+            "pull_from_anchor": 1.3314031029609819e-06,
+            "posterior_sigma": 0.9882133316100297,
+            "unit_auxiliary_response": -0.017332880842044367,
+            "auxiliary_variance": 0.00030042875828450863,
+            "conditional_postfit_np_impact": -0.017539614461388683,
+            "correlation_with_mu": -0.017121694288508946,
+            "injected_value": -0.11293609877529417
+          },
+          {
+            "name": "alpha_ATLAS_JET_BJES_Response",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.06104772261599599,
+            "anchor": -0.0610354052616112,
+            "pull_from_anchor": -1.2317354384790147e-05,
+            "posterior_sigma": 0.9864820662742516,
+            "unit_auxiliary_response": -0.018229770163038013,
+            "auxiliary_variance": 0.000332324520197191,
+            "conditional_postfit_np_impact": -0.018479575844585056,
+            "correlation_with_mu": -0.01803925900930259,
+            "injected_value": -0.0610354052616112
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Detector1",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.2975175054328618,
+            "anchor": 0.29751961947687094,
+            "pull_from_anchor": -2.1140440091271806e-06,
+            "posterior_sigma": 0.9832629402849832,
+            "unit_auxiliary_response": -0.014519576790353084,
+            "auxiliary_variance": 0.00021081811017096,
+            "conditional_postfit_np_impact": -0.014766728405470886,
+            "correlation_with_mu": -0.014414878386095153,
+            "injected_value": 0.29751961947687094
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Detector2",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.06597949487736392,
+            "anchor": -0.06597115914334568,
+            "pull_from_anchor": -8.335734018233287e-06,
+            "posterior_sigma": 0.9967064263243166,
+            "unit_auxiliary_response": 0.011320627643325407,
+            "auxiliary_variance": 0.00012815661023882335,
+            "conditional_postfit_np_impact": 0.011358036172269855,
+            "correlation_with_mu": 0.01108740579717588,
+            "injected_value": -0.06597115914334568
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Mixed1",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.5202882256436479,
+            "anchor": -0.5202840251106909,
+            "pull_from_anchor": -4.200532956910585e-06,
+            "posterior_sigma": 0.9912271094396702,
+            "unit_auxiliary_response": -0.0027719512578403688,
+            "auxiliary_variance": 7.683713775842802e-06,
+            "conditional_postfit_np_impact": -0.0027964845104037988,
+            "correlation_with_mu": -0.002729852071440204,
+            "injected_value": -0.5202840251106909
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Mixed2",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.13129802350298345,
+            "anchor": -0.13129845395695008,
+            "pull_from_anchor": 4.3045396663776714e-07,
+            "posterior_sigma": 0.9921311739650732,
+            "unit_auxiliary_response": 0.0004528985545015481,
+            "auxiliary_variance": 2.0511710066959174e-07,
+            "conditional_postfit_np_impact": 0.00045649059961650986,
+            "correlation_with_mu": 0.0004456136997433868,
+            "injected_value": -0.13129845395695008
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Mixed3",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.03342286620899165,
+            "anchor": -0.03343015340274893,
+            "pull_from_anchor": 7.287193757275767e-06,
+            "posterior_sigma": 0.992721785223855,
+            "unit_auxiliary_response": 0.01673508554894002,
+            "auxiliary_variance": 0.000280063088330341,
+            "conditional_postfit_np_impact": 0.01685778009310667,
+            "correlation_with_mu": 0.016456106134628914,
+            "injected_value": -0.03343015340274893
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Modelling1",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.03311727990459973,
+            "anchor": -0.03312400753559982,
+            "pull_from_anchor": 6.727631000090495e-06,
+            "posterior_sigma": 0.9908210696826117,
+            "unit_auxiliary_response": 0.00933615115270377,
+            "auxiliary_variance": 8.716371834613195e-05,
+            "conditional_postfit_np_impact": 0.009422640917087489,
+            "correlation_with_mu": 0.009198125621741533,
+            "injected_value": -0.03312400753559982
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Modelling2",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.24530829132583587,
+            "anchor": 0.24530905240408285,
+            "pull_from_anchor": -7.610782469802402e-07,
+            "posterior_sigma": 0.9951704344181951,
+            "unit_auxiliary_response": 0.015406627924085365,
+            "auxiliary_variance": 0.0002373641839912069,
+            "conditional_postfit_np_impact": 0.015481396343021904,
+            "correlation_with_mu": 0.015112517776714856,
+            "injected_value": 0.24530905240408285
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Modelling3",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.35012386975051435,
+            "anchor": -0.3501227367622617,
+            "pull_from_anchor": -1.1329882526611712e-06,
+            "posterior_sigma": 0.9853338243940056,
+            "unit_auxiliary_response": -0.008778733561187723,
+            "auxiliary_variance": 7.706616293832369e-05,
+            "conditional_postfit_np_impact": -0.008909400391879138,
+            "correlation_with_mu": -0.008697114189110795,
+            "injected_value": -0.3501227367622617
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Modelling4",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.039927598872018265,
+            "anchor": -0.03992716991789438,
+            "pull_from_anchor": -4.289541238877703e-07,
+            "posterior_sigma": 0.986350802907434,
+            "unit_auxiliary_response": -0.0349297698977014,
+            "auxiliary_variance": 0.0012200888251063667,
+            "conditional_postfit_np_impact": -0.03541313069826684,
+            "correlation_with_mu": -0.03456933440295987,
+            "injected_value": -0.03992716991789438
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical1",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.20629807629731145,
+            "anchor": -0.20629677546377362,
+            "pull_from_anchor": -1.3008335378317248e-06,
+            "posterior_sigma": 0.9922110844469777,
+            "unit_auxiliary_response": -0.015511397345952064,
+            "auxiliary_variance": 0.00024060344762400873,
+            "conditional_postfit_np_impact": -0.015633162730284908,
+            "correlation_with_mu": -0.01526066799356876,
+            "injected_value": -0.20629677546377362
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical2",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.27269423975490803,
+            "anchor": -0.2726999752205339,
+            "pull_from_anchor": 5.7354656258779e-06,
+            "posterior_sigma": 0.9915811482640062,
+            "unit_auxiliary_response": -0.008345261583665428,
+            "auxiliary_variance": 6.964339089980201e-05,
+            "conditional_postfit_np_impact": -0.008416115613205991,
+            "correlation_with_mu": -0.008215583013142878,
+            "injected_value": -0.2726999752205339
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical3",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.062459378901249994,
+            "anchor": -0.06245200556653049,
+            "pull_from_anchor": -7.373334719507074e-06,
+            "posterior_sigma": 0.9896237093709767,
+            "unit_auxiliary_response": 0.020114223030700776,
+            "auxiliary_variance": 0.0004045819681287735,
+            "conditional_postfit_np_impact": 0.020325122407875366,
+            "correlation_with_mu": 0.019840831336985512,
+            "injected_value": -0.06245200556653049
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical4",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.1294209008321181,
+            "anchor": -0.12941767459399348,
+            "pull_from_anchor": -3.2262381246261906e-06,
+            "posterior_sigma": 0.9935534211868364,
+            "unit_auxiliary_response": -0.012867663253834332,
+            "auxiliary_variance": 0.00016557675761407834,
+            "conditional_postfit_np_impact": -0.012951153888095349,
+            "correlation_with_mu": -0.01264256395393118,
+            "injected_value": -0.12941767459399348
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical5",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.1576566318357962,
+            "anchor": 0.15765457558992524,
+            "pull_from_anchor": 2.0562458709627585e-06,
+            "posterior_sigma": 0.9892037833091832,
+            "unit_auxiliary_response": -0.00048049781127145445,
+            "auxiliary_variance": 2.3087814663665827e-07,
+            "conditional_postfit_np_impact": -0.000485741987019141,
+            "correlation_with_mu": -0.00047416810803583334,
+            "injected_value": 0.15765457558992524
+          },
+          {
+            "name": "alpha_ATLAS_JET_EffectiveNP_Statistical6",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.12376262892031166,
+            "anchor": 0.12377075131195173,
+            "pull_from_anchor": -8.122391640066895e-06,
+            "posterior_sigma": 0.9899926013578098,
+            "unit_auxiliary_response": 0.001492398596086313,
+            "auxiliary_variance": 2.227253569600398e-06,
+            "conditional_postfit_np_impact": 0.0015074845953792339,
+            "correlation_with_mu": 0.001471565435120534,
+            "injected_value": 0.12377075131195173
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_Modelling",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.18872564095733915,
+            "anchor": 0.18870562449203643,
+            "pull_from_anchor": 2.0016465302724606e-05,
+            "posterior_sigma": 0.9458337589066195,
+            "unit_auxiliary_response": 0.002934232894659031,
+            "auxiliary_variance": 8.609722680099116e-06,
+            "conditional_postfit_np_impact": 0.003102271268104232,
+            "correlation_with_mu": 0.003028352782179696,
+            "injected_value": 0.18870562449203643
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_2018data",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.25052804182436156,
+            "anchor": -0.25050614185801456,
+            "pull_from_anchor": -2.1899966346994315e-05,
+            "posterior_sigma": 0.9833116179341004,
+            "unit_auxiliary_response": 0.006309815908933413,
+            "auxiliary_variance": 3.981377680462919e-05,
+            "conditional_postfit_np_impact": 0.006416903648703035,
+            "correlation_with_mu": 0.006264006702870951,
+            "injected_value": -0.25050614185801456
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_highE",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.155481902434021,
+            "anchor": 0.1554825542541684,
+            "pull_from_anchor": -6.518201474126073e-07,
+            "posterior_sigma": 0.9845811086141641,
+            "unit_auxiliary_response": 0.006491437009334349,
+            "auxiliary_variance": 4.2138754446155684e-05,
+            "conditional_postfit_np_impact": 0.006593095228559988,
+            "correlation_with_mu": 0.006436000127992185,
+            "injected_value": 0.1554825542541684
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_negEta",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.033922939305981954,
+            "anchor": 0.033926253937489194,
+            "pull_from_anchor": -3.3146315072396515e-06,
+            "posterior_sigma": 0.9923180460766404,
+            "unit_auxiliary_response": -0.018212737788733682,
+            "auxiliary_variance": 0.00033170381776116784,
+            "conditional_postfit_np_impact": -0.018353730299214013,
+            "correlation_with_mu": -0.01791641201285595,
+            "injected_value": 0.033926253937489194
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_NonClosure_posEta",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.14046412591793206,
+            "anchor": -0.1404569815836666,
+            "pull_from_anchor": -7.144334265463126e-06,
+            "posterior_sigma": 0.9869503839373097,
+            "unit_auxiliary_response": -0.0017496469476174067,
+            "auxiliary_variance": 3.0612644413069083e-06,
+            "conditional_postfit_np_impact": -0.0017727810598111514,
+            "correlation_with_mu": -0.0017305406235333096,
+            "injected_value": -0.1404569815836666
+          },
+          {
+            "name": "alpha_ATLAS_JET_EtaIntercalibration_TotalStat",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.007640176694872696,
+            "anchor": -0.007648503994642822,
+            "pull_from_anchor": 8.32729977012607e-06,
+            "posterior_sigma": 0.9927939910959609,
+            "unit_auxiliary_response": -0.0037778134846871655,
+            "auxiliary_variance": 1.4271874725084184e-05,
+            "conditional_postfit_np_impact": -0.003805234035025512,
+            "correlation_with_mu": -0.0037145659037922663,
+            "injected_value": -0.007648503994642822
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Composition_VBF",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.014331937673032,
+            "anchor": 0.014331822668362748,
+            "pull_from_anchor": 1.1500466925128128e-07,
+            "posterior_sigma": 0.9999379769771102,
+            "unit_auxiliary_response": -0.0012244183201881632,
+            "auxiliary_variance": 1.4992002228124034e-06,
+            "conditional_postfit_np_impact": -0.0012244942670241153,
+            "correlation_with_mu": -0.0011953179782925986,
+            "injected_value": 0.014331822668362748
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Composition_gg",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.017422113151887856,
+            "anchor": 0.017423997620057904,
+            "pull_from_anchor": -1.8844681700484756e-06,
+            "posterior_sigma": 0.9988729580762591,
+            "unit_auxiliary_response": -0.0027994226746801843,
+            "auxiliary_variance": 7.836767311513557e-06,
+            "conditional_postfit_np_impact": -0.0028025813013014436,
+            "correlation_with_mu": -0.002735803592787508,
+            "injected_value": 0.017423997620057904
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Composition_qq",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.25215843412414624,
+            "anchor": -0.25215796528748713,
+            "pull_from_anchor": -4.6883665910657513e-07,
+            "posterior_sigma": 0.9999988052777563,
+            "unit_auxiliary_response": 0.00011848632720079912,
+            "auxiliary_variance": 1.4039009733534829e-08,
+            "conditional_postfit_np_impact": 0.00011848646875921892,
+            "correlation_with_mu": 0.00011566326613884379,
+            "injected_value": -0.25215796528748713
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Response_VBF",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.009768089285374287,
+            "anchor": 0.009768298672678956,
+            "pull_from_anchor": -2.0938730466851796e-07,
+            "posterior_sigma": 0.999976323050644,
+            "unit_auxiliary_response": -0.0004151016804281248,
+            "auxiliary_variance": 1.7230940509425303e-07,
+            "conditional_postfit_np_impact": -0.0004151115090023005,
+            "correlation_with_mu": -0.00040522055763683506,
+            "injected_value": 0.009768298672678956
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Response_gg",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.11840991599659957,
+            "anchor": 0.1184043435613612,
+            "pull_from_anchor": 5.572435238368478e-06,
+            "posterior_sigma": 0.9936176298678765,
+            "unit_auxiliary_response": 0.00044960348709500113,
+            "auxiliary_variance": 2.0214329560798484e-07,
+            "conditional_postfit_np_impact": 0.0004524914550427068,
+            "correlation_with_mu": 0.00044170984364900464,
+            "injected_value": 0.1184043435613612
+          },
+          {
+            "name": "alpha_ATLAS_JET_Flavor_Response_qq",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.10600713265101191,
+            "anchor": 0.10604112307150722,
+            "pull_from_anchor": -3.3990420495302875e-05,
+            "posterior_sigma": 0.9763728508192211,
+            "unit_auxiliary_response": 0.0038475326703509972,
+            "auxiliary_variance": 1.4803507649418276e-05,
+            "conditional_postfit_np_impact": 0.003940638729479975,
+            "correlation_with_mu": 0.0038467442814174918,
+            "injected_value": 0.10604112307150722
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_DataVsMC_MC16",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.1402949029487802,
+            "anchor": 0.14029176956120792,
+            "pull_from_anchor": 3.1333875722683313e-06,
+            "posterior_sigma": 0.9814429472090077,
+            "unit_auxiliary_response": 0.013534742640256376,
+            "auxiliary_variance": 0.00018318925833797414,
+            "conditional_postfit_np_impact": 0.013790656582479901,
+            "correlation_with_mu": 0.013462063636736282,
+            "injected_value": 0.14029176956120792
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_1",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.2054137918757685,
+            "anchor": 0.2054180740919525,
+            "pull_from_anchor": -4.28221618400948e-06,
+            "posterior_sigma": 0.9603062665942455,
+            "unit_auxiliary_response": 0.007761555971215481,
+            "auxiliary_variance": 6.024175109431069e-05,
+            "conditional_postfit_np_impact": 0.008082375634954533,
+            "correlation_with_mu": 0.007889795129261266,
+            "injected_value": 0.2054180740919525
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_10",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.16682561075840183,
+            "anchor": 0.16683042291600403,
+            "pull_from_anchor": -4.812157602201994e-06,
+            "posterior_sigma": 0.9675844028574824,
+            "unit_auxiliary_response": -0.02842971485020937,
+            "auxiliary_variance": 0.0008082486864642151,
+            "conditional_postfit_np_impact": -0.029382154948188893,
+            "correlation_with_mu": -0.028682060011520936,
+            "injected_value": 0.16683042291600403
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_11",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.15228603386214992,
+            "anchor": -0.15227857729117547,
+            "pull_from_anchor": -7.456570974451182e-06,
+            "posterior_sigma": 0.989656814881491,
+            "unit_auxiliary_response": -0.016648199662774133,
+            "auxiliary_variance": 0.00027716255201159275,
+            "conditional_postfit_np_impact": -0.016822194737038935,
+            "correlation_with_mu": -0.016421368678507468,
+            "injected_value": -0.15227857729117547
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_12restTerm",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.5910615718576921,
+            "anchor": 0.5910609826563858,
+            "pull_from_anchor": 5.892013063002466e-07,
+            "posterior_sigma": 0.9663788283278988,
+            "unit_auxiliary_response": 0.02796343306296607,
+            "auxiliary_variance": 0.0007819535886669839,
+            "conditional_postfit_np_impact": 0.02893630555974669,
+            "correlation_with_mu": 0.028246833972520435,
+            "injected_value": 0.5910609826563858
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_2",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.5244430769906557,
+            "anchor": -0.5244483406962487,
+            "pull_from_anchor": 5.263705592950529e-06,
+            "posterior_sigma": 0.980431277622538,
+            "unit_auxiliary_response": 0.019515292351005672,
+            "auxiliary_variance": 0.0003808466355452205,
+            "conditional_postfit_np_impact": 0.019904803933151326,
+            "correlation_with_mu": 0.01943052788112109,
+            "injected_value": -0.5244483406962487
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_3",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.39138637327606807,
+            "anchor": -0.39138113700654226,
+            "pull_from_anchor": -5.236269525810133e-06,
+            "posterior_sigma": 0.9814852342637066,
+            "unit_auxiliary_response": -0.02029604536755834,
+            "auxiliary_variance": 0.00041192945756198635,
+            "conditional_postfit_np_impact": -0.02067891055211247,
+            "correlation_with_mu": -0.02018618969488222,
+            "injected_value": -0.39138113700654226
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_4",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.1476098203091471,
+            "anchor": -0.14761181526596834,
+            "pull_from_anchor": 1.994956821238514e-06,
+            "posterior_sigma": 0.9857502778782328,
+            "unit_auxiliary_response": 0.0041668273391084355,
+            "auxiliary_variance": 1.7362450073941485e-05,
+            "conditional_postfit_np_impact": 0.004227061795079862,
+            "correlation_with_mu": 0.004126342682920242,
+            "injected_value": -0.14761181526596834
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_5",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.08677329637514627,
+            "anchor": 0.08677161542753598,
+            "pull_from_anchor": 1.6809476102996879e-06,
+            "posterior_sigma": 0.9790849420474494,
+            "unit_auxiliary_response": -0.06285492159274587,
+            "auxiliary_variance": 0.003950741168430231,
+            "conditional_postfit_np_impact": -0.06419761850417646,
+            "correlation_with_mu": -0.06266796801597475,
+            "injected_value": 0.08677161542753598
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_6",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.1532962629979497,
+            "anchor": -0.15331022137535122,
+            "pull_from_anchor": 1.3958377401507294e-05,
+            "posterior_sigma": 0.9731176409952993,
+            "unit_auxiliary_response": 0.034050211735265984,
+            "auxiliary_variance": 0.0011594169192164453,
+            "conditional_postfit_np_impact": 0.03499084828062475,
+            "correlation_with_mu": 0.03415711379946846,
+            "injected_value": -0.15331022137535122
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_7",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.005580188996274842,
+            "anchor": -0.005582687942225458,
+            "pull_from_anchor": 2.498945950615665e-06,
+            "posterior_sigma": 0.9862725157760726,
+            "unit_auxiliary_response": -0.0021258857786895435,
+            "auxiliary_variance": 4.519390344034447e-06,
+            "conditional_postfit_np_impact": -0.002155475028133313,
+            "correlation_with_mu": -0.002104116060216517,
+            "injected_value": -0.005582687942225458
+          },
+          {
+            "name": "alpha_ATLAS_JET_JER_EffectiveNP_8",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.06452983790200258,
+            "anchor": 0.06453721028106192,
+            "pull_from_anchor": -7.372379059344958e-06,
+            "posterior_sigma": 0.9748092656843413,
+            "unit_auxiliary_response": -0.03285245286736775,
+            "auxiliary_variance": 0.0010792836594026196,
+            "conditional_postfit_np_impact": -0.033701416291221316,
+            "correlation_with_mu": -0.03289840538389924,
+            "injected_value": 0.06453721028106192
+          },
+          {
+            "name": "alpha_ATLAS_JET_Pileup_OffsetMu",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.11656338835096015,
+            "anchor": -0.11656782079264483,
+            "pull_from_anchor": 4.432441684673605e-06,
+            "posterior_sigma": 0.9498024994999527,
+            "unit_auxiliary_response": 0.01823251763851284,
+            "auxiliary_variance": 0.00033242469943868183,
+            "conditional_postfit_np_impact": 0.0191961146113132,
+            "correlation_with_mu": 0.018738724652449527,
+            "injected_value": -0.11656782079264483
+          },
+          {
+            "name": "alpha_ATLAS_JET_Pileup_OffsetNPV",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.06708779661585394,
+            "anchor": -0.06709631868640971,
+            "pull_from_anchor": 8.522070555766481e-06,
+            "posterior_sigma": 0.9863361155405705,
+            "unit_auxiliary_response": 0.007297984731685604,
+            "auxiliary_variance": 5.3260581143916194e-05,
+            "conditional_postfit_np_impact": 0.0073990849738741205,
+            "correlation_with_mu": 0.007222785381985114,
+            "injected_value": -0.06709631868640971
+          },
+          {
+            "name": "alpha_ATLAS_JET_Pileup_PtTerm",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.10568343223012759,
+            "anchor": 0.10567854754928957,
+            "pull_from_anchor": 4.884680838021516e-06,
+            "posterior_sigma": 0.9863092427368082,
+            "unit_auxiliary_response": -0.04540961687344533,
+            "auxiliary_variance": 0.0020620333045930908,
+            "conditional_postfit_np_impact": -0.04603993849580366,
+            "correlation_with_mu": -0.04494293496143889,
+            "injected_value": 0.10567854754928957
+          },
+          {
+            "name": "alpha_ATLAS_JET_Pileup_RhoTopology",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.28299498110521826,
+            "anchor": -0.2830171902434717,
+            "pull_from_anchor": 2.2209138253459493e-05,
+            "posterior_sigma": 0.9536896854365022,
+            "unit_auxiliary_response": 0.022141068105434376,
+            "auxiliary_variance": 0.0004902268968494834,
+            "conditional_postfit_np_impact": 0.02321621848652001,
+            "correlation_with_mu": 0.022663040646444955,
+            "injected_value": -0.2830171902434717
+          },
+          {
+            "name": "alpha_ATLAS_JET_PunchThrough_MC16",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.134880349203865,
+            "anchor": -0.13487922045620643,
+            "pull_from_anchor": -1.1287476585630785e-06,
+            "posterior_sigma": 0.992376626444185,
+            "unit_auxiliary_response": 0.003265746476740104,
+            "auxiliary_variance": 1.0665100050340402e-05,
+            "conditional_postfit_np_impact": 0.003290833731586061,
+            "correlation_with_mu": 0.0032124223272162284,
+            "injected_value": -0.13487922045620643
+          },
+          {
+            "name": "alpha_ATLAS_JET_SingleParticle_HighPt",
+            "constrained": true,
+            "group": "Jets",
+            "value": 0.3228551873418872,
+            "anchor": 0.32285615568563675,
+            "pull_from_anchor": -9.683437495744407e-07,
+            "posterior_sigma": 0.9925096955168636,
+            "unit_auxiliary_response": -0.01114528086812332,
+            "auxiliary_variance": 0.0001242172856293557,
+            "conditional_postfit_np_impact": -0.01122939243663434,
+            "correlation_with_mu": -0.0109618272835471,
+            "injected_value": 0.32285615568563675
+          },
+          {
+            "name": "alpha_ATLAS_JET_fJvtEfficiency",
+            "constrained": true,
+            "group": "Jets",
+            "value": -0.005776964886492945,
+            "anchor": -0.005777381020971576,
+            "pull_from_anchor": 4.1613447863096675e-07,
+            "posterior_sigma": 0.9940052237806648,
+            "unit_auxiliary_response": 0.0046147357829393176,
+            "auxiliary_variance": 2.1295786346340556e-05,
+            "conditional_postfit_np_impact": 0.004642566932784647,
+            "correlation_with_mu": 0.004531947490183655,
+            "injected_value": -0.005777381020971576
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_ISO_STAT",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.005363337267253222,
+            "anchor": -0.005380022274214398,
+            "pull_from_anchor": 1.668500696117535e-05,
+            "posterior_sigma": 0.9929432602265789,
+            "unit_auxiliary_response": -0.002009176070623703,
+            "auxiliary_variance": 4.036788482766904e-06,
+            "conditional_postfit_np_impact": -0.0020234550664709997,
+            "correlation_with_mu": -0.001975241766625925,
+            "injected_value": -0.005380022274214398
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_ISO_SYS",
+            "constrained": true,
+            "group": "Muons",
+            "value": 0.013243192085456235,
+            "anchor": 0.01325157930833714,
+            "pull_from_anchor": -8.38722288090503e-06,
+            "posterior_sigma": 0.968512875809775,
+            "unit_auxiliary_response": 0.005001659175671334,
+            "auxiliary_variance": 2.5016594509577244e-05,
+            "conditional_postfit_np_impact": 0.005164267095044492,
+            "correlation_with_mu": 0.005041216990271137,
+            "injected_value": 0.01325157930833714
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_RECO_STAT",
+            "constrained": true,
+            "group": "Muons",
+            "value": 0.07905869021629215,
+            "anchor": 0.07905516566432043,
+            "pull_from_anchor": 3.5245519717230778e-06,
+            "posterior_sigma": 0.9956973751285285,
+            "unit_auxiliary_response": -0.011290928975972201,
+            "auxiliary_variance": 0.00012748507714044867,
+            "conditional_postfit_np_impact": -0.011339719535280209,
+            "correlation_with_mu": -0.011069525594642313,
+            "injected_value": 0.07905516566432043
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_RECO_STAT_LOWPT",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.033510217581548415,
+            "anchor": -0.03351594202934102,
+            "pull_from_anchor": 5.724447792607168e-06,
+            "posterior_sigma": 0.9941795970622074,
+            "unit_auxiliary_response": 0.01331456781654671,
+            "auxiliary_variance": 0.0001772777161414214,
+            "conditional_postfit_np_impact": 0.013392517665712663,
+            "correlation_with_mu": 0.013073411261722389,
+            "injected_value": -0.03351594202934102
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_RECO_SYS",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.08958078124395867,
+            "anchor": -0.08958129247271916,
+            "pull_from_anchor": 5.112287604913668e-07,
+            "posterior_sigma": 0.9952663779100698,
+            "unit_auxiliary_response": -0.013420225360014458,
+            "auxiliary_variance": 0.0001801024487135752,
+            "conditional_postfit_np_impact": -0.013484053774824777,
+            "correlation_with_mu": -0.013162766320240197,
+            "injected_value": -0.08958129247271916
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_RECO_SYS_LOWPT",
+            "constrained": true,
+            "group": "Muons",
+            "value": 0.13046668698321157,
+            "anchor": 0.1304529439622378,
+            "pull_from_anchor": 1.3743020973761011e-05,
+            "posterior_sigma": 0.9697535249444448,
+            "unit_auxiliary_response": 0.012817854393391137,
+            "auxiliary_variance": 0.00016429739125017648,
+            "conditional_postfit_np_impact": 0.013217641455982794,
+            "correlation_with_mu": 0.012902701865120809,
+            "injected_value": 0.1304529439622378
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_TTVA_STAT",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.012015402872641648,
+            "anchor": -0.01202324902122427,
+            "pull_from_anchor": 7.84614858262249e-06,
+            "posterior_sigma": 0.9938383769790549,
+            "unit_auxiliary_response": 0.010713659140627725,
+            "auxiliary_variance": 0.00011478249218155601,
+            "conditional_postfit_np_impact": 0.0107800819416873,
+            "correlation_with_mu": 0.010523222606572189,
+            "injected_value": -0.01202324902122427
+          },
+          {
+            "name": "alpha_ATLAS_MUON_EFF_TTVA_SYS",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.03182942453734104,
+            "anchor": -0.03183018919150863,
+            "pull_from_anchor": 7.646541675884744e-07,
+            "posterior_sigma": 0.9913077755979892,
+            "unit_auxiliary_response": -0.005596239655311383,
+            "auxiliary_variance": 3.131789827967966e-05,
+            "conditional_postfit_np_impact": -0.005645309956270189,
+            "correlation_with_mu": -0.005510797939596287,
+            "injected_value": -0.03183018919150863
+          },
+          {
+            "name": "alpha_ATLAS_MUON_ID",
+            "constrained": true,
+            "group": "Muons",
+            "value": 0.2283487503816398,
+            "anchor": 0.22835454328809987,
+            "pull_from_anchor": -5.792906460078129e-06,
+            "posterior_sigma": 0.9844440207499323,
+            "unit_auxiliary_response": 0.008748187029564577,
+            "auxiliary_variance": 7.65307763042419e-05,
+            "conditional_postfit_np_impact": 0.008886424057815255,
+            "correlation_with_mu": 0.008674685317109163,
+            "injected_value": 0.22835454328809987
+          },
+          {
+            "name": "alpha_ATLAS_MUON_MS",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.10941842730585098,
+            "anchor": -0.10939223017060569,
+            "pull_from_anchor": -2.619713524529277e-05,
+            "posterior_sigma": 0.9540099399467427,
+            "unit_auxiliary_response": -0.009056001118016244,
+            "auxiliary_variance": 8.201115624951146e-05,
+            "conditional_postfit_np_impact": -0.009492564740490851,
+            "correlation_with_mu": -0.009266383355138786,
+            "injected_value": -0.10939223017060569
+          },
+          {
+            "name": "alpha_ATLAS_MUON_SAGITTA_RESBIAS",
+            "constrained": true,
+            "group": "Muons",
+            "value": 0.06391751013038759,
+            "anchor": 0.06392311095819282,
+            "pull_from_anchor": -5.60082780523552e-06,
+            "posterior_sigma": 0.9852881727263568,
+            "unit_auxiliary_response": -0.014624542855671484,
+            "auxiliary_variance": 0.00021387725373737184,
+            "conditional_postfit_np_impact": -0.014842909171643071,
+            "correlation_with_mu": -0.014489243976737745,
+            "injected_value": 0.06392311095819282
+          },
+          {
+            "name": "alpha_ATLAS_MUON_SAGITTA_RHO",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.17983470945227129,
+            "anchor": -0.17985368855946743,
+            "pull_from_anchor": 1.8979107196143152e-05,
+            "posterior_sigma": 0.9877084261681067,
+            "unit_auxiliary_response": -0.01213670976372437,
+            "auxiliary_variance": 0.00014729972388888244,
+            "conditional_postfit_np_impact": -0.012287745494699989,
+            "correlation_with_mu": -0.011994962735264085,
+            "injected_value": -0.17985368855946743
+          },
+          {
+            "name": "alpha_ATLAS_MUON_SCALE",
+            "constrained": true,
+            "group": "Muons",
+            "value": -0.03299524977126383,
+            "anchor": -0.033007124407602936,
+            "pull_from_anchor": 1.1874636339108402e-05,
+            "posterior_sigma": 0.9838115403068358,
+            "unit_auxiliary_response": 0.025846519521193576,
+            "auxiliary_variance": 0.0006680425713594406,
+            "conditional_postfit_np_impact": 0.026271819817373195,
+            "correlation_with_mu": 0.025645835506024044,
+            "injected_value": -0.033007124407602936
+          },
+          {
+            "name": "alpha_ATLAS_PRW_DATASF",
+            "constrained": true,
+            "group": "Pileup",
+            "value": -0.12506525107854563,
+            "anchor": -0.12507387314444077,
+            "pull_from_anchor": 8.622065895136366e-06,
+            "posterior_sigma": 0.9809082311220363,
+            "unit_auxiliary_response": 0.008137805655784973,
+            "auxiliary_variance": 6.62238808913259e-05,
+            "conditional_postfit_np_impact": 0.008296194687321913,
+            "correlation_with_mu": 0.008098519468998156,
+            "injected_value": -0.12507387314444077
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_CKKW_Norm",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.07692469698769248,
+            "anchor": -0.07691280906053558,
+            "pull_from_anchor": -1.1887927156908895e-05,
+            "posterior_sigma": 0.9956768751954365,
+            "unit_auxiliary_response": -0.010421926508293438,
+            "auxiliary_variance": 0.00010861655214426947,
+            "conditional_postfit_np_impact": -0.010467177422643035,
+            "correlation_with_mu": -0.010217773730922006,
+            "injected_value": -0.07691280906053558
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_CKKW_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.05370665506074008,
+            "anchor": -0.05370794411062541,
+            "pull_from_anchor": 1.2890498853335153e-06,
+            "posterior_sigma": 0.9964059488240237,
+            "unit_auxiliary_response": 0.06270649918146484,
+            "auxiliary_variance": 0.003932105039595051,
+            "conditional_postfit_np_impact": 0.06293268246287789,
+            "correlation_with_mu": 0.06143317187827699,
+            "injected_value": -0.05370794411062541
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_CSSKIN_Norm",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": 0.022173352990510008,
+            "anchor": 0.02213695675130676,
+            "pull_from_anchor": 3.6396239203248526e-05,
+            "posterior_sigma": 0.957370174516987,
+            "unit_auxiliary_response": -0.02950766112865571,
+            "auxiliary_variance": 0.0008707020652835791,
+            "conditional_postfit_np_impact": -0.030821579692038067,
+            "correlation_with_mu": -0.03008718727185808,
+            "injected_value": 0.02213695675130676
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_CSSKIN_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": 0.11606086483381207,
+            "anchor": 0.1160663436067429,
+            "pull_from_anchor": -5.478772930819775e-06,
+            "posterior_sigma": 0.7503510555876325,
+            "unit_auxiliary_response": 0.04129861029940697,
+            "auxiliary_variance": 0.0017055752126622836,
+            "conditional_postfit_np_impact": 0.055039051377177364,
+            "correlation_with_mu": 0.053727624041227495,
+            "injected_value": 0.1160663436067429
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_QSF_Norm",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": 0.3407986236183717,
+            "anchor": 0.3407344042972816,
+            "pull_from_anchor": 6.421932109013095e-05,
+            "posterior_sigma": 0.8342774516503967,
+            "unit_auxiliary_response": 0.054572992380921885,
+            "auxiliary_variance": 0.002978211497408158,
+            "conditional_postfit_np_impact": 0.06541348117819042,
+            "correlation_with_mu": 0.06385486006808362,
+            "injected_value": 0.3407344042972816
+          },
+          {
+            "name": "alpha_ATLAS_PS_ggZZ_QSF_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": 0.05926761908126506,
+            "anchor": 0.059269480005537625,
+            "pull_from_anchor": -1.8609242725675657e-06,
+            "posterior_sigma": 0.9901640302514011,
+            "unit_auxiliary_response": -0.1105784579585254,
+            "auxiliary_variance": 0.01222759536448537,
+            "conditional_postfit_np_impact": -0.11167690865365984,
+            "correlation_with_mu": -0.10901595888911658,
+            "injected_value": 0.059269480005537625
+          },
+          {
+            "name": "alpha_ATLAS_PS_qqZZ_CKKW_0Jet_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.1403118272050667,
+            "anchor": -0.14030285558831893,
+            "pull_from_anchor": -8.971616747788236e-06,
+            "posterior_sigma": 0.8995642704942654,
+            "unit_auxiliary_response": 0.0682640217281654,
+            "auxiliary_variance": 0.004659976662503437,
+            "conditional_postfit_np_impact": 0.07588565260674232,
+            "correlation_with_mu": 0.0740775088116597,
+            "injected_value": -0.14030285558831893
+          },
+          {
+            "name": "alpha_ATLAS_PS_qqZZ_CKKW_1Jet_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.10186103678059699,
+            "anchor": -0.10186427088424367,
+            "pull_from_anchor": 3.2341036466793094e-06,
+            "posterior_sigma": 0.9498524312563832,
+            "unit_auxiliary_response": 0.08068026620552603,
+            "auxiliary_variance": 0.006509305354994545,
+            "conditional_postfit_np_impact": 0.08493979017225771,
+            "correlation_with_mu": 0.08291591149058525,
+            "injected_value": -0.10186427088424367
+          },
+          {
+            "name": "alpha_ATLAS_PS_qqZZ_CKKW_2Jet_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.03243193760129573,
+            "anchor": -0.03243006194719348,
+            "pull_from_anchor": -1.8756541022499351e-06,
+            "posterior_sigma": 0.958683793021786,
+            "unit_auxiliary_response": 0.07393522836876572,
+            "auxiliary_variance": 0.005466417993941539,
+            "conditional_postfit_np_impact": 0.07712160037223613,
+            "correlation_with_mu": 0.07528400738344618,
+            "injected_value": -0.03243006194719348
+          },
+          {
+            "name": "alpha_ATLAS_PS_qqZZ_QSF_Shape",
+            "constrained": true,
+            "group": "Parton shower",
+            "value": -0.12881330079278036,
+            "anchor": -0.12882336170630523,
+            "pull_from_anchor": 1.0060913524873039e-05,
+            "posterior_sigma": 0.994372152424485,
+            "unit_auxiliary_response": 0.010985209560765456,
+            "auxiliary_variance": 0.00012067482909393278,
+            "conditional_postfit_np_impact": 0.01104738254584186,
+            "correlation_with_mu": 0.01078415418163862,
+            "injected_value": -0.12882336170630523
+          },
+          {
+            "name": "alpha_ATLAS_QCD_ggZZk_Norm",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.1686227306011674,
+            "anchor": -0.16861745829715225,
+            "pull_from_anchor": -5.272304015147e-06,
+            "posterior_sigma": 0.9175499048117155,
+            "unit_auxiliary_response": -0.0414843501456845,
+            "auxiliary_variance": 0.0017209513070097539,
+            "conditional_postfit_np_impact": -0.04521209138395283,
+            "correlation_with_mu": -0.044134813141091155,
+            "injected_value": -0.16861745829715225
+          },
+          {
+            "name": "alpha_ATLAS_QCD_ggZZk_Shape",
+            "constrained": true,
+            "group": "Higher-order theory",
+            "value": -0.027404662150209914,
+            "anchor": -0.027405040809517587,
+            "pull_from_anchor": 3.7865930767322364e-07,
+            "posterior_sigma": 0.9935655435754324,
+            "unit_auxiliary_response": -0.040868105931328905,
+            "auxiliary_variance": 0.0016702020824143208,
+            "conditional_postfit_np_impact": -0.041132772966604156,
+            "correlation_with_mu": -0.04015269352260792,
+            "injected_value": -0.027405040809517587
+          },
+          {
+            "name": "alpha_ATLAS_VBF_PDF",
+            "constrained": true,
+            "group": "Parton distributions",
+            "value": -0.06004397790554982,
+            "anchor": -0.060044401992476626,
+            "pull_from_anchor": 4.240869268049008e-07,
+            "posterior_sigma": 0.9952689142366993,
+            "unit_auxiliary_response": -0.013160892792598623,
+            "auxiliary_variance": 0.00017320909909827436,
+            "conditional_postfit_np_impact": -0.013223454087975907,
+            "correlation_with_mu": -0.012908375998279023,
+            "injected_value": -0.060044401992476626
+          },
+          {
+            "name": "alpha_ATLAS_alpha_LUMI",
+            "constrained": true,
+            "group": "Luminosity",
+            "value": -0.018025024406146874,
+            "anchor": -0.018027369175815676,
+            "pull_from_anchor": 2.34476966880226e-06,
+            "posterior_sigma": 0.9978360919696858,
+            "unit_auxiliary_response": -0.007885853678212427,
+            "auxiliary_variance": 6.218668823417647e-05,
+            "conditional_postfit_np_impact": -0.007902954945883035,
+            "correlation_with_mu": -0.00771464953560649,
+            "injected_value": -0.018027369175815676
+          },
+          {
+            "name": "alpha_ATLAS_gg_PDF",
+            "constrained": true,
+            "group": "Parton distributions",
+            "value": -0.02268981153328412,
+            "anchor": -0.022688883871739694,
+            "pull_from_anchor": -9.276615444246683e-07,
+            "posterior_sigma": 0.9975599905510847,
+            "unit_auxiliary_response": -0.01323010620415095,
+            "auxiliary_variance": 0.00017503571017311347,
+            "conditional_postfit_np_impact": -0.013262466748332808,
+            "correlation_with_mu": -0.012946459095571882,
+            "injected_value": -0.022688883871739694
+          },
+          {
+            "name": "alpha_ATLAS_qq_PDF_0Jet",
+            "constrained": true,
+            "group": "Parton distributions",
+            "value": -0.051204918388977984,
+            "anchor": -0.05120431569315561,
+            "pull_from_anchor": -6.026958223742662e-07,
+            "posterior_sigma": 0.9955281917957147,
+            "unit_auxiliary_response": 0.0025645858441443728,
+            "auxiliary_variance": 6.577100551985705e-06,
+            "conditional_postfit_np_impact": 0.0025761056947251506,
+            "correlation_with_mu": 0.0025147242692858387,
+            "injected_value": -0.05120431569315561
+          },
+          {
+            "name": "alpha_ATLAS_qq_PDF_1Jet",
+            "constrained": true,
+            "group": "Parton distributions",
+            "value": 0.10878545163036192,
+            "anchor": 0.1087839272016293,
+            "pull_from_anchor": 1.5244287326215966e-06,
+            "posterior_sigma": 0.9959517629823315,
+            "unit_auxiliary_response": -0.009323483292613807,
+            "auxiliary_variance": 8.69273407076488e-05,
+            "conditional_postfit_np_impact": -0.009361380379201365,
+            "correlation_with_mu": -0.009138324751890897,
+            "injected_value": 0.1087839272016293
+          },
+          {
+            "name": "alpha_ATLAS_qq_PDF_2Jet",
+            "constrained": true,
+            "group": "Parton distributions",
+            "value": 0.09655515992366119,
+            "anchor": 0.09655544157380544,
+            "pull_from_anchor": -2.8165014424874624e-07,
+            "posterior_sigma": 0.9922019249055728,
+            "unit_auxiliary_response": -0.015107067086605475,
+            "auxiliary_variance": 0.00022822347595919843,
+            "conditional_postfit_np_impact": -0.015225799010663283,
+            "correlation_with_mu": -0.014863010617065677,
+            "injected_value": 0.09655544157380544
+          },
+          {
+            "name": "mu_qqZZ",
+            "constrained": false,
+            "group": "Unconstrained qqZZ",
+            "value": 1.1209884876699219,
+            "anchor": null,
+            "pull_from_anchor": null,
+            "posterior_sigma": 0.04619327666548993,
+            "unit_auxiliary_response": null,
+            "auxiliary_variance": null,
+            "conditional_postfit_np_impact": -0.08218897194633246,
+            "correlation_with_mu": -0.08023063760322402,
+            "injected_value": 1.1209918827889147
+          },
+          {
+            "name": "mu_qqZZ_1",
+            "constrained": false,
+            "group": "Unconstrained qqZZ",
+            "value": 0.8458333163812973,
+            "anchor": null,
+            "pull_from_anchor": null,
+            "posterior_sigma": 0.048883862331105955,
+            "unit_auxiliary_response": null,
+            "auxiliary_variance": null,
+            "conditional_postfit_np_impact": -0.03729971214910267,
+            "correlation_with_mu": -0.03641096387108133,
+            "injected_value": 0.8458265070196692
+          },
+          {
+            "name": "mu_qqZZ_2",
+            "constrained": false,
+            "group": "Unconstrained qqZZ",
+            "value": 0.8995398052200761,
+            "anchor": null,
+            "pull_from_anchor": null,
+            "posterior_sigma": 0.07514250207421973,
+            "unit_auxiliary_response": null,
+            "auxiliary_variance": null,
+            "conditional_postfit_np_impact": -0.016878860956901096,
+            "correlation_with_mu": -0.016476684700139597,
+            "injected_value": 0.8995451014107498
+          }
+        ],
+        "conditional_diagnostics": {
+          "qqzz_block_profiling_variance_penalty": 0.011666777781763279,
+          "alpha_block_profiling_variance_penalty": 0.1281167041012904,
+          "alpha_fixed_sigma": 0.9598420207103244,
+          "note": "Freeze/float penalties are conditional diagnostics, not additive physical-source uncertainties."
+        },
+        "covariance_quality": 3,
+        "hesse_status": 0,
+        "hesse_seconds": 3161.8385805101134,
+        "maximum_step_relative_difference": 6.60493528923109e-07,
+        "input_sha256": "783c3dc31718ee2a3bcf2cd11036a37b3136856ae54fff0a01f52746a888ee83",
+        "source_sha256": {
+          "covariance.json": "dde322b940218dcf6ecd9199e724a584b817c58c292aa5300354e4b2fe80c8af",
+          "observation_response.json": "5bf9899a294a982584b980fee2db2635b0e18475f82f7d30f5ff88042b0059d4",
+          "curvature_validation.json": "0cbd64ab4049b32e854f9f43436145e2df40fbba7a8e8d24dcd5971198858798"
+        },
+        "negative_rows": 2,
+        "quadrature": {
+          "reference_events": 8192,
+          "negative_rows": 2,
+          "negative_weight_sum": -0.4244201134669939,
+          "positive_weight_sum": 3811.365940237251,
+          "signed_variance_contributions": {
+            "SR": {
+              "positive": 0.9687433844513657,
+              "negative": -0.0008782151091810143
+            },
+            "CR0": {
+              "positive": 1.7852112970027692e-06,
+              "negative": 0.0
+            },
+            "CR1": {
+              "positive": 6.392875388453024e-05,
+              "negative": 0.0
+            },
+            "CR2": {
+              "positive": 0.002641351396458076,
+              "negative": 0.0
+            }
+          }
+        },
+        "primary_variance_convention": "Signed quadrature approximation to the population Poisson score integral; negative rows are integration coefficients, not negative Poisson variances. No absolute-value replacement, clipping or SumW2 correction.",
+        "maximum_absolute_pull_from_asimov": 6.421932109013095e-05,
+        "reused_covariance": false
+      }
+    },
+    "displayed_nps": [
+      "alpha_ATLAS_PS_ggZZ_QSF_Shape",
+      "alpha_ATLAS_EG_SCALE_ALL",
+      "alpha_ATLAS_PS_qqZZ_CKKW_1Jet_Shape",
+      "alpha_ATLAS_PS_qqZZ_CKKW_2Jet_Shape",
+      "alpha_ATLAS_PS_qqZZ_CKKW_0Jet_Shape",
+      "alpha_ATLAS_HOEW_QCD_2Jet",
+      "alpha_ATLAS_JET_JER_EffectiveNP_5",
+      "alpha_ATLAS_PS_ggZZ_CKKW_Shape",
+      "alpha_ATLAS_PS_ggZZ_QSF_Norm",
+      "alpha_ATLAS_HOQCD_2Jet",
+      "alpha_ATLAS_JET_Pileup_PtTerm",
+      "alpha_ATLAS_EL_EFF_ID_SIMPLIFIED_UncorrUncertaintyNP4",
+      "alpha_ATLAS_PS_ggZZ_CSSKIN_Shape",
+      "alpha_ATLAS_QCD_ggZZk_Norm",
+      "alpha_ATLAS_QCD_ggZZk_Shape"
+    ],
+    "reference": "https://arxiv.org/abs/2608.15312",
+    "source_definition": "V[mu,alpha]^2 for each independent unit Gaussian auxiliary; primary score integral propagated with V[:,mu]",
+    "pull_definition": "alpha_hat minus the actual Asimov auxiliary center; original-nominal-coordinate view separately shows injected data-fit shifts",
+    "closure_policy": "Report source and observed-Hesse totals and directional checks separately; never rescale to enforce closure",
+    "signed_quadrature_policy": "8192 primary source terms approximate the population score integral; negative integration weights are preserved and are not interpreted as negative Poisson variances",
+    "observed_fit_sha256": "4ecdccbde155988c48183f843ac8759cf9961cbcd408a094e8d97768fee7be70"
+  },
+  "native_workspace": {
+    "source_basename": "HZZ_4l_offshell_v2.root",
+    "source_sha256": "e0daa756e1b3addf6078315705ce51427f020aeb043c2cee5062a0cad9b1c9eb",
+    "root_version": "6.34.10",
+    "workspace": "combined",
+    "dataset": "obsData_4l_offshell",
+    "data_rows": 2077,
+    "sum_weights": 3837.0,
+    "channels": {
+      "CR0": {
+        "rows": 1,
+        "count": 1377.0
+      },
+      "CR1": {
+        "rows": 1,
+        "count": 231.0
+      },
+      "CR2": {
+        "rows": 1,
+        "count": 155.0
+      },
+      "SR": {
+        "rows": 2074,
+        "count": 2074.0
+      }
+    },
+    "model_config_sets": {
+      "observables": {
+        "count": 13,
+        "names": [
+          "obs_CR0",
+          "obs_CR1",
+          "obs_CR2",
+          "r_S",
+          "r_SBI",
+          "r_B",
+          "r_EWB",
+          "r_EWSBI",
+          "r_EWSBI10",
+          "r_qqZZ_0",
+          "r_qqZZ_1",
+          "r_qqZZ_2",
+          "r_ttV"
+        ]
+      },
+      "parameters_of_interest": {
+        "count": 4,
+        "names": [
+          "mu",
+          "mu_qqZZ",
+          "mu_qqZZ_1",
+          "mu_qqZZ_2"
+        ]
+      },
+      "nuisances": {
+        "count": 127
+      },
+      "global_observables": {
+        "count": 127
+      },
+      "conditional_observables": {
+        "count": 0,
+        "names": []
+      },
+      "external_constraints": {
+        "count": 0,
+        "names": []
+      }
+    },
+    "pdf_classes": {
+      "RooProdPdf": 5,
+      "RooAddPdf": 4,
+      "RooWrapperPdf": 10,
+      "RooGaussian": 127,
+      "RooUniform": 24,
+      "RooSimultaneous": 1
+    },
+    "function_classes": {
+      "RooProduct": 75,
+      "RooRatio": 10,
+      "PiecewiseInterpolation": 10,
+      "RooStats::HistFactory::FlexibleInterpVar": 34,
+      "RooAddition": 1,
+      "RooFormulaVar": 44
+    },
+    "selected_nodes": {
+      "simPdf": {
+        "class": "RooSimultaneous",
+        "servers": [
+          "cat",
+          "constrainedCR0",
+          "constrainedCR1",
+          "constrainedCR2",
+          "pdf_SR_4l_offshell"
+        ],
+        "server_count": 5
+      },
+      "pdf_SR_4l_offshell": {
+        "class": "RooProdPdf",
+        "servers": [
+          "pdfSRUnc",
+          "constraintPdf"
+        ],
+        "server_count": 2
+      },
+      "pdfSRUnc": {
+        "class": "RooAddPdf",
+        "servers": [
+          "pdf_process_S",
+          "nfFactor_S",
+          "pdf_process_SBI",
+          "nfFactor_SBI",
+          "pdf_process_B",
+          "nfFactor_B",
+          "pdf_process_EWB",
+          "nfFactor_EWB",
+          "pdf_process_EWSBI",
+          "nfFactor_EWSBI",
+          "pdf_process_EWSBI10",
+          "nfFactor_EWSBI10",
+          "pdf_process_qqZZ_0",
+          "nfFactor_qqZZ_0",
+          "pdf_process_qqZZ_1",
+          "nfFactor_qqZZ_1",
+          "pdf_process_qqZZ_2",
+          "nfFactor_qqZZ_2",
+          "pdf_process_ttV",
+          "nfFactor_ttV"
+        ],
+        "server_count": 20
+      },
+      "pdf_process_S": {
+        "class": "RooWrapperPdf",
+        "servers": [
+          "prod_process_S"
+        ],
+        "server_count": 1,
+        "self_normalized": true
+      },
+      "prod_process_S": {
+        "class": "RooProduct",
+        "servers": [
+          "s_factor_S",
+          "dummyFactor",
+          "r_S"
+        ],
+        "server_count": 3
+      },
+      "s_factor_S": {
+        "class": "RooRatio",
+        "servers": [
+          "s_factor_S_nr",
+          "s_factor_S_dr"
+        ],
+        "server_count": 2
+      },
+      "s_factor_S_nr": {
+        "class": "RooProduct",
+        "servers": [
+          "piecewise_interp_S"
+        ],
+        "server_count": 1
+      },
+      "s_factor_S_dr": {
+        "class": "RooProduct",
+        "servers": [
+          "mod_S"
+        ],
+        "server_count": 1
+      },
+      "piecewise_interp_S": {
+        "class": "PiecewiseInterpolation",
+        "servers": [
+          "1",
+          "var_ATLAS_alpha_LUMI_ratio_S_down",
+          "var_ATLAS_EG_RESOLUTION_ALL_ratio_S_down",
+          "var_ATLAS_EG_SCALE_AF2_ratio_S_down",
+          "var_ATLAS_EG_SCALE_ALL_ratio_S_down",
+          "var_ATLAS_EL_EFF_ID_CorrUncertaintyNP0_ratio_S_down"
+        ],
+        "server_count": 382,
+        "servers_truncated": true,
+        "interpolation_codes": [
+          5
+        ]
+      },
+      "mod_S": {
+        "class": "RooStats::HistFactory::FlexibleInterpVar",
+        "servers": [
+          "alpha_ATLAS_alpha_LUMI",
+          "alpha_ATLAS_EG_RESOLUTION_ALL",
+          "alpha_ATLAS_EG_SCALE_AF2",
+          "alpha_ATLAS_EG_SCALE_ALL",
+          "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP0",
+          "alpha_ATLAS_EL_EFF_ID_CorrUncertaintyNP1"
+        ],
+        "server_count": 127,
+        "servers_truncated": true,
+        "interpolation_codes": [
+          4
+        ]
+      },
+      "nfFactor_S": {
+        "class": "RooProduct",
+        "servers": [
+          "nu_SR_S",
+          "f_s"
+        ],
+        "server_count": 2
+      },
+      "nfFactor_SBI": {
+        "class": "RooProduct",
+        "servers": [
+          "nu_SR_SBI",
+          "f_sbi"
+        ],
+        "server_count": 2
+      },
+      "nfFactor_B": {
+        "class": "RooProduct",
+        "servers": [
+          "nu_SR_B",
+          "f_b"
+        ],
+        "server_count": 2
+      },
+      "nfFactor_EWB": {
+        "class": "RooProduct",
+        "servers": [
+          "nu_SR_EWB",
+          "f_ewb"
+        ],
+        "server_count": 2
+      },
+      "nfFactor_EWSBI": {
+        "class": "RooProduct",
+        "servers": [
+          "nu_SR_EWSBI",
+          "f_ewsbi"
+        ],
+        "server_count": 2
+      },
+      "nfFactor_EWSBI10": {
+        "class": "RooProduct",
+        "servers": [
+          "nu_SR_EWSBI10",
+          "f_ewsbi10"
+        ],
+        "server_count": 2
+      },
+      "nfFactor_qqZZ_0": {
+        "class": "RooProduct",
+        "servers": [
+          "nu_SR_qqZZ_0",
+          "f_qqZZ_0"
+        ],
+        "server_count": 2
+      },
+      "nfFactor_qqZZ_1": {
+        "class": "RooProduct",
+        "servers": [
+          "nu_SR_qqZZ_1",
+          "f_qqZZ_1"
+        ],
+        "server_count": 2
+      },
+      "nfFactor_qqZZ_2": {
+        "class": "RooProduct",
+        "servers": [
+          "nu_SR_qqZZ_2",
+          "f_qqZZ_2"
+        ],
+        "server_count": 2
+      },
+      "nfFactor_ttV": {
+        "class": "RooProduct",
+        "servers": [
+          "nu_SR_ttV",
+          "f_ttV"
+        ],
+        "server_count": 2
+      },
+      "nominal_yield_SR_S": {
+        "class": "RooFormulaVar",
+        "servers": [
+          "40.8622",
+          "ATLAS_LUMI"
+        ],
+        "server_count": 2,
+        "formula": "@0*@1/140.1"
+      },
+      "constraintPdf": {
+        "class": "RooProdPdf",
+        "servers": [
+          "gauss_ATLAS_alpha_LUMI",
+          "gauss_ATLAS_EG_RESOLUTION_ALL",
+          "gauss_ATLAS_EG_SCALE_AF2",
+          "gauss_ATLAS_EG_SCALE_ALL",
+          "gauss_ATLAS_EL_EFF_ID_CorrUncertaintyNP0",
+          "gauss_ATLAS_EL_EFF_ID_CorrUncertaintyNP1"
+        ],
+        "server_count": 127,
+        "servers_truncated": true
+      },
+      "gauss_ATLAS_EG_SCALE_ALL": {
+        "class": "RooGaussian",
+        "servers": [
+          "nom_ATLAS_EG_SCALE_ALL",
+          "alpha_ATLAS_EG_SCALE_ALL",
+          "1"
+        ],
+        "server_count": 3
+      },
+      "pdf_CR0": {
+        "class": "RooAddPdf",
+        "servers": [
+          "pdf_S_CR0",
+          "nu_CR0_S",
+          "pdf_SBI_CR0",
+          "nu_CR0_SBI",
+          "pdf_B_CR0",
+          "nu_CR0_B",
+          "pdf_EWB_CR0",
+          "nu_CR0_EWB",
+          "pdf_EWSBI_CR0",
+          "nu_CR0_EWSBI",
+          "pdf_EWSBI10_CR0",
+          "nu_CR0_EWSBI10",
+          "pdf_qqZZ_CR0",
+          "nu_CR0_qqZZ",
+          "pdf_ttV_CR0",
+          "nu_CR0_ttV"
+        ],
+        "server_count": 16
+      },
+      "constrainedCR0": {
+        "class": "RooProdPdf",
+        "servers": [
+          "pdf_CR0",
+          "constraintPdf"
+        ],
+        "server_count": 2
+      },
+      "nu_CR0_qqZZ": {
+        "class": "RooProduct",
+        "servers": [
+          "n_CR0_qqZZ",
+          "interpFactor_CR0_qqZZ"
+        ],
+        "server_count": 2
+      }
+    },
+    "formula_nodes": {
+      "nominal_yield_SR_S": {
+        "formula": "@0*@1/140.1",
+        "servers": [
+          "40.8622",
+          "ATLAS_LUMI"
+        ]
+      },
+      "f_s": {
+        "formula": "@0 - sqrt(@0)",
+        "servers": [
+          "mu"
+        ]
+      },
+      "nominal_yield_SR_SBI": {
+        "formula": "@0*@1/140.1",
+        "servers": [
+          "398.342",
+          "ATLAS_LUMI"
+        ]
+      },
+      "f_sbi": {
+        "formula": "sqrt(@0)",
+        "servers": [
+          "mu"
+        ]
+      },
+      "nominal_yield_SR_B": {
+        "formula": "@0*@1/140.1",
+        "servers": [
+          "408.455",
+          "ATLAS_LUMI"
+        ]
+      },
+      "f_b": {
+        "formula": "1.0 - sqrt(@0)",
+        "servers": [
+          "mu"
+        ]
+      },
+      "nominal_yield_SR_EWB": {
+        "formula": "@0*@1/140.1",
+        "servers": [
+          "29.9842",
+          "ATLAS_LUMI"
+        ]
+      },
+      "f_ewb": {
+        "formula": "(1.0/(-10.0+sqrt(10.0)))*((1.0-sqrt(10.0))*@0+9.0*sqrt(@0)-10.0+sqrt(10.0))",
+        "servers": [
+          "mu"
+        ]
+      },
+      "nominal_yield_SR_EWSBI": {
+        "formula": "@0*@1/140.1",
+        "servers": [
+          "25.7514",
+          "ATLAS_LUMI"
+        ]
+      },
+      "f_ewsbi": {
+        "formula": "(1.0/(-10.0+sqrt(10.0)))*(sqrt(10.0)*@0-10.0*sqrt(@0))",
+        "servers": [
+          "mu"
+        ]
+      },
+      "nominal_yield_SR_EWSBI10": {
+        "formula": "@0*@1/140.1",
+        "servers": [
+          "55.3522",
+          "ATLAS_LUMI"
+        ]
+      },
+      "f_ewsbi10": {
+        "formula": "(1.0/(-10.0+sqrt(10.0)))*(-(@0)+sqrt(@0))",
+        "servers": [
+          "mu"
+        ]
+      },
+      "nominal_yield_SR_qqZZ_0": {
+        "formula": "@0*@1/140.1",
+        "servers": [
+          "723.948",
+          "ATLAS_LUMI"
+        ]
+      },
+      "f_qqZZ_0": {
+        "formula": "@0",
+        "servers": [
+          "mu_qqZZ"
+        ]
+      },
+      "nominal_yield_SR_qqZZ_1": {
+        "formula": "@0*@1/140.1",
+        "servers": [
+          "559.266",
+          "ATLAS_LUMI"
+        ]
+      },
+      "f_qqZZ_1": {
+        "formula": "@0*@1",
+        "servers": [
+          "mu_qqZZ",
+          "mu_qqZZ_1"
+        ]
+      },
+      "nominal_yield_SR_qqZZ_2": {
+        "formula": "@0*@1/140.1",
+        "servers": [
+          "305.385",
+          "ATLAS_LUMI"
+        ]
+      },
+      "f_qqZZ_2": {
+        "formula": "@0*@1*@2",
+        "servers": [
+          "mu_qqZZ",
+          "mu_qqZZ_1",
+          "mu_qqZZ_2"
+        ]
+      },
+      "nominal_yield_SR_ttV": {
+        "formula": "@0*@1/140.1",
+        "servers": [
+          "75.7874",
+          "ATLAS_LUMI"
+        ]
+      },
+      "f_ttV": {
+        "formula": "@0",
+        "servers": [
+          "1"
+        ]
+      },
+      "n_CR0_S": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_s",
+          "0.971801"
+        ]
+      },
+      "n_CR0_SBI": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_sbi",
+          "201.285"
+        ]
+      },
+      "n_CR0_B": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_b",
+          "201.457"
+        ]
+      },
+      "n_CR0_EWB": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ewb",
+          "0.249443"
+        ]
+      },
+      "n_CR0_EWSBI": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ewsbi",
+          "0.424941"
+        ]
+      },
+      "n_CR0_EWSBI10": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ewsbi10",
+          "0.503326"
+        ]
+      },
+      "n_CR0_qqZZ": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_qqZZ_0",
+          "1069"
+        ]
+      },
+      "n_CR0_ttV": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ttV",
+          "1.79871"
+        ]
+      },
+      "n_CR1_S": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_s",
+          "0.293853"
+        ]
+      },
+      "n_CR1_SBI": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_sbi",
+          "57.2214"
+        ]
+      },
+      "n_CR1_B": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_b",
+          "57.25"
+        ]
+      },
+      "n_CR1_EWB": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ewb",
+          "0.960854"
+        ]
+      },
+      "n_CR1_EWSBI": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ewsbi",
+          "0.958734"
+        ]
+      },
+      "n_CR1_EWSBI10": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ewsbi10",
+          "1.14812"
+        ]
+      },
+      "n_CR1_qqZZ": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_qqZZ_1",
+          "196.828"
+        ]
+      },
+      "n_CR1_ttV": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ttV",
+          "2.39372"
+        ]
+      },
+      "n_CR2_S": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_s",
+          "0.418159"
+        ]
+      },
+      "n_CR2_SBI": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_sbi",
+          "26.5074"
+        ]
+      },
+      "n_CR2_B": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_b",
+          "27.0421"
+        ]
+      },
+      "n_CR2_EWB": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ewb",
+          "12.9907"
+        ]
+      },
+      "n_CR2_EWSBI": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ewsbi",
+          "12.4546"
+        ]
+      },
+      "n_CR2_EWSBI10": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ewsbi10",
+          "12.7671"
+        ]
+      },
+      "n_CR2_qqZZ": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_qqZZ_2",
+          "125.941"
+        ]
+      },
+      "n_CR2_ttV": {
+        "formula": "@0*@1*@2/140.1",
+        "servers": [
+          "ATLAS_LUMI",
+          "f_ttV",
+          "17.4437"
+        ]
+      }
+    },
+    "global_observations_all_zero": true,
+    "dataset_columns": 2554,
+    "scope": "Aggregate graph inspection of the supplied file; not the original production builder and no event values exported"
+  },
+  "artifact_sha256": {
+    "assets/summary_data_like_4096_pruned54_resources.pdf": "8c497437364857db47d6e0b51b6a19c8eeeb777b538189cfa13b77d3416aa923",
+    "assets/summary_data_like_4096_pruned54_resources.svg": "4c4842d9c627ccd568306fa2e7a0b06da1a970b352bf3e6dcc8de49072083825",
+    "assets/summary_data_like_4096_unpruned_resources.pdf": "66b65003197dc53d82136c3c21ab8e4bc0257ba2e8f92a76b1e515e4fbb09ab7",
+    "assets/summary_data_like_4096_unpruned_resources.svg": "5fb8ad5adba7429a43d5c4fbd1486d0e1dbc6bad3233d53f3be4c2096a58ff70",
+    "assets/summary_data_like_8192_pruned54_resources.pdf": "76be41d0a386f6c2e54b0beafca16586780141e2d82ae97b3bb4dd0ba150afe8",
+    "assets/summary_data_like_8192_pruned54_resources.svg": "9cab27d1b3025b0c160ec3ca1eaa3b48ecc1c3242b30e59288d371b11ccc2c40",
+    "assets/summary_data_like_8192_unpruned_resources.pdf": "443380f590bfca543db4c80968e9858e3ccac541e75e1adb19e538c86981c63b",
+    "assets/summary_data_like_8192_unpruned_resources.svg": "026505913fce21a141b4128af7a287aecf14d85bde1f85f2fe25f673cb6584b1",
+    "assets/summary_historical_resource_comparison.pdf": "6ac9778ba24f9b2cca3c80c61c7a2a35b4dc31d6781b26f8094189fee02ba8ad",
+    "assets/summary_historical_resource_comparison.svg": "00e05e35639debc3af6723d1b47ebfc40fe4c2ff6cf0ec611d2efc73bd65d996",
+    "assets/summary_true_4096_unpruned_resources.pdf": "6daeae443b4ad4970abb8739295cf33e49246a3780146372f977a7bf0f130bc9",
+    "assets/summary_true_4096_unpruned_resources.svg": "5cb5f5af07843f6b1cea2f44ccf00a69d93a2d93a1f9d20da84d15b3fb951cc1",
+    "assets/summary_true_8192_unpruned_resources.pdf": "f1286af8b474b708c51a4c122bf87deab93ea63a55da05b9b2c9b33c2b154206",
+    "assets/summary_true_8192_unpruned_resources.svg": "605540ab5b45d25c036ce2463382ca5efc06e2266d862d2648fede9d28f2627e",
+    "data/summary_all_computed_profiles.csv": "23129ea4100636f8e366f746de372769d3bc0e7ff0557ce13489c191bfc9b194",
+    "data/summary_data_like_4096_pruned54_resources.csv": "8bb89e0b256df9bab7364783d6fbdb71446596e6991947f874c1790d0accb9a5",
+    "data/summary_data_like_4096_unpruned_resources.csv": "61a091936711ea6ed62947371a11ec768db991d888d001400ab7663cb350b0b0",
+    "data/summary_data_like_8192_pruned54_resources.csv": "f96fb1d30bc239932fd7a559a53084452b2c48809ce8908b1c700bd3226107f3",
+    "data/summary_data_like_8192_unpruned_resources.csv": "4a9edd79f43fb05fd13aac95a4cea6ed5081970797f1dc2b677d68a308ad5c74",
+    "data/summary_resource_summary.csv": "89f9603632ec58471c1f6c10ac4ff3e7c503a54765a69fce37d28830baa50edc",
+    "data/summary_slurm_jobs.csv": "5db527771ea7f8649cf261efe803d7d7756c166525d7285ddf53adf0812d38ab",
+    "data/summary_true_4096_unpruned_resources.csv": "85d526b4fe27ea3bf21878a9094f314efaad0f0620ffe4a116c9c8786773c259",
+    "data/summary_true_8192_unpruned_resources.csv": "6641a4a1e4bd8fc5c7c0092b294e65b8aa7a29e4bbc4868eb695d7ca6c1fe545",
+    "data/summary_all_np_ranking_4096_8192.csv": "5e4a1139cd2e8cb7b7884082ed905ea0ca22a2945df5196774531ee4bdd4b40d",
+    "data/summary_data_like_4096_all_nps.csv": "8dcbc04c425620d8d30c232c8b67f103e0138b707a160f77b234a01d273af391",
+    "assets/summary_data_like_4096_auxiliary_impacts.pdf": "7d7756f2496e1df4e7d7902ab593fd0bead01b9ffaac683aa44f5596f6af36db",
+    "assets/summary_data_like_4096_auxiliary_impacts.svg": "884518bbfdacd5c4eaba4a1a29715676fd3ad8af68053d804b09795032bb79f9",
+    "data/summary_data_like_4096_covariance.csv": "3fd38056bc1a757b7f01a54a21fe6f8d45f861d43d1ce318b63dc477989b8c39",
+    "assets/summary_data_like_4096_pulls_asimov.pdf": "cd93c3346ec4cb172cb2a622937c35e1165499fdcd97d585dfcb34d443d1c4c6",
+    "assets/summary_data_like_4096_pulls_asimov.svg": "2a46210ccff391374dbc819494e1b9eeaeba2caa382ae9cffbaaab4111ef9edf",
+    "assets/summary_data_like_4096_pulls_nominal.pdf": "833ff9259d4868c59991333b1aaa9d8e28b01652d11d3106715737e22058da45",
+    "assets/summary_data_like_4096_pulls_nominal.svg": "2834dfecd35552731364c92a9d6f73df97d006c68d79fe168fe15d606da9ca77",
+    "assets/summary_data_like_4096_source_groups.pdf": "400e5f0796e0371ede0a8cfa4ff2c5f7e186bc6c3dff49b58d8b59d5946aec50",
+    "assets/summary_data_like_4096_source_groups.svg": "bd074f38fbcc0d75458927016268c0a1080b7730d34ba63faa55ab38c07f02df",
+    "data/summary_data_like_4096_uncertainty_sources.csv": "d12fbce22514dcfcedca9020c0b0f4ffa2f282324307b768e15b0972dbb2298f",
+    "data/summary_data_like_8192_all_nps.csv": "4e52c5295843f5e5fdd9b9940b5569aba0b765a1ac1d2c4d2ca7714566b06409",
+    "assets/summary_data_like_8192_auxiliary_impacts.pdf": "9932ec99fcdca9a245902352c22e28d9d5fccba4e32d0f406d0ef36f5b4e7ca6",
+    "assets/summary_data_like_8192_auxiliary_impacts.svg": "4bd3b749fcf28d58e9fa12fe9a2776ae0409658948bbaeed6edf950f86767eb2",
+    "data/summary_data_like_8192_covariance.csv": "1c7ad459f3dafeafa937129adf5b781e1b920b92dfeea8969021e2a562d5cf66",
+    "assets/summary_data_like_8192_pulls_asimov.pdf": "4b80fa289591b1278f0245be59070f4ab928e52e008b30c7656fda05ba855cd7",
+    "assets/summary_data_like_8192_pulls_asimov.svg": "64c042eb9515ddb59047b8b7a4fd0bce0c8716765793c47411c729c8f5c7e2ee",
+    "assets/summary_data_like_8192_pulls_nominal.pdf": "90226e30ab0be777add35807dc7781af7f93fb52c66a47190f64efab5fba2e8f",
+    "assets/summary_data_like_8192_pulls_nominal.svg": "d10bafce526315d4223b93037eac7a5d1cf95c0053ab12dbf73a619ade9105c3",
+    "assets/summary_data_like_8192_source_groups.pdf": "7adbdbdbaa2329e59fc7c939aae24ea56bbcc630701dc018e08abad6901c31eb",
+    "assets/summary_data_like_8192_source_groups.svg": "9ec8979f8506c883378c2448287ccb4757eec8d44f8509089f24e02a8fe44192",
+    "data/summary_data_like_8192_uncertainty_sources.csv": "166ac91ceb3c6ce90f6a938bb1b9da3695ec98591d4c3f537984f5e05a65ba0d",
+    "data/summary_native_workspace_graph.json": "9d8fedda61705a0fa121221a0a7484d55683eec81f13d9d014e2d3b8a3a7672c",
+    "data/summary_normalizer_usage_example.py": "34fcfeadbbdff540b97730d4d799a4e3659fecfde04800065f45ac4cd7fdada7"
+  },
+  "analysis_source_sha256": {
+    "report_summary_resources.py": "33f4c4f689b5a4980f36cebae58e0a54271fbdb9c437aea97a76e65a4504a59c",
+    "report_summary_diagnostics.py": "7cd8ee7cfba390cd84c861dd3eb6ed88466a3d2706ba4d75236c523c710d6a03",
+    "compute_observation_response.py": "b9e1be27c503ab9946af9a23d5c7c62f98a06cbb57dd9953d0a9fcf7c3e66bc1",
+    "normalizer_usage_example.py": "34fcfeadbbdff540b97730d4d799a4e3659fecfde04800065f45ac4cd7fdada7",
+    "inspect_native_workspace.py": "95ec09e1035bd0b4e37e3d77a8e36adb02f15c96e04262c5c363d6c40970c679"
+  },
+  "historical_benchmark_scope": "One profiled mu point; 24 hours and 500 GB reported by the author. Historical CPU count, hardware and RAM measurement convention unspecified."
+};

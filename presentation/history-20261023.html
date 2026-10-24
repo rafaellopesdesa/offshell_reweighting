@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Six individual 4096/8192 Asimov likelihood comparisons with HEPData through mu=3, plus earlier off-shell Higgs studies.">
+  <title>Off-shell Higgs · workspace results</title>
+  <link rel="stylesheet" href="vendor/reveal/reset.css">
+  <link rel="stylesheet" href="vendor/reveal/reveal.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead"><a href="#/overview">OFF-SHELL / INFERENCE</a><span id="snapshot-stamp"></span><button id="contents-button" type="button">Contents <span aria-hidden="true">☰</span></button></header>
+  <div class="reveal"><main class="slides">
+    <section id="overview" aria-labelledby="overview-title">
+      <p class="eyebrow">H* → ZZ → 4ℓ · current results</p>
+      <h1 id="overview-title">Six Asimov scans.<br>One published reference.</h1>
+      <p class="lead">True, data-like and pruned models at 4,096 and 8,192 events.<br>Six consecutive comparisons with the HEPData expected curve.</p>
+      <div class="three-cards">
+        <article class="blue"><span class="pill complete">SAME METHOD</span><h3>6 workspaces</h3><div class="big">4,096 / 8,192</div><p>Every model uses full same-sample normalization at each nuisance point.</p></article>
+        <article class="coral"><span class="pill complete">COMPLETE + VALIDATED</span><h3>366 profile points</h3><div class="big">0 ≤ μ ≤ 3</div><p>61 points per workspace, spaced by 0.05 and including μ = 1.</p></article>
+        <article><span class="pill complete">GENERATING POINT</span><h3>True / data-like</h3><div class="big">μ = 1</div><p>Data-like models shift α and qqZZ. Pruning retains 54 constrained NPs.</p></article>
+      </div>
+      <p class="footnote"><a data-family-start href="#/family-true-4096">Start the six comparisons →</a> · <a href="data/family_scans_csv.zip" download>Download all scan CSVs</a> · Earlier studies follow the new block. Use ← → to navigate.</p>
+    </section>
+
+    <section id="family-true-4096" class="family-slide" data-family-model="true_4096_unpruned" aria-labelledby="family-true-4096-title">
+      <p class="eyebrow">Current scans / 1 of 6 · 61 exact HEPData coordinates</p><h2 id="family-true-4096-title">True Asimov · 4,096 events</h2>
+      <p class="family-model-note">Generation: μ = 1, all α = 0, and all qqZZ factors = 1.</p>
+      <div class="figure-layout"><figure><img src="assets/family_true_4096_unpruned_vs_hepdata.svg" alt="True Asimov · 4,096 events: profile likelihood over mu=0 to 3 compared with HEPData expected NSBI, with signed scan-minus-HEPData differences below."><figcaption>Same axes on all six slides. Star: continuous fitted minimum. Residuals retain the original values.</figcaption></figure><aside><span class="pill complete">COMPLETE + VALIDATED</span><p>127 constrained NPs<br>+ 3 free qqZZ factors</p><dl><dt>Fitted μ̂</dt><dd class="small-value" data-family-mu></dd><dt>RMS Δq · all 61 points</dt><dd class="small-value" data-family-rms></dd><dt>Largest |Δq| at μ = <span data-family-max-mu></span></dt><dd class="small-value" data-family-max></dd></dl><a class="download" href="data/family_true_4096_unpruned.csv" download>↓ Original scan CSV</a><br><a class="download" href="data/family_true_4096_unpruned_comparison.csv" download>↓ HEPData comparison CSV</a><br><a class="download" href="assets/family_true_4096_unpruned_vs_hepdata.pdf" download>↓ PDF figure</a></aside></div>
+      <p class="footnote"><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData Table 2 · Exp NSBI, 4ℓ stat+syst</a>. Δq = scan − HEPData; no re-zeroing, rescaling or smoothing. Full RooSameSampleNormalizer in every current workspace.</p>
+    </section>
+
+    <section id="family-data-like-4096" class="family-slide" data-family-model="data_like_4096_unpruned" aria-labelledby="family-data-like-4096-title">
+      <p class="eyebrow">Current scans / 2 of 6 · 61 exact HEPData coordinates</p><h2 id="family-data-like-4096-title">Data-like Asimov · 4,096 events</h2>
+      <p class="family-model-note">Generation: μ = 1; α and qqZZ factors from the observed-data fit, with consistent CR and auxiliary observations.</p>
+      <div class="figure-layout"><figure><img src="assets/family_data_like_4096_unpruned_vs_hepdata.svg" alt="Data-like Asimov · 4,096 events: profile likelihood over mu=0 to 3 compared with HEPData expected NSBI, with signed scan-minus-HEPData differences below."><figcaption>Same axes on all six slides. Star: continuous fitted minimum. Residuals retain the original values.</figcaption></figure><aside><span class="pill complete">COMPLETE + VALIDATED</span><p>127 constrained NPs<br>+ 3 free qqZZ factors</p><dl><dt>Fitted μ̂</dt><dd class="small-value" data-family-mu></dd><dt>RMS Δq · all 61 points</dt><dd class="small-value" data-family-rms></dd><dt>Largest |Δq| at μ = <span data-family-max-mu></span></dt><dd class="small-value" data-family-max></dd></dl><a class="download" href="data/family_data_like_4096_unpruned.csv" download>↓ Original scan CSV</a><br><a class="download" href="data/family_data_like_4096_unpruned_comparison.csv" download>↓ HEPData comparison CSV</a><br><a class="download" href="assets/family_data_like_4096_unpruned_vs_hepdata.pdf" download>↓ PDF figure</a></aside></div>
+      <p class="footnote"><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData Table 2 · Exp NSBI, 4ℓ stat+syst</a>. Δq = scan − HEPData; no re-zeroing, rescaling or smoothing. Full RooSameSampleNormalizer in every current workspace.</p>
+    </section>
+
+    <section id="family-pruned-4096" class="family-slide" data-family-model="data_like_4096_pruned54" aria-labelledby="family-pruned-4096-title">
+      <p class="eyebrow">Current scans / 3 of 6 · 61 exact HEPData coordinates</p><h2 id="family-pruned-4096-title">Data-like, pruned · 4,096 events</h2>
+      <p class="family-model-note">Same data-like observations; 54 constrained NPs float and the other 73 remain fixed at their generating values.</p>
+      <div class="figure-layout"><figure><img src="assets/family_data_like_4096_pruned54_vs_hepdata.svg" alt="Data-like, pruned · 4,096 events: profile likelihood over mu=0 to 3 compared with HEPData expected NSBI, with signed scan-minus-HEPData differences below."><figcaption>Same axes on all six slides. Star: continuous fitted minimum. Residuals retain the original values.</figcaption></figure><aside><span class="pill complete">COMPLETE + VALIDATED</span><p>54 constrained NPs<br>+ 3 free qqZZ factors</p><dl><dt>Fitted μ̂</dt><dd class="small-value" data-family-mu></dd><dt>RMS Δq · all 61 points</dt><dd class="small-value" data-family-rms></dd><dt>Largest |Δq| at μ = <span data-family-max-mu></span></dt><dd class="small-value" data-family-max></dd></dl><a class="download" href="data/family_data_like_4096_pruned54.csv" download>↓ Original scan CSV</a><br><a class="download" href="data/family_data_like_4096_pruned54_comparison.csv" download>↓ HEPData comparison CSV</a><br><a class="download" href="assets/family_data_like_4096_pruned54_vs_hepdata.pdf" download>↓ PDF figure</a></aside></div>
+      <p class="footnote"><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData Table 2 · Exp NSBI, 4ℓ stat+syst</a>. Δq = scan − HEPData; no re-zeroing, rescaling or smoothing. Full RooSameSampleNormalizer in every current workspace.</p>
+    </section>
+
+    <section id="family-true-8192" class="family-slide" data-family-model="true_8192_unpruned" aria-labelledby="family-true-8192-title">
+      <p class="eyebrow">Current scans / 4 of 6 · 61 exact HEPData coordinates</p><h2 id="family-true-8192-title">True Asimov · 8,192 events</h2>
+      <p class="family-model-note">Generation: μ = 1, all α = 0, and all qqZZ factors = 1.</p>
+      <div class="figure-layout"><figure><img src="assets/family_true_8192_unpruned_vs_hepdata.svg" alt="True Asimov · 8,192 events: profile likelihood over mu=0 to 3 compared with HEPData expected NSBI, with signed scan-minus-HEPData differences below."><figcaption>Same axes on all six slides. Star: continuous fitted minimum. Residuals retain the original values.</figcaption></figure><aside><span class="pill complete">COMPLETE + VALIDATED</span><p>127 constrained NPs<br>+ 3 free qqZZ factors</p><dl><dt>Fitted μ̂</dt><dd class="small-value" data-family-mu></dd><dt>RMS Δq · all 61 points</dt><dd class="small-value" data-family-rms></dd><dt>Largest |Δq| at μ = <span data-family-max-mu></span></dt><dd class="small-value" data-family-max></dd></dl><a class="download" href="data/family_true_8192_unpruned.csv" download>↓ Original scan CSV</a><br><a class="download" href="data/family_true_8192_unpruned_comparison.csv" download>↓ HEPData comparison CSV</a><br><a class="download" href="assets/family_true_8192_unpruned_vs_hepdata.pdf" download>↓ PDF figure</a></aside></div>
+      <p class="footnote"><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData Table 2 · Exp NSBI, 4ℓ stat+syst</a>. Δq = scan − HEPData; no re-zeroing, rescaling or smoothing. Full RooSameSampleNormalizer in every current workspace.</p>
+    </section>
+
+    <section id="family-data-like-8192" class="family-slide" data-family-model="data_like_8192_unpruned" aria-labelledby="family-data-like-8192-title">
+      <p class="eyebrow">Current scans / 5 of 6 · 61 exact HEPData coordinates</p><h2 id="family-data-like-8192-title">Data-like Asimov · 8,192 events</h2>
+      <p class="family-model-note">Generation: μ = 1; α and qqZZ factors from the observed-data fit, with consistent CR and auxiliary observations.</p>
+      <div class="figure-layout"><figure><img src="assets/family_data_like_8192_unpruned_vs_hepdata.svg" alt="Data-like Asimov · 8,192 events: profile likelihood over mu=0 to 3 compared with HEPData expected NSBI, with signed scan-minus-HEPData differences below."><figcaption>Same axes on all six slides. Star: continuous fitted minimum. Residuals retain the original values.</figcaption></figure><aside><span class="pill complete">COMPLETE + VALIDATED</span><p>127 constrained NPs<br>+ 3 free qqZZ factors</p><dl><dt>Fitted μ̂</dt><dd class="small-value" data-family-mu></dd><dt>RMS Δq · all 61 points</dt><dd class="small-value" data-family-rms></dd><dt>Largest |Δq| at μ = <span data-family-max-mu></span></dt><dd class="small-value" data-family-max></dd></dl><a class="download" href="data/family_data_like_8192_unpruned.csv" download>↓ Original scan CSV</a><br><a class="download" href="data/family_data_like_8192_unpruned_comparison.csv" download>↓ HEPData comparison CSV</a><br><a class="download" href="assets/family_data_like_8192_unpruned_vs_hepdata.pdf" download>↓ PDF figure</a></aside></div>
+      <p class="footnote"><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData Table 2 · Exp NSBI, 4ℓ stat+syst</a>. Δq = scan − HEPData; no re-zeroing, rescaling or smoothing. Full RooSameSampleNormalizer in every current workspace.</p>
+    </section>
+
+    <section id="family-pruned-8192" class="family-slide" data-family-model="data_like_8192_pruned54" aria-labelledby="family-pruned-8192-title">
+      <p class="eyebrow">Current scans / 6 of 6 · 61 exact HEPData coordinates</p><h2 id="family-pruned-8192-title">Data-like, pruned · 8,192 events</h2>
+      <p class="family-model-note">Same data-like observations; 54 constrained NPs float and the other 73 remain fixed at their generating values.</p>
+      <div class="figure-layout"><figure><img src="assets/family_data_like_8192_pruned54_vs_hepdata.svg" alt="Data-like, pruned · 8,192 events: profile likelihood over mu=0 to 3 compared with HEPData expected NSBI, with signed scan-minus-HEPData differences below."><figcaption>Same axes on all six slides. Star: continuous fitted minimum. Residuals retain the original values.</figcaption></figure><aside><span class="pill complete">COMPLETE + VALIDATED</span><p>54 constrained NPs<br>+ 3 free qqZZ factors</p><dl><dt>Fitted μ̂</dt><dd class="small-value" data-family-mu></dd><dt>RMS Δq · all 61 points</dt><dd class="small-value" data-family-rms></dd><dt>Largest |Δq| at μ = <span data-family-max-mu></span></dt><dd class="small-value" data-family-max></dd></dl><a class="download" href="data/family_data_like_8192_pruned54.csv" download>↓ Original scan CSV</a><br><a class="download" href="data/family_data_like_8192_pruned54_comparison.csv" download>↓ HEPData comparison CSV</a><br><a class="download" href="assets/family_data_like_8192_pruned54_vs_hepdata.pdf" download>↓ PDF figure</a></aside></div>
+      <p class="footnote"><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData Table 2 · Exp NSBI, 4ℓ stat+syst</a>. Δq = scan − HEPData; no re-zeroing, rescaling or smoothing. Full RooSameSampleNormalizer in every current workspace.</p>
+    </section>
+
+    <section id="observed" aria-labelledby="observed-title">
+      <p class="eyebrow">Baseline / observed workspace</p><h2 id="observed-title">The observed scan closes.</h2>
+      <div class="figure-layout"><figure><img src="assets/observed.svg" alt="Observed profile likelihood compared with HEPData, with signed q differences below."><figcaption>41 local points; 21 coordinates shared with HEPData. Shading marks ±0.0005 rounding precision.</figcaption></figure>
+      <aside><span class="pill complete">COMPLETE + VALIDATED</span><dl><dt>Fitted μ̂</dt><dd>0.87313964</dd><dt>Maximum |Δq|</dt><dd>0.000552</dd><dt>RMS Δq</dt><dd>0.000277</dd></dl><p>Native RooFit likelihood; 127 systematic parameters and 3 qqZZ factors profiled.</p><p>Accurate covariance: quality 3.<br>EDM: 8.10 × 10⁻⁷.</p><a class="download" href="data/observed_scan.csv" download>↓ Scan table</a></aside></div>
+      <p class="footnote"><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData Table 2 · Obs NSBI, stat+syst, 4ℓ only</a>. No shifts, interpolation, or rescaling.</p>
+    </section>
+
+    <section id="pruned-model" aria-labelledby="pruned-model-title">
+      <p class="eyebrow">Earlier study / data-like 4,096 events · 54 constrained NPs</p><h2 id="pruned-model-title">Keep the leading nuisance parameters.</h2>
+      <p class="lead small">Retain the first 54 constrained NPs in the published shared ranking. All three cumulative qqZZ normalizations remain free.</p>
+      <table><caption>Three preserved 4,096-event workspace variants</caption><thead><tr><th>Workspace</th><th>Free constrained NPs</th><th>Free qqZZ scales</th><th>Generating μ</th></tr></thead><tbody><tr><td>True Asimov · unpruned</td><td>127</td><td>3</td><td>1</td></tr><tr><td>Data-like Asimov · unpruned</td><td>127</td><td>3</td><td>1</td></tr><tr><td>Data-like Asimov · pruned</td><td>54</td><td>3</td><td>1</td></tr></tbody></table>
+      <p class="note">The other 73 α parameters are fixed at their data-like generating values. The SR/CR data, reference weights and fixed shape/rate factors are retained exactly.</p>
+      <p class="footnote">The selected NPs carry 96.11% of the unpruned data-like auxiliary variance. This local ranking does not predict the full scan change. <a href="data/pruned54_kept_nuisances.csv" download>54 retained NPs</a> · <a href="data/pruned54_fixed_nuisances.csv" download>73 fixed values</a> · <a href="data/pruned54_bestfit_parameters.csv" download>New global fit</a>.</p>
+    </section>
+
+    <section id="pruned-scan" aria-labelledby="pruned-scan-title">
+      <p class="eyebrow">Earlier study / expected profile with 57 nuisance parameters</p><h2 id="pruned-scan-title">Pruned data-like Asimov against HEPData.</h2>
+      <div class="figure-layout"><figure><img src="assets/pruned54_pruned_vs_hepdata.svg" alt="Pruned data-like 4096-event profile likelihood compared only with the HEPData expected NSBI curve, with residuals below."><figcaption>42 evaluated points: 0, 0.01, 0.05, …, 2.00. Residuals use 41 exact published coordinates.</figcaption></figure><aside><span class="pill complete">COMPLETE + VALIDATED</span><dl><dt>Fitted μ̂</dt><dd id="pruned-mu" class="small-value"></dd><dt>RMS Δq versus HEPData</dt><dd id="pruned-rms" class="small-value"></dd><dt>q(0) / q(2)</dt><dd class="small-value"><span id="pruned-qzero"></span> / <span id="pruned-qtwo"></span></dd></dl><a class="download" href="data/pruned54_profile_resources.csv" download>↓ Scan + resources</a><br><a class="download" href="assets/pruned54_pruned_vs_hepdata.pdf" download>↓ PDF figure</a></aside></div>
+      <p class="footnote" id="pruned-validation-note"></p>
+    </section>
+
+    <section id="pruned-resources-slide" aria-labelledby="pruned-resources-title">
+      <p class="eyebrow">Earlier study / measured time and memory</p><h2 id="pruned-resources-title">Record the cost of the pruned study.</h2>
+      <table id="pruned-resources"><caption>One CPU per job; 42 profiles run as independent array tasks, up to six concurrently</caption><thead><tr><th>Stage</th><th>Jobs</th><th>Elapsed</th><th>CPU minutes</th><th>Peak RSS / job</th></tr></thead><tbody></tbody></table>
+      <p class="note">Elapsed spans each stage; CPU time sums its jobs; memory is the largest individual job peak. Requested memory: build/checks 4 GiB; global fit, profiles and final validation 3 GiB.</p>
+      <p class="footnote">Superseded setup/check costs are included separately. Earlier unpruned scans used warm starts and different nodes, so these costs do not measure a controlled speedup. <a href="data/pruned54_resources.csv" download>Stage table</a> · <a href="data/pruned54_job_resources.csv" download>All job measurements</a>.</p>
+    </section>
+
+    <section id="pruned-cost" aria-labelledby="pruned-cost-title">
+      <p class="eyebrow">Earlier study / per-coordinate profiling cost</p><h2 id="pruned-cost-title">Time and peak memory along the scan.</h2>
+      <figure><img src="assets/pruned54_profile_cost_vs_mu.svg" alt="Measured minimizer wall and CPU time, and process peak RSS, versus mu for the pruned 4096 Asimov scan."><figcaption id="pruned-cost-note"></figcaption></figure>
+      <p class="footnote">Each coordinate starts from the saved global fit in a fresh process. These are single measurements on different nodes. Timing covers minimization; peak RSS includes loading. <a href="data/pruned54_profile_resources.csv" download>Per-μ measurements</a> · <a href="assets/pruned54_profile_cost_vs_mu.pdf" download>PDF figure</a> · <a href="data/pruned54_snapshot.json" download>Checks and provenance</a>.</p>
+    </section>
+
+    <section id="data-like-injection" aria-labelledby="shifted-injection-title">
+      <p class="eyebrow">Earlier study / data-like 4,096-event Asimov</p><h2 id="shifted-injection-title">Keep μ = 1. Shift the nuisance parameters.</h2>
+      <p class="lead small">Use the same 4,096 reference events and weights. Inject all 127 α values and the three qqZZ factors from the observed-data global fit.</p>
+      <div class="columns"><div><table id="shifted-injection-table"><caption>Generating parameters · cumulative qqZZ factors</caption><thead><tr><th>Parameter</th><th>Injected value</th></tr></thead><tbody></tbody></table><p class="footnote">Jet factors are β₀, β₀β₁, β₀β₁β₂.<br><a href="data/shifted_generation_parameters.csv" download>Download all 131 injected values ↗</a></p></div><div><table id="shifted-count-table"><caption>Expected yields at the same generating point</caption><thead><tr><th>Region</th><th>Asimov count</th></tr></thead><tbody></tbody></table><p class="note">CR counts use the shifted point. Gaussian auxiliary measurements satisfy nomₖ = αₖ injected and remain fixed during fitting.</p></div></div>
+      <p class="footnote">The original 4,096 and 8,192 workspaces are preserved as “true Asimov.” Only the new data-like sample uses the observed-fit nuisances.</p>
+    </section>
+
+    <section id="data-like-normalization" aria-labelledby="shifted-normalization-title">
+      <p class="eyebrow">Earlier study / normalization at every nuisance point</p><h2 id="shifted-normalization-title">The full model now closes at the injection.</h2>
+      <div class="columns"><div><p class="equation">Zₚ(α) = ∑ᵢ uᵢ r̂ₚᵢ Vₚᵢ(α)<br>ρₚᵢ = r̂ₚᵢ Vₚᵢ / Zₚ<br>∑ᵢ uᵢ ρₚᵢ = 1</p></div><div><p>Ten shared <code>RooSameSampleNormalizer</code> nodes track the trial nuisances. The physical rate modifiers stay in the yield coefficients.</p><p>Maximum score at tested injections: <strong id="shifted-score"></strong>.<br>Process-integral error: <strong id="shifted-closure"></strong>.</p><a href="https://github.com/rafaellopesdesa/offshell_reweighting/blob/codex/root-data-fit-20261021/docs/ROO_SAME_SAMPLE_NORMALIZER.md">Class definition, caching, loading and validation ↗</a></div></div>
+      <table id="shifted-fit-table"><caption>Global fits · 131 floating parameters</caption><thead><tr><th>Starting μ</th><th>Fitted μ̂</th><th>EDM</th><th>MIGRAD covariance</th></tr></thead><tbody></tbody></table>
+      <p class="note" id="shifted-recovery"></p><p class="footnote">The scan baseline uses MIGRAD covariance. Separate full Hesse results follow. The stationary-start covariance failed validation. The successful displaced start was repeated to save the validated profile baseline; the initial artifacts remain preserved.</p>
+    </section>
+
+    <section id="data-like-scan" aria-labelledby="shifted-scan-title">
+      <p class="eyebrow">Earlier study / expected profiles through μ = 2</p><h2 id="shifted-scan-title">True and data-like Asimov against HEPData.</h2>
+      <div class="figure-layout"><figure><img src="assets/true_vs_data_like.svg" alt="True and data-like 4096-event profile scans through mu=2, compared with the published expected NSBI curve and residuals at identical coordinates."><figcaption>42 points per scan: 0, 0.01, 0.05, …, 2.00. Residuals use 41 exact HEPData coordinates.</figcaption></figure><aside><table class="point-table" id="shifted-comparison-table"><caption>Continuous minima and direct residuals</caption><thead><tr><th>Sample</th><th>μ̂</th><th>RMS Δq</th><th>q(0)</th><th>q(2)</th></tr></thead><tbody></tbody></table><p>Blue: preserved true Asimov.<br>Coral: shifted data-like Asimov.<br>Black: published expected NSBI.</p><a class="download" href="data/shifted_comparison.csv" download>↓ Comparison table</a><br><a class="download" href="assets/true_vs_data_like.svg" download>↓ Vector figure</a></aside></div>
+      <p class="footnote">The true model retains anchor normalization; the data-like model normalizes every nuisance point. Their difference includes both this refinement and the nuisance shift. <a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData Table 2</a> is used without shifting or rescaling.</p>
+    </section>
+
+    <section id="data-like-resources" aria-labelledby="shifted-resource-title">
+      <p class="eyebrow">Earlier study / validation and measured computation</p><h2 id="shifted-resource-title">Check the profiles and record their cost.</h2>
+      <p class="lead small" id="shifted-likelihood-check"></p>
+      <table id="shifted-resource-table"><caption>New work only; earlier true-Asimov costs remain in the historical resource slide</caption><thead><tr><th>Sample</th><th>Stage</th><th>Elapsed</th><th>CPU minutes</th><th>Peak RSS / job</th></tr></thead><tbody></tbody></table>
+      <p class="note">All jobs use one CPU. Elapsed spans the phase; CPU time sums its jobs; RSS is the largest individual job peak. Requests: true extension 2 GiB; data-like build/global 6 GiB, recovery check 3 GiB, profiles 4 GiB.</p>
+      <p class="footnote">No active fit was interrupted. Global costs include both covariance-check failures and the displaced-start repeat. Different CPU nodes; prototype development, installation and earlier staging excluded. <a href="data/shifted_resources.csv" download>Resources</a> · <a href="data/shifted_snapshot.json" download>Validation and source hashes</a>.</p>
+    </section>
+
+    <section id="normalizer-performance" aria-labelledby="normalizer-performance-title">
+      <p class="eyebrow">Earlier study / controlled efficiency measurement</p><h2 id="normalizer-performance-title">Evaluation cost and complete profiling time.</h2>
+      <table id="normalizer-evaluation-table"><caption>Mean CPU milliseconds per likelihood evaluation · identical CPU and parameter sequence</caption><thead><tr><th>Changed parameters</th><th>True model</th><th>Data-like model</th><th>Ratio</th></tr></thead><tbody></tbody></table>
+      <table id="normalizer-profile-table"><caption>One complete μ = 0.5 profile from each global fit · same CPU, 130 free nuisances</caption><thead><tr><th>Sample</th><th>Minimization time</th><th>Likelihood calls</th><th>EDM</th></tr></thead><tbody></tbody></table>
+      <p class="note" id="normalizer-performance-note"></p><p class="footnote">Evaluation runs alternate true/data-like/data-like/true; loading and initial evaluations are excluded. Fits use different Asimov data and model shapes, so iteration counts can differ. A single profiled coordinate is not a universal scan-speed benchmark. <a href="data/normalizer_timing.json" download>Timing measurements and method ↗</a>.</p>
+    </section>
+
+    <section id="uncertainty-table" aria-labelledby="uncertainty-title">
+      <p class="eyebrow">Earlier study / covariance as an observation-response probe</p><h2 id="uncertainty-title">Which observations contribute to σ(μ)?</h2>
+      <p class="lead small">Full observed Hesse with all 131 parameters floating. Independent source variances add; the table reports their square roots in units of μ.</p>
+      <div class="columns"><table id="uncertainty-primary"><caption>Primary statistics and totals</caption><thead><tr><th>Source</th><th>True</th><th>Data-like</th></tr></thead><tbody></tbody></table><table id="uncertainty-auxiliary"><caption>Grouped Gaussian auxiliary sources</caption><thead><tr><th>Source</th><th>True</th><th>Data-like</th></tr></thead><tbody></tbody></table></div>
+      <p class="note">For a unit Gaussian auxiliary: Δμ̂ = V<sub>μα</sub> Δa and variance = V<sub>μα</sub>². SR and CR Poisson fluctuations propagate through the same complete covariance.</p>
+      <p class="footnote">Local linear-response estimates; not asymmetric profile intervals. <a href="https://arxiv.org/abs/2608.15312">Method: arXiv:2608.15312</a> · <a href="data/true_uncertainties.csv" download>True table</a> · <a href="data/data_like_uncertainties.csv" download>Data-like table</a>.</p>
+    </section>
+
+    <section id="uncertainty-ranking" aria-labelledby="uncertainty-ranking-title">
+      <p class="eyebrow">Earlier study / impact-style ranking</p><h2 id="uncertainty-ranking-title">Rank the auxiliary-source responses.</h2>
+      <figure><img src="assets/auxiliary_impacts.svg" alt="Impact-style ranking of the twelve largest auxiliary-observation responses in true and data-like Asimov fits, alongside nuisance pulls relative to their generating anchors and post-fit errors."><figcaption>Top 12 by the larger absolute response across the two models. Pulls are relative to each sample’s own auxiliary anchor.</figcaption></figure>
+      <p class="footnote">These bars shift auxiliary observations. Conventional one-post-fit-σ nuisance impacts are V<sub>μα</sub>/σ<sub>α</sub>; their squares are not additive source variances. All 130 NPs: <a href="data/all_np_uncertainty_ranking.csv" download>ranked CSV</a> · <a href="data/all_np_uncertainty_ranking_README.md" download>column definitions</a> · <a href="assets/auxiliary_impacts.svg" download>vector figure</a>.</p>
+    </section>
+
+    <section id="uncertainty-checks" aria-labelledby="uncertainty-checks-title">
+      <p class="eyebrow">Earlier study / closure, unconstrained nuisances and cost</p><h2 id="uncertainty-checks-title">Check the source sum against the Hessian.</h2>
+      <table id="uncertainty-closure"><thead><tr><th>Check</th><th>True</th><th>Data-like</th></tr></thead><tbody></tbody></table>
+      <p class="note">qqZZ factors have no Gaussian auxiliary observations. They remain profiled and enter the SR/CR response. Their freeze/float variance penalty is a separate conditional diagnostic.</p>
+      <table id="uncertainty-resources"><caption>Separate covariance study · full Hesse, probes and checks</caption><thead><tr><th>Sample</th><th>Elapsed</th><th>CPU minutes</th><th>Peak RSS / job</th></tr></thead><tbody></tbody></table>
+      <p class="footnote" id="uncertainty-check-note"></p>
+      <p class="footnote">Resource totals include failed setup and superseded diagnostic work. <a href="data/decomposition_snapshot.json" download>Full covariance-analysis checks</a> · <a href="data/decomposition_resources.csv" download>Resource table</a> · <a href="https://github.com/rafaellopesdesa/offshell_reweighting/blob/codex/root-data-fit-20261021/docs/UNCERTAINTY_DECOMPOSITION.md">Method and conventions</a>.</p>
+    </section>
+
+    <section id="construction" aria-labelledby="construction-title">
+      <p class="eyebrow">Earlier true-Asimov study / reference samples</p><h2 id="construction-title">Two subsets. Independent normalization.</h2>
+      <div class="method-strip"><div><strong>3,110,759</strong><span>reference rows<br>S + EWSBI10</span></div><span class="arrow" aria-hidden="true">→</span><div><strong>Seed 42</strong><span>nested random selections<br>without replacement</span></div><span class="arrow" aria-hidden="true">→</span><div><strong>4,096 / 8,192</strong><span>separate nominal Z factors<br>and qqZZ jet fractions</span></div></div>
+      <div class="columns"><div><p class="equation">uᵢ = wᵢ / ∑w<br>Zₚ = ∑uᵢ rₚᵢ<br>r̂ₚᵢ = rₚᵢ / Zₚ</p><p>Generate at μ = 1, α = 0,<br>and all qqZZ factors = 1.</p></div><div><table id="construction-table"><caption>Serialized workspace checks</caption><thead><tr><th scope="col">Quantity</th><th scope="col">4,096</th><th scope="col">8,192</th></tr></thead><tbody></tbody></table><p class="note">Full physical yields stay fixed. Signed weights are retained. Up/down anchors now close to their supplied physical rates.</p></div></div>
+      <p class="footnote">The NumPy physics inputs differ from the observed ROOT template, including some yields and systematics. The template supplies the structure.</p>
+    </section>
+
+    <section id="diagnosis" aria-labelledby="diagnosis-title">
+      <p class="eyebrow">Discussion / why did μ̂ move?</p><h2 id="diagnosis-title">The control regions were already Asimov.</h2>
+      <table id="cr-table"><caption>Same nominal control-region counts in both reference samples</caption><thead><tr><th>Channel</th><th>Asimov count</th><th>Model expectation</th><th>Difference</th></tr></thead><tbody></tbody></table>
+      <div class="two-cards"><article><h3>Nominal directions close</h3><p>With α fixed to zero and all qqZZ factors free, μ̂ ≈ 0.99996 (4,096) and 0.99998 (8,192). The nominal μ score is numerically zero.</p></article><article><h3>Systematic directions did not</h3><p>At generation, ∂NLL<sub>A</sub> = ∂ν − ∑uᵢ ∂Iᵢ. For the old 8,192 HOQCD_1Jet direction: 4.62077 − 3.19025 = 1.43053, matching the nonzero native score.</p></article></div>
+      <p class="note">Nominal same-sample normalization alone does not impose stationarity in all 127 systematic directions. The Gaussian constraints and Asimov CRs have zero score at generation.</p>
+    </section>
+
+    <section id="anchor-correction" aria-labelledby="anchor-title">
+      <p class="eyebrow">Discussion / preserve shape and physical rate</p><h2 id="anchor-title">Normalize each anchor to its supplied rate.</h2>
+      <div class="columns"><div><p class="equation">Cₚₖ = ∑ᵢ uᵢ r̂ₚᵢ vₚₖᵢ<br>v′ₚₖᵢ = vₚₖᵢ Rₚₖ / Cₚₖ<br>∑ᵢ uᵢ r̂ₚᵢ v′ₚₖᵢ = Rₚₖ</p></div><div><h3>The rate information is available</h3><p class="lead small">R comes from <code>list_weight_up/down_&lt;process&gt;.npy</code>. The target is the physical rate factor, which can differ from one.</p><p>Apply separately to each subset, each direction, all 127 nuisances, and all 10 SR components, including the three conditional qqZZ jet bins.</p></div></div>
+      <div class="two-cards"><article><h3>2,540 anchor checks per sample</h3><p>Every corrected up/down integral closes to its target within 9 × 10⁻¹⁵ relative precision.</p></article><article><h3>Controlled change</h3><p>Reuse the exact event rows, signed weights, nominal ratios and yields, Asimov CRs, constraints, bounds, and interpolation.</p></article></div>
+    </section>
+
+    <section id="before-after" aria-labelledby="before-title">
+      <p class="eyebrow">Discussion / the effect of the correction</p><h2 id="before-title">Correcting the anchors removes most of the shift.</h2>
+      <table class="large-table" id="before-table"><caption>Unconditional μ estimates, all systematic parameters floating</caption><thead><tr><th>Reference events</th><th>Before · nominal only</th><th>After · nominal + anchors</th><th>After · μ̂ − 1</th></tr></thead><tbody></tbody></table>
+      <p class="note">* The old 4,096 estimate is a known higher local minimum. A later profile improved NLL by 86.162, invalidating that baseline. The old runs were stopped and preserved; the corrected experiment starts from new workspaces.</p>
+      <p class="lead small">The old 8,192 estimate was 1.10436. Both new minima lie about 0.1–0.2% above the generation value. The scans now test how well these corrected finite samples reproduce the published curve.</p>
+    </section>
+
+    <section id="minima" aria-labelledby="minima-title">
+      <p class="eyebrow">Fits / corrected Asimov workspaces</p><h2 id="minima-title">Both corrected fits return close to μ = 1.</h2>
+      <table class="large-table" id="fit-table"><caption>Unconditional fits · all 131 parameters floating</caption><thead><tr><th scope="col">Reference events</th><th scope="col">μ̂, start at 1.0</th><th scope="col">μ̂, start at 1.4</th><th scope="col">|ΔNLL| between starts</th><th scope="col">MIGRAD covariance</th></tr></thead><tbody></tbody></table>
+      <div class="two-cards"><article class="blue"><h3>4,096 events</h3><p>Selected μ̂ = <span data-mu="4096"></span>.<br>Displacement from one: <strong data-shift="4096"></strong>.</p></article><article class="coral"><h3>8,192 events</h3><p>Selected μ̂ = <span data-mu="8192"></span>.<br>Displacement from one: <strong data-shift="8192"></strong>.</p></article></div>
+      <p class="note" id="fit-state-note"></p><p class="footnote">Local scan: [0.01, 1.5]. The published μ = 0 point is shown separately. Original unconditional bounds are retained.</p>
+    </section>
+
+    <section id="joint-scan" aria-labelledby="joint-title">
+      <p class="eyebrow">Earlier true-Asimov profiles / both sample sizes</p><h2 id="joint-title">Two sample sizes, one published reference.</h2>
+      <div class="figure-layout"><figure><img src="assets/asimov_comparison.svg" alt="Both corrected Asimov profile likelihood scans overlaid with HEPData, with residuals at shared coordinates."><figcaption>Continuous fitted minima shown at q = 0; scan coordinates are 0.01, 0.05, …, 1.50.</figcaption></figure><aside><p>Blue: 4,096 events.<br>Coral: 8,192 events.<br>Black: published expected NSBI.</p><p>Each subset has independent nominal and anchor normalization. The event selections remain nested.</p><p>Residuals compare the saved values directly at μ ≥ 0.05.</p><a class="download" href="assets/asimov_comparison.svg" download>↓ Combined vector figure</a></aside></div>
+      <p class="footnote"><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData Table 2 · Exp NSBI, stat+syst, 4ℓ only</a>. The published zero is an isolated marker; no reference value is inferred at our μ = 0.01 point.</p>
+    </section>
+
+    <section id="scan-4096" aria-labelledby="scan-4096-title">
+      <p class="eyebrow">Earlier true-Asimov profile / 4,096 reference events</p><h2 id="scan-4096-title">4,096 events: original positive scan.</h2>
+      <div class="figure-layout"><figure><img src="assets/asimov_4096.svg" alt="Corrected 4096-event Asimov scan points compared with the published expected NSBI curve."><figcaption data-caption="4096"></figcaption></figure><aside class="blue"><span class="pill" data-status="4096"></span><dl><dt>Fitted μ̂</dt><dd data-mu="4096"></dd><dt>Validated profile</dt><dd class="small-value" data-count="4096"></dd></dl><table class="point-table" data-points="4096"><caption>Selected shared coordinates</caption><thead><tr><th>μ</th><th>Local q</th><th>HEPData</th></tr></thead><tbody></tbody></table><a class="download" href="data/asimov_4096_scan.csv" download>↓ Complete scan table</a></aside></div>
+      <p class="footnote">This preserves the original [0.01, 1.5] snapshot. The later 42-point scan, including exact μ = 0 and the extension to 2, appears in the new comparison above.</p>
+    </section>
+
+    <section id="scan-8192" aria-labelledby="scan-8192-title">
+      <p class="eyebrow">True-Asimov profile / 8,192 reference events</p><h2 id="scan-8192-title">8,192 events: preserved expected scan.</h2>
+      <div class="figure-layout"><figure><img src="assets/asimov_8192.svg" alt="Corrected 8192-event Asimov scan points compared with the published expected NSBI curve."><figcaption data-caption="8192"></figcaption></figure><aside class="coral"><span class="pill" data-status="8192"></span><dl><dt>Fitted μ̂</dt><dd data-mu="8192"></dd><dt>Validated profile</dt><dd class="small-value" data-count="8192"></dd></dl><table class="point-table" data-points="8192"><caption>Selected shared coordinates</caption><thead><tr><th>μ</th><th>Local q</th><th>HEPData</th></tr></thead><tbody></tbody></table><a class="download" href="data/asimov_8192_scan.csv" download>↓ Complete scan table</a></aside></div>
+      <p class="footnote">q = 2[NLLprofile(μ) − NLLminimum]. The published curve is used as tabulated, including its nonzero sampled minimum.</p>
+    </section>
+
+    <section id="comparison" aria-labelledby="comparison-title">
+      <p class="eyebrow">Comparison / published expected NSBI</p><h2 id="comparison-title">Compare the curves at identical μ coordinates.</h2>
+      <table class="large-table" id="comparison-table"><caption>30 shared coordinates: μ = 0.05, 0.10, …, 1.50</caption><thead><tr><th>Reference events</th><th>Maximum |Δq|</th><th>RMS Δq</th><th>μ at largest residual</th><th>Local q(0.01)</th></tr></thead><tbody></tbody></table>
+      <div class="two-cards"><article><h3>Same definition</h3><p>q(μ) = 2[NLL<sub>profile</sub>(μ) − NLL<sub>continuous minimum</sub>]. Profile all 127 systematic parameters and all 3 qqZZ factors.</p></article><article><h3>Direct comparison</h3><p>No shifting, rescaling, or reference interpolation. The published sampled minimum is nonzero. Our μ = 0.01 has no exact published counterpart.</p></article></div>
+      <p class="note" id="sample-difference"></p>
+      <p class="footnote">The corrected 4,096 curve is closer to HEPData for these particular selections. Residuals can reflect finite sampling, incomplete nuisance-dependent normalization, and differences in the physics inputs; two nested subsets do not separate those effects.</p>
+    </section>
+
+    <section id="nuisances" aria-labelledby="nuisances-title">
+      <p class="eyebrow">Parameters / inspect the corrected fit</p><h2 id="nuisances-title">The fitted systematic pulls are now small.</h2>
+      <table class="nuisance-table" id="nuisance-table"><caption>Six largest |α̂| in the 4,096 fit; corresponding values for 8,192</caption><thead><tr><th scope="col">Systematic parameter · ATLAS prefix omitted</th><th scope="col">α̂ · 4,096</th><th scope="col">α̂ · 8,192</th></tr></thead><tbody></tbody></table>
+      <div class="two-cards"><article><h3>Bounds preserved</h3><p>All 127 systematic parameters remain in [−5, 5]. All three cumulative qqZZ factors remain free.</p></article><article><h3>Values retained</h3><p>Download all fitted parameters, bounds, and the available error estimates for later reference.</p><p><a href="data/asimov_4096_parameters.csv" download>4,096 parameters ↗</a> &nbsp; <a href="data/asimov_8192_parameters.csv" download>8,192 parameters ↗</a></p></article></div>
+      <p class="footnote">Parameter CSVs contain MIGRAD error estimates. No explicit full Hesse calculation was run for these corrected fits.</p>
+    </section>
+
+    <section id="normalization" aria-labelledby="normalization-title">
+      <p class="eyebrow">Closure / before and after</p><h2 id="normalization-title">The fitted normalization mismatch shrinks.</h2>
+      <p class="lead small">SR mismatch = (∑uᵢ Iᵢ − ν) / ν, evaluated at the fitted parameters.</p>
+      <table class="large-table" id="quadrature-table"><caption>Old first converged start versus new selected unconditional fit</caption><thead><tr><th>Reference events</th><th>Before · first start</th><th>After · selected fit</th><th>Largest |α̂| after</th></tr></thead><tbody></tbody></table>
+      <div class="two-cards"><article><h3>What changed</h3><p>Each component’s nominal and up/down integrals now agree with the model’s physical rates on that same reference subset.</p></article><article><h3>What remains</h3><p>Nonlinear interpolation and simultaneous nuisance variations can change the integral between the corrected anchors.</p></article></div>
+      <p class="note">The old 4,096 first-start solution is a known higher local minimum. This table diagnoses normalization; it does not validate that old scan.</p>
+    </section>
+
+    <section id="residual" aria-labelledby="residual-title">
+      <p class="eyebrow">Interpretation / exact closure versus approximation</p><h2 id="residual-title">Anchor closure is not full nuisance closure.</h2>
+      <p class="lead small">The remaining displacement is small, but an exact minimum at μ = 1 is not guaranteed by this correction.</p>
+      <table id="score-table"><caption>Largest absolute systematic NLL derivative at the nominal generation point</caption><thead><tr><th>Reference events</th><th>Nominal-only normalization</th><th>Nominal + anchor normalization</th></tr></thead><tbody></tbody></table>
+      <div class="two-cards"><article><h3>Native interpolation retained</h3><p>Event factors use PiecewiseInterpolation code 5; rate factors use FlexibleInterpVar code 4. Their nonlinear interpolation and products are not normalized at every point.</p></article><article><h3>Connection to the paper</h3><p>The shape-only example motivates full nuisance-dependent normalization. Our inputs mix shape and rate, so the supplied physical rate must be retained separately.</p></article></div>
+      <p class="footnote"><a href="https://arxiv.org/html/2609.30196#S5.SS5">arXiv:2609.30196, §4.2.1 and §5.5</a>. The 8,192 sample retains two negative weights; positive-weight global-maximum arguments need separate care here.</p>
+    </section>
+
+    <section id="validation" aria-labelledby="validation-title">
+      <p class="eyebrow">Validation / likelihood and profile checks</p><h2 id="validation-title">Both scans pass independent likelihood checks.</h2>
+      <div class="validation-grid"><article><span class="step">01</span><h3>Native likelihood</h3><p>Extended RooFit likelihood, SR + 3 control regions, Gaussian constraints counted once. No SumW2 correction.</p></article><article><span class="step">02</span><h3>Independent evaluation</h3><p>Native and explicit ΔNLL agree within 2.7 × 10⁻¹⁰ at every profile point. Construction and global checks also pass.</p></article><article><span class="step">03</span><h3>Physical profile points</h3><p>Positivity is checked at the actual fitted points. A nuisance vector need not stay physical at every other μ.</p></article><article><span class="step">04</span><h3>Final acceptance</h3><p>All 31 coordinates converge; overlaps agree within 2.5 × 10⁻⁵ in q. Workspace checksums are unchanged.</p></article></div>
+      <p class="note">The figures show a likelihood scan, not confidence intervals. The publication uses Neyman confidence belts; q = 1 is not its 68% belt.</p>
+    </section>
+
+    <section id="resources" aria-labelledby="resources-title">
+      <p class="eyebrow">Execution / measured Slurm accounting</p><h2 id="resources-title">Time and memory for both sample sizes.</h2>
+      <table id="resource-table"><caption>Each job requests 1 CPU and 4 GiB; four profile chunks run in parallel per sample</caption><thead><tr><th>Events</th><th>Stage</th><th>Elapsed</th><th>Total CPU minutes</th><th>Peak RSS / job</th></tr></thead><tbody></tbody></table>
+      <p class="note">Elapsed time spans the first start to the last finish in each stage. CPU time sums the jobs. Peak RSS is the largest individual job’s measured peak, not total simultaneous memory.</p>
+      <p class="footnote">Global stage: construction from staged inputs, two starts, and checks; no full Hesse. Finalization: merge, figures, and independent validation. Initial input staging, ROOT installation, and queue time before the first start are excluded. Different nodes were used; this is not a controlled hardware benchmark. <a href="data/resources.csv" download>Measurements</a> · <a href="https://slurm.schedmd.com/sacct.html">Slurm definitions</a>.</p>
+    </section>
+
+    <section id="downloads" aria-labelledby="downloads-title">
+      <p class="eyebrow">Downloads / reproducible results</p><h2 id="downloads-title">Figures, tables, and provenance.</h2>
+      <p class="family-downloads">Current six-model study: <a href="data/family_scans_csv.zip" download>all CSVs (ZIP)</a> · <a href="data/family_comparison_summary.csv" download>comparison summary</a> · <a href="data/family_hepdata_expected_0_3.csv" download>HEPData expected values</a> · <a href="data/family_snapshot.json" download>checks and provenance</a>.</p>
+      <div class="columns downloads"><div><h3>Download the snapshot</h3><ul><li><a href="data/snapshot.json" download>Numerical snapshot + source hashes</a></li><li><a href="data/observed_scan.csv" download>Observed scan</a> · <a href="data/observed_parameters.csv" download>fitted parameters</a></li><li><a href="data/asimov_4096_scan.csv" download>4,096 scan</a> · <a href="data/asimov_4096_parameters.csv" download>fitted parameters</a></li><li><a href="data/asimov_8192_scan.csv" download>8,192 scan</a> · <a href="data/asimov_8192_parameters.csv" download>fitted parameters</a></li><li><a href="data/global_fit_comparison.csv" download>Corrected global-fit diagnostics</a></li><li><a href="data/hepdata.csv" download>Published observed / expected values</a></li><li>Vector figures: <a href="assets/asimov_comparison.svg">both Asimov scans</a> · <a href="assets/observed.svg">observed</a> · <a href="assets/asimov_4096.svg">4,096</a> · <a href="assets/asimov_8192.svg">8,192</a></li></ul></div><div><h3>Sources & conventions</h3><ul><li><a href="https://doi.org/10.17182/hepdata.156805.v1/t2">HEPData 156805 v1 · Table 2</a></li><li><a href="https://arxiv.org/abs/2412.01548">ATLAS off-shell 4ℓ measurement</a></li><li><a href="https://github.com/rafaellopesdesa/offshell_reweighting/blob/codex/root-data-fit-20261021/docs/ANCHOR_NORMALIZED_RESULTS.md">Corrected results and analysis code</a></li><li id="source-commit"></li><li><a href="https://arxiv.org/abs/2609.30196">Nuisance normalization discussion</a></li><li>ROOT 6.34.10 · nominal generation μ = 1</li><li>Snapshot: <span class="snapshot-time"></span></li></ul></div></div>
+      <p class="note" id="snapshot-note"></p><p class="footnote">Navigation: ← → / Space · Overview: Esc · Full screen: F · Browser print: append ?print-pdf to this page’s URL.</p>
+    </section>
+  </main></div>
+  <dialog id="contents"><div class="dialog-heading"><h2>Contents</h2><button id="close-contents" type="button" aria-label="Close contents">×</button></div><ol id="contents-list"></ol></dialog>
+  <noscript><p class="noscript">JavaScript is needed for the slideshow. <a href="data/snapshot.json">Download the numerical snapshot.</a></p></noscript>
+  <script src="vendor/reveal/reveal.js"></script><script src="data/snapshot.js"></script><script src="data/shifted_snapshot.js"></script><script src="slides.js"></script><script src="shifted.js"></script>
+<script src="data/decomposition_snapshot.js"></script>
+<script src="decomposition.js"></script>
+<script src="data/pruned54_snapshot.js"></script>
+<script src="pruned.js"></script>
+<script src="data/family_snapshot.js"></script>
+<script src="family.js"></script>
+</body></html>

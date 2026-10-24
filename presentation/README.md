@@ -1,156 +1,93 @@
-# Off-shell workspace results slideshow
+# Structured scientific summary
 
-A static Reveal.js 6.0.2 presentation with 35 slides. After the overview,
-six consecutive slides compare the current true, data-like and pruned Asimov
-scans at 4096 and 8192 events with HEPData Table 2 Exp NSBI (4l, stat+syst).
-Each comparison uses all 61 coordinates from 0 through 3, including mu=1,
-with common axes, an signed difference panel, and original CSV/comparison
-CSV/PDF downloads. All current models use RooSameSampleNormalizer.
+Open `index.html` through a local HTTP server or the repository's GitHub Pages
+site. The 33-slide Reveal.js deck follows four parts:
 
-Earlier observed, anchor-normalized, data-like, covariance and pruning studies
-follow with their original figures and conventions. They remain identified as
-earlier studies. The page displays its frozen snapshot time and does not query
-Unity or update automatically. No event arrays or ROOT workspaces are published.
+1. Finite Asimov construction, exact same-sample closure, and shape systematics.
+2. The native NRE RooFit workspace: ratio columns, shapes/rates, channels and
+   ModelConfig; then `RooSameSampleNormalizer`, loading and a tested constructor.
+3. Six consecutive 61-point HEPData comparisons, then data-like unpruned 4096/8192
+   nuisance pulls and covariance source uncertainties.
+4. Wall time, CPU and memory versus μ for all six models, followed by full costs.
 
-## Refresh the current six-model comparisons
+The earlier 35-slide research history is preserved as `history-20261023.html`,
+using its original JavaScript, styles and numerical assets. The main deck uses
+`summary.css` and `summary.js`. Below 700 px it becomes a continuous reading page;
+both `#/slide-id` and reading-mode anchors work. Contents and keyboard navigation
+are supported. All figures and results are static local files.
 
-After all six scan validations and the CSV bundle complete, run inside an
-allocation using the analysis report generator and presentation exporter:
+## Add the paper figures
 
-```bash
-python /path/to/analysis/report_family_scan_comparisons.py \
-  --run /path/to/results/asimov_scans_0_3_61 \
-  --hepdata /path/to/results/hepdata_comparison/table_2.json \
-  --output /path/to/results/asimov_scans_0_3_61/presentation_report
-python presentation/tools/export_family_results.py \
-  --run /path/to/results/asimov_scans_0_3_61 \
-  --report /path/to/results/asimov_scans_0_3_61/presentation_report
-python presentation/tools/check_presentation.py --output /path/to/browser_checks
+Put the four images in `assets/` and edit `data/paper_figures.js`:
+
+```javascript
+window.PAPER_FIGURES = {
+  pulls_4096: {src: 'assets/paper_pulls_4096.svg', alt: 'Paper nuisance pull plot', caption: 'Paper result'},
+  uncertainties_4096: {src: 'assets/paper_uncertainties_4096.svg', alt: 'Paper uncertainty decomposition'},
+  pulls_8192: {src: 'assets/paper_pulls_8192.svg', alt: 'Paper nuisance pull plot'},
+  uncertainties_8192: {src: 'assets/paper_uncertainties_8192.svg', alt: 'Paper uncertainty decomposition'}
+};
 ```
 
-The generator cross-checks the cached official HEPData JSON and CSV and uses
-all 61 exact shared coordinates. It preserves the published values and the
-continuous fitted likelihood baseline: no shifts, rescaling, clipping or
-smoothing. Every figure uses the same x, q and residual limits. The exporter
-requires all six complete validated scans and verifies the original scan CSV
-hashes. `data/family_snapshot.json` records numerical results and provenance;
-`data/family_scans_csv.zip` contains the complete original scan/parameter tables.
+Unconfigured slots remain visibly reserved. The export script does not touch this
+configuration. SVG, PNG or JPEG images work. No scientific numbers are inferred
+from the paper images. Each figure sits beside our corresponding diagnostic.
 
-The current true files replace the old anchor-only true models in the current
-comparison. Their historical results remain on the later slides. Both pruned
-models retain the same 54 ranked constrained NPs and all three qqZZ factors.
-The 8192 reference sample preserves its two negative quadrature weights.
+## Refresh the summary
 
-## Enable GitHub Pages
-
-In the repository's **Settings → Pages**, select **Deploy from a branch**,
-choose **codex/asimov-results-slides-20261021**, and select **/ (root)**.
-The root `index.html` redirects to `presentation/`; `.nojekyll` enables static
-serving. No build workflow, npm install, or external runtime CDN is required.
-
-The expected URL, once Pages is enabled, is:
-`https://rafaellopesdesa.github.io/offshell_reweighting/`.
-The branch does not enable Pages or change repository settings itself.
-
-## View and navigate
-
-Open `presentation/index.html` directly, or serve the repository root with
-`python3 -m http.server 8000` and visit `/presentation/`.
-Use arrow keys / Space to move, Esc for overview, F for full screen, and the
-Contents button to jump to a section. Append `?print-pdf` for browser PDF export.
-On small screens, the same material appears as a readable scrolling page.
-The last slide links the vector figures, CSV tables, fitted parameters, and
-`data/snapshot.json` with relative source paths and SHA-256 hashes.
-
-## Refresh the numerical snapshot
-
-With Python and matplotlib installed, run this on Unity inside an allocation:
+Run report generation in a suitable Slurm allocation. ROOT >= 6.34.04 with RooFit
+is required for the covariance calculation and executable class example. The
+report/export steps use Python, NumPy and Matplotlib; browser checks use Playwright.
+From the work-area root, with both covariance reports independently validated:
 
 ```bash
-python3 presentation/tools/export_results.py \
-  --results /path/to/work-area/results \
-  --output presentation
+.venv_presentation/bin/python offshell_reweighting/report_summary_resources.py --help
+.venv_presentation/bin/python offshell_reweighting/report_summary_diagnostics.py \
+  --results results/summary_presentation_20261024/diagnostics \
+  --data-fit results/data_workspace/bestfit.json \
+  --output results/summary_presentation_20261024/diagnostics_report
+.venv_presentation/bin/python results_slides/presentation/tools/export_summary_results.py \
+  --run results/summary_presentation_20261024 --analysis offshell_reweighting
+PLAYWRIGHT_BROWSERS_PATH="$PWD/.presentation_browsers" \
+  .venv_presentation/bin/python results_slides/presentation/tools/check_summary_presentation.py \
+  --output results/summary_presentation_20261024/browser
 ```
 
-This reads saved JSON results only. It never opens ROOT workspaces or event
-arrays, changes inputs, or launches fits. It reads the corrected experiment
-under `asimov_anchor_normalized/n_SIZE/{workspace,fit}` and its completed
-HEPData comparison. Both scans must contain all 31 coordinates, pass the
-independent likelihood checks, and agree at overlaps before export. The
-aggregate CSVs and figures reproduce the saved continuous-fit baseline.
+The exporter requires both complete covariance reports and six resource reports
+whose scan checksums match `family_snapshot.json`. It copies only `summary_*`
+assets and records artifact/source hashes. Existing scans, baselines and HEPData
+values are unchanged. The original six-model export remains
+`tools/export_family_results.py`.
 
-The discussion includes the original CR and nuisance-score diagnosis, the
-physical-rate-preserving anchor correction, and the before/after minima.
-The old 4096 estimate is labeled as a known higher local minimum, not a valid
-global baseline. Historical first-start integral discrepancies are explicitly
-separated from the new selected-fit diagnostics. The new global fits saved
-MIGRAD covariance estimates; their parameter errors are not full Hesse errors.
+## Scientific and resource definitions
 
-Review the regenerated tables, figures, and text before committing an update.
+- Original-nominal pull view: fitted α with full Hesse error; diamonds show the
+  observed-data values used to generate this Asimov. Asimov-centered view subtracts
+  those centers. The three unconstrained qqZZ factors remain in raw units.
+- Plot labels abbreviate electron `SIMPLIFIED_UncorrUncertainty` to `uncorr`
+  and `CorrUncertainty` to `corr`; the CSV preserves every exact RooFit name.
+- The CSV field `posterior_sigma` is the local post-fit Hesse error, not a
+  Bayesian credible interval.
+- Auxiliary source response: `V[mu,alpha]` for a unit Gaussian observation shift.
+  Its square is the additive source variance. `V[mu,alpha]/sigma_alpha` is a
+  different conditional diagnostic, available in the all-NP CSV.
+- Primary sources: the intensity-score covariance propagated through the full V.
+  The two negative 8192 quadrature weights are retained as integration coefficients,
+  not interpreted as negative Poisson variances. Source/Hesse closure is measured
+  and reported without rescaling. These are local errors, not profile intervals.
+- Each point uses one CPU. Timing curves measure minimization and exclude loading.
+  Process RSS is a high-water mark up through that point. Slurm MaxRSS is separately
+  reported for whole jobs; sampling and process scope differ. Public records use
+  anonymous worker numbers; detailed cluster identifiers remain in the local audit.
+- 61 unique points require 66 computations per model because of overlapping chunks.
+  Aggregate CPU includes all 66. Whole-job CPU includes loading; scan elapsed spans
+  the first start to last finish, with scheduling gaps and at most four simultaneous
+  chunks per model. Global fits, final validation and Hesse are separate work.
+- The author's historical **24 h / 500 GB is per profiled μ point**, not per scan.
+  Hardware, core count and RAM accounting are unspecified. It is a contextual cost
+  comparison, not a controlled speedup. Decimal 500 GB is about 466 GiB.
 
-Reveal.js is vendored with its MIT license and source/checksum manifest under
-`vendor/reveal/`. It is unmodified. See the
-[official documentation](https://revealjs.com/installation/).
-
-To validate the rendered slides after export, use Playwright with Chromium
-inside an allocation:
-
-```bash
-python3 presentation/tools/check_presentation.py --output /work/path/browser_checks
-```
-
-This checks all desktop slides, local downloads, JavaScript errors, navigation,
-mobile overflow, and hosting under a GitHub project subpath. It creates a
-temporary localhost server and writes screenshots plus a JSON report.
-
-
-## Data-like 4096 follow-up and source decomposition
-
-The new snapshot adds the data-like injection, full nuisance-dependent
-same-reference normalization, both 42-point scans through mu=2, controlled
-normalizer timing, and covariance-propagation tables/ranking. The original
-4096/8192 results remain as historical true-Asimov slides.
-
-After all numerical and accounting checks pass, run:
-
-```bash
-python presentation/tools/export_shifted_results.py \
-  --results /path/to/results/asimov_data_like_4096 \
-  --analysis-commit ANALYSIS_COMMIT
-python presentation/tools/export_decomposition.py \
-  --results /path/to/results/asimov_data_like_4096/decomposition \
-  --analysis-commit ANALYSIS_COMMIT
-python presentation/tools/check_presentation.py --output /path/to/browser_checks
-```
-
-Both exporters require complete validated results. `decomposition_snapshot`
-records observed-Hessian and propagated totals separately, with no forced
-closure. Its plot ranks unit auxiliary-observation responses, not conventional
-conditional nuisance impacts. Covariance CSVs and all named-nuisance diagnostics
-are included in `presentation/data/`; no ROOT workspaces or event arrays are
-published.
-
-
-The ranking slide links [all 130 NPs in one sorted CSV](data/all_np_uncertainty_ranking.csv),
-with true/data-like source responses side by side and per-model ranks.
-[Column definitions](data/all_np_uncertainty_ranking_README.md) explain the
-importance metric and the unconstrained qqZZ rows. The analysis exporter
-`export_np_ranking.py` creates these files from the saved decomposition summary;
-`export_decomposition.py` copies them into the presentation.
-
-
-## Pruned data-like follow-up
-
-The pruned model keeps the first 54 constrained NPs in the shared ranking and
-all three qqZZ normalizations. The other 73 coordinates are fixed at their
-injected values; the data are unchanged and all older workspaces are retained.
-Four slides show the restriction, its HEPData comparison, stage accounting and
-per-mu minimization time/process RSS. Each coordinate uses a fresh Slurm process.
-
-After the complete scan and independent checks pass, export its report with:
-
-```bash
-python presentation/tools/export_pruned_results.py \
-  --report /path/to/results/asimov_data_like_4096_pruned54/report \
-  --analysis-commit ANALYSIS_COMMIT
-```
+Primary references: [finite Asimov construction](https://arxiv.org/abs/2609.14136),
+[hNDE shape example](https://arxiv.org/abs/2609.30196),
+[covariance propagation](https://arxiv.org/abs/2608.15312), and
+[HEPData Table 2](https://doi.org/10.17182/hepdata.156805.v1/t2).
